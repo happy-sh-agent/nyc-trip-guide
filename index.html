@@ -72,13 +72,20 @@
     .link-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
     .food-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
     .food-note { color: var(--success); font-size: 12px; font-weight: 700; margin-top: 6px; }
-    #routeMap { height: 320px; border-radius: 20px; border: 1px solid var(--line); overflow: hidden; }
+    #routeMap { height: 68vh; min-height: 520px; max-height: 860px; border-radius: 20px; border: 1px solid var(--line); overflow: hidden; }
     .footer-note { margin-top: 22px; color: var(--muted); font-size: 13px; text-align: center; }
     @media (max-width: 640px) {
       .hero h1 { font-size: 44px; }
       .timeline-item { grid-template-columns: 86px 1fr; }
       .info-grid, .food-grid { grid-template-columns: 1fr; }
       .section-title { flex-direction: column; align-items: flex-start; }
+      .card { padding: 16px; }
+      #routeMap {
+        height: 78vh;
+        min-height: 620px;
+        max-height: none;
+        border-radius: 18px;
+      }
     }
   </style>
 </head>

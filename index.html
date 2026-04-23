@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뉴욕 여행 가이드</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --text: #eef2ff;
+      --muted: #aab3d1;
+      --line: #253055;
+      --accent: #8ab4ff;
+      --chip: #1b2446;
+      --good: #8ee3b5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #10172d 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    .hero {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(18, 25, 51, 0.9);
+    }
+    h1 { margin: 0 0 10px; font-size: 40px; line-height: 1.15; }
+    .sub { color: var(--muted); margin: 0; max-width: 760px; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .chip {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+    .section { margin-top: 28px; }
+    .section h2 { font-size: 24px; margin-bottom: 12px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 20px; }
+    .desc { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+    ul { margin: 0; padding-left: 18px; color: var(--muted); }
+    .badge {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--good);
+      font-size: 13px;
+    }
+    .note {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(138, 180, 255, 0.08);
+      border: 1px solid rgba(138, 180, 255, 0.2);
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>뉴욕 여행 가이드</h1>
+      <p class="sub">뉴욕 여행 준비를 위한 공유형 페이지입니다. 음식은 하위 카테고리로 두고, 일정, 동네, 쇼핑, 카페, 바, 실전 팁까지 한 곳에서 정리하는 구조로 잡았습니다.</p>
+      <div class="chips">
+        <span class="chip">New York Trip</span>
+        <span class="chip">Food</span>
+        <span class="chip">Neighborhoods</span>
+        <span class="chip">Practical Tips</span>
+      </div>
+      <div class="meta">초안 버전, 마지막 업데이트: 2026-04-23</div>
+    </section>
+
+    <section class="section">
+      <h2>카테고리</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>음식</h3>
+          <p class="desc">브런치, 디너, 피자, 베이글, 스테이크, 로컬 맛집까지. 이번 페이지에서는 이 항목이 핵심 하위 섹션입니다.</p>
+          <ul>
+            <li>동네별 맛집</li>
+            <li>가격대와 예약 난이도</li>
+            <li>대표 메뉴</li>
+          </ul>
+          <span class="badge">우선 채울 항목</span>
+        </article>
+
+        <article class="card">
+          <h3>일정</h3>
+          <p class="desc">여행 일자별 동선, 오전-점심-저녁 흐름, 예약해야 하는 곳들을 정리합니다.</p>
+          <ul>
+            <li>데이 플랜</li>
+            <li>이동 동선</li>
+            <li>예약 체크</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>동네</h3>
+          <p class="desc">소호, 웨스트빌리지, 어퍼이스트, 브루클린 등 지역별 성격과 추천 포인트를 정리합니다.</p>
+          <ul>
+            <li>어디가 좋은지</li>
+            <li>어떤 분위기인지</li>
+            <li>무엇을 묶어 볼지</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>실전 팁</h3>
+          <p class="desc">결제, 팁 문화, 예약 앱, 이동, 날씨, 쇼핑 팁 같은 실전 정보를 모읍니다.</p>
+          <ul>
+            <li>팁과 세금</li>
+            <li>예약 앱</li>
+            <li>교통과 시간 관리</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>다음 단계</h2>
+      <div class="note">
+        지금은 여행 허브 구조만 잡아둔 상태입니다. 다음으로는 이전에 리서치한 뉴욕 맛집 데이터를 음식 섹션에 먼저 넣고, 이후 일정과 동네 정보를 붙이면 됩니다.
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>뉴욕 여행 가이드</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <style>
     :root {
       --bg: #f5f7fb;
@@ -14,7 +15,6 @@
       --primary: #173b7a;
       --primary-soft: #eef3ff;
       --accent: #5b8cff;
-      --warm: #ffb86b;
       --shadow: 0 14px 40px rgba(15, 28, 63, 0.10);
       --radius: 24px;
       --success: #1f8f5f;
@@ -22,276 +22,61 @@
       --free-border: #cfdcf5;
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
     .page { max-width: 760px; margin: 0 auto; padding: 0 14px 48px; }
     .hero {
-      position: relative;
-      margin: 0 -14px;
-      min-height: 240px;
-      padding: 22px 20px 28px;
-      color: white;
-      background:
-        linear-gradient(180deg, rgba(8,20,48,0.25), rgba(8,20,48,0.78)),
-        url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80') center/cover;
-      border-bottom-left-radius: 26px;
-      border-bottom-right-radius: 26px;
-      overflow: hidden;
+      position: relative; margin: 0 -14px; min-height: 240px; padding: 22px 20px 28px; color: white;
+      background: linear-gradient(180deg, rgba(8,20,48,0.25), rgba(8,20,48,0.78)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80') center/cover;
+      border-bottom-left-radius: 26px; border-bottom-right-radius: 26px; overflow: hidden;
     }
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 28px;
-      font-size: 14px;
-    }
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; font-size: 14px; }
     .hero-kicker { font-style: italic; opacity: 0.92; font-size: 20px; }
     .hero h1 { margin: 0; font-size: 52px; line-height: 0.95; letter-spacing: -0.03em; }
     .hero-sub { margin-top: 10px; font-size: 18px; color: rgba(255,255,255,0.9); }
     .tabbar {
-      display: flex;
-      gap: 10px;
-      background: rgba(255,255,255,0.92);
-      margin-top: -18px;
-      padding: 10px;
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      position: relative;
-      z-index: 2;
-      overflow-x: auto;
+      display: flex; gap: 10px; background: rgba(255,255,255,0.92); margin-top: -18px; padding: 10px;
+      border-radius: 22px; box-shadow: var(--shadow); position: relative; z-index: 2; overflow-x: auto;
     }
-    .tab {
-      padding: 12px 18px;
-      border-radius: 999px;
-      white-space: nowrap;
-      color: var(--muted);
-      font-weight: 700;
-      background: transparent;
-      border: 1px solid transparent;
-    }
-    .tab.active {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 8px 18px rgba(23,59,122,0.25);
-    }
+    .tab { flex: 1; text-align: center; padding: 12px 18px; border-radius: 999px; text-decoration: none; color: var(--muted); font-weight: 700; }
+    .tab.active { background: var(--primary); color: white; box-shadow: 0 8px 18px rgba(23,59,122,0.25); }
     .section { margin-top: 18px; }
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(226,232,242,0.9);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      gap: 12px;
-    }
-    .section-title h2 {
-      font-size: 24px;
-      margin: 0;
-      letter-spacing: -0.02em;
-    }
+    .card { background: var(--card); border: 1px solid rgba(226,232,242,0.9); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
+    .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 12px; }
+    .section-title h2 { font-size: 24px; margin: 0; letter-spacing: -0.02em; }
     .subtle { color: var(--muted); font-size: 14px; }
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .info-item {
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fbfcff;
-    }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .info-item { padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: #fbfcff; }
     .label { color: var(--muted); font-size: 12px; margin-bottom: 4px; }
     .value { font-size: 15px; font-weight: 700; }
-    .day-tabs {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      margin-bottom: 14px;
-    }
-    .day-pill {
-      min-width: 86px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: #f1f5fb;
-      color: var(--text);
-      border: 1px solid var(--line);
-      font-weight: 700;
-      text-align: center;
-      font-size: 13px;
-      cursor: pointer;
-    }
-    .day-pill.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
+    .day-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 14px; }
+    .day-pill { min-width: 86px; padding: 10px 12px; border-radius: 16px; background: #f1f5fb; color: var(--text); border: 1px solid var(--line); font-weight: 700; text-align: center; font-size: 13px; cursor: pointer; }
+    .day-pill.active { background: var(--primary); color: white; border-color: var(--primary); }
     .timeline { position: relative; padding-left: 18px; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 4px;
-      bottom: 4px;
-      width: 2px;
-      background: #d8e0ef;
-    }
-    .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 12px;
-      margin-bottom: 14px;
-      align-items: stretch;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -17px;
-      top: 12px;
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: white;
-      border: 2px solid var(--primary);
-    }
-    .timeline-item.free::before {
-      border-style: dashed;
-      border-color: var(--accent);
-    }
-    .thumb {
-      border-radius: 14px;
-      min-height: 78px;
-      background-size: cover;
-      background-position: center;
-      border: 1px solid var(--line);
-    }
-    .event-card, .food-card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px 14px;
-      background: #fff;
-    }
-    .event-card.free {
-      background: var(--free-bg);
-      border-style: dashed;
-      border-color: var(--free-border);
-    }
+    .timeline::before { content: ''; position: absolute; left: 6px; top: 4px; bottom: 4px; width: 2px; background: #d8e0ef; }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 96px 1fr; gap: 12px; margin-bottom: 14px; align-items: stretch; }
+    .timeline-item::before { content: ''; position: absolute; left: -17px; top: 12px; width: 10px; height: 10px; border-radius: 999px; background: white; border: 2px solid var(--primary); }
+    .timeline-item.free::before { border-style: dashed; border-color: var(--accent); }
+    .thumb { border-radius: 14px; min-height: 78px; background-size: cover; background-position: center; border: 1px solid var(--line); }
+    .event-card, .food-card { border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; background: #fff; }
+    .event-card.free { background: var(--free-bg); border-style: dashed; border-color: var(--free-border); }
     .time { color: var(--primary); font-size: 13px; font-weight: 700; }
     .event-title, .food-title { font-size: 19px; font-weight: 800; margin-top: 2px; }
     .tagline, .food-desc { margin-top: 4px; color: var(--muted); font-size: 13px; }
-    .event-tag, .food-tag {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 5px 8px;
-      border-radius: 999px;
-      font-size: 12px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-weight: 700;
-    }
-    .event-card.free .event-tag {
-      background: #eef6ff;
-      color: var(--accent);
-    }
-    .free-suggestions {
-      margin-top: 8px;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    .event-tag, .food-tag { display: inline-block; margin-top: 8px; padding: 5px 8px; border-radius: 999px; font-size: 12px; background: var(--primary-soft); color: var(--primary); font-weight: 700; }
+    .event-card.free .event-tag { background: #eef6ff; color: var(--accent); }
+    .free-suggestions { margin-top: 8px; font-size: 12px; color: var(--muted); line-height: 1.5; }
     .free-suggestions strong { color: var(--text); }
-    .list-row {
-      display: grid;
-      grid-template-columns: 92px 1fr auto;
-      gap: 12px;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .list-row:last-child { border-bottom: none; }
-    .list-thumb {
-      width: 92px;
-      height: 68px;
-      border-radius: 14px;
-      background-size: cover;
-      background-position: center;
-      border: 1px solid var(--line);
-    }
-    .place-title { font-size: 18px; font-weight: 800; }
-    .place-meta { color: var(--muted); font-size: 13px; margin-top: 3px; }
-    .map-box {
-      border-radius: 22px;
-      height: 220px;
-      background:
-        linear-gradient(180deg, rgba(20,33,61,0.18), rgba(20,33,61,0.18)),
-        url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80') center/cover;
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: end;
-      padding: 14px;
-      color: white;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      border: 1px solid transparent;
-      background: white;
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .button.primary {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-    .button.outline {
-      background: white;
-      color: var(--primary);
-      border-color: #dce5f4;
-    }
-    .link-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .food-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border-radius: 14px; text-decoration: none; border: 1px solid transparent; background: white; color: var(--text); font-size: 14px; font-weight: 600; cursor: pointer; }
+    .button.primary { background: var(--primary); color: white; border-color: var(--primary); }
+    .button.outline { background: white; color: var(--primary); border-color: #dce5f4; }
+    .link-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .food-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
     .food-note { color: var(--success); font-size: 12px; font-weight: 700; margin-top: 6px; }
-    .footer-note {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-    }
+    #routeMap { height: 320px; border-radius: 20px; border: 1px solid var(--line); overflow: hidden; }
+    .footer-note { margin-top: 22px; color: var(--muted); font-size: 13px; text-align: center; }
     @media (max-width: 640px) {
       .hero h1 { font-size: 44px; }
       .timeline-item { grid-template-columns: 86px 1fr; }
-      .list-row { grid-template-columns: 82px 1fr; }
-      .list-row .button { grid-column: 2; width: fit-content; }
       .info-grid, .food-grid { grid-template-columns: 1fr; }
       .section-title { flex-direction: column; align-items: flex-start; }
     }
@@ -300,19 +85,15 @@
 <body>
   <main class="page">
     <section class="hero">
-      <div class="topbar">
-        <div>☰</div>
-        <div>🔖</div>
-      </div>
+      <div class="topbar"><div>☰</div><div>🔖</div></div>
       <div class="hero-kicker">Let&apos;s go!</div>
       <h1>New York Trip</h1>
       <div class="hero-sub">나만의 뉴욕 여행 플래너 ✈️</div>
     </section>
 
     <div class="tabbar">
-      <div class="tab active">🗓️ 일정표</div>
-      <div class="tab">🍽️ 맛집</div>
-      <div class="tab">🗺️ 지도</div>
+      <a class="tab active" href="./index.html">🗓️ 일정표</a>
+      <a class="tab" href="./food.html">🍽️ 맛집</a>
     </div>
 
     <section class="section">
@@ -332,24 +113,15 @@
           <h2>뉴욕 여행 일정표 보기</h2>
           <div class="subtle" id="dayLabel">DAY 1 · 04/30 (Thu)</div>
         </div>
-
         <div class="day-tabs" id="dayTabs"></div>
         <div class="link-row">
           <a id="dayMapLink" class="button primary" target="_blank" rel="noopener noreferrer">오늘 일정 구글 지도</a>
           <a id="daySearchLink" class="button outline" target="_blank" rel="noopener noreferrer">오늘 일정 검색</a>
         </div>
         <div class="timeline" id="timeline" style="margin-top:14px;"></div>
-
-        <div class="section-title" style="margin-top:18px;">
-          <h2 style="font-size:20px;">오늘 먹기 좋은 곳</h2>
-          <div class="subtle">일정 동선 기준 추천</div>
-        </div>
+        <div class="section-title" style="margin-top:18px;"><h2 style="font-size:20px;">오늘 먹기 좋은 곳</h2><div class="subtle">일정 동선 기준 추천</div></div>
         <div class="food-grid" id="dayFood"></div>
-
-        <div class="section-title" style="margin-top:18px;">
-          <h2 style="font-size:20px;">오늘 메모</h2>
-          <div class="subtle">특별 요청사항 반영</div>
-        </div>
+        <div class="section-title" style="margin-top:18px;"><h2 style="font-size:20px;">오늘 메모</h2><div class="subtle">특별 요청사항 반영</div></div>
         <div class="food-grid" id="dayNotes"></div>
       </div>
     </section>
@@ -357,226 +129,29 @@
     <section class="section">
       <div class="card">
         <div class="section-title">
-          <h2>맛집 리스트</h2>
-          <div class="subtle">여행 동선에 넣기 쉬운 후보</div>
+          <h2>일정 기반 동선 지도</h2>
+          <div class="subtle">선택한 DAY 기준 주요 포인트를 지도에 표시</div>
         </div>
-
-        <div class="list-row">
-          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"></div>
-          <div><div class="place-title">Buvette</div><div class="place-meta">브런치 · West Village</div></div>
-          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Buvette+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-        </div>
-        <div class="list-row">
-          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80');"></div>
-          <div><div class="place-title">Katz's Delicatessen</div><div class="place-meta">델리 · Lower East Side</div></div>
-          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Katz%27s+Delicatessen+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-        </div>
-        <div class="list-row">
-          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80');"></div>
-          <div><div class="place-title">Prince Street Pizza</div><div class="place-meta">피자 · SoHo</div></div>
-          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-        </div>
-        <div class="list-row">
-          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80');"></div>
-          <div><div class="place-title">Smith & Wollensky</div><div class="place-meta">스테이크 · Midtown East</div></div>
-          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-        </div>
+        <div id="routeMap"></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="card">
-        <div class="section-title">
-          <h2>지도에서 확인</h2>
-          <div class="subtle">주요 스팟과 맛집을 위치 중심으로 확인</div>
-        </div>
-        <div class="map-box">
-          <div>
-            <div style="font-size:18px; font-weight:800;">MANHATTAN · BROOKLYN</div>
-            <div class="subtle" style="color:rgba(255,255,255,0.88); margin-top:6px;">날짜별 일정 카드 위의 구글 지도 버튼으로 바로 확인할 수 있습니다.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer-note">이제 공백시간마다 나중에 넣기 좋은 액션도 함께 볼 수 있습니다.</div>
+    <div class="footer-note">메인은 일정 중심, 맛집은 별도 페이지로 분리되었습니다.</div>
   </main>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     const itinerary = [
-      {
-        label: 'DAY 1 · 04/30 (Thu)', short: 'DAY 1<br>04.30',
-        map: 'https://www.google.com/maps/dir/?api=1&destination=Times+Square+New+York&travelmode=walking',
-        search: 'https://www.google.com/search?q=Times+Square+New+York+travel+plan',
-        food: [
-          { name: '가벼운 저녁식사', desc: '첫날은 무리하지 않고 Times Square 근처에서 가볍게', tag: '첫날 추천' },
-          { name: 'Los Tacos No.1', desc: '빠르고 실패 적은 첫날 식사 카드', tag: '간편 식사', link: 'https://www.google.com/maps/search/?api=1&query=Los+Tacos+No.1+Times+Square' }
-        ],
-        notes: [],
-        items: [
-          { time: '15:00', title: 'Hotel check-in', desc: '여행 시작, 짐 정리 후 컨디션 조절', tag: '체크인', image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80' },
-          { time: '16:00', title: 'Amtrak 도착', desc: '이동 마무리 후 본격적인 뉴욕 일정 시작', tag: '이동', image: 'https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=400&q=80' },
-          { time: '17:00-18:30', title: '공백시간', desc: '호텔 휴식, 주변 산책, 간단한 카페 들르기 좋음', tag: '비워둔 시간', free: true, suggestions: '추천 액션: 호텔 정리, 편의점/드럭스토어, 카페, 가벼운 산책', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
-          { time: '19:00', title: 'Times Square 산책', desc: '첫날 분위기 익히기 좋은 대표 코스', tag: '관광', image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=400&q=80' },
-          { time: '22:00', title: '동행인 공항 도착', desc: '합류 후 다음날 본격 일정 준비', tag: '합류', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 2 · 05/01 (Fri)', short: 'DAY 2<br>05.01',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=Birdland+Jazz+Club+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Rockefeller+Center+New+York|Grand+Central+Terminal+New+York|SUMMIT+One+Vanderbilt+New+York',
-        search: 'https://www.google.com/search?q=NYPL+Bryant+Park+Gallaghers+Rockefeller+Grand+Central+SUMMIT+Birdland',
-        food: [
-          { name: 'Gallaghers Steakhouse', desc: '11:45 예약 확정 점심, 오늘의 핵심 식사', tag: '예약 완료', link: 'https://www.google.com/maps/search/?api=1&query=Gallaghers+Steakhouse+New+York' },
-          { name: 'Midtown dinner', desc: 'Birdland 전후로 극장가 근처에서 저녁', tag: '저녁 후보' }
-        ],
-        notes: [],
-        items: [
-          { time: '09:00', title: 'New York Public Library', desc: 'Bryant Park와 묶기 좋은 아침 시작 코스', tag: '명소', image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80' },
-          { time: '11:45', title: 'Gallaghers Steakhouse 점심 예약', desc: '예약 반영 완료, 점심 핵심 일정', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
-          { time: '15:30-16:30', title: '공백시간', desc: 'Grand Central 근처 카페, 쇼핑, 잠깐 휴식 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: Grand Central 푸드홀, 카페, Bryant Park 재방문, 기념품 쇼핑', image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
-          { time: '17:00', title: 'SUMMIT One Vanderbilt', desc: 'Grand Central 이후 연결 좋은 전망 코스', tag: '전망', image: 'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80' },
-          { time: '20:00', title: 'Birdland Jazz Club', desc: '첫 금요일 밤 하이라이트', tag: '공연', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 3 · 05/02 (Sat)', short: 'DAY 3<br>05.02',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York&destination=Rockefeller+Center+New+York&waypoints=Shake+Shack+Madison+Square+Park+New+York|New+Amsterdam+Theatre+New+York',
-        search: 'https://www.google.com/search?q=Harry+Potter+New+York+Shake+Shack+Madison+Square+Park+Aladdin+Rockefeller',
-        food: [
-          { name: 'Shake Shack Madison Square Park', desc: '이미 일정 반영된 점심, 동선 효율 좋음', tag: '점심 확정', link: 'https://www.google.com/maps/search/?api=1&query=Shake+Shack+Madison+Square+Park' },
-          { name: 'Midtown dinner', desc: '공연 후 무리 없는 저녁 추천', tag: '저녁 후보' }
-        ],
-        notes: [],
-        items: [
-          { time: '09:00', title: 'Harry Potter New York', desc: '오전부터 여유 있게 굿즈/체험', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80' },
-          { time: '12:00', title: 'Shake Shack Madison Square Park', desc: '가볍고 효율적인 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80' },
-          { time: '14:00', title: 'Aladdin', desc: '극장가 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
-          { time: '16:30-18:00', title: '공백시간', desc: '공연 후 Times Square / Rockefeller에서 자유시간 확보', tag: '비워둔 시간', free: true, suggestions: '추천 액션: M&M, LEGO, 라운지 카페, Top of the Rock 주변 산책', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
-          { time: '17:00', title: 'Times Square / Rockefeller Center', desc: '공연 후 가볍게 둘러보기', tag: '산책', image: 'https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 4 · 05/03 (Sun)', short: 'DAY 4<br>05.03',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=Washington+Street+DUMBO+New+York&destination=Whitehall+Terminal+New+York&waypoints=Brooklyn+Bridge+Park+New+York|Juliana%27s+Pizza+Brooklyn',
-        search: 'https://www.google.com/search?q=DUMBO+Brooklyn+Bridge+Park+Julianas+Pizza+Whitehall+Terminal',
-        food: [
-          { name: 'Juliana’s Pizza', desc: '브루클린 데이 메인 식사 카드', tag: '점심 확정', link: 'https://www.google.com/maps/search/?api=1&query=Juliana%27s+Pizza+Brooklyn' },
-          { name: '가벼운 저녁식사', desc: '페리 이후에는 너무 무겁지 않게 마무리', tag: '저녁 추천' }
-        ],
-        notes: [],
-        items: [
-          { time: '08:00', title: 'Washington Street photo spot', desc: '아침 사진 명소, 붐비기 전 방문', tag: '사진', image: 'https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=400&q=80' },
-          { time: '10:00', title: 'DUMBO / Brooklyn Bridge Park', desc: '산책과 사진 모두 좋은 구간', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
-          { time: '12:00', title: 'Juliana’s Pizza', desc: '브루클린 점심 메인 카드', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
-          { time: '14:00-15:00', title: '공백시간', desc: 'DUMBO 주변 카페, 사진, 강변 산책 추가 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: Jacques Torres 초콜릿, 강변 벤치 휴식, 브루클린 브리지 포토', image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
-          { time: '16:00', title: 'Staten Island Ferry 왕복', desc: '가성비 좋은 뷰 포인트', tag: '이동', image: 'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 5 · 05/04 (Mon)', short: 'DAY 5<br>05.04',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=Museum+of+Ice+Cream+New+York&destination=Ambassador+Theatre+New+York&waypoints=Prince+Street+Pizza+New+York|Joe%27s+Pizza+Carmine+Street+New+York',
-        search: 'https://www.google.com/search?q=Museum+of+Ice+Cream+SoHo+Prince+Street+Pizza+Joes+Pizza+Chicago+Broadway',
-        food: [
-          { name: 'Prince Street Pizza', desc: 'SoHo / Nolita 동선과 가장 잘 맞는 점심', tag: '점심 확정', link: 'https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York' },
-          { name: 'Joe’s Pizza (Carmine St)', desc: '오후 간식 카드, 동선상 부담 적음', tag: '간식 확정', link: 'https://www.google.com/maps/search/?api=1&query=Joe%27s+Pizza+Carmine+Street+New+York' }
-        ],
-        notes: [],
-        items: [
-          { time: '10:00', title: 'Museum of Ice Cream', desc: 'SoHo day 시작 포인트', tag: '체험', image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=400&q=80' },
-          { time: '12:00', title: 'Prince Street Pizza', desc: 'SoHo/Nolita 동선 중 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
-          { time: '14:30-16:00', title: '공백시간', desc: 'SoHo / Nolita에서 쇼핑이나 디저트 추가하기 좋은 시간', tag: '비워둔 시간', free: true, suggestions: '추천 액션: 디저트, 편집숍 쇼핑, 카페, Glossier/세포라, 소호 골목 산책', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80' },
-          { time: '16:00', title: 'Joe’s Pizza (Carmine St)', desc: '간식 카드로 넣기 좋은 클래식', tag: '간식', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
-          { time: '19:00', title: 'Chicago', desc: '저녁 메인 공연 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 6 · 05/05 (Tue)', short: 'DAY 6<br>05.05',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=Times+Square+New+York&destination=Grand+Central+Terminal+New+York&waypoints=New+York+Public+Library|Bryant+Park+New+York',
-        search: 'https://www.google.com/search?q=Times+Square+New+York+Public+Library+Bryant+Park+Grand+Central+photo+route',
-        food: [
-          { name: '촬영 후 점심', desc: '촬영 동선 끝난 뒤 Bryant Park 또는 Grand Central 쪽에서 점심', tag: '유동 일정' },
-          { name: '저녁식사', desc: '컨디션 보고 가볍게 또는 호텔 근처로', tag: '휴식 우선' }
-        ],
-        notes: [
-          { name: '스냅 촬영 코스', desc: '타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 구성, 120분 소요', tag: '여자친구 요청' },
-          { name: '촬영 콘셉트', desc: '가장 화려한 뉴욕의 명소들로 구성해 보았습니다.', tag: '촬영 메모' }
-        ],
-        items: [
-          { time: '08:00', title: 'Snap Photo Session', desc: '타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 중심의 촬영 코스', tag: '촬영', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80' },
-          { time: '08:00-10:00', title: '촬영 코스 진행', desc: '타임스퀘어 → 뉴욕도서관 → 브라이언트파크 → 그랜드센트럴, 총 120분 소요 예정', tag: '120분 코스', image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80' },
-          { time: '10:30', title: '점심 / 휴식', desc: '촬영 후 회복 시간 확보', tag: '휴식', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
-          { time: '13:00-18:00', title: '공백시간', desc: '쇼핑, 카페, 낮잠, 세탁 등 자유롭게 조정 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: 낮잠, 사진 셀렉, 브라이언트파크 재방문, 카페, 가벼운 쇼핑, 호텔 휴식', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 7 · 05/06 (Wed)', short: 'DAY 7<br>05.06',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=Ellen%27s+Stardust+Diner+New+York&destination=Museum+of+Modern+Art+New+York&waypoints=Minskoff+Theatre+New+York',
-        search: 'https://www.google.com/search?q=Ellens+Stardust+Diner+Lion+King+MoMA+route',
-        food: [
-          { name: 'Ellen’s Stardust Diner', desc: '브런치 겸 볼거리, 오늘 일정과 자연스럽게 연결', tag: '브런치 확정', link: 'https://www.google.com/maps/search/?api=1&query=Ellen%27s+Stardust+Diner+New+York' },
-          { name: 'Midtown dinner', desc: 'MoMA 이후 또는 공연 전후에 무난한 선택', tag: '저녁 후보' }
-        ],
-        notes: [
-          { name: 'MoMA 관람 요청', desc: '여유롭게 최소 4시간 확보가 필요해 오늘은 MoMA를 제외하고 별도 재배치 추천.', tag: '여자친구 요청' }
-        ],
-        items: [
-          { time: '10:00', title: 'Ellen’s Stardust Diner', desc: '브런치 겸 볼거리 있는 시작', tag: '브런치', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
-          { time: '13:00', title: 'The Lion King', desc: '오후 공연 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
-          { time: '15:00-16:00', title: '공백시간', desc: '공연 후 바로 이동하지 않고 잠깐 쉬거나 간식 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: 타임스퀘어 카페, 기념품, 간단한 디저트, MoMA 전 휴식', image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
-          { time: '16:00', title: 'MoMA', desc: '공연 이후 이어가기 좋은 미술관 코스', tag: '미술관', image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 8 · 05/07 (Thu)', short: 'DAY 8<br>05.07',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=American+Museum+of+Natural+History+New+York&destination=Gershwin+Theatre+New+York&waypoints=Central+Park+New+York',
-        search: 'https://www.google.com/search?q=AMNH+Central+Park+Wicked+route',
-        food: [
-          { name: 'Museum area lunch', desc: '박물관 근처에서 가볍게 점심 후 Central Park로 이동', tag: '점심 추천' },
-          { name: '공연 전 저녁', desc: 'Wicked 전에는 너무 무겁지 않은 저녁 권장', tag: '시간 여유 필요' }
-        ],
-        notes: [
-          { name: '자연사박물관 관람 요청', desc: '최소 4시간 여유롭게 보기로 반영, 점심과 센트럴파크는 이후로 조정.', tag: '여자친구 요청' }
-        ],
-        items: [
-          { time: '10:00', title: 'American Museum of Natural History', desc: '오전 핵심 박물관 일정', tag: '박물관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
-          { time: '13:00-15:00', title: '공백시간', desc: '박물관 관람 길이에 따라 점심, 휴식, 간단한 산책 조정 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: 박물관샵, 센트럴파크 진입 전 점심, 커피, 벤치 휴식', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
-          { time: '15:00', title: 'Central Park 산책', desc: '박물관 후 이어가기 좋은 동선', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
-          { time: '19:00', title: 'Wicked', desc: '저녁 대표 공연 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 9 · 05/08 (Fri)', short: 'DAY 9<br>05.08',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=The+Metropolitan+Museum+of+Art+New+York&destination=Blue+Note+Jazz+Club+New+York&waypoints=Vessel+New+York|High+Line+New+York',
-        search: 'https://www.google.com/search?q=Met+Vessel+High+Line+Blue+Note+route',
-        food: [
-          { name: 'Lunch near The Met', desc: '미술관 중심 오전 일정이라 가까운 곳에서 효율적으로', tag: '점심 추천' },
-          { name: 'Blue Note 전후 저녁', desc: '재즈 일정 전에는 이동 동선 짧은 저녁이 좋음', tag: '저녁 추천' }
-        ],
-        notes: [],
-        items: [
-          { time: '10:00', title: 'The Metropolitan Museum of Art', desc: '오전 메인 일정', tag: '미술관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
-          { time: '13:30-15:00', title: '공백시간', desc: 'Met 관람 길이에 따라 점심, 기념품숍, 주변 카페 조정 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: Met gift shop, 카페, 5th Ave 산책, 사진 찍기', image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
-          { time: '15:00', title: 'Vessel / High Line', desc: 'Hudson Yards 라인으로 산책', tag: '산책', image: 'https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=400&q=80' },
-          { time: '20:00', title: 'Blue Note New York', desc: '마지막 금요일 밤 재즈 일정', tag: '재즈', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80' }
-        ]
-      },
-      {
-        label: 'DAY 10 · 05/09 (Sat)', short: 'DAY 10<br>05.09',
-        map: 'https://www.google.com/maps/dir/?api=1&origin=Woodbury+Common+Premium+Outlets&destination=Smith+%26+Wollensky+New+York',
-        search: 'https://www.google.com/search?q=Woodbury+Common+Smith+and+Wollensky+NYC+route',
-        food: [
-          { name: 'Outlet lunch', desc: '아울렛 내부 또는 근처에서 빠르게', tag: '점심 확정' },
-          { name: 'Smith & Wollensky', desc: '18:00 예약 반영 완료, 마지막 저녁 메인', tag: '예약 완료', link: 'https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+New+York' }
-        ],
-        notes: [],
-        items: [
-          { time: '09:00', title: '호텔 체크아웃 / 이동', desc: '짐 정리 후 아울렛 출발', tag: '체크아웃', image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=400&q=80' },
-          { time: '10:00', title: 'Woodbury Common Premium Outlets', desc: '쇼핑 중심 일정', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80' },
-          { time: '15:30-17:30', title: '공백시간', desc: '아울렛 복귀 시간에 따라 정리, 휴식, 공항 준비 가능', tag: '비워둔 시간', free: true, suggestions: '추천 액션: 짐 정리, 쇼핑 정리, 샤워, 사진 백업, 공항 준비', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
-          { time: '18:00', title: 'Smith & Wollensky 예약', desc: '마지막 저녁 예약 반영 완료', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
-          { time: '20:00', title: '공항 이동 준비', desc: '복귀 버퍼 시간 확보', tag: '복귀', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80' }
-        ]
-      }
+      { label:'DAY 1 · 04/30 (Thu)', short:'DAY 1<br>04.30', map:'https://www.google.com/maps/dir/?api=1&destination=Times+Square+New+York&travelmode=walking', search:'https://www.google.com/search?q=Times+Square+New+York+travel+plan', route:[['Hotel',40.7580,-73.9855],['Times Square',40.7580,-73.9855]], food:[{name:'가벼운 저녁식사',desc:'첫날은 무리하지 않고 Times Square 근처에서 가볍게',tag:'첫날 추천'},{name:'Los Tacos No.1',desc:'빠르고 실패 적은 첫날 식사 카드',tag:'간편 식사',link:'https://www.google.com/maps/search/?api=1&query=Los+Tacos+No.1+Times+Square'}], notes:[], items:[{time:'15:00',title:'Hotel check-in',desc:'여행 시작, 짐 정리 후 컨디션 조절',tag:'체크인',image:'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80'},{time:'16:00',title:'Amtrak 도착',desc:'이동 마무리 후 본격적인 뉴욕 일정 시작',tag:'이동',image:'https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=400&q=80'},{time:'17:00-18:30',title:'공백시간',desc:'호텔 휴식, 주변 산책, 간단한 카페 들르기 좋음',tag:'비워둔 시간',free:true,suggestions:'추천 액션: 호텔 정리, 편의점/드럭스토어, 카페, 가벼운 산책',image:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80'},{time:'19:00',title:'Times Square 산책',desc:'첫날 분위기 익히기 좋은 대표 코스',tag:'관광',image:'https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=400&q=80'},{time:'22:00',title:'동행인 공항 도착',desc:'합류 후 다음날 본격 일정 준비',tag:'합류',image:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 2 · 05/01 (Fri)', short:'DAY 2<br>05.01', map:'https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=Birdland+Jazz+Club+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Rockefeller+Center+New+York|Grand+Central+Terminal+New+York|SUMMIT+One+Vanderbilt+New+York', search:'https://www.google.com/search?q=NYPL+Bryant+Park+Gallaghers+Rockefeller+Grand+Central+SUMMIT+Birdland', route:[['NYPL',40.7532,-73.9822],['Bryant Park',40.7536,-73.9832],['Gallaghers',40.7594,-73.9868],['Rockefeller',40.7587,-73.9787],['Grand Central',40.7527,-73.9772],['SUMMIT',40.7527,-73.9787],['Birdland',40.7607,-73.9885]], food:[{name:'Gallaghers Steakhouse',desc:'11:45 예약 확정 점심, 오늘의 핵심 식사',tag:'예약 완료',link:'https://www.google.com/maps/search/?api=1&query=Gallaghers+Steakhouse+New+York'},{name:'Midtown dinner',desc:'Birdland 전후로 극장가 근처에서 저녁',tag:'저녁 후보'}], notes:[], items:[{time:'09:00',title:'New York Public Library',desc:'Bryant Park와 묶기 좋은 아침 시작 코스',tag:'명소',image:'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80'},{time:'11:45',title:'Gallaghers Steakhouse 점심 예약',desc:'예약 반영 완료, 점심 핵심 일정',tag:'예약',image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80'},{time:'15:30-16:30',title:'공백시간',desc:'Grand Central 근처 카페, 쇼핑, 잠깐 휴식 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: Grand Central 푸드홀, 카페, Bryant Park 재방문, 기념품 쇼핑',image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80'},{time:'17:00',title:'SUMMIT One Vanderbilt',desc:'Grand Central 이후 연결 좋은 전망 코스',tag:'전망',image:'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80'},{time:'20:00',title:'Birdland Jazz Club',desc:'첫 금요일 밤 하이라이트',tag:'공연',image:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 3 · 05/02 (Sat)', short:'DAY 3<br>05.02', map:'https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York&destination=Rockefeller+Center+New+York&waypoints=Shake+Shack+Madison+Square+Park+New+York|New+Amsterdam+Theatre+New+York', search:'https://www.google.com/search?q=Harry+Potter+New+York+Shake+Shack+Madison+Square+Park+Aladdin+Rockefeller', route:[['Harry Potter NY',40.7610,-73.9835],['Shake Shack',40.7420,-73.9886],['New Amsterdam Theatre',40.7580,-73.9881],['Rockefeller',40.7587,-73.9787]], food:[{name:'Shake Shack Madison Square Park',desc:'이미 일정 반영된 점심, 동선 효율 좋음',tag:'점심 확정',link:'https://www.google.com/maps/search/?api=1&query=Shake+Shack+Madison+Square+Park'},{name:'Midtown dinner',desc:'공연 후 무리 없는 저녁 추천',tag:'저녁 후보'}], notes:[], items:[{time:'09:00',title:'Harry Potter New York',desc:'오전부터 여유 있게 굿즈/체험',tag:'쇼핑',image:'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80'},{time:'12:00',title:'Shake Shack Madison Square Park',desc:'가볍고 효율적인 점심',tag:'식사',image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80'},{time:'14:00',title:'Aladdin',desc:'극장가 메인 일정',tag:'브로드웨이',image:'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80'},{time:'16:30-18:00',title:'공백시간',desc:'공연 후 Times Square / Rockefeller에서 자유시간 확보',tag:'비워둔 시간',free:true,suggestions:'추천 액션: M&M, LEGO, 라운지 카페, Top of the Rock 주변 산책',image:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80'},{time:'17:00',title:'Times Square / Rockefeller Center',desc:'공연 후 가볍게 둘러보기',tag:'산책',image:'https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 4 · 05/03 (Sun)', short:'DAY 4<br>05.03', map:'https://www.google.com/maps/dir/?api=1&origin=Washington+Street+DUMBO+New+York&destination=Whitehall+Terminal+New+York&waypoints=Brooklyn+Bridge+Park+New+York|Juliana%27s+Pizza+Brooklyn', search:'https://www.google.com/search?q=DUMBO+Brooklyn+Bridge+Park+Julianas+Pizza+Whitehall+Terminal', route:[['Washington St',40.7033,-73.9881],['Brooklyn Bridge Park',40.7003,-73.9967],['Julianas',40.7027,-73.9935],['Whitehall Terminal',40.7018,-74.0131]], food:[{name:'Juliana’s Pizza',desc:'브루클린 데이 메인 식사 카드',tag:'점심 확정',link:'https://www.google.com/maps/search/?api=1&query=Juliana%27s+Pizza+Brooklyn'},{name:'가벼운 저녁식사',desc:'페리 이후에는 너무 무겁지 않게 마무리',tag:'저녁 추천'}], notes:[], items:[{time:'08:00',title:'Washington Street photo spot',desc:'아침 사진 명소, 붐비기 전 방문',tag:'사진',image:'https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=400&q=80'},{time:'10:00',title:'DUMBO / Brooklyn Bridge Park',desc:'산책과 사진 모두 좋은 구간',tag:'산책',image:'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80'},{time:'12:00',title:'Juliana’s Pizza',desc:'브루클린 점심 메인 카드',tag:'식사',image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80'},{time:'14:00-15:00',title:'공백시간',desc:'DUMBO 주변 카페, 사진, 강변 산책 추가 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: Jacques Torres 초콜릿, 강변 벤치 휴식, 브루클린 브리지 포토',image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80'},{time:'16:00',title:'Staten Island Ferry 왕복',desc:'가성비 좋은 뷰 포인트',tag:'이동',image:'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 5 · 05/04 (Mon)', short:'DAY 5<br>05.04', map:'https://www.google.com/maps/dir/?api=1&origin=Museum+of+Ice+Cream+New+York&destination=Ambassador+Theatre+New+York&waypoints=Prince+Street+Pizza+New+York|Joe%27s+Pizza+Carmine+Street+New+York', search:'https://www.google.com/search?q=Museum+of+Ice+Cream+SoHo+Prince+Street+Pizza+Joes+Pizza+Chicago+Broadway', route:[['Museum of Ice Cream',40.7254,-74.0007],['Prince Street Pizza',40.7231,-73.9942],['Joes Pizza',40.7306,-74.0027],['Ambassador Theatre',40.7610,-73.9855]], food:[{name:'Prince Street Pizza',desc:'SoHo / Nolita 동선과 가장 잘 맞는 점심',tag:'점심 확정',link:'https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York'},{name:'Joe’s Pizza (Carmine St)',desc:'오후 간식 카드, 동선상 부담 적음',tag:'간식 확정',link:'https://www.google.com/maps/search/?api=1&query=Joe%27s+Pizza+Carmine+Street+New+York'}], notes:[], items:[{time:'10:00',title:'Museum of Ice Cream',desc:'SoHo day 시작 포인트',tag:'체험',image:'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=400&q=80'},{time:'12:00',title:'Prince Street Pizza',desc:'SoHo/Nolita 동선 중 점심',tag:'식사',image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80'},{time:'14:30-16:00',title:'공백시간',desc:'SoHo / Nolita에서 쇼핑이나 디저트 추가하기 좋은 시간',tag:'비워둔 시간',free:true,suggestions:'추천 액션: 디저트, 편집숍 쇼핑, 카페, Glossier/세포라, 소호 골목 산책',image:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80'},{time:'16:00',title:'Joe’s Pizza (Carmine St)',desc:'간식 카드로 넣기 좋은 클래식',tag:'간식',image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80'},{time:'19:00',title:'Chicago',desc:'저녁 메인 공연 일정',tag:'브로드웨이',image:'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 6 · 05/05 (Tue)', short:'DAY 6<br>05.05', map:'https://www.google.com/maps/dir/?api=1&origin=Times+Square+New+York&destination=Grand+Central+Terminal+New+York&waypoints=New+York+Public+Library|Bryant+Park+New+York', search:'https://www.google.com/search?q=Times+Square+New+York+Public+Library+Bryant+Park+Grand+Central+photo+route', route:[['Times Square',40.7580,-73.9855],['NY Public Library',40.7532,-73.9822],['Bryant Park',40.7536,-73.9832],['Grand Central',40.7527,-73.9772]], food:[{name:'촬영 후 점심',desc:'촬영 동선 끝난 뒤 Bryant Park 또는 Grand Central 쪽에서 점심',tag:'유동 일정'},{name:'저녁식사',desc:'컨디션 보고 가볍게 또는 호텔 근처로',tag:'휴식 우선'}], notes:[{name:'스냅 촬영 코스',desc:'타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 구성, 120분 소요',tag:'여자친구 요청'},{name:'촬영 콘셉트',desc:'가장 화려한 뉴욕의 명소들로 구성해 보았습니다.',tag:'촬영 메모'}], items:[{time:'08:00',title:'Snap Photo Session',desc:'타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 중심의 촬영 코스',tag:'촬영',image:'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80'},{time:'08:00-10:00',title:'촬영 코스 진행',desc:'타임스퀘어 → 뉴욕도서관 → 브라이언트파크 → 그랜드센트럴, 총 120분 소요 예정',tag:'120분 코스',image:'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80'},{time:'10:30',title:'점심 / 휴식',desc:'촬영 후 회복 시간 확보',tag:'휴식',image:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80'},{time:'13:00-18:00',title:'공백시간',desc:'쇼핑, 카페, 낮잠, 세탁 등 자유롭게 조정 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: 낮잠, 사진 셀렉, 브라이언트파크 재방문, 카페, 가벼운 쇼핑, 호텔 휴식',image:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 7 · 05/06 (Wed)', short:'DAY 7<br>05.06', map:'https://www.google.com/maps/dir/?api=1&origin=Ellen%27s+Stardust+Diner+New+York&destination=Museum+of+Modern+Art+New+York&waypoints=Minskoff+Theatre+New+York', search:'https://www.google.com/search?q=Ellens+Stardust+Diner+Lion+King+MoMA+route', route:[['Ellens Stardust',40.7613,-73.9846],['Minskoff Theatre',40.7580,-73.9855],['MoMA',40.7614,-73.9776]], food:[{name:'Ellen’s Stardust Diner',desc:'브런치 겸 볼거리, 오늘 일정과 자연스럽게 연결',tag:'브런치 확정',link:'https://www.google.com/maps/search/?api=1&query=Ellen%27s+Stardust+Diner+New+York'},{name:'Midtown dinner',desc:'MoMA 이후 또는 공연 전후에 무난한 선택',tag:'저녁 후보'}], notes:[{name:'MoMA 관람 요청',desc:'여유롭게 최소 4시간 확보가 필요해 오늘은 MoMA를 제외하고 별도 재배치 추천.',tag:'여자친구 요청'}], items:[{time:'10:00',title:'Ellen’s Stardust Diner',desc:'브런치 겸 볼거리 있는 시작',tag:'브런치',image:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80'},{time:'13:00',title:'The Lion King',desc:'오후 공연 메인 일정',tag:'브로드웨이',image:'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80'},{time:'15:00-16:00',title:'공백시간',desc:'공연 후 바로 이동하지 않고 잠깐 쉬거나 간식 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: 타임스퀘어 카페, 기념품, 간단한 디저트, MoMA 전 휴식',image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80'},{time:'16:00',title:'MoMA',desc:'공연 이후 이어가기 좋은 미술관 코스',tag:'미술관',image:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 8 · 05/07 (Thu)', short:'DAY 8<br>05.07', map:'https://www.google.com/maps/dir/?api=1&origin=American+Museum+of+Natural+History+New+York&destination=Gershwin+Theatre+New+York&waypoints=Central+Park+New+York', search:'https://www.google.com/search?q=AMNH+Central+Park+Wicked+route', route:[['AMNH',40.7813,-73.9735],['Central Park',40.7812,-73.9665],['Gershwin Theatre',40.7624,-73.9854]], food:[{name:'Museum area lunch',desc:'박물관 근처에서 가볍게 점심 후 Central Park로 이동',tag:'점심 추천'},{name:'공연 전 저녁',desc:'Wicked 전에는 너무 무겁지 않은 저녁 권장',tag:'시간 여유 필요'}], notes:[{name:'자연사박물관 관람 요청',desc:'최소 4시간 여유롭게 보기로 반영, 점심과 센트럴파크는 이후로 조정.',tag:'여자친구 요청'}], items:[{time:'10:00',title:'American Museum of Natural History',desc:'오전 핵심 박물관 일정',tag:'박물관',image:'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80'},{time:'13:00-15:00',title:'공백시간',desc:'박물관 관람 길이에 따라 점심, 휴식, 간단한 산책 조정 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: 박물관샵, 센트럴파크 진입 전 점심, 커피, 벤치 휴식',image:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80'},{time:'15:00',title:'Central Park 산책',desc:'박물관 후 이어가기 좋은 동선',tag:'산책',image:'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80'},{time:'19:00',title:'Wicked',desc:'저녁 대표 공연 일정',tag:'브로드웨이',image:'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 9 · 05/08 (Fri)', short:'DAY 9<br>05.08', map:'https://www.google.com/maps/dir/?api=1&origin=The+Metropolitan+Museum+of+Art+New+York&destination=Blue+Note+Jazz+Club+New+York&waypoints=Vessel+New+York|High+Line+New+York', search:'https://www.google.com/search?q=Met+Vessel+High+Line+Blue+Note+route', route:[['The Met',40.7794,-73.9632],['Vessel',40.7539,-74.0021],['High Line',40.7480,-74.0048],['Blue Note',40.7309,-74.0007]], food:[{name:'Lunch near The Met',desc:'미술관 중심 오전 일정이라 가까운 곳에서 효율적으로',tag:'점심 추천'},{name:'Blue Note 전후 저녁',desc:'재즈 일정 전에는 이동 동선 짧은 저녁이 좋음',tag:'저녁 추천'}], notes:[], items:[{time:'10:00',title:'The Metropolitan Museum of Art',desc:'오전 메인 일정',tag:'미술관',image:'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80'},{time:'13:30-15:00',title:'공백시간',desc:'Met 관람 길이에 따라 점심, 기념품숍, 주변 카페 조정 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: Met gift shop, 카페, 5th Ave 산책, 사진 찍기',image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80'},{time:'15:00',title:'Vessel / High Line',desc:'Hudson Yards 라인으로 산책',tag:'산책',image:'https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=400&q=80'},{time:'20:00',title:'Blue Note New York',desc:'마지막 금요일 밤 재즈 일정',tag:'재즈',image:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80'}] },
+      { label:'DAY 10 · 05/09 (Sat)', short:'DAY 10<br>05.09', map:'https://www.google.com/maps/dir/?api=1&origin=Woodbury+Common+Premium+Outlets&destination=Smith+%26+Wollensky+New+York', search:'https://www.google.com/search?q=Woodbury+Common+Smith+and+Wollensky+NYC+route', route:[['Woodbury Common',41.3169,-74.1260],['Smith & Wollensky',40.7616,-73.9718]], food:[{name:'Outlet lunch',desc:'아울렛 내부 또는 근처에서 빠르게',tag:'점심 확정'},{name:'Smith & Wollensky',desc:'18:00 예약 반영 완료, 마지막 저녁 메인',tag:'예약 완료',link:'https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+New+York'}], notes:[], items:[{time:'09:00',title:'호텔 체크아웃 / 이동',desc:'짐 정리 후 아울렛 출발',tag:'체크아웃',image:'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=400&q=80'},{time:'10:00',title:'Woodbury Common Premium Outlets',desc:'쇼핑 중심 일정',tag:'쇼핑',image:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80'},{time:'15:30-17:30',title:'공백시간',desc:'아울렛 복귀 시간에 따라 정리, 휴식, 공항 준비 가능',tag:'비워둔 시간',free:true,suggestions:'추천 액션: 짐 정리, 쇼핑 정리, 샤워, 사진 백업, 공항 준비',image:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80'},{time:'18:00',title:'Smith & Wollensky 예약',desc:'마지막 저녁 예약 반영 완료',tag:'예약',image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80'},{time:'20:00',title:'공항 이동 준비',desc:'복귀 버퍼 시간 확보',tag:'복귀',image:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80'}] }
     ];
 
     const dayTabs = document.getElementById('dayTabs');
@@ -587,17 +162,13 @@
     const dayFood = document.getElementById('dayFood');
     const dayNotes = document.getElementById('dayNotes');
     let currentDay = 0;
+    const map = L.map('routeMap').setView([40.758, -73.9855], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+    let routeLayer = null;
 
     function renderTabs() {
-      dayTabs.innerHTML = itinerary.map((day, index) => `
-        <div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.short}</div>
-      `).join('');
-      dayTabs.querySelectorAll('.day-pill').forEach((pill) => {
-        pill.addEventListener('click', () => {
-          currentDay = Number(pill.dataset.index);
-          render();
-        });
-      });
+      dayTabs.innerHTML = itinerary.map((day, index) => `<div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.short}</div>`).join('');
+      dayTabs.querySelectorAll('.day-pill').forEach((pill) => pill.addEventListener('click', () => { currentDay = Number(pill.dataset.index); render(); }));
     }
 
     function renderTimeline() {
@@ -605,42 +176,31 @@
       dayLabel.textContent = day.label;
       dayMapLink.href = day.map;
       daySearchLink.href = day.search;
-      timeline.innerHTML = day.items.map(item => `
-        <div class="timeline-item ${item.free ? 'free' : ''}">
-          <div class="thumb" style="background-image:url('${item.image}')"></div>
-          <div class="event-card ${item.free ? 'free' : ''}">
-            <div class="time">${item.time}</div>
-            <div class="event-title">${item.title}</div>
-            <div class="tagline">${item.desc}</div>
-            <div class="event-tag">${item.tag}</div>
-            ${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}
-          </div>
-        </div>
-      `).join('');
+      timeline.innerHTML = day.items.map(item => `<div class="timeline-item ${item.free ? 'free' : ''}"><div class="thumb" style="background-image:url('${item.image}')"></div><div class="event-card ${item.free ? 'free' : ''}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`).join('');
+      dayFood.innerHTML = day.food.map(food => `<div class="food-card"><div class="food-title">${food.name}</div><div class="food-desc">${food.desc}</div><div class="food-tag">${food.tag}</div>${food.link ? `<div class="food-note"><a href="${food.link}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Google Maps 바로가기</a></div>` : ''}</div>`).join('');
+      dayNotes.innerHTML = (day.notes && day.notes.length) ? day.notes.map(note => `<div class="food-card"><div class="food-title">${note.name}</div><div class="food-desc">${note.desc}</div><div class="food-tag">${note.tag}</div></div>`).join('') : `<div class="food-card"><div class="food-title">특이사항 없음</div><div class="food-desc">현재 날짜에는 별도 메모가 없습니다.</div><div class="food-tag">기본</div></div>`;
+    }
 
-      dayFood.innerHTML = day.food.map(food => `
-        <div class="food-card">
-          <div class="food-title">${food.name}</div>
-          <div class="food-desc">${food.desc}</div>
-          <div class="food-tag">${food.tag}</div>
-          ${food.link ? `<div class="food-note"><a href="${food.link}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Google Maps 바로가기</a></div>` : ''}
-        </div>
-      `).join('');
-
-      dayNotes.innerHTML = (day.notes && day.notes.length)
-        ? day.notes.map(note => `
-          <div class="food-card">
-            <div class="food-title">${note.name}</div>
-            <div class="food-desc">${note.desc}</div>
-            <div class="food-tag">${note.tag}</div>
-          </div>
-        `).join('')
-        : `<div class="food-card"><div class="food-title">특이사항 없음</div><div class="food-desc">현재 날짜에는 별도 메모가 없습니다.</div><div class="food-tag">기본</div></div>`;
+    function renderMap() {
+      const day = itinerary[currentDay];
+      if (routeLayer) routeLayer.remove();
+      routeLayer = L.layerGroup().addTo(map);
+      const latlngs = day.route.map(([name, lat, lng]) => {
+        L.circleMarker([lat, lng], { radius: 7, color: '#173b7a', fillColor: '#5b8cff', fillOpacity: 0.95, weight: 2 }).addTo(routeLayer).bindPopup(name);
+        return [lat, lng];
+      });
+      if (latlngs.length > 1) {
+        L.polyline(latlngs, { color: '#173b7a', weight: 4, opacity: 0.85 }).addTo(routeLayer);
+        map.fitBounds(latlngs, { padding: [24, 24] });
+      } else if (latlngs.length === 1) {
+        map.setView(latlngs[0], 13);
+      }
     }
 
     function render() {
       renderTabs();
       renderTimeline();
+      renderMap();
     }
 
     render();

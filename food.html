@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뉴욕 맛집 리스트</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: rgba(255,255,255,0.96);
+      --text: #14213d;
+      --muted: #6b7488;
+      --line: #e5eaf3;
+      --primary: #173b7a;
+      --shadow: 0 14px 40px rgba(15, 28, 63, 0.10);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+    .page { max-width: 760px; margin: 0 auto; padding: 0 14px 48px; }
+    .hero {
+      margin: 0 -14px;
+      min-height: 220px;
+      padding: 22px 20px 28px;
+      color: white;
+      background: linear-gradient(180deg, rgba(8,20,48,0.28), rgba(8,20,48,0.78)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80') center/cover;
+      border-bottom-left-radius: 26px;
+      border-bottom-right-radius: 26px;
+    }
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; font-size: 14px; }
+    h1 { margin: 0; font-size: 48px; line-height: 0.96; }
+    .hero-sub { margin-top: 10px; font-size: 18px; color: rgba(255,255,255,0.92); }
+    .tabbar {
+      display: flex; gap: 10px; background: rgba(255,255,255,0.92); margin-top: -18px; padding: 10px;
+      border-radius: 22px; box-shadow: var(--shadow); position: relative; z-index: 2;
+    }
+    .tab {
+      flex: 1; text-align: center; padding: 12px 18px; border-radius: 999px; text-decoration: none;
+      color: var(--muted); font-weight: 700;
+    }
+    .tab.active { background: var(--primary); color: white; }
+    .section { margin-top: 18px; }
+    .card {
+      background: var(--card); border: 1px solid rgba(226,232,242,0.9); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 18px;
+    }
+    .section-title h2 { font-size: 24px; margin: 0 0 6px; }
+    .subtle { color: var(--muted); font-size: 14px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+    .meta-item { padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: #fbfcff; }
+    .meta-label { color: var(--muted); font-size: 12px; }
+    .meta-value { font-weight: 700; font-size: 14px; margin-top: 4px; }
+    .place-list { display: grid; gap: 12px; }
+    .place-card {
+      display: grid; grid-template-columns: 120px 1fr auto; gap: 14px; align-items: center;
+      border: 1px solid var(--line); border-radius: 18px; padding: 12px; background: white;
+    }
+    .thumb { width: 120px; height: 90px; border-radius: 14px; background-size: cover; background-position: center; }
+    .title { font-size: 22px; font-weight: 800; }
+    .desc { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .chip { font-size: 12px; padding: 5px 8px; border-radius: 999px; background: #f3f6fd; color: var(--primary); font-weight: 700; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; padding: 11px 14px; border-radius: 14px;
+      text-decoration: none; border: 1px solid #dce5f4; color: var(--primary); font-weight: 700; background: white;
+    }
+    @media (max-width: 640px) {
+      .meta-grid { grid-template-columns: 1fr 1fr; }
+      .place-card { grid-template-columns: 1fr; }
+      .thumb { width: 100%; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="topbar"><div>←</div><div>🍴</div></div>
+      <h1>NYC Food</h1>
+      <div class="hero-sub">여행 중 실패 없는 뉴욕 맛집 리스트</div>
+    </section>
+
+    <div class="tabbar">
+      <a class="tab" href="./index.html">🗓️ 일정표</a>
+      <a class="tab active" href="./food.html">🍽️ 맛집</a>
+    </div>
+
+    <section class="section">
+      <div class="card">
+        <div class="section-title">
+          <h2>뉴욕 맛집 리스트</h2>
+          <div class="subtle">실패 없는 인기 맛집만 엄선했어요!</div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><div class="meta-label">지역</div><div class="meta-value">Manhattan, NY</div></div>
+          <div class="meta-item"><div class="meta-label">분위기</div><div class="meta-value">브런치 · 클래식 · 현지맛집</div></div>
+          <div class="meta-item"><div class="meta-label">예산</div><div class="meta-value">₩₩ ~ ₩₩₩₩</div></div>
+          <div class="meta-item"><div class="meta-label">추천</div><div class="meta-value">12곳</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="place-list">
+          <div class="place-card">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80');"></div>
+            <div>
+              <div class="title">Buvette</div>
+              <div class="desc">프렌치 브런치 · West Village</div>
+              <div class="chips"><span class="chip">브런치 명소</span></div>
+            </div>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=Buvette+New+York" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
+          </div>
+
+          <div class="place-card">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=600&q=80');"></div>
+            <div>
+              <div class="title">Katz's Delicatessen</div>
+              <div class="desc">델리 · 샌드위치 · Lower East Side</div>
+              <div class="chips"><span class="chip">현지 델리</span></div>
+            </div>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=Katz%27s+Delicatessen+New+York" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
+          </div>
+
+          <div class="place-card">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80');"></div>
+            <div>
+              <div class="title">Prince St. Pizza</div>
+              <div class="desc">피자 · SoHo</div>
+              <div class="chips"><span class="chip">치즈 피자</span></div>
+            </div>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
+          </div>
+
+          <div class="place-card">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80');"></div>
+            <div>
+              <div class="title">Peter Luger</div>
+              <div class="desc">스테이크 · Williamsburg</div>
+              <div class="chips"><span class="chip">클래식 스테이크</span></div>
+            </div>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=Peter+Luger+Steak+House+Brooklyn" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
+          </div>
+
+          <div class="place-card">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80');"></div>
+            <div>
+              <div class="title">The River Café</div>
+              <div class="desc">이탈리안 · 파인 다이닝 · DUMBO, Brooklyn</div>
+              <div class="chips"><span class="chip">전망 좋은 루프탑</span></div>
+            </div>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=The+River+Cafe+Brooklyn" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

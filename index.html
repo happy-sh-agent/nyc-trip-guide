@@ -15,7 +15,6 @@
       --primary-soft: #eef3ff;
       --accent: #5b8cff;
       --warm: #ffb86b;
-      --danger: #e56b6f;
       --shadow: 0 14px 40px rgba(15, 28, 63, 0.10);
       --radius: 24px;
     }
@@ -27,64 +26,6 @@
       color: var(--text);
       line-height: 1.55;
     }
-    .hidden { display: none; }
-    .gate-wrap {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: linear-gradient(180deg, rgba(18,39,84,0.95), rgba(42,61,110,0.92));
-    }
-    .gate {
-      width: 100%;
-      max-width: 520px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: white;
-      border-radius: 28px;
-      padding: 28px;
-      backdrop-filter: blur(12px);
-    }
-    .gate h2 { margin: 0 0 10px; }
-    .gate p, .gate .meta { color: rgba(255,255,255,0.78); }
-    .field { margin-top: 14px; }
-    input[type="password"] {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: none;
-      background: rgba(255,255,255,0.92);
-      color: #14213d;
-      font-size: 16px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      border: 1px solid transparent;
-      background: white;
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .button.primary {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-    .button.outline {
-      background: white;
-      color: var(--primary);
-      border-color: #dce5f4;
-    }
-    .error { color: #ffd0d0; font-size: 14px; margin-top: 10px; min-height: 20px; }
-
     .page { max-width: 760px; margin: 0 auto; padding: 0 14px 48px; }
     .hero {
       position: relative;
@@ -277,19 +218,38 @@
       border-radius: 22px;
       height: 220px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
-        url('https://maps.googleapis.com/maps/api/staticmap?center=Manhattan,New+York&zoom=11&size=1200x500&maptype=roadmap') center/cover;
+        linear-gradient(180deg, rgba(20,33,61,0.18), rgba(20,33,61,0.18)),
+        url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80') center/cover;
       border: 1px solid var(--line);
       display: flex;
       align-items: end;
       padding: 14px;
       color: white;
-      background-color: #d8e3f7;
     }
-    .map-fallback {
-      background:
-        linear-gradient(180deg, rgba(20,33,61,0.18), rgba(20,33,61,0.18)),
-        url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80') center/cover;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      background: white;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .button.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .button.outline {
+      background: white;
+      color: var(--primary);
+      border-color: #dce5f4;
     }
     .footer-note {
       margin-top: 22px;
@@ -307,229 +267,233 @@
   </style>
 </head>
 <body>
-  <div id="gateWrap" class="gate-wrap">
-    <section class="gate">
-      <h2>비공개 미리보기</h2>
-      <p>아직 초안 단계라, 암호를 입력한 뒤에만 페이지를 볼 수 있게 해두었습니다.</p>
-      <div class="field">
-        <input id="passwordInput" type="password" placeholder="암호 입력" />
+  <main class="page">
+    <section class="hero">
+      <div class="topbar">
+        <div>☰</div>
+        <div>🔖</div>
       </div>
-      <div style="display:flex; gap:10px; margin-top:14px;">
-        <button id="unlockBtn" class="button primary">열기</button>
-      </div>
-      <div id="errorMsg" class="error"></div>
-      <div class="meta">주의: 이 방식은 가벼운 프라이버시용입니다.</div>
+      <div class="hero-kicker">Let&apos;s go!</div>
+      <h1>New York Trip</h1>
+      <div class="hero-sub">나만의 뉴욕 여행 플래너 ✈️</div>
     </section>
-  </div>
 
-  <main id="siteContent" class="hidden">
-    <div class="page">
-      <section class="hero">
-        <div class="topbar">
-          <div>☰</div>
-          <div>🔖</div>
-        </div>
-        <div class="hero-kicker">Let&apos;s go!</div>
-        <h1>New York Trip</h1>
-        <div class="hero-sub">나만의 뉴욕 여행 플래너 ✈️</div>
-      </section>
-
-      <div class="tabbar">
-        <div class="tab active">🗓️ 일정표</div>
-        <div class="tab">🍽️ 맛집</div>
-        <div class="tab">🗺️ 지도</div>
-      </div>
-
-      <section class="section">
-        <div class="card">
-          <div class="info-grid">
-            <div class="info-item">
-              <div class="label">여행 기간</div>
-              <div class="value">2026. 04. 30 (목) - 05. 09 (토)</div>
-            </div>
-            <div class="info-item">
-              <div class="label">여행 길이</div>
-              <div class="value">9박 10일</div>
-            </div>
-            <div class="info-item">
-              <div class="label">숙소 지역</div>
-              <div class="value">Manhattan, NY</div>
-            </div>
-            <div class="info-item">
-              <div class="label">여행 테마</div>
-              <div class="value">맛집 · 쇼핑 · 사진 · 공연</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card">
-          <div class="section-title">
-            <h2>뉴욕 여행 일정표 보기</h2>
-            <div class="subtle">날짜별 핵심 일정 스냅샷</div>
-          </div>
-
-          <div class="day-tabs">
-            <div class="day-pill active">DAY 1<br>04.30</div>
-            <div class="day-pill">DAY 2<br>05.01</div>
-            <div class="day-pill">DAY 3<br>05.02</div>
-            <div class="day-pill">DAY 4<br>05.03</div>
-            <div class="day-pill">DAY 5<br>05.04</div>
-            <div class="day-pill">DAY 6<br>05.05</div>
-            <div class="day-pill">DAY 7<br>05.06</div>
-            <div class="day-pill">DAY 8<br>05.07</div>
-            <div class="day-pill">DAY 9<br>05.08</div>
-            <div class="day-pill">DAY 10<br>05.09</div>
-          </div>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80');"></div>
-              <div class="event-card">
-                <div class="time">15:00</div>
-                <div class="event-title">Hotel check-in</div>
-                <div class="tagline">여행 시작, 짐 정리 후 컨디션 조절</div>
-                <div class="event-tag">체크인</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=400&q=80');"></div>
-              <div class="event-card">
-                <div class="time">16:00</div>
-                <div class="event-title">Amtrak 도착</div>
-                <div class="tagline">이동 마무리 후 본격적인 뉴욕 일정 시작</div>
-                <div class="event-tag">이동</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=400&q=80');"></div>
-              <div class="event-card">
-                <div class="time">19:00</div>
-                <div class="event-title">Times Square 산책</div>
-                <div class="tagline">첫날 분위기 익히기 좋은 대표 코스</div>
-                <div class="event-tag">관광</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80');"></div>
-              <div class="event-card">
-                <div class="time">22:00</div>
-                <div class="event-title">동행인 공항 도착</div>
-                <div class="tagline">합류 후 다음날 본격 일정 준비</div>
-                <div class="event-tag">합류</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px; text-align:center;">
-            <a class="button outline" href="#full-itinerary">전체 일정 보기 →</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card">
-          <div class="section-title">
-            <h2>맛집 리스트</h2>
-            <div class="subtle">여행 동선에 넣기 쉬운 후보</div>
-          </div>
-
-          <div class="list-row">
-            <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"></div>
-            <div>
-              <div class="place-title">Buvette</div>
-              <div class="place-meta">브런치 · West Village</div>
-            </div>
-            <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Buvette+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          </div>
-
-          <div class="list-row">
-            <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80');"></div>
-            <div>
-              <div class="place-title">Katz's Delicatessen</div>
-              <div class="place-meta">델리 · Lower East Side</div>
-            </div>
-            <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Katz%27s+Delicatessen+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          </div>
-
-          <div class="list-row">
-            <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80');"></div>
-            <div>
-              <div class="place-title">Prince Street Pizza</div>
-              <div class="place-meta">피자 · SoHo</div>
-            </div>
-            <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          </div>
-
-          <div class="list-row">
-            <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80');"></div>
-            <div>
-              <div class="place-title">Peter Luger Steak House</div>
-              <div class="place-meta">스테이크 · Williamsburg</div>
-            </div>
-            <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Peter+Luger+Steak+House+Brooklyn" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card">
-          <div class="section-title">
-            <h2>지도에서 확인</h2>
-            <div class="subtle">주요 스팟과 맛집을 위치 중심으로 확인</div>
-          </div>
-          <div class="map-box map-fallback">
-            <div>
-              <div style="font-size:18px; font-weight:800;">MANHATTAN · BROOKLYN</div>
-              <div class="subtle" style="color:rgba(255,255,255,0.88); margin-top:6px;">다음 단계에서 날짜별 동선 지도 링크를 붙이면 더 실전적입니다.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="full-itinerary" class="section">
-        <div class="card">
-          <div class="section-title">
-            <h2>전체 일정 원본</h2>
-            <div class="subtle">입력된 일정 기준</div>
-          </div>
-          <div class="subtle">04/30 체크인, 05/01 도서관·Bryant Park·Gallaghers·SUMMIT·Birdland, 05/02 Harry Potter New York·Aladdin, 05/03 DUMBO·Juliana’s·Staten Island Ferry, 05/04 SoHo·Museum of Ice Cream·Chicago, 05/05 Snap Photo Session, 05/06 Ellen’s Stardust Diner·The Lion King·MoMA, 05/07 AMNH·Central Park·Wicked, 05/08 The Met·Vessel·High Line·Blue Note, 05/09 Woodbury Common·Smith & Wollensky.</div>
-        </div>
-      </section>
-
-      <div class="footer-note">암호: nyc2026, 이 버전은 디자인 방향을 먼저 맞춘 모바일형 초안입니다.</div>
+    <div class="tabbar">
+      <div class="tab active">🗓️ 일정표</div>
+      <div class="tab">🍽️ 맛집</div>
+      <div class="tab">🗺️ 지도</div>
     </div>
+
+    <section class="section">
+      <div class="card">
+        <div class="info-grid">
+          <div class="info-item"><div class="label">여행 기간</div><div class="value">2026. 04. 30 (목) - 05. 09 (토)</div></div>
+          <div class="info-item"><div class="label">여행 길이</div><div class="value">9박 10일</div></div>
+          <div class="info-item"><div class="label">숙소 지역</div><div class="value">Manhattan, NY</div></div>
+          <div class="info-item"><div class="label">여행 테마</div><div class="value">맛집 · 쇼핑 · 사진 · 공연</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="section-title">
+          <h2>뉴욕 여행 일정표 보기</h2>
+          <div class="subtle" id="dayLabel">DAY 1 · 04/30 (Thu)</div>
+        </div>
+
+        <div class="day-tabs" id="dayTabs"></div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="section-title">
+          <h2>맛집 리스트</h2>
+          <div class="subtle">여행 동선에 넣기 쉬운 후보</div>
+        </div>
+
+        <div class="list-row">
+          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"></div>
+          <div><div class="place-title">Buvette</div><div class="place-meta">브런치 · West Village</div></div>
+          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Buvette+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        </div>
+        <div class="list-row">
+          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80');"></div>
+          <div><div class="place-title">Katz's Delicatessen</div><div class="place-meta">델리 · Lower East Side</div></div>
+          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Katz%27s+Delicatessen+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        </div>
+        <div class="list-row">
+          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80');"></div>
+          <div><div class="place-title">Prince Street Pizza</div><div class="place-meta">피자 · SoHo</div></div>
+          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        </div>
+        <div class="list-row">
+          <div class="list-thumb" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80');"></div>
+          <div><div class="place-title">Smith & Wollensky</div><div class="place-meta">스테이크 · Midtown East</div></div>
+          <a class="button outline" href="https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+New+York" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="section-title">
+          <h2>지도에서 확인</h2>
+          <div class="subtle">주요 스팟과 맛집을 위치 중심으로 확인</div>
+        </div>
+        <div class="map-box">
+          <div>
+            <div style="font-size:18px; font-weight:800;">MANHATTAN · BROOKLYN</div>
+            <div class="subtle" style="color:rgba(255,255,255,0.88); margin-top:6px;">다음 단계에서 날짜별 지도 링크를 붙이면 더 실전적입니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">디자인 정리 중, 다음 단계는 날짜별 지도 링크 연결입니다.</div>
   </main>
 
   <script>
-    const PASSWORD = 'nyc2026';
-    const gateWrap = document.getElementById('gateWrap');
-    const siteContent = document.getElementById('siteContent');
-    const passwordInput = document.getElementById('passwordInput');
-    const unlockBtn = document.getElementById('unlockBtn');
-    const errorMsg = document.getElementById('errorMsg');
-
-    function unlock() {
-      if (passwordInput.value === PASSWORD) {
-        sessionStorage.setItem('nyc-trip-guide-unlocked', 'true');
-        gateWrap.classList.add('hidden');
-        siteContent.classList.remove('hidden');
-        errorMsg.textContent = '';
-      } else {
-        errorMsg.textContent = '암호가 맞지 않습니다.';
+    const itinerary = [
+      {
+        label: 'DAY 1 · 04/30 (Thu)',
+        short: 'DAY 1<br>04.30',
+        items: [
+          { time: '15:00', title: 'Hotel check-in', desc: '여행 시작, 짐 정리 후 컨디션 조절', tag: '체크인', image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80' },
+          { time: '16:00', title: 'Amtrak 도착', desc: '이동 마무리 후 본격적인 뉴욕 일정 시작', tag: '이동', image: 'https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=400&q=80' },
+          { time: '19:00', title: 'Times Square 산책', desc: '첫날 분위기 익히기 좋은 대표 코스', tag: '관광', image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=400&q=80' },
+          { time: '22:00', title: '동행인 공항 도착', desc: '합류 후 다음날 본격 일정 준비', tag: '합류', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 2 · 05/01 (Fri)',
+        short: 'DAY 2<br>05.01',
+        items: [
+          { time: '09:00', title: 'New York Public Library', desc: 'Bryant Park와 묶기 좋은 아침 시작 코스', tag: '명소', image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80' },
+          { time: '11:45', title: 'Gallaghers Steakhouse 점심 예약', desc: '예약 반영 완료, 점심 핵심 일정', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
+          { time: '17:00', title: 'SUMMIT One Vanderbilt', desc: 'Grand Central 이후 연결 좋은 전망 코스', tag: '전망', image: 'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80' },
+          { time: '20:00', title: 'Birdland Jazz Club', desc: '첫 금요일 밤 하이라이트', tag: '공연', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 3 · 05/02 (Sat)',
+        short: 'DAY 3<br>05.02',
+        items: [
+          { time: '09:00', title: 'Harry Potter New York', desc: '오전부터 여유 있게 굿즈/체험', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80' },
+          { time: '12:00', title: 'Shake Shack Madison Square Park', desc: '가볍고 효율적인 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80' },
+          { time: '14:00', title: 'Aladdin', desc: '극장가 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
+          { time: '17:00', title: 'Times Square / Rockefeller Center', desc: '공연 후 가볍게 둘러보기', tag: '산책', image: 'https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 4 · 05/03 (Sun)',
+        short: 'DAY 4<br>05.03',
+        items: [
+          { time: '08:00', title: 'Washington Street photo spot', desc: '아침 사진 명소, 붐비기 전 방문', tag: '사진', image: 'https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=400&q=80' },
+          { time: '10:00', title: 'DUMBO / Brooklyn Bridge Park', desc: '산책과 사진 모두 좋은 구간', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
+          { time: '12:00', title: 'Juliana’s Pizza', desc: '브루클린 점심 메인 카드', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
+          { time: '16:00', title: 'Staten Island Ferry 왕복', desc: '가성비 좋은 뷰 포인트', tag: '이동', image: 'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 5 · 05/04 (Mon)',
+        short: 'DAY 5<br>05.04',
+        items: [
+          { time: '10:00', title: 'Museum of Ice Cream', desc: 'SoHo day 시작 포인트', tag: '체험', image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=400&q=80' },
+          { time: '12:00', title: 'Prince Street Pizza', desc: 'SoHo/Nolita 동선 중 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
+          { time: '16:00', title: 'Joe’s Pizza (Carmine St)', desc: '간식 카드로 넣기 좋은 클래식', tag: '간식', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
+          { time: '19:00', title: 'Chicago', desc: '저녁 메인 공연 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 6 · 05/05 (Tue)',
+        short: 'DAY 6<br>05.05',
+        items: [
+          { time: '08:00', title: 'Snap Photo Session', desc: '오전 전체 할당, 다른 일정 최소화', tag: '촬영', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80' },
+          { time: '12:30', title: '점심 / 휴식', desc: '촬영 후 회복 시간 확보', tag: '휴식', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:00', title: '자유시간', desc: '쇼핑, 카페, 호텔 휴식 등 유동적으로 사용', tag: '자유', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 7 · 05/06 (Wed)',
+        short: 'DAY 7<br>05.06',
+        items: [
+          { time: '10:00', title: 'Ellen’s Stardust Diner', desc: '브런치 겸 볼거리 있는 시작', tag: '브런치', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
+          { time: '13:00', title: 'The Lion King', desc: '오후 공연 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
+          { time: '16:00', title: 'MoMA', desc: '공연 이후 이어가기 좋은 미술관 코스', tag: '미술관', image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 8 · 05/07 (Thu)',
+        short: 'DAY 8<br>05.07',
+        items: [
+          { time: '10:00', title: 'American Museum of Natural History', desc: '오전 핵심 박물관 일정', tag: '박물관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:00', title: 'Central Park 산책', desc: '박물관 후 이어가기 좋은 동선', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
+          { time: '19:00', title: 'Wicked', desc: '저녁 대표 공연 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 9 · 05/08 (Fri)',
+        short: 'DAY 9<br>05.08',
+        items: [
+          { time: '10:00', title: 'The Metropolitan Museum of Art', desc: '오전 메인 일정', tag: '미술관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:00', title: 'Vessel / High Line', desc: 'Hudson Yards 라인으로 산책', tag: '산책', image: 'https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=400&q=80' },
+          { time: '20:00', title: 'Blue Note New York', desc: '마지막 금요일 밤 재즈 일정', tag: '재즈', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80' }
+        ]
+      },
+      {
+        label: 'DAY 10 · 05/09 (Sat)',
+        short: 'DAY 10<br>05.09',
+        items: [
+          { time: '09:00', title: '호텔 체크아웃 / 이동', desc: '짐 정리 후 아울렛 출발', tag: '체크아웃', image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=400&q=80' },
+          { time: '10:00', title: 'Woodbury Common Premium Outlets', desc: '쇼핑 중심 일정', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80' },
+          { time: '18:00', title: 'Smith & Wollensky 예약', desc: '마지막 저녁 예약 반영 완료', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
+          { time: '20:00', title: '공항 이동 준비', desc: '복귀 버퍼 시간 확보', tag: '복귀', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80' }
+        ]
       }
+    ];
+
+    const dayTabs = document.getElementById('dayTabs');
+    const timeline = document.getElementById('timeline');
+    const dayLabel = document.getElementById('dayLabel');
+    let currentDay = 0;
+
+    function renderTabs() {
+      dayTabs.innerHTML = itinerary.map((day, index) => `
+        <div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.short}</div>
+      `).join('');
+      dayTabs.querySelectorAll('.day-pill').forEach((pill) => {
+        pill.addEventListener('click', () => {
+          currentDay = Number(pill.dataset.index);
+          render();
+        });
+      });
     }
 
-    if (sessionStorage.getItem('nyc-trip-guide-unlocked') === 'true') {
-      gateWrap.classList.add('hidden');
-      siteContent.classList.remove('hidden');
+    function renderTimeline() {
+      const day = itinerary[currentDay];
+      dayLabel.textContent = day.label;
+      timeline.innerHTML = day.items.map(item => `
+        <div class="timeline-item">
+          <div class="thumb" style="background-image:url('${item.image}')"></div>
+          <div class="event-card">
+            <div class="time">${item.time}</div>
+            <div class="event-title">${item.title}</div>
+            <div class="tagline">${item.desc}</div>
+            <div class="event-tag">${item.tag}</div>
+          </div>
+        </div>
+      `).join('');
     }
 
-    unlockBtn.addEventListener('click', unlock);
-    passwordInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') unlock();
-    });
+    function render() {
+      renderTabs();
+      renderTimeline();
+    }
+
+    render();
   </script>
 </body>
 </html>

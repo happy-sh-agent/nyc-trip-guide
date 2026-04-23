@@ -43,6 +43,8 @@
     .event-title, .food-title { font-size:18px; font-weight:800; margin-top:2px; }
     .tagline, .food-desc, .pin-desc { margin-top:4px; color:var(--muted); font-size:13px; }
     .event-tag, .food-tag { display:inline-block; margin-top:8px; padding:5px 8px; border-radius:999px; font-size:12px; background:var(--primary-soft); color:var(--primary); font-weight:700; }
+    .meta-line { margin-top:8px; font-size:12px; color:var(--muted); }
+    .meta-chip { display:inline-flex; align-items:center; margin-right:6px; margin-top:4px; padding:4px 8px; border-radius:999px; background:#f4f7fc; color:#42506b; font-weight:600; }
     .event-card.free .event-tag { background:#eef6ff; color:var(--accent); }
     .free-suggestions { margin-top:8px; font-size:12px; color:var(--muted); line-height:1.5; }
     .free-suggestions strong { color:var(--text); }
@@ -156,7 +158,9 @@
       dayMapLink.href = day.map;
       timeline.innerHTML = day.items.map(item => {
         const image = resolveItemImage(item, dayPlaces);
-        return `<div class="timeline-item ${item.free ? 'free' : ''}"><div class="thumb" style="background-image:url('${image}')"></div><div class="event-card ${item.free ? 'free' : ''}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`;
+        const place = item.placeId ? dayPlaces[item.placeId] : null;
+        const meta = place ? `<div class="meta-line"><span class="meta-chip">📍 ${place.name}</span><span class="meta-chip">${place.kind || 'place'}</span></div>` : '';
+        return `<div class="timeline-item ${item.free ? 'free' : ''}"><div class="thumb" style="background-image:url('${image}')"></div><div class="event-card ${item.free ? 'free' : ''}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${meta}${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`;
       }).join('');
       dayFood.innerHTML = day.food.map(food => `<div class="food-card"><div class="food-title">${food.name}</div><div class="food-desc">${food.desc}</div><div class="food-tag">${food.tag}</div>${food.link ? `<div class="food-note"><a href="${food.link}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Google Maps 바로가기</a></div>` : ''}</div>`).join('');
       dayNotes.innerHTML = (day.notes && day.notes.length) ? day.notes.map(note => `<div class="food-card"><div class="food-title">${note.name}</div><div class="food-desc">${note.desc}</div><div class="food-tag">${note.tag}</div></div>`).join('') : `<div class="food-card"><div class="food-title">특이사항 없음</div><div class="food-desc">현재 날짜에는 별도 메모가 없습니다.</div><div class="food-tag">기본</div></div>`;
@@ -167,22 +171,24 @@
       if (!day) return;
       const placeLookup = getDayPlaces(day);
       const routePlaces = day.routePlaceIds.map(id => placeLookup[id]).filter(Boolean);
+      const itemPlaces = day.items.map(item => item.placeId ? placeLookup[item.placeId] : null).filter(Boolean);
+      const mergedPlaces = [...new Map([...routePlaces, ...itemPlaces].map(place => [place.id, place])).values()];
       if (routeLayer) routeLayer.remove();
       routeLayer = L.layerGroup().addTo(map);
-      const latlngs = routePlaces.map(place => {
-        L.marker([place.lat, place.lng]).addTo(routeLayer).bindPopup(`<strong>${place.name}</strong><br>${place.address}`);
+      const latlngs = mergedPlaces.map((place, index) => {
+        L.marker([place.lat, place.lng]).addTo(routeLayer).bindPopup(`<strong>${index + 1}. ${place.name}</strong><br>${place.address}`);
         return [place.lat, place.lng];
       });
-      if (latlngs.length > 1) {
-        L.polyline(latlngs, { color: '#173b7a', weight: 4, opacity: 0.85 }).addTo(routeLayer);
+      if (routePlaces.length > 1) {
+        L.polyline(routePlaces.map(place => [place.lat, place.lng]), { color: '#173b7a', weight: 4, opacity: 0.85 }).addTo(routeLayer);
       }
-      map.setView([40.758, -73.9855], 11);
-      map.fitBounds([[40.68, -74.05], [40.82, -73.93]], { padding: [16, 16] });
       if (latlngs.length) {
         const routeBounds = L.latLngBounds(latlngs);
-        map.fitBounds(routeBounds.pad(1.2), { padding: [20, 20], maxZoom: 11 });
+        map.fitBounds(routeBounds.pad(0.35), { padding: [20, 20], maxZoom: 13 });
+      } else {
+        map.setView([40.758, -73.9855], 12);
       }
-      dayPins.innerHTML = routePlaces.map(place => `<div class="pin-card"><div class="food-title">📍 ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
+      dayPins.innerHTML = mergedPlaces.map((place, index) => `<div class="pin-card"><div class="food-title">📍 ${index + 1}. ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
     }
 
     function render() {

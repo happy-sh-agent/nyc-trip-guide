@@ -15,6 +15,7 @@
       --chip: #1b2446;
       --good: #8ee3b5;
       --warm: #ffd38a;
+      --danger: #ff9b9b;
     }
     * { box-sizing: border-box; }
     body {
@@ -25,12 +26,12 @@
       line-height: 1.6;
     }
     .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px 80px; }
-    .hero {
-      padding: 28px;
+    .hero, .gate, .card, .restaurant-card, .note {
+      background: rgba(18, 25, 51, 0.92);
       border: 1px solid var(--line);
       border-radius: 24px;
-      background: rgba(18, 25, 51, 0.92);
     }
+    .hero, .gate { padding: 28px; }
     h1 { margin: 0 0 10px; font-size: 40px; line-height: 1.15; }
     .sub { color: var(--muted); margin: 0; max-width: 760px; }
     .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
@@ -46,34 +47,13 @@
     .section { margin-top: 30px; }
     .section h2 { font-size: 24px; margin-bottom: 12px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-    .card h3 { margin: 0 0 8px; font-size: 20px; }
+    .card, .restaurant-card, .note { padding: 18px; border-radius: 18px; }
+    .card h3, .restaurant-card h3 { margin: 0 0 8px; }
     .area { color: var(--warm); font-size: 13px; margin-bottom: 6px; }
-    .desc { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
-    ul { margin: 0; padding-left: 18px; color: var(--muted); }
-    .badge { display: inline-block; margin-top: 12px; color: var(--good); font-size: 13px; }
-    .note {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(138, 180, 255, 0.08);
-      border: 1px solid rgba(138, 180, 255, 0.2);
-      color: var(--muted);
-    }
+    .desc, .restaurant-card p, ul, .small, .note { color: var(--muted); }
+    ul { padding-left: 18px; }
     .restaurant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-    .restaurant-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-    .restaurant-card h3 { margin: 0 0 6px; font-size: 21px; }
     .restaurant-meta { color: var(--accent); font-size: 14px; margin-bottom: 10px; }
-    .restaurant-card p { color: var(--muted); margin: 0 0 12px; }
     .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
     .button {
       display: inline-block;
@@ -84,135 +64,195 @@
       background: #1a2447;
       color: var(--text);
       font-size: 14px;
+      cursor: pointer;
     }
     .button.primary { color: #08101f; background: var(--accent); border-color: var(--accent); font-weight: 600; }
-    .small { font-size: 13px; color: var(--muted); }
+    .button.ghost { background: transparent; }
+    .small { font-size: 13px; }
+    .badge { display: inline-block; margin-top: 12px; color: var(--good); font-size: 13px; }
+    .hidden { display: none; }
+    .gate-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .gate { max-width: 520px; width: 100%; }
+    .gate h2 { margin-top: 0; }
+    .field { margin-top: 14px; }
+    input[type="password"] {
+      width: 100%; padding: 14px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: #0f1731; color: var(--text); font-size: 16px;
+    }
+    .error { color: var(--danger); font-size: 14px; margin-top: 10px; min-height: 20px; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="hero">
-      <h1>뉴욕 여행 가이드</h1>
-      <p class="sub">뉴욕 여행 준비를 위한 공유형 페이지입니다. 음식은 핵심 하위 항목으로 두고, 각 맛집은 구글 지도에서 바로 위치를 확인할 수 있게 연결했습니다.</p>
-      <div class="chips">
-        <span class="chip">New York Trip</span>
-        <span class="chip">Food</span>
-        <span class="chip">Google Maps</span>
-        <span class="chip">Neighborhoods</span>
+  <div id="gateWrap" class="gate-wrap">
+    <section class="gate">
+      <h2>비공개 미리보기</h2>
+      <p class="sub">아직 초안 단계라, 암호를 입력한 뒤에만 페이지를 볼 수 있게 해두었습니다.</p>
+      <div class="field">
+        <input id="passwordInput" type="password" placeholder="암호 입력" />
       </div>
-      <div class="meta">초안 버전, 마지막 업데이트: 2026-04-23</div>
-    </section>
-
-    <section class="section">
-      <h2>카테고리</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>음식</h3>
-          <p class="desc">브런치, 디너, 피자, 베이글, 스테이크, 로컬 맛집까지. 구글 지도 바로가기를 붙여 실사용성을 높였습니다.</p>
-          <ul>
-            <li>동네별 맛집</li>
-            <li>가격대와 예약 난이도</li>
-            <li>구글 지도 바로 열기</li>
-          </ul>
-          <span class="badge">우선 채우는 섹션</span>
-        </article>
-
-        <article class="card">
-          <h3>일정</h3>
-          <p class="desc">여행 일자별 동선, 오전-점심-저녁 흐름, 예약해야 하는 곳들을 정리합니다.</p>
-        </article>
-
-        <article class="card">
-          <h3>동네</h3>
-          <p class="desc">소호, 웨스트빌리지, LES, 브루클린 등 지역별 성격과 추천 포인트를 정리합니다.</p>
-        </article>
-
-        <article class="card">
-          <h3>실전 팁</h3>
-          <p class="desc">팁 문화, 예약 앱, 이동, 날씨, 쇼핑 팁 같은 실전 정보를 모읍니다.</p>
-        </article>
+      <div style="display:flex; gap:10px; margin-top:14px;">
+        <button id="unlockBtn" class="button primary">열기</button>
       </div>
-    </section>
-
-    <section class="section">
-      <h2>음식, 우선 후보</h2>
-      <div class="restaurant-grid">
-        <article class="restaurant-card">
-          <div class="area">West Village</div>
-          <h3>L'Artusi</h3>
-          <div class="restaurant-meta">이탈리안, 디너, 예약 경쟁 있음</div>
-          <p>웨스트빌리지 대표 이탈리안. 파스타 중심으로 실패 확률이 낮고, 여행 중 한 번 넣기 좋은 저녁 카드.</p>
-          <div class="small">추천 포인트: 분위기, 안정적인 퀄리티, 동선 좋음</div>
-          <div class="links">
-            <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=L%27Artusi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
-            <a class="button" href="https://www.google.com/search?q=L%27Artusi+New+York" target="_blank" rel="noopener noreferrer">검색</a>
-          </div>
-        </article>
-
-        <article class="restaurant-card">
-          <div class="area">West Village</div>
-          <h3>I Sodi</h3>
-          <div class="restaurant-meta">토스카나 스타일, 디너, 매우 인기</div>
-          <p>뉴욕에서 가장 자주 언급되는 이탈리안 중 하나. 일정이 맞으면 우선순위를 높게 둘 만한 곳.</p>
-          <div class="small">추천 포인트: 대표성, 분위기, 여행 만족도 높음</div>
-          <div class="links">
-            <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=I+Sodi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
-            <a class="button" href="https://www.google.com/search?q=I+Sodi+New+York" target="_blank" rel="noopener noreferrer">검색</a>
-          </div>
-        </article>
-
-        <article class="restaurant-card">
-          <div class="area">West Village</div>
-          <h3>Jeju Noodle Bar</h3>
-          <div class="restaurant-meta">한식 퓨전, 미쉐린, 바 좌석 감성</div>
-          <p>뉴욕에서 한국계 셰프 레스토랑으로 존재감이 큰 편. 한국인 여행자에게도 설명하기 좋은 카드.</p>
-          <div class="small">추천 포인트: 뉴욕다운 한식 해석, 상징성</div>
-          <div class="links">
-            <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Jeju+Noodle+Bar+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
-            <a class="button" href="https://www.google.com/search?q=Jeju+Noodle+Bar+New+York" target="_blank" rel="noopener noreferrer">검색</a>
-          </div>
-        </article>
-
-        <article class="restaurant-card">
-          <div class="area">Lower East Side</div>
-          <h3>Una Pizza Napoletana</h3>
-          <div class="restaurant-meta">피자, 캐주얼, 뉴욕 대표급</div>
-          <p>피자 한 장르만으로도 목적지가 되는 곳. LES 동선과 묶기 좋습니다.</p>
-          <div class="small">추천 포인트: 피자 우선순위 높을 때 강력</div>
-          <div class="links">
-            <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
-            <a class="button" href="https://www.google.com/search?q=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">검색</a>
-          </div>
-        </article>
-
-        <article class="restaurant-card">
-          <div class="area">SoHo</div>
-          <h3>The Corner Store</h3>
-          <div class="restaurant-meta">트렌디, 소호, 예약 어려움</div>
-          <p>요즘 뉴욕 트렌드 감도를 보여주기 좋은 카드. 핫플 성격이 강해서 여행 페이지에 넣기 좋습니다.</p>
-          <div class="small">추천 포인트: 분위기, 화제성, 소호 동선</div>
-          <div class="links">
-            <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=The+Corner+Store+Soho+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
-            <a class="button" href="https://www.google.com/search?q=The+Corner+Store+Soho+New+York" target="_blank" rel="noopener noreferrer">검색</a>
-          </div>
-        </article>
-
-        <article class="restaurant-card">
-          <div class="area">Brooklyn / Williamsburg</div>
-          <h3>Lilia</h3>
-          <div class="restaurant-meta">이탈리안, 브루클린 대표, 예약 인기</div>
-          <p>맨해튼 밖에서도 일부러 갈 가치가 있는 대표 카드. 브루클린 일정이 있으면 강하게 고려할 만합니다.</p>
-          <div class="small">추천 포인트: 브루클린 대표성, 파스타</div>
-          <div class="links">
-            <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Lilia+Brooklyn+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
-            <a class="button" href="https://www.google.com/search?q=Lilia+Brooklyn+New+York" target="_blank" rel="noopener noreferrer">검색</a>
-          </div>
-        </article>
-      </div>
-      <div class="note" style="margin-top:16px;">
-        지금 넣은 맛집은 여행 허브의 첫 샘플입니다. 다음 단계에서는 수현이 원했던 실제 취향 기준으로, 브런치, 스테이크, 피자, 베이글, 칵테일바까지 더 촘촘하게 확장하면 됩니다.
-      </div>
+      <div id="errorMsg" class="error"></div>
+      <div class="meta">주의: 이 방식은 가벼운 프라이버시용입니다. 강한 보안이 필요한 비공개 보호는 아닙니다.</div>
     </section>
   </div>
+
+  <main id="siteContent" class="hidden">
+    <div class="wrap">
+      <section class="hero">
+        <h1>뉴욕 여행 가이드</h1>
+        <p class="sub">뉴욕 여행 준비를 위한 공유형 페이지입니다. 음식은 핵심 하위 항목으로 두고, 각 맛집은 구글 지도에서 바로 위치를 확인할 수 있게 연결했습니다.</p>
+        <div class="chips">
+          <span class="chip">New York Trip</span>
+          <span class="chip">Food</span>
+          <span class="chip">Google Maps</span>
+          <span class="chip">Neighborhoods</span>
+        </div>
+        <div class="meta">초안 버전, 마지막 업데이트: 2026-04-23</div>
+      </section>
+
+      <section class="section">
+        <h2>카테고리</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>음식</h3>
+            <p class="desc">브런치, 피자, 베이글, 스테이크, 디너, 바 기준으로 정리합니다. 구글 지도 바로가기를 붙여 실사용성을 높였습니다.</p>
+            <ul>
+              <li>꼭 갈 곳</li>
+              <li>후보</li>
+              <li>가볍게 들를 곳</li>
+            </ul>
+            <span class="badge">최우선 섹션</span>
+          </article>
+
+          <article class="card">
+            <h3>일정</h3>
+            <p class="desc">여행 일자별 동선, 오전-점심-저녁 흐름, 예약해야 하는 곳들을 정리합니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>동네</h3>
+            <p class="desc">소호, 웨스트빌리지, LES, 브루클린 등 지역별 성격과 추천 포인트를 정리합니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>실전 팁</h3>
+            <p class="desc">팁 문화, 예약 앱, 이동, 날씨, 쇼핑 팁 같은 실전 정보를 모읍니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>맛집, 꼭 갈 곳</h2>
+        <div class="restaurant-grid">
+          <article class="restaurant-card">
+            <div class="area">West Village</div>
+            <h3>L'Artusi</h3>
+            <div class="restaurant-meta">이탈리안, 디너, 예약 경쟁 있음</div>
+            <p>웨스트빌리지 대표 이탈리안. 여행 중 한 번 넣기 좋은 저녁 카드.</p>
+            <div class="small">추천 메뉴 중심의 안정적인 선택지</div>
+            <div class="links">
+              <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=L%27Artusi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
+            </div>
+          </article>
+
+          <article class="restaurant-card">
+            <div class="area">West Village</div>
+            <h3>I Sodi</h3>
+            <div class="restaurant-meta">이탈리안, 디너, 매우 인기</div>
+            <p>뉴욕 대표 이탈리안 중 하나. 일정이 맞으면 우선순위를 높게 둘 만한 곳.</p>
+            <div class="small">대표성, 분위기, 여행 만족도 높음</div>
+            <div class="links">
+              <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=I+Sodi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
+            </div>
+          </article>
+
+          <article class="restaurant-card">
+            <div class="area">West Village</div>
+            <h3>Jeju Noodle Bar</h3>
+            <div class="restaurant-meta">한식 퓨전, 미쉐린</div>
+            <p>뉴욕다운 한식 해석이 있는 곳이라, 상징성 있는 한 끼 후보로 좋습니다.</p>
+            <div class="small">한국인 여행자에게 설명하기 좋은 카드</div>
+            <div class="links">
+              <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Jeju+Noodle+Bar+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>맛집, 후보</h2>
+        <div class="restaurant-grid">
+          <article class="restaurant-card">
+            <div class="area">Lower East Side</div>
+            <h3>Una Pizza Napoletana</h3>
+            <div class="restaurant-meta">피자, 캐주얼</div>
+            <p>피자 우선순위가 높다면 강하게 고려할 만한 카드.</p>
+            <div class="links">
+              <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
+            </div>
+          </article>
+
+          <article class="restaurant-card">
+            <div class="area">SoHo</div>
+            <h3>The Corner Store</h3>
+            <div class="restaurant-meta">트렌디, 예약 어려움</div>
+            <p>화제성과 분위기 중심의 카드. 소호 동선과 함께 보기 좋습니다.</p>
+            <div class="links">
+              <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=The+Corner+Store+Soho+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
+            </div>
+          </article>
+
+          <article class="restaurant-card">
+            <div class="area">Brooklyn / Williamsburg</div>
+            <h3>Lilia</h3>
+            <div class="restaurant-meta">이탈리안, 브루클린 대표</div>
+            <p>브루클린 일정이 있으면 강하게 고려할 만한 대표 카드.</p>
+            <div class="links">
+              <a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Lilia+Brooklyn+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>다음 작업 방향</h2>
+        <div class="note">
+          다음 단계는 브런치, 피자, 베이글, 스테이크, 바, 디저트 기준으로 더 실전적인 여행 리스트로 다듬는 것입니다. 제가 추천한 방식대로 꼭 갈 곳, 후보, 가볍게 들를 곳 구조를 먼저 잡아두었습니다.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const PASSWORD = 'nyc2026';
+    const gateWrap = document.getElementById('gateWrap');
+    const siteContent = document.getElementById('siteContent');
+    const passwordInput = document.getElementById('passwordInput');
+    const unlockBtn = document.getElementById('unlockBtn');
+    const errorMsg = document.getElementById('errorMsg');
+
+    function unlock() {
+      if (passwordInput.value === PASSWORD) {
+        sessionStorage.setItem('nyc-trip-guide-unlocked', 'true');
+        gateWrap.classList.add('hidden');
+        siteContent.classList.remove('hidden');
+        errorMsg.textContent = '';
+      } else {
+        errorMsg.textContent = '암호가 맞지 않습니다.';
+      }
+    }
+
+    if (sessionStorage.getItem('nyc-trip-guide-unlocked') === 'true') {
+      gateWrap.classList.add('hidden');
+      siteContent.classList.remove('hidden');
+    }
+
+    unlockBtn.addEventListener('click', unlock);
+    passwordInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') unlock();
+    });
+  </script>
 </body>
 </html>

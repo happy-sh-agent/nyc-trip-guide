@@ -18,6 +18,8 @@
       --shadow: 0 14px 40px rgba(15, 28, 63, 0.10);
       --radius: 24px;
       --success: #1f8f5f;
+      --free-bg: #f9fbff;
+      --free-border: #cfdcf5;
     }
     * { box-sizing: border-box; }
     body {
@@ -164,6 +166,10 @@
       background: white;
       border: 2px solid var(--primary);
     }
+    .timeline-item.free::before {
+      border-style: dashed;
+      border-color: var(--accent);
+    }
     .thumb {
       border-radius: 14px;
       min-height: 78px;
@@ -177,6 +183,11 @@
       padding: 12px 14px;
       background: #fff;
     }
+    .event-card.free {
+      background: var(--free-bg);
+      border-style: dashed;
+      border-color: var(--free-border);
+    }
     .time { color: var(--primary); font-size: 13px; font-weight: 700; }
     .event-title, .food-title { font-size: 19px; font-weight: 800; margin-top: 2px; }
     .tagline, .food-desc { margin-top: 4px; color: var(--muted); font-size: 13px; }
@@ -189,6 +200,10 @@
       background: var(--primary-soft);
       color: var(--primary);
       font-weight: 700;
+    }
+    .event-card.free .event-tag {
+      background: #eef6ff;
+      color: var(--accent);
     }
     .list-row {
       display: grid;
@@ -371,7 +386,7 @@
       </div>
     </section>
 
-    <div class="footer-note">이제 날짜별 일정과 식당 추천을 같이 볼 수 있습니다.</div>
+    <div class="footer-note">이제 일정 사이의 공백시간도 같이 보여서, 나중에 추가할 활동을 고민하기 좋습니다.</div>
   </main>
 
   <script>
@@ -387,6 +402,7 @@
         items: [
           { time: '15:00', title: 'Hotel check-in', desc: '여행 시작, 짐 정리 후 컨디션 조절', tag: '체크인', image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80' },
           { time: '16:00', title: 'Amtrak 도착', desc: '이동 마무리 후 본격적인 뉴욕 일정 시작', tag: '이동', image: 'https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=400&q=80' },
+          { time: '17:00-18:30', title: '공백시간', desc: '호텔 휴식, 주변 산책, 간단한 카페 들르기 좋음', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
           { time: '19:00', title: 'Times Square 산책', desc: '첫날 분위기 익히기 좋은 대표 코스', tag: '관광', image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=400&q=80' },
           { time: '22:00', title: '동행인 공항 도착', desc: '합류 후 다음날 본격 일정 준비', tag: '합류', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80' }
         ]
@@ -402,6 +418,7 @@
         items: [
           { time: '09:00', title: 'New York Public Library', desc: 'Bryant Park와 묶기 좋은 아침 시작 코스', tag: '명소', image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80' },
           { time: '11:45', title: 'Gallaghers Steakhouse 점심 예약', desc: '예약 반영 완료, 점심 핵심 일정', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:30-16:30', title: '공백시간', desc: 'Grand Central 근처 카페, 쇼핑, 잠깐 휴식 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
           { time: '17:00', title: 'SUMMIT One Vanderbilt', desc: 'Grand Central 이후 연결 좋은 전망 코스', tag: '전망', image: 'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80' },
           { time: '20:00', title: 'Birdland Jazz Club', desc: '첫 금요일 밤 하이라이트', tag: '공연', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80' }
         ]
@@ -418,6 +435,7 @@
           { time: '09:00', title: 'Harry Potter New York', desc: '오전부터 여유 있게 굿즈/체험', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80' },
           { time: '12:00', title: 'Shake Shack Madison Square Park', desc: '가볍고 효율적인 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80' },
           { time: '14:00', title: 'Aladdin', desc: '극장가 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
+          { time: '16:30-18:00', title: '공백시간', desc: '공연 후 Times Square / Rockefeller에서 자유시간 확보', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
           { time: '17:00', title: 'Times Square / Rockefeller Center', desc: '공연 후 가볍게 둘러보기', tag: '산책', image: 'https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=400&q=80' }
         ]
       },
@@ -433,6 +451,7 @@
           { time: '08:00', title: 'Washington Street photo spot', desc: '아침 사진 명소, 붐비기 전 방문', tag: '사진', image: 'https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=400&q=80' },
           { time: '10:00', title: 'DUMBO / Brooklyn Bridge Park', desc: '산책과 사진 모두 좋은 구간', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
           { time: '12:00', title: 'Juliana’s Pizza', desc: '브루클린 점심 메인 카드', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
+          { time: '14:00-15:00', title: '공백시간', desc: 'DUMBO 주변 카페, 사진, 강변 산책 추가 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
           { time: '16:00', title: 'Staten Island Ferry 왕복', desc: '가성비 좋은 뷰 포인트', tag: '이동', image: 'https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=400&q=80' }
         ]
       },
@@ -447,6 +466,7 @@
         items: [
           { time: '10:00', title: 'Museum of Ice Cream', desc: 'SoHo day 시작 포인트', tag: '체험', image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=400&q=80' },
           { time: '12:00', title: 'Prince Street Pizza', desc: 'SoHo/Nolita 동선 중 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
+          { time: '14:30-16:00', title: '공백시간', desc: 'SoHo / Nolita에서 쇼핑이나 디저트 추가하기 좋은 시간', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80' },
           { time: '16:00', title: 'Joe’s Pizza (Carmine St)', desc: '간식 카드로 넣기 좋은 클래식', tag: '간식', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
           { time: '19:00', title: 'Chicago', desc: '저녁 메인 공연 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' }
         ]
@@ -462,6 +482,7 @@
         items: [
           { time: '08:00', title: 'Snap Photo Session', desc: '오전 전체 할당, 다른 일정 최소화', tag: '촬영', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80' },
           { time: '12:30', title: '점심 / 휴식', desc: '촬영 후 회복 시간 확보', tag: '휴식', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:00-18:00', title: '공백시간', desc: '쇼핑, 카페, 낮잠, 세탁 등 자유롭게 조정 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
           { time: '15:00', title: '자유시간', desc: '쇼핑, 카페, 호텔 휴식 등 유동적으로 사용', tag: '자유', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' }
         ]
       },
@@ -476,6 +497,7 @@
         items: [
           { time: '10:00', title: 'Ellen’s Stardust Diner', desc: '브런치 겸 볼거리 있는 시작', tag: '브런치', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
           { time: '13:00', title: 'The Lion King', desc: '오후 공연 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:00-16:00', title: '공백시간', desc: '공연 후 바로 이동하지 않고 잠깐 쉬거나 간식 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
           { time: '16:00', title: 'MoMA', desc: '공연 이후 이어가기 좋은 미술관 코스', tag: '미술관', image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80' }
         ]
       },
@@ -489,6 +511,7 @@
         ],
         items: [
           { time: '10:00', title: 'American Museum of Natural History', desc: '오전 핵심 박물관 일정', tag: '박물관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
+          { time: '13:00-15:00', title: '공백시간', desc: '박물관 관람 길이에 따라 점심, 휴식, 간단한 산책 조정 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
           { time: '15:00', title: 'Central Park 산책', desc: '박물관 후 이어가기 좋은 동선', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
           { time: '19:00', title: 'Wicked', desc: '저녁 대표 공연 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' }
         ]
@@ -503,6 +526,7 @@
         ],
         items: [
           { time: '10:00', title: 'The Metropolitan Museum of Art', desc: '오전 메인 일정', tag: '미술관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
+          { time: '13:30-15:00', title: '공백시간', desc: 'Met 관람 길이에 따라 점심, 기념품숍, 주변 카페 조정 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80' },
           { time: '15:00', title: 'Vessel / High Line', desc: 'Hudson Yards 라인으로 산책', tag: '산책', image: 'https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=400&q=80' },
           { time: '20:00', title: 'Blue Note New York', desc: '마지막 금요일 밤 재즈 일정', tag: '재즈', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80' }
         ]
@@ -518,6 +542,7 @@
         items: [
           { time: '09:00', title: '호텔 체크아웃 / 이동', desc: '짐 정리 후 아울렛 출발', tag: '체크아웃', image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=400&q=80' },
           { time: '10:00', title: 'Woodbury Common Premium Outlets', desc: '쇼핑 중심 일정', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80' },
+          { time: '15:30-17:30', title: '공백시간', desc: '아울렛 복귀 시간에 따라 정리, 휴식, 공항 준비 가능', tag: '비워둔 시간', free: true, image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80' },
           { time: '18:00', title: 'Smith & Wollensky 예약', desc: '마지막 저녁 예약 반영 완료', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
           { time: '20:00', title: '공항 이동 준비', desc: '복귀 버퍼 시간 확보', tag: '복귀', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80' }
         ]
@@ -550,9 +575,9 @@
       dayMapLink.href = day.map;
       daySearchLink.href = day.search;
       timeline.innerHTML = day.items.map(item => `
-        <div class="timeline-item">
+        <div class="timeline-item ${item.free ? 'free' : ''}">
           <div class="thumb" style="background-image:url('${item.image}')"></div>
-          <div class="event-card">
+          <div class="event-card ${item.free ? 'free' : ''}">
             <div class="time">${item.time}</div>
             <div class="event-title">${item.title}</div>
             <div class="tagline">${item.desc}</div>

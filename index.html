@@ -36,7 +36,7 @@
     .timeline-item { position:relative; display:grid; grid-template-columns:96px 1fr; gap:12px; margin-bottom:14px; align-items:stretch; }
     .timeline-item::before { content:''; position:absolute; left:-17px; top:12px; width:10px; height:10px; border-radius:999px; background:white; border:2px solid var(--primary); }
     .timeline-item.free::before { border-style:dashed; border-color:var(--accent); }
-    .thumb { border-radius:14px; min-height:78px; background-size:cover; background-position:center; border:1px solid var(--line); }
+    .thumb { border-radius:14px; width:100%; aspect-ratio: 4 / 3; min-height:78px; background-size:cover; background-position:center; border:1px solid var(--line); overflow:hidden; }
     .event-card, .food-card, .pin-card { border:1px solid var(--line); border-radius:16px; padding:12px 14px; background:#fff; }
     .event-card.free { background:var(--free-bg); border-style:dashed; border-color:var(--free-border); }
     .time { color:var(--primary); font-size:13px; font-weight:700; }

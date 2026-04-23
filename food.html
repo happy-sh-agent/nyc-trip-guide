@@ -78,7 +78,7 @@
         document.getElementById('foodCount').textContent = `${items.length}곳`;
         document.getElementById('foodList').innerHTML = items.map(item => `
           <div class="place-card">
-            <div class="thumb" style="background-image:url('${item.image}')"></div>
+            <div class="thumb" style="background-image:url('${item.image.url}')"></div>
             <div>
               <div class="title">${item.name}</div>
               <div class="desc">${item.desc}</div>

@@ -135,7 +135,7 @@
     }
 
     function resolveItemImage(item, dayPlaces) {
-      if (item.placeId && dayPlaces[item.placeId]?.image) return dayPlaces[item.placeId].image;
+      if (item.placeId && dayPlaces[item.placeId]?.image?.url) return dayPlaces[item.placeId].image.url;
       return item.image || 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80';
     }
 
@@ -178,7 +178,7 @@
         const routeBounds = L.latLngBounds(latlngs);
         map.fitBounds(routeBounds.pad(1.2), { padding: [20, 20], maxZoom: 11 });
       }
-      dayPins.innerHTML = routePlaces.map(place => `<div class="pin-card"><div class="food-title">📍 ${place.name}</div><div class="pin-desc">${place.address}</div></div>`).join('');
+      dayPins.innerHTML = routePlaces.map(place => `<div class="pin-card"><div class="food-title">📍 ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
     }
 
     function render() {

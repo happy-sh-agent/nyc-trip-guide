@@ -1,0 +1,62 @@
+[
+  {
+    "label": "DAY 1 · 04/30 (Thu)",
+    "short": "DAY 1<br>04.30",
+    "map": "https://www.google.com/maps/dir/?api=1&destination=Times+Square+New+York&travelmode=walking",
+    "search": "https://www.google.com/search?q=Times+Square+New+York+travel+plan",
+    "route": [
+      ["Hotel", 40.758, -73.9855],
+      ["Times Square", 40.758, -73.9855]
+    ],
+    "food": [
+      {"name": "가벼운 저녁식사", "desc": "첫날은 무리하지 않고 Times Square 근처에서 가볍게", "tag": "첫날 추천"},
+      {"name": "Los Tacos No.1", "desc": "빠르고 실패 적은 첫날 식사 카드", "tag": "간편 식사", "link": "https://www.google.com/maps/search/?api=1&query=Los+Tacos+No.1+Times+Square"}
+    ],
+    "notes": [],
+    "items": [
+      {"time": "15:00", "title": "Hotel check-in", "desc": "여행 시작, 짐 정리 후 컨디션 조절", "tag": "체크인", "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "16:00", "title": "Amtrak 도착", "desc": "이동 마무리 후 본격적인 뉴욕 일정 시작", "tag": "이동", "image": "https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "17:00-18:30", "title": "공백시간", "desc": "호텔 휴식, 주변 산책, 간단한 카페 들르기 좋음", "tag": "비워둔 시간", "free": true, "suggestions": "추천 액션: 호텔 정리, 편의점/드럭스토어, 카페, 가벼운 산책", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "19:00", "title": "Times Square 산책", "desc": "첫날 분위기 익히기 좋은 대표 코스", "tag": "관광", "image": "https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "22:00", "title": "동행인 공항 도착", "desc": "합류 후 다음날 본격 일정 준비", "tag": "합류", "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"}
+    ]
+  },
+  {
+    "label": "DAY 2 · 05/01 (Fri)",
+    "short": "DAY 2<br>05.01",
+    "map": "https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=Birdland+Jazz+Club+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Rockefeller+Center+New+York|Grand+Central+Terminal+New+York|SUMMIT+One+Vanderbilt+New+York",
+    "search": "https://www.google.com/search?q=NYPL+Bryant+Park+Gallaghers+Rockefeller+Grand+Central+SUMMIT+Birdland",
+    "route": [["NYPL",40.7532,-73.9822],["Bryant Park",40.7536,-73.9832],["Gallaghers",40.7594,-73.9868],["Rockefeller",40.7587,-73.9787],["Grand Central",40.7527,-73.9772],["SUMMIT",40.7527,-73.9787],["Birdland",40.7607,-73.9885]],
+    "food": [
+      {"name": "Gallaghers Steakhouse", "desc": "11:45 예약 확정 점심, 오늘의 핵심 식사", "tag": "예약 완료", "link": "https://www.google.com/maps/search/?api=1&query=Gallaghers+Steakhouse+New+York"},
+      {"name": "Midtown dinner", "desc": "Birdland 전후로 극장가 근처에서 저녁", "tag": "저녁 후보"}
+    ],
+    "notes": [],
+    "items": [
+      {"time": "09:00", "title": "New York Public Library", "desc": "Bryant Park와 묶기 좋은 아침 시작 코스", "tag": "명소", "image": "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "11:45", "title": "Gallaghers Steakhouse 점심 예약", "desc": "예약 반영 완료, 점심 핵심 일정", "tag": "예약", "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "15:30-16:30", "title": "공백시간", "desc": "Grand Central 근처 카페, 쇼핑, 잠깐 휴식 가능", "tag": "비워둔 시간", "free": true, "suggestions": "추천 액션: Grand Central 푸드홀, 카페, Bryant Park 재방문, 기념품 쇼핑", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "17:00", "title": "SUMMIT One Vanderbilt", "desc": "Grand Central 이후 연결 좋은 전망 코스", "tag": "전망", "image": "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "20:00", "title": "Birdland Jazz Club", "desc": "첫 금요일 밤 하이라이트", "tag": "공연", "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80"}
+    ]
+  },
+  {
+    "label": "DAY 3 · 05/02 (Sat)",
+    "short": "DAY 3<br>05.02",
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York&destination=Rockefeller+Center+New+York&waypoints=Shake+Shack+Madison+Square+Park+New+York|New+Amsterdam+Theatre+New+York",
+    "search": "https://www.google.com/search?q=Harry+Potter+New+York+Shake+Shack+Madison+Square+Park+Aladdin+Rockefeller",
+    "route": [["Harry Potter NY",40.761,-73.9835],["Shake Shack",40.742,-73.9886],["New Amsterdam Theatre",40.758,-73.9881],["Rockefeller",40.7587,-73.9787]],
+    "food": [
+      {"name": "Shake Shack Madison Square Park", "desc": "이미 일정 반영된 점심, 동선 효율 좋음", "tag": "점심 확정", "link": "https://www.google.com/maps/search/?api=1&query=Shake+Shack+Madison+Square+Park"},
+      {"name": "Midtown dinner", "desc": "공연 후 무리 없는 저녁 추천", "tag": "저녁 후보"}
+    ],
+    "notes": [],
+    "items": [
+      {"time": "09:00", "title": "Harry Potter New York", "desc": "오전부터 여유 있게 굿즈/체험", "tag": "쇼핑", "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "12:00", "title": "Shake Shack Madison Square Park", "desc": "가볍고 효율적인 점심", "tag": "식사", "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "14:00", "title": "Aladdin", "desc": "극장가 메인 일정", "tag": "브로드웨이", "image": "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "16:30-18:00", "title": "공백시간", "desc": "공연 후 Times Square / Rockefeller에서 자유시간 확보", "tag": "비워둔 시간", "free": true, "suggestions": "추천 액션: M&M, LEGO, 라운지 카페, Top of the Rock 주변 산책", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "17:00", "title": "Times Square / Rockefeller Center", "desc": "공연 후 가볍게 둘러보기", "tag": "산책", "image": "https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=1200&q=80"}
+    ]
+  }
+]

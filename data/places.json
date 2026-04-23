@@ -1,0 +1,68 @@
+{
+  "days": {
+    "DAY 1": [
+      {"id":"hotel-ts","name":"Hotel","address":"Times Square Area Manhattan New York NY","mapQuery":"Times Square Manhattan New York","lat":40.7580,"lng":-73.9855,"image":"https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"times-square","name":"Times Square","address":"Times Square Manhattan New York NY","mapQuery":"Times Square New York","lat":40.7580,"lng":-73.9855,"image":"https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 2": [
+      {"id":"nypl","name":"New York Public Library","address":"476 5th Ave New York NY 10018","mapQuery":"New York Public Library Stephen A. Schwarzman Building","lat":40.7532,"lng":-73.9822,"image":"https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"bryant-park","name":"Bryant Park","address":"Bryant Park New York NY 10018","mapQuery":"Bryant Park New York","lat":40.7536,"lng":-73.9832,"image":"https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"gallaghers","name":"Gallaghers Steakhouse","address":"228 W 52nd St New York NY 10019","mapQuery":"Gallaghers Steakhouse New York","lat":40.7594,"lng":-73.9868,"image":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"rockefeller","name":"Rockefeller Center","address":"45 Rockefeller Plaza New York NY 10111","mapQuery":"Rockefeller Center New York","lat":40.7587,"lng":-73.9787,"image":"https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"grand-central","name":"Grand Central Terminal","address":"89 E 42nd St New York NY 10017","mapQuery":"Grand Central Terminal New York","lat":40.7527,"lng":-73.9772,"image":"https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"summit","name":"SUMMIT One Vanderbilt","address":"45 E 42nd St New York NY 10017","mapQuery":"SUMMIT One Vanderbilt New York","lat":40.7527,"lng":-73.9787,"image":"https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"birdland","name":"Birdland Jazz Club","address":"315 W 44th St Suite 5402 New York NY 10036","mapQuery":"Birdland Jazz Club New York","lat":40.7607,"lng":-73.9885,"image":"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 3": [
+      {"id":"harry-potter-ny","name":"Harry Potter New York","address":"935 Broadway New York NY 10010","mapQuery":"Harry Potter New York Flatiron","lat":40.7410,"lng":-73.9897,"image":"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"shake-shack-msp","name":"Shake Shack Madison Square Park","address":"Madison Ave & E 23rd St New York NY 10010","mapQuery":"Shake Shack Madison Square Park","lat":40.7416,"lng":-73.9881,"image":"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"new-amsterdam","name":"New Amsterdam Theatre","address":"214 W 42nd St New York NY 10036","mapQuery":"New Amsterdam Theatre New York","lat":40.7561,"lng":-73.9897,"image":"https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"rockefeller","name":"Rockefeller Center","address":"45 Rockefeller Plaza New York NY 10111","mapQuery":"Rockefeller Center New York","lat":40.7587,"lng":-73.9787,"image":"https://images.unsplash.com/photo-1485879136085-498c6f8df76b?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 4": [
+      {"id":"washington-dumbo","name":"Washington Street DUMBO","address":"39-21 Washington St Brooklyn NY 11201","mapQuery":"Washington Street DUMBO Brooklyn","lat":40.7033,"lng":-73.9881,"image":"https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"brooklyn-bridge-park","name":"Brooklyn Bridge Park","address":"334 Furman St Brooklyn NY 11201","mapQuery":"Brooklyn Bridge Park","lat":40.7003,"lng":-73.9967,"image":"https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"julianas","name":"Juliana's Pizza","address":"19 Old Fulton St Brooklyn NY 11201","mapQuery":"Juliana's Pizza Brooklyn","lat":40.7027,"lng":-73.9935,"image":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"whitehall-terminal","name":"Whitehall Terminal","address":"4 Whitehall St New York NY 10004","mapQuery":"Whitehall Terminal New York","lat":40.7018,"lng":-74.0131,"image":"https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 5": [
+      {"id":"museum-of-ice-cream","name":"Museum of Ice Cream","address":"558 Broadway New York NY 10012","mapQuery":"Museum of Ice Cream New York","lat":40.7241,"lng":-73.9982,"image":"https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"prince-street-pizza","name":"Prince Street Pizza","address":"27 Prince St A New York NY 10012","mapQuery":"Prince Street Pizza New York","lat":40.7231,"lng":-73.9942,"image":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"joes-carmine","name":"Joe's Pizza Carmine St","address":"7 Carmine St New York NY 10014","mapQuery":"Joe's Pizza Carmine Street New York","lat":40.7306,"lng":-74.0027,"image":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"ambassador-theatre","name":"Ambassador Theatre","address":"219 W 49th St New York NY 10019","mapQuery":"Ambassador Theatre New York","lat":40.7605,"lng":-73.9848,"image":"https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 6": [
+      {"id":"times-square","name":"Times Square","address":"Times Square Manhattan New York NY","mapQuery":"Times Square New York","lat":40.7580,"lng":-73.9855,"image":"https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"nypl","name":"New York Public Library","address":"476 5th Ave New York NY 10018","mapQuery":"New York Public Library Stephen A. Schwarzman Building","lat":40.7532,"lng":-73.9822,"image":"https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"bryant-park","name":"Bryant Park","address":"Bryant Park New York NY 10018","mapQuery":"Bryant Park New York","lat":40.7536,"lng":-73.9832,"image":"https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"grand-central","name":"Grand Central Terminal","address":"89 E 42nd St New York NY 10017","mapQuery":"Grand Central Terminal New York","lat":40.7527,"lng":-73.9772,"image":"https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"moma","name":"MoMA","address":"11 W 53rd St New York NY 10019","mapQuery":"Museum of Modern Art New York","lat":40.7614,"lng":-73.9776,"image":"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 7": [
+      {"id":"ellens-stardust","name":"Ellen's Stardust Diner","address":"1650 Broadway New York NY 10019","mapQuery":"Ellen's Stardust Diner New York","lat":40.7613,"lng":-73.9846,"image":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"minskoff","name":"Minskoff Theatre","address":"200 W 45th St New York NY 10036","mapQuery":"Minskoff Theatre New York","lat":40.7580,"lng":-73.9855,"image":"https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 8": [
+      {"id":"amnh","name":"American Museum of Natural History","address":"200 Central Park W New York NY 10024","mapQuery":"American Museum of Natural History New York","lat":40.7813,"lng":-73.9735,"image":"https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"central-park","name":"Central Park","address":"Central Park New York NY","mapQuery":"Central Park New York","lat":40.7812,"lng":-73.9665,"image":"https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"gershwin","name":"Gershwin Theatre","address":"222 W 51st St New York NY 10019","mapQuery":"Gershwin Theatre New York","lat":40.7624,"lng":-73.9854,"image":"https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 9": [
+      {"id":"met","name":"The Metropolitan Museum of Art","address":"1000 5th Ave New York NY 10028","mapQuery":"The Metropolitan Museum of Art New York","lat":40.7794,"lng":-73.9632,"image":"https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"vessel","name":"Vessel","address":"20 Hudson Yards New York NY 10001","mapQuery":"Vessel New York","lat":40.7539,"lng":-74.0021,"image":"https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"high-line","name":"High Line","address":"High Line New York NY","mapQuery":"High Line New York","lat":40.7480,"lng":-74.0048,"image":"https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"blue-note","name":"Blue Note New York","address":"131 W 3rd St New York NY 10012","mapQuery":"Blue Note New York","lat":40.7309,"lng":-74.0007,"image":"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80"}
+    ],
+    "DAY 10": [
+      {"id":"woodbury","name":"Woodbury Common Premium Outlets","address":"498 Red Apple Ct Central Valley NY 10917","mapQuery":"Woodbury Common Premium Outlets","lat":41.3169,"lng":-74.1260,"image":"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"},
+      {"id":"smith-wollensky","name":"Smith & Wollensky","address":"797 3rd Ave New York NY 10022","mapQuery":"Smith & Wollensky New York","lat":40.7616,"lng":-73.9718,"image":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"}
+    ]
+  },
+  "food": [
+    {"id":"buvette","name":"Buvette","address":"42 Grove St New York NY 10014","mapQuery":"Buvette New York","lat":40.7330,"lng":-74.0043,"image":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80","desc":"프렌치 브런치 · West Village","chips":["브런치 명소"]},
+    {"id":"katzs","name":"Katz's Delicatessen","address":"205 E Houston St New York NY 10002","mapQuery":"Katz's Delicatessen New York","lat":40.7223,"lng":-73.9874,"image":"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80","desc":"델리 · 샌드위치 · Lower East Side","chips":["현지 델리"]},
+    {"id":"prince-st-food","name":"Prince St. Pizza","address":"27 Prince St A New York NY 10012","mapQuery":"Prince Street Pizza New York","lat":40.7231,"lng":-73.9942,"image":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80","desc":"피자 · SoHo","chips":["치즈 피자"]},
+    {"id":"peter-luger","name":"Peter Luger","address":"178 Broadway Brooklyn NY 11211","mapQuery":"Peter Luger Steak House Brooklyn","lat":40.7099,"lng":-73.9622,"image":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80","desc":"스테이크 · Williamsburg","chips":["클래식 스테이크"]},
+    {"id":"river-cafe","name":"The River Café","address":"1 Water St Brooklyn NY 11201","mapQuery":"The River Cafe Brooklyn","lat":40.7037,"lng":-73.9947,"image":"https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80","desc":"이탈리안 · 파인 다이닝 · DUMBO, Brooklyn","chips":["전망 좋은 루프탑"]}
+  ]
+}

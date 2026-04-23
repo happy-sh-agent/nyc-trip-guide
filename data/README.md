@@ -1,18 +1,31 @@
 # NYC Trip Guide Data
 
-## places.csv
-일정 장소와 맛집의 주소, 지도 검색용 쿼리, 좌표, 이미지 URL을 모아둔 파일입니다.
+현재 권장 원본은 JSON입니다.
 
-컬럼
-- `category`: stay / spot / food
-- `day`: DAY 1 ~ DAY 10 또는 FOOD
-- `label`: 화면 표시 이름
-- `address`: 주소 보관용 텍스트
-- `google_maps_query`: Google Maps 검색이나 링크 생성용 쿼리
-- `lat`, `lng`: 지도 오버레이용 좌표
-- `image_url`: 외부 이미지 참조 URL
+## 파일 구조
+- `places.json`: 장소 원본 데이터
+  - 일정용 장소 좌표
+  - 주소
+  - Google Maps 검색용 쿼리
+  - 이미지 URL
+  - 맛집 기본 정보
+- `itinerary.json`: 일정 구조 데이터
+  - `routePlaceIds`로 장소 연결
+  - 각 일정 항목은 `placeId`로 장소와 연결 가능
+- `food.json`: 맛집 페이지 노출 순서용 참조 목록
 
-운영 원칙
-- 실제 이미지는 저장하지 않고 URL만 참조합니다.
-- 주소와 이미지 URL은 이 CSV를 기준 데이터로 관리합니다.
-- 나중에 일정 JSON 또는 페이지 렌더 구조를 분리할 때 이 파일을 우선 참조하면 됩니다.
+## 연결 규칙
+- 일정 지도는 `itinerary.json.routePlaceIds`를 읽고 `places.json.days[DAY X]`에서 좌표를 찾아 핀과 경로를 표시합니다.
+- 일정 카드 이미지는 `item.placeId`가 있으면 `places.json`의 이미지 URL을 우선 사용합니다.
+- 맛집 페이지는 `food.json`의 `placeId`를 기준으로 `places.json.food`를 조회합니다.
+
+## 향후 자동 생성 방향
+추천 기준 원본: `places.json`
+- 장소 정보, 이미지, 좌표는 `places.json`을 기준 원본으로 유지
+- `itinerary.json`은 일정 배치 정보 전용
+- 필요하면 추후 스크립트로 `food.json` 또는 보조 데이터 파일 자동 생성 가능
+
+## 검토 메모
+- shadcn 도입은 현재 정적 HTML + 순수 JS 구조에서는 효용이 낮습니다.
+- React/Vite로 전환할 계획이 생기면 그때 도입 검토가 의미 있습니다.
+- 지금은 순수 JS로 JSON 렌더링하는 방식이 반복 감소와 유지보수 측면에서 가장 실용적입니다.

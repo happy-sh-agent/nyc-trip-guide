@@ -1,37 +1,7 @@
 [
-  {
-    "name": "Buvette",
-    "desc": "프렌치 브런치 · West Village",
-    "chips": ["브런치 명소"],
-    "map": "https://www.google.com/maps/search/?api=1&query=Buvette+New+York",
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    "name": "Katz's Delicatessen",
-    "desc": "델리 · 샌드위치 · Lower East Side",
-    "chips": ["현지 델리"],
-    "map": "https://www.google.com/maps/search/?api=1&query=Katz%27s+Delicatessen+New+York",
-    "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    "name": "Prince St. Pizza",
-    "desc": "피자 · SoHo",
-    "chips": ["치즈 피자"],
-    "map": "https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York",
-    "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    "name": "Peter Luger",
-    "desc": "스테이크 · Williamsburg",
-    "chips": ["클래식 스테이크"],
-    "map": "https://www.google.com/maps/search/?api=1&query=Peter+Luger+Steak+House+Brooklyn",
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    "name": "The River Café",
-    "desc": "이탈리안 · 파인 다이닝 · DUMBO, Brooklyn",
-    "chips": ["전망 좋은 루프탑"],
-    "map": "https://www.google.com/maps/search/?api=1&query=The+River+Cafe+Brooklyn",
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
-  }
+  {"placeId":"buvette"},
+  {"placeId":"katzs"},
+  {"placeId":"prince-st-food"},
+  {"placeId":"peter-luger"},
+  {"placeId":"river-cafe"}
 ]

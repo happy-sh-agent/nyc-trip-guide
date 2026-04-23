@@ -6,29 +6,29 @@
   <title>뉴욕 여행 가이드</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <style>
-    :root { --bg:#f5f7fb; --card:rgba(255,255,255,0.96); --text:#14213d; --muted:#6b7488; --line:#e5eaf3; --primary:#173b7a; --primary-soft:#eef3ff; --accent:#5b8cff; --shadow:0 14px 40px rgba(15, 28, 63, 0.10); --radius:24px; --success:#1f8f5f; --free-bg:#f9fbff; --free-border:#cfdcf5; }
+    :root { --bg:#f4f7fb; --card:rgba(255,255,255,0.97); --text:#14213d; --muted:#6b7488; --line:#e5eaf3; --primary:#173b7a; --primary-soft:#eef3ff; --accent:#5b8cff; --shadow:0 14px 40px rgba(15, 28, 63, 0.10); --radius:24px; --success:#1f8f5f; --free-bg:#f9fbff; --free-border:#cfdcf5; }
     * { box-sizing: border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
     .page { max-width:760px; margin:0 auto; padding:0 14px 48px; }
-    .hero { position:relative; margin:0 -14px; min-height:240px; padding:22px 20px 28px; color:white; background:linear-gradient(180deg, rgba(8,20,48,0.25), rgba(8,20,48,0.78)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80') center/cover; border-bottom-left-radius:26px; border-bottom-right-radius:26px; overflow:hidden; }
-    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; font-size:14px; }
-    .hero-kicker { font-style:italic; opacity:0.92; font-size:20px; }
-    .hero h1 { margin:0; font-size:52px; line-height:0.95; letter-spacing:-0.03em; }
-    .hero-sub { margin-top:10px; font-size:18px; color:rgba(255,255,255,0.9); }
-    .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.92); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; overflow-x:auto; }
+    .hero { margin:0 -14px; min-height:240px; padding:22px 20px 28px; color:white; background:linear-gradient(180deg, rgba(8,20,48,0.28), rgba(8,20,48,0.78)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80') center/cover; border-bottom-left-radius:26px; border-bottom-right-radius:26px; overflow:hidden; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; font-size:14px; opacity:0.95; }
+    .hero-kicker { font-style:italic; opacity:0.92; font-size:18px; }
+    .hero h1 { margin:8px 0 0; font-size:48px; line-height:1; letter-spacing:-0.03em; }
+    .hero-sub { margin-top:10px; font-size:17px; color:rgba(255,255,255,0.9); }
+    .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.94); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; }
     .tab { flex:1; text-align:center; padding:12px 18px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; }
     .tab.active { background:var(--primary); color:white; box-shadow:0 8px 18px rgba(23,59,122,0.25); }
     .section { margin-top:18px; }
-    .card { background:var(--card); border:1px solid rgba(226,232,242,0.9); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
+    .card { background:var(--card); border:1px solid rgba(226,232,242,0.95); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
     .section-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:12px; }
-    .section-title h2 { font-size:24px; margin:0; letter-spacing:-0.02em; }
+    .section-title h2 { font-size:22px; margin:0; letter-spacing:-0.02em; }
     .subtle { color:var(--muted); font-size:14px; }
     .info-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
     .info-item { padding:14px; border:1px solid var(--line); border-radius:18px; background:#fbfcff; }
     .label { color:var(--muted); font-size:12px; margin-bottom:4px; }
     .value { font-size:15px; font-weight:700; }
     .day-tabs { display:flex; gap:8px; overflow-x:auto; padding-bottom:4px; margin-bottom:14px; }
-    .day-pill { min-width:86px; padding:10px 12px; border-radius:16px; background:#f1f5fb; color:var(--text); border:1px solid var(--line); font-weight:700; text-align:center; font-size:13px; cursor:pointer; }
+    .day-pill { min-width:96px; padding:10px 12px; border-radius:16px; background:#f1f5fb; color:var(--text); border:1px solid var(--line); font-weight:700; text-align:center; font-size:13px; cursor:pointer; }
     .day-pill.active { background:var(--primary); color:white; border-color:var(--primary); }
     .timeline { position:relative; padding-left:18px; }
     .timeline::before { content:''; position:absolute; left:6px; top:4px; bottom:4px; width:2px; background:#d8e0ef; }
@@ -36,41 +36,40 @@
     .timeline-item::before { content:''; position:absolute; left:-17px; top:12px; width:10px; height:10px; border-radius:999px; background:white; border:2px solid var(--primary); }
     .timeline-item.free::before { border-style:dashed; border-color:var(--accent); }
     .thumb { border-radius:14px; min-height:78px; background-size:cover; background-position:center; border:1px solid var(--line); }
-    .event-card, .food-card { border:1px solid var(--line); border-radius:16px; padding:12px 14px; background:#fff; }
+    .event-card, .food-card, .pin-card { border:1px solid var(--line); border-radius:16px; padding:12px 14px; background:#fff; }
     .event-card.free { background:var(--free-bg); border-style:dashed; border-color:var(--free-border); }
     .time { color:var(--primary); font-size:13px; font-weight:700; }
-    .event-title, .food-title { font-size:19px; font-weight:800; margin-top:2px; }
-    .tagline, .food-desc { margin-top:4px; color:var(--muted); font-size:13px; }
+    .event-title, .food-title { font-size:18px; font-weight:800; margin-top:2px; }
+    .tagline, .food-desc, .pin-desc { margin-top:4px; color:var(--muted); font-size:13px; }
     .event-tag, .food-tag { display:inline-block; margin-top:8px; padding:5px 8px; border-radius:999px; font-size:12px; background:var(--primary-soft); color:var(--primary); font-weight:700; }
     .event-card.free .event-tag { background:#eef6ff; color:var(--accent); }
     .free-suggestions { margin-top:8px; font-size:12px; color:var(--muted); line-height:1.5; }
     .free-suggestions strong { color:var(--text); }
     .button { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:11px 16px; border-radius:14px; text-decoration:none; border:1px solid transparent; background:white; color:var(--text); font-size:14px; font-weight:600; cursor:pointer; }
     .button.primary { background:var(--primary); color:white; border-color:var(--primary); }
-    .button.outline { background:white; color:var(--primary); border-color:#dce5f4; }
-    .link-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
-    .food-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
+    .food-grid, .pins-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
     .food-note { color:var(--success); font-size:12px; font-weight:700; margin-top:6px; }
-    #routeMap { height:68vh; min-height:520px; max-height:860px; border-radius:20px; border:1px solid var(--line); overflow:hidden; }
+    .map-wrap { display:flex; flex-direction:column; gap:12px; }
+    #routeMap { height:74vh; min-height:620px; max-height:980px; border-radius:20px; border:1px solid var(--line); overflow:hidden; }
     .footer-note { margin-top:22px; color:var(--muted); font-size:13px; text-align:center; }
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
     @media (max-width:640px) {
-      .hero h1 { font-size:44px; }
+      .hero h1 { font-size:42px; }
       .timeline-item { grid-template-columns:86px 1fr; }
-      .info-grid, .food-grid { grid-template-columns:1fr; }
+      .info-grid, .food-grid, .pins-grid { grid-template-columns:1fr; }
       .section-title { flex-direction:column; align-items:flex-start; }
       .card { padding:16px; }
-      #routeMap { height:78vh; min-height:620px; max-height:none; border-radius:18px; }
+      #routeMap { height:82vh; min-height:700px; max-height:none; border-radius:18px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <section class="hero">
-      <div class="topbar"><div>☰</div><div>🔖</div></div>
-      <div class="hero-kicker">Let's go!</div>
+      <div class="topbar"><div>☰</div><div>🗽</div></div>
+      <div class="hero-kicker">Trip planner</div>
       <h1>New York Trip</h1>
-      <div class="hero-sub">나만의 뉴욕 여행 플래너 ✈️</div>
+      <div class="hero-sub">일정, 동선, 맛집을 한 번에 보는 뉴욕 여행 플래너</div>
     </section>
     <div class="tabbar">
       <a class="tab active" href="./index.html">🗓️ 일정표</a>
@@ -88,13 +87,10 @@
     </section>
     <section class="section">
       <div class="card">
-        <div class="section-title"><h2>뉴욕 여행 일정표 보기</h2><div class="subtle" id="dayLabel">로딩 중...</div></div>
+        <div class="section-title"><h2>뉴욕 여행 일정표</h2><div class="subtle" id="dayLabel">로딩 중...</div></div>
         <div class="day-tabs" id="dayTabs"></div>
-        <div class="link-row">
-          <a id="dayMapLink" class="button primary" target="_blank" rel="noopener noreferrer">오늘 일정 구글 지도</a>
-          <a id="daySearchLink" class="button outline" target="_blank" rel="noopener noreferrer">오늘 일정 검색</a>
-        </div>
-        <div class="timeline" id="timeline"><div class="loading">일정 데이터를 불러오는 중입니다.</div></div>
+        <div><a id="dayMapLink" class="button primary" target="_blank" rel="noopener noreferrer">오늘 일정 구글 지도</a></div>
+        <div class="timeline" id="timeline" style="margin-top:14px;"><div class="loading">일정 데이터를 불러오는 중입니다.</div></div>
         <div class="section-title" style="margin-top:18px;"><h2 style="font-size:20px;">오늘 먹기 좋은 곳</h2><div class="subtle">일정 동선 기준 추천</div></div>
         <div class="food-grid" id="dayFood"></div>
         <div class="section-title" style="margin-top:18px;"><h2 style="font-size:20px;">오늘 메모</h2><div class="subtle">특별 요청사항 반영</div></div>
@@ -103,11 +99,14 @@
     </section>
     <section class="section">
       <div class="card">
-        <div class="section-title"><h2>일정 기반 동선 지도</h2><div class="subtle">선택한 DAY 기준 주요 포인트를 지도에 표시</div></div>
-        <div id="routeMap"></div>
+        <div class="section-title"><h2>일정 기반 동선 지도</h2><div class="subtle">맨해튼 전역이 보이도록 넉넉하게 표시</div></div>
+        <div class="map-wrap">
+          <div id="routeMap"></div>
+          <div class="pins-grid" id="dayPins"></div>
+        </div>
       </div>
     </section>
-    <div class="footer-note">메인은 일정 중심, 맛집은 별도 페이지로 분리되었습니다.</div>
+    <div class="footer-note">데이터 원본은 JSON 기준으로 정리 중이며, 추후 자동 생성 구조로 확장할 수 있습니다.</div>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
@@ -115,27 +114,46 @@
     const timeline = document.getElementById('timeline');
     const dayLabel = document.getElementById('dayLabel');
     const dayMapLink = document.getElementById('dayMapLink');
-    const daySearchLink = document.getElementById('daySearchLink');
     const dayFood = document.getElementById('dayFood');
     const dayNotes = document.getElementById('dayNotes');
-    const map = L.map('routeMap').setView([40.758, -73.9855], 12);
+    const dayPins = document.getElementById('dayPins');
+    const map = L.map('routeMap').setView([40.758, -73.9855], 11);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+
     let routeLayer = null;
     let itinerary = [];
+    let places = {};
     let currentDay = 0;
 
+    const dayKeyLabel = (day) => `${day.dayKey} · ${day.date} (${day.weekdayKo})`;
+
+    function getDayPlaces(day) {
+      return (places.days?.[day.dayKey] || []).reduce((acc, place) => {
+        acc[place.id] = place;
+        return acc;
+      }, {});
+    }
+
+    function resolveItemImage(item, dayPlaces) {
+      if (item.placeId && dayPlaces[item.placeId]?.image) return dayPlaces[item.placeId].image;
+      return item.image || 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80';
+    }
+
     function renderTabs() {
-      dayTabs.innerHTML = itinerary.map((day, index) => `<div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.short}</div>`).join('');
+      dayTabs.innerHTML = itinerary.map((day, index) => `<div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.dayKey}<br>${day.date} (${day.weekdayKo})</div>`).join('');
       dayTabs.querySelectorAll('.day-pill').forEach((pill) => pill.addEventListener('click', () => { currentDay = Number(pill.dataset.index); render(); }));
     }
 
     function renderTimeline() {
       const day = itinerary[currentDay];
       if (!day) return;
-      dayLabel.textContent = day.label;
+      const dayPlaces = getDayPlaces(day);
+      dayLabel.textContent = dayKeyLabel(day);
       dayMapLink.href = day.map;
-      daySearchLink.href = day.search;
-      timeline.innerHTML = day.items.map(item => `<div class="timeline-item ${item.free ? 'free' : ''}"><div class="thumb" style="background-image:url('${item.image}')"></div><div class="event-card ${item.free ? 'free' : ''}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`).join('');
+      timeline.innerHTML = day.items.map(item => {
+        const image = resolveItemImage(item, dayPlaces);
+        return `<div class="timeline-item ${item.free ? 'free' : ''}"><div class="thumb" style="background-image:url('${image}')"></div><div class="event-card ${item.free ? 'free' : ''}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`;
+      }).join('');
       dayFood.innerHTML = day.food.map(food => `<div class="food-card"><div class="food-title">${food.name}</div><div class="food-desc">${food.desc}</div><div class="food-tag">${food.tag}</div>${food.link ? `<div class="food-note"><a href="${food.link}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Google Maps 바로가기</a></div>` : ''}</div>`).join('');
       dayNotes.innerHTML = (day.notes && day.notes.length) ? day.notes.map(note => `<div class="food-card"><div class="food-title">${note.name}</div><div class="food-desc">${note.desc}</div><div class="food-tag">${note.tag}</div></div>`).join('') : `<div class="food-card"><div class="food-title">특이사항 없음</div><div class="food-desc">현재 날짜에는 별도 메모가 없습니다.</div><div class="food-tag">기본</div></div>`;
     }
@@ -143,18 +161,24 @@
     function renderMap() {
       const day = itinerary[currentDay];
       if (!day) return;
+      const placeLookup = getDayPlaces(day);
+      const routePlaces = day.routePlaceIds.map(id => placeLookup[id]).filter(Boolean);
       if (routeLayer) routeLayer.remove();
       routeLayer = L.layerGroup().addTo(map);
-      const latlngs = day.route.map(([name, lat, lng]) => {
-        L.circleMarker([lat, lng], { radius: 7, color: '#173b7a', fillColor: '#5b8cff', fillOpacity: 0.95, weight: 2 }).addTo(routeLayer).bindPopup(name);
-        return [lat, lng];
+      const latlngs = routePlaces.map(place => {
+        L.marker([place.lat, place.lng]).addTo(routeLayer).bindPopup(`<strong>${place.name}</strong><br>${place.address}`);
+        return [place.lat, place.lng];
       });
       if (latlngs.length > 1) {
         L.polyline(latlngs, { color: '#173b7a', weight: 4, opacity: 0.85 }).addTo(routeLayer);
-        map.fitBounds(latlngs, { padding: [24, 24] });
-      } else if (latlngs.length === 1) {
-        map.setView(latlngs[0], 13);
       }
+      map.setView([40.758, -73.9855], 11);
+      map.fitBounds([[40.68, -74.05], [40.82, -73.93]], { padding: [16, 16] });
+      if (latlngs.length) {
+        const routeBounds = L.latLngBounds(latlngs);
+        map.fitBounds(routeBounds.pad(1.2), { padding: [20, 20], maxZoom: 11 });
+      }
+      dayPins.innerHTML = routePlaces.map(place => `<div class="pin-card"><div class="food-title">📍 ${place.name}</div><div class="pin-desc">${place.address}</div></div>`).join('');
     }
 
     function render() {
@@ -163,10 +187,13 @@
       renderMap();
     }
 
-    fetch('./data/itinerary.json')
-      .then(res => res.json())
-      .then(data => {
-        itinerary = data;
+    Promise.all([
+      fetch('./data/itinerary.json').then(res => res.json()),
+      fetch('./data/places.json').then(res => res.json())
+    ])
+      .then(([itineraryData, placesData]) => {
+        itinerary = itineraryData;
+        places = placesData;
         render();
       })
       .catch(() => {

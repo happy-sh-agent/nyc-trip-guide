@@ -50,7 +50,6 @@
     .hero-kicker { font-style: italic; opacity: 0.92; font-size: 20px; }
     .hero h1 { margin: 0; font-size: 52px; line-height: 0.95; letter-spacing: -0.03em; }
     .hero-sub { margin-top: 10px; font-size: 18px; color: rgba(255,255,255,0.9); }
-
     .tabbar {
       display: flex;
       gap: 10px;
@@ -77,7 +76,6 @@
       color: white;
       box-shadow: 0 8px 18px rgba(23,59,122,0.25);
     }
-
     .section { margin-top: 18px; }
     .card {
       background: var(--card);
@@ -91,6 +89,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
+      gap: 12px;
     }
     .section-title h2 {
       font-size: 24px;
@@ -98,7 +97,6 @@
       letter-spacing: -0.02em;
     }
     .subtle { color: var(--muted); font-size: 14px; }
-
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -112,7 +110,6 @@
     }
     .label { color: var(--muted); font-size: 12px; margin-bottom: 4px; }
     .value { font-size: 15px; font-weight: 700; }
-
     .day-tabs {
       display: flex;
       gap: 8px;
@@ -137,7 +134,6 @@
       color: white;
       border-color: var(--primary);
     }
-
     .timeline { position: relative; padding-left: 18px; }
     .timeline::before {
       content: '';
@@ -193,7 +189,6 @@
       color: var(--primary);
       font-weight: 700;
     }
-
     .list-row {
       display: grid;
       grid-template-columns: 92px 1fr auto;
@@ -213,7 +208,6 @@
     }
     .place-title { font-size: 18px; font-weight: 800; }
     .place-meta { color: var(--muted); font-size: 13px; margin-top: 3px; }
-
     .map-box {
       border-radius: 22px;
       height: 220px;
@@ -251,6 +245,12 @@
       color: var(--primary);
       border-color: #dce5f4;
     }
+    .link-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
     .footer-note {
       margin-top: 22px;
       color: var(--muted);
@@ -263,6 +263,7 @@
       .list-row { grid-template-columns: 82px 1fr; }
       .list-row .button { grid-column: 2; width: fit-content; }
       .info-grid { grid-template-columns: 1fr; }
+      .section-title { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -303,7 +304,11 @@
         </div>
 
         <div class="day-tabs" id="dayTabs"></div>
-        <div class="timeline" id="timeline"></div>
+        <div class="link-row">
+          <a id="dayMapLink" class="button primary" target="_blank" rel="noopener noreferrer">오늘 일정 구글 지도</a>
+          <a id="daySearchLink" class="button outline" target="_blank" rel="noopener noreferrer">오늘 일정 검색</a>
+        </div>
+        <div class="timeline" id="timeline" style="margin-top:14px;"></div>
       </div>
     </section>
 
@@ -346,20 +351,21 @@
         <div class="map-box">
           <div>
             <div style="font-size:18px; font-weight:800;">MANHATTAN · BROOKLYN</div>
-            <div class="subtle" style="color:rgba(255,255,255,0.88); margin-top:6px;">다음 단계에서 날짜별 지도 링크를 붙이면 더 실전적입니다.</div>
+            <div class="subtle" style="color:rgba(255,255,255,0.88); margin-top:6px;">날짜별 일정 카드 위의 구글 지도 버튼으로 바로 확인할 수 있습니다.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="footer-note">디자인 정리 중, 다음 단계는 날짜별 지도 링크 연결입니다.</div>
+    <div class="footer-note">이제 날짜별 일정에서 바로 지도 확인이 가능합니다.</div>
   </main>
 
   <script>
     const itinerary = [
       {
-        label: 'DAY 1 · 04/30 (Thu)',
-        short: 'DAY 1<br>04.30',
+        label: 'DAY 1 · 04/30 (Thu)', short: 'DAY 1<br>04.30',
+        map: 'https://www.google.com/maps/dir/?api=1&destination=Times+Square+New+York&travelmode=walking',
+        search: 'https://www.google.com/search?q=Times+Square+New+York+travel+plan',
         items: [
           { time: '15:00', title: 'Hotel check-in', desc: '여행 시작, 짐 정리 후 컨디션 조절', tag: '체크인', image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80' },
           { time: '16:00', title: 'Amtrak 도착', desc: '이동 마무리 후 본격적인 뉴욕 일정 시작', tag: '이동', image: 'https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=400&q=80' },
@@ -368,8 +374,9 @@
         ]
       },
       {
-        label: 'DAY 2 · 05/01 (Fri)',
-        short: 'DAY 2<br>05.01',
+        label: 'DAY 2 · 05/01 (Fri)', short: 'DAY 2<br>05.01',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=Birdland+Jazz+Club+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Rockefeller+Center+New+York|Grand+Central+Terminal+New+York|SUMMIT+One+Vanderbilt+New+York',
+        search: 'https://www.google.com/search?q=NYPL+Bryant+Park+Gallaghers+Rockefeller+Grand+Central+SUMMIT+Birdland',
         items: [
           { time: '09:00', title: 'New York Public Library', desc: 'Bryant Park와 묶기 좋은 아침 시작 코스', tag: '명소', image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=400&q=80' },
           { time: '11:45', title: 'Gallaghers Steakhouse 점심 예약', desc: '예약 반영 완료, 점심 핵심 일정', tag: '예약', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80' },
@@ -378,8 +385,9 @@
         ]
       },
       {
-        label: 'DAY 3 · 05/02 (Sat)',
-        short: 'DAY 3<br>05.02',
+        label: 'DAY 3 · 05/02 (Sat)', short: 'DAY 3<br>05.02',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York&destination=Rockefeller+Center+New+York&waypoints=Shake+Shack+Madison+Square+Park+New+York|New+Amsterdam+Theatre+New+York',
+        search: 'https://www.google.com/search?q=Harry+Potter+New+York+Shake+Shack+Madison+Square+Park+Aladdin+Rockefeller',
         items: [
           { time: '09:00', title: 'Harry Potter New York', desc: '오전부터 여유 있게 굿즈/체험', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80' },
           { time: '12:00', title: 'Shake Shack Madison Square Park', desc: '가볍고 효율적인 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80' },
@@ -388,8 +396,9 @@
         ]
       },
       {
-        label: 'DAY 4 · 05/03 (Sun)',
-        short: 'DAY 4<br>05.03',
+        label: 'DAY 4 · 05/03 (Sun)', short: 'DAY 4<br>05.03',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=Washington+Street+DUMBO+New+York&destination=Whitehall+Terminal+New+York&waypoints=Brooklyn+Bridge+Park+New+York|Juliana%27s+Pizza+Brooklyn',
+        search: 'https://www.google.com/search?q=DUMBO+Brooklyn+Bridge+Park+Julianas+Pizza+Whitehall+Terminal',
         items: [
           { time: '08:00', title: 'Washington Street photo spot', desc: '아침 사진 명소, 붐비기 전 방문', tag: '사진', image: 'https://images.unsplash.com/photo-1529429612778-7e5e517b6d71?auto=format&fit=crop&w=400&q=80' },
           { time: '10:00', title: 'DUMBO / Brooklyn Bridge Park', desc: '산책과 사진 모두 좋은 구간', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
@@ -398,8 +407,9 @@
         ]
       },
       {
-        label: 'DAY 5 · 05/04 (Mon)',
-        short: 'DAY 5<br>05.04',
+        label: 'DAY 5 · 05/04 (Mon)', short: 'DAY 5<br>05.04',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=Museum+of+Ice+Cream+New+York&destination=Ambassador+Theatre+New+York&waypoints=Prince+Street+Pizza+New+York|Joe%27s+Pizza+Carmine+Street+New+York',
+        search: 'https://www.google.com/search?q=Museum+of+Ice+Cream+SoHo+Prince+Street+Pizza+Joes+Pizza+Chicago+Broadway',
         items: [
           { time: '10:00', title: 'Museum of Ice Cream', desc: 'SoHo day 시작 포인트', tag: '체험', image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=400&q=80' },
           { time: '12:00', title: 'Prince Street Pizza', desc: 'SoHo/Nolita 동선 중 점심', tag: '식사', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80' },
@@ -408,8 +418,9 @@
         ]
       },
       {
-        label: 'DAY 6 · 05/05 (Tue)',
-        short: 'DAY 6<br>05.05',
+        label: 'DAY 6 · 05/05 (Tue)', short: 'DAY 6<br>05.05',
+        map: 'https://www.google.com/maps/search/?api=1&query=New+York+photo+session+locations',
+        search: 'https://www.google.com/search?q=NYC+snap+photo+session+planning',
         items: [
           { time: '08:00', title: 'Snap Photo Session', desc: '오전 전체 할당, 다른 일정 최소화', tag: '촬영', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80' },
           { time: '12:30', title: '점심 / 휴식', desc: '촬영 후 회복 시간 확보', tag: '휴식', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
@@ -417,8 +428,9 @@
         ]
       },
       {
-        label: 'DAY 7 · 05/06 (Wed)',
-        short: 'DAY 7<br>05.06',
+        label: 'DAY 7 · 05/06 (Wed)', short: 'DAY 7<br>05.06',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=Ellen%27s+Stardust+Diner+New+York&destination=Museum+of+Modern+Art+New+York&waypoints=Minskoff+Theatre+New+York',
+        search: 'https://www.google.com/search?q=Ellens+Stardust+Diner+Lion+King+MoMA+route',
         items: [
           { time: '10:00', title: 'Ellen’s Stardust Diner', desc: '브런치 겸 볼거리 있는 시작', tag: '브런치', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80' },
           { time: '13:00', title: 'The Lion King', desc: '오후 공연 메인 일정', tag: '브로드웨이', image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=400&q=80' },
@@ -426,8 +438,9 @@
         ]
       },
       {
-        label: 'DAY 8 · 05/07 (Thu)',
-        short: 'DAY 8<br>05.07',
+        label: 'DAY 8 · 05/07 (Thu)', short: 'DAY 8<br>05.07',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=American+Museum+of+Natural+History+New+York&destination=Gershwin+Theatre+New+York&waypoints=Central+Park+New+York',
+        search: 'https://www.google.com/search?q=AMNH+Central+Park+Wicked+route',
         items: [
           { time: '10:00', title: 'American Museum of Natural History', desc: '오전 핵심 박물관 일정', tag: '박물관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
           { time: '15:00', title: 'Central Park 산책', desc: '박물관 후 이어가기 좋은 동선', tag: '산책', image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=400&q=80' },
@@ -435,8 +448,9 @@
         ]
       },
       {
-        label: 'DAY 9 · 05/08 (Fri)',
-        short: 'DAY 9<br>05.08',
+        label: 'DAY 9 · 05/08 (Fri)', short: 'DAY 9<br>05.08',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=The+Metropolitan+Museum+of+Art+New+York&destination=Blue+Note+Jazz+Club+New+York&waypoints=Vessel+New+York|High+Line+New+York',
+        search: 'https://www.google.com/search?q=Met+Vessel+High+Line+Blue+Note+route',
         items: [
           { time: '10:00', title: 'The Metropolitan Museum of Art', desc: '오전 메인 일정', tag: '미술관', image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=400&q=80' },
           { time: '15:00', title: 'Vessel / High Line', desc: 'Hudson Yards 라인으로 산책', tag: '산책', image: 'https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=400&q=80' },
@@ -444,8 +458,9 @@
         ]
       },
       {
-        label: 'DAY 10 · 05/09 (Sat)',
-        short: 'DAY 10<br>05.09',
+        label: 'DAY 10 · 05/09 (Sat)', short: 'DAY 10<br>05.09',
+        map: 'https://www.google.com/maps/dir/?api=1&origin=Woodbury+Common+Premium+Outlets&destination=Smith+%26+Wollensky+New+York',
+        search: 'https://www.google.com/search?q=Woodbury+Common+Smith+and+Wollensky+NYC+route',
         items: [
           { time: '09:00', title: '호텔 체크아웃 / 이동', desc: '짐 정리 후 아울렛 출발', tag: '체크아웃', image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=400&q=80' },
           { time: '10:00', title: 'Woodbury Common Premium Outlets', desc: '쇼핑 중심 일정', tag: '쇼핑', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80' },
@@ -458,6 +473,8 @@
     const dayTabs = document.getElementById('dayTabs');
     const timeline = document.getElementById('timeline');
     const dayLabel = document.getElementById('dayLabel');
+    const dayMapLink = document.getElementById('dayMapLink');
+    const daySearchLink = document.getElementById('daySearchLink');
     let currentDay = 0;
 
     function renderTabs() {
@@ -475,6 +492,8 @@
     function renderTimeline() {
       const day = itinerary[currentDay];
       dayLabel.textContent = day.label;
+      dayMapLink.href = day.map;
+      daySearchLink.href = day.search;
       timeline.innerHTML = day.items.map(item => `
         <div class="timeline-item">
           <div class="thumb" style="background-image:url('${item.image}')"></div>

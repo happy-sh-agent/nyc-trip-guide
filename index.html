@@ -25,15 +25,17 @@
       color: var(--text);
       line-height: 1.6;
     }
-    .wrap { max-width: 1160px; margin: 0 auto; padding: 32px 20px 80px; }
-    .hero, .gate, .card, .restaurant-card, .note {
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 20px 80px; }
+    .hero, .gate, .card, .restaurant-card, .note, .day-card, .table-card {
       background: rgba(18, 25, 51, 0.92);
       border: 1px solid var(--line);
       border-radius: 24px;
     }
     .hero, .gate { padding: 28px; }
     h1 { margin: 0 0 10px; font-size: 40px; line-height: 1.15; }
-    .sub { color: var(--muted); margin: 0; max-width: 820px; }
+    h2 { font-size: 28px; margin: 0 0 12px; }
+    h3 { font-size: 18px; margin: 0 0 10px; }
+    .sub { color: var(--muted); margin: 0; max-width: 900px; }
     .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
     .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
     .chip {
@@ -45,15 +47,12 @@
       font-size: 14px;
     }
     .section { margin-top: 30px; }
-    .section h2 { font-size: 26px; margin-bottom: 12px; }
-    .section h3 { font-size: 18px; margin-bottom: 10px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
-    .card, .restaurant-card, .note { padding: 18px; border-radius: 18px; }
-    .card h3, .restaurant-card h3 { margin: 0 0 8px; }
+    .card, .restaurant-card, .note, .day-card, .table-card { padding: 18px; border-radius: 18px; }
     .area { color: var(--warm); font-size: 13px; margin-bottom: 6px; }
-    .desc, .restaurant-card p, ul, .small, .note { color: var(--muted); }
+    .desc, .restaurant-card p, ul, .small, .note, .day-card p, .day-card li { color: var(--muted); }
     ul { padding-left: 18px; }
-    .restaurant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .restaurant-grid, .day-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
     .restaurant-meta { color: var(--accent); font-size: 14px; margin-bottom: 10px; }
     .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
     .button {
@@ -68,13 +67,11 @@
       cursor: pointer;
     }
     .button.primary { color: #08101f; background: var(--accent); border-color: var(--accent); font-weight: 600; }
-    .button.ghost { background: transparent; }
     .small { font-size: 13px; }
     .badge { display: inline-block; margin-top: 12px; color: var(--good); font-size: 13px; }
     .hidden { display: none; }
     .gate-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
     .gate { max-width: 520px; width: 100%; }
-    .gate h2 { margin-top: 0; }
     .field { margin-top: 14px; }
     input[type="password"] {
       width: 100%; padding: 14px 14px; border-radius: 12px; border: 1px solid var(--line);
@@ -82,6 +79,21 @@
     }
     .error { color: var(--danger); font-size: 14px; margin-top: 10px; min-height: 20px; }
     .category-block { margin-top: 20px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 980px; }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th:last-child, td:last-child { border-right: none; }
+    th { color: var(--text); background: rgba(138, 180, 255, 0.06); }
+    td { color: var(--muted); }
+    .day-card h3 { color: var(--text); }
+    .day-card ul { margin: 8px 0 0; }
   </style>
 </head>
 <body>
@@ -104,235 +116,148 @@
     <div class="wrap">
       <section class="hero">
         <h1>뉴욕 여행 가이드</h1>
-        <p class="sub">뉴욕 여행 준비를 위한 공유형 페이지입니다. 음식은 핵심 하위 항목으로 두고, 각 맛집은 구글 지도에서 바로 위치를 확인할 수 있게 연결했습니다. 지금은 실제 여행에서 쓰기 좋게 카테고리별 구조를 먼저 촘촘하게 잡아두었습니다.</p>
+        <p class="sub">뉴욕 여행 준비를 위한 공유형 페이지입니다. 음식, 일정, 동네, 실전 팁까지 한 곳에서 볼 수 있게 정리했습니다. 지금은 일정표와 일자별 하이라이트까지 붙여, 실제 여행 문서처럼 바로 쓰기 쉬운 형태로 확장해두었습니다.</p>
         <div class="chips">
           <span class="chip">New York Trip</span>
           <span class="chip">Food</span>
+          <span class="chip">Itinerary</span>
           <span class="chip">Google Maps</span>
-          <span class="chip">Brunch</span>
-          <span class="chip">Pizza</span>
-          <span class="chip">Bagel</span>
-          <span class="chip">Steak</span>
-          <span class="chip">Bar</span>
-          <span class="chip">Dessert</span>
+          <span class="chip">Broadway</span>
+          <span class="chip">Museums</span>
         </div>
         <div class="meta">초안 버전, 마지막 업데이트: 2026-04-23</div>
       </section>
 
       <section class="section">
-        <h2>카테고리</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>음식</h3>
-            <p class="desc">브런치, 피자, 베이글, 스테이크, 디너, 바, 디저트 기준으로 정리합니다. 구글 지도 바로가기를 붙여 실사용성을 높였습니다.</p>
-            <ul>
-              <li>꼭 갈 곳</li>
-              <li>후보</li>
-              <li>가볍게 들를 곳</li>
-            </ul>
-            <span class="badge">최우선 섹션</span>
-          </article>
-
-          <article class="card">
-            <h3>일정</h3>
-            <p class="desc">여행 일자별 동선, 오전-점심-저녁 흐름, 예약해야 하는 곳들을 정리합니다.</p>
-          </article>
-
-          <article class="card">
-            <h3>동네</h3>
-            <p class="desc">소호, 웨스트빌리지, LES, 브루클린 등 지역별 성격과 추천 포인트를 정리합니다.</p>
-          </article>
-
-          <article class="card">
-            <h3>실전 팁</h3>
-            <p class="desc">팁 문화, 예약 앱, 이동, 날씨, 쇼핑 팁 같은 실전 정보를 모읍니다.</p>
-          </article>
+        <h2>여행 일정표</h2>
+        <div class="table-card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>04/30 (Thu)</th>
+                  <th>05/01 (Fri)</th>
+                  <th>05/02 (Sat)</th>
+                  <th>05/03 (Sun)</th>
+                  <th>05/04 (Mon)</th>
+                  <th>05/05 (Tue)</th>
+                  <th>05/06 (Wed)</th>
+                  <th>05/07 (Thu)</th>
+                  <th>05/08 (Fri)</th>
+                  <th>05/09 (Sat)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>07:00</td><td></td><td></td><td></td><td></td><td></td><td>Snap Photo Session 준비</td><td></td><td></td><td></td><td>아침 준비 / 짐 정리</td></tr>
+                <tr><td>08:00</td><td></td><td></td><td></td><td>Washington Street photo spot 이동</td><td>아침 준비</td><td>Snap Photo Session</td><td>아침 준비</td><td>아침 준비</td><td>아침 준비</td><td>호텔 체크아웃 준비</td></tr>
+                <tr><td>09:00</td><td></td><td>New York Public Library</td><td>Harry Potter New York</td><td>Washington Street photo spot</td><td>SoHo 이동</td><td>Snap Photo Session</td><td>아침 준비</td><td>아침 준비</td><td>아침 준비</td><td>호텔 체크아웃 / 이동</td></tr>
+                <tr><td>10:00</td><td></td><td>Bryant Park 산책</td><td>Harry Potter New York</td><td>DUMBO 산책</td><td>Museum of Ice Cream</td><td>Snap Photo Session</td><td>Ellen’s Stardust Diner brunch</td><td>American Museum of Natural History</td><td>The Metropolitan Museum of Art</td><td>Woodbury Common Premium Outlets 이동</td></tr>
+                <tr><td>11:00</td><td></td><td>Gallaghers Steakhouse로 이동</td><td>Shake Shack Madison Square Park 점심</td><td>Brooklyn Bridge Park</td><td>Museum of Ice Cream / SoHo 산책</td><td>Snap Photo Session</td><td>Ellen’s Stardust Diner brunch</td><td>American Museum of Natural History</td><td>The Metropolitan Museum of Art</td><td>Woodbury Common Premium Outlets</td></tr>
+                <tr><td>12:00</td><td></td><td>Gallaghers Steakhouse 예약 점심 11:45 (2인)</td><td>Shake Shack Madison Square Park 점심</td><td>Juliana’s Pizza 점심</td><td>Prince Street Pizza 점심</td><td>점심 / 휴식</td><td>brunch / 이동</td><td>점심</td><td>Met 근처 점심</td><td>아울렛 점심</td></tr>
+                <tr><td>13:00</td><td></td><td>Times Square / Theater District 산책</td><td>극장가 이동</td><td>Juliana’s Pizza / 이동</td><td>Prince Street Pizza / SoHo 산책</td><td>자유시간 / 휴식</td><td>The Lion King</td><td>박물관 근처 점심</td><td>Met 근처 점심</td><td>Woodbury Common Premium Outlets</td></tr>
+                <tr><td>14:00</td><td></td><td>Rockefeller Center 구경</td><td>Aladdin</td><td>자유시간 / 이동</td><td>SoHo / Nolita 산책</td><td>자유시간</td><td>The Lion King</td><td>점심 / 이동</td><td>이동</td><td>Woodbury Common Premium Outlets</td></tr>
+                <tr><td>15:00</td><td>Hotel check-in</td><td>Grand Central Terminal 이동</td><td>Aladdin</td><td>Whitehall Terminal로 이동</td><td>SoHo / Nolita 산책</td><td>자유시간</td><td>공연 종료 / 이동</td><td>Central Park 산책</td><td>Vessel</td><td>Woodbury Common Premium Outlets</td></tr>
+                <tr><td>16:00</td><td>Amtrak 도착</td><td>자유시간 / 이동</td><td>공연 후 자유시간</td><td>Staten Island Ferry 왕복</td><td>Joe’s Pizza (Carmine St) 간식</td><td>자유시간</td><td>MoMA</td><td>Central Park 산책</td><td>자유시간 / 이동</td><td>복귀</td></tr>
+                <tr><td>17:00</td><td>휴식</td><td>SUMMIT One Vanderbilt</td><td>Times Square / Rockefeller Center</td><td>복귀</td><td>극장가 이동</td><td>자유시간</td><td>MoMA</td><td>Central Park 산책 / 복귀</td><td>High Line 산책</td><td>Manhattan 복귀</td></tr>
+                <tr><td>18:00</td><td>가벼운 저녁식사</td><td>이동 / 저녁 준비</td><td>Midtown 저녁식사</td><td>가벼운 저녁식사</td><td>저녁 전 이동</td><td>저녁식사</td><td>Midtown 저녁식사</td><td>저녁 준비</td><td>High Line 산책</td><td>Smith &amp; Wollensky - New York 예약</td></tr>
+                <tr><td>19:00</td><td>Times Square 산책</td><td>Midtown 저녁식사</td><td>Midtown 저녁식사</td><td>저녁식사</td><td>Chicago</td><td>저녁식사</td><td>Midtown 저녁식사</td><td>Wicked</td><td>저녁식사 / 이동</td><td>Smith &amp; Wollensky - New York</td></tr>
+                <tr><td>20:00</td><td></td><td>Birdland Jazz Club</td><td>자유시간</td><td>자유시간</td><td>Chicago</td><td>자유시간</td><td>자유시간</td><td>Wicked</td><td>Blue Note New York</td><td>공항 이동 준비</td></tr>
+                <tr><td>21:00</td><td></td><td>Birdland Jazz Club</td><td>자유시간</td><td>자유시간</td><td>공연 후 복귀</td><td>자유시간</td><td>자유시간</td><td>공연 후 복귀</td><td>Blue Note New York</td><td>공항 이동 준비</td></tr>
+                <tr><td>22:00</td><td>동행인 공항 도착</td><td>복귀</td><td>복귀</td><td>복귀</td><td>복귀</td><td>복귀</td><td>복귀</td><td>복귀</td><td>복귀</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </section>
+
+      <section class="section">
+        <h2>일자별 하이라이트</h2>
+        <div class="day-grid">
+          <article class="day-card"><h3>04/30 (Thu)</h3><ul><li>Hotel check-in</li><li>Amtrak arrival</li><li>Times Square</li><li>동행인 공항 도착</li></ul></article>
+          <article class="day-card"><h3>05/01 (Fri)</h3><ul><li>New York Public Library</li><li>Bryant Park</li><li>Gallaghers Steakhouse 11:45 lunch reservation</li><li>Times Square / Theater District</li><li>Rockefeller Center</li><li>Grand Central Terminal</li><li>SUMMIT One Vanderbilt</li><li>Birdland Jazz Club</li></ul></article>
+          <article class="day-card"><h3>05/02 (Sat)</h3><ul><li>Harry Potter New York</li><li>Shake Shack Madison Square Park</li><li>Aladdin</li><li>Times Square / Rockefeller Center</li></ul></article>
+          <article class="day-card"><h3>05/03 (Sun)</h3><ul><li>Washington Street photo spot</li><li>DUMBO</li><li>Brooklyn Bridge Park</li><li>Juliana’s Pizza</li><li>Whitehall Terminal</li><li>Staten Island Ferry round trip</li></ul></article>
+          <article class="day-card"><h3>05/04 (Mon)</h3><ul><li>SoHo</li><li>Museum of Ice Cream</li><li>Prince Street Pizza</li><li>Joe’s Pizza (Carmine St)</li><li>Chicago</li></ul></article>
+          <article class="day-card"><h3>05/05 (Tue)</h3><ul><li>Snap Photo Session (오전 전체 할당)</li><li>오후 자유시간 / 휴식</li></ul></article>
+          <article class="day-card"><h3>05/06 (Wed)</h3><ul><li>Ellen’s Stardust Diner</li><li>The Lion King</li><li>MoMA</li></ul></article>
+          <article class="day-card"><h3>05/07 (Thu)</h3><ul><li>American Museum of Natural History</li><li>Central Park</li><li>Wicked</li></ul></article>
+          <article class="day-card"><h3>05/08 (Fri)</h3><ul><li>The Metropolitan Museum of Art</li><li>Vessel</li><li>High Line</li><li>Blue Note New York</li></ul></article>
+          <article class="day-card"><h3>05/09 (Sat)</h3><ul><li>Hotel check-out</li><li>Woodbury Common Premium Outlets</li><li>Smith &amp; Wollensky - New York 18:00 reservation</li></ul></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>우선 메모</h2>
+        <div class="table-card">
+          <div class="table-wrap">
+            <table style="min-width:680px;">
+              <thead><tr><th>Item</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Snap Photo Session</td><td>05/05 (Tue) 오전 전체 할당</td></tr>
+                <tr><td>Woodbury Common Premium Outlets</td><td>05/09 (Sat)</td></tr>
+                <tr><td>Gallaghers Steakhouse reservation</td><td>05/01 반영 완료</td></tr>
+                <tr><td>Smith &amp; Wollensky reservation</td><td>05/09 18:00 반영 완료</td></tr>
+                <tr><td>Empire State Building</td><td>제외 유지</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>식사 요약</h2>
+        <div class="table-card">
+          <div class="table-wrap">
+            <table style="min-width:680px;">
+              <thead><tr><th>Date</th><th>Lunch</th><th>Dinner</th></tr></thead>
+              <tbody>
+                <tr><td>05/01</td><td>Gallaghers Steakhouse</td><td>Midtown dinner</td></tr>
+                <tr><td>05/02</td><td>Shake Shack Madison Square Park</td><td>Midtown dinner</td></tr>
+                <tr><td>05/03</td><td>Juliana’s Pizza</td><td>Light dinner</td></tr>
+                <tr><td>05/04</td><td>Prince Street Pizza / Joe’s Pizza</td><td>공연 전후 식사</td></tr>
+                <tr><td>05/05</td><td>촬영 후 점심</td><td>저녁식사</td></tr>
+                <tr><td>05/06</td><td>Ellen’s Stardust Diner brunch</td><td>Midtown dinner</td></tr>
+                <tr><td>05/07</td><td>Museum area lunch</td><td>공연 전 저녁</td></tr>
+                <tr><td>05/08</td><td>Lunch near The Met</td><td>Dinner before/after Blue Note</td></tr>
+                <tr><td>05/09</td><td>Outlet lunch</td><td>Smith &amp; Wollensky - New York</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>맛집 섹션</h2>
+        <div class="note">아래 맛집 후보들은 여행 일정과 별도로 계속 다듬을 수 있게 유지해두었습니다. 일정표와 함께 보면서 어느 날 어느 동네에 넣을지 연결하면 완성도가 높아집니다.</div>
       </section>
 
       <section class="section">
         <h2>맛집, 꼭 갈 곳</h2>
         <div class="restaurant-grid">
-          <article class="restaurant-card">
-            <div class="area">West Village</div>
-            <h3>L'Artusi</h3>
-            <div class="restaurant-meta">이탈리안, 디너, 예약 경쟁 있음</div>
-            <p>웨스트빌리지 대표 이탈리안. 여행 중 한 번 넣기 좋은 저녁 카드.</p>
-            <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=L%27Artusi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-          </article>
-          <article class="restaurant-card">
-            <div class="area">West Village</div>
-            <h3>I Sodi</h3>
-            <div class="restaurant-meta">이탈리안, 디너, 매우 인기</div>
-            <p>뉴욕 대표 이탈리안 중 하나. 일정이 맞으면 우선순위를 높게 둘 만한 곳.</p>
-            <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=I+Sodi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-          </article>
-          <article class="restaurant-card">
-            <div class="area">West Village</div>
-            <h3>Jeju Noodle Bar</h3>
-            <div class="restaurant-meta">한식 퓨전, 미쉐린</div>
-            <p>뉴욕다운 한식 해석이 있는 곳이라, 상징성 있는 한 끼 후보로 좋습니다.</p>
-            <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Jeju+Noodle+Bar+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-          </article>
+          <article class="restaurant-card"><div class="area">West Village</div><h3>L'Artusi</h3><div class="restaurant-meta">이탈리안, 디너, 예약 경쟁 있음</div><p>웨스트빌리지 대표 이탈리안. 여행 중 한 번 넣기 좋은 저녁 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=L%27Artusi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article>
+          <article class="restaurant-card"><div class="area">West Village</div><h3>I Sodi</h3><div class="restaurant-meta">이탈리안, 디너, 매우 인기</div><p>뉴욕 대표 이탈리안 중 하나. 일정이 맞으면 우선순위를 높게 둘 만한 곳.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=I+Sodi+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article>
+          <article class="restaurant-card"><div class="area">West Village</div><h3>Jeju Noodle Bar</h3><div class="restaurant-meta">한식 퓨전, 미쉐린</div><p>뉴욕다운 한식 해석이 있는 곳이라, 상징성 있는 한 끼 후보로 좋습니다.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Jeju+Noodle+Bar+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article>
         </div>
       </section>
 
       <section class="section">
         <h2>맛집, 후보</h2>
         <div class="restaurant-grid">
-          <article class="restaurant-card">
-            <div class="area">Lower East Side</div>
-            <h3>Una Pizza Napoletana</h3>
-            <div class="restaurant-meta">피자, 캐주얼</div>
-            <p>피자 우선순위가 높다면 강하게 고려할 만한 카드.</p>
-            <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-          </article>
-          <article class="restaurant-card">
-            <div class="area">SoHo</div>
-            <h3>The Corner Store</h3>
-            <div class="restaurant-meta">트렌디, 예약 어려움</div>
-            <p>화제성과 분위기 중심의 카드. 소호 동선과 함께 보기 좋습니다.</p>
-            <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=The+Corner+Store+Soho+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-          </article>
-          <article class="restaurant-card">
-            <div class="area">Brooklyn / Williamsburg</div>
-            <h3>Lilia</h3>
-            <div class="restaurant-meta">이탈리안, 브루클린 대표</div>
-            <p>브루클린 일정이 있으면 강하게 고려할 만한 대표 카드.</p>
-            <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Lilia+Brooklyn+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-          </article>
+          <article class="restaurant-card"><div class="area">Lower East Side</div><h3>Una Pizza Napoletana</h3><div class="restaurant-meta">피자, 캐주얼</div><p>피자 우선순위가 높다면 강하게 고려할 만한 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article>
+          <article class="restaurant-card"><div class="area">SoHo</div><h3>The Corner Store</h3><div class="restaurant-meta">트렌디, 예약 어려움</div><p>화제성과 분위기 중심의 카드. 소호 동선과 함께 보기 좋습니다.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=The+Corner+Store+Soho+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article>
+          <article class="restaurant-card"><div class="area">Brooklyn / Williamsburg</div><h3>Lilia</h3><div class="restaurant-meta">이탈리안, 브루클린 대표</div><p>브루클린 일정이 있으면 강하게 고려할 만한 대표 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Lilia+Brooklyn+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article>
         </div>
       </section>
 
       <section class="section">
         <h2>카테고리별 맛집 후보</h2>
-
-        <div class="category-block">
-          <h3>브런치</h3>
-          <div class="restaurant-grid">
-            <article class="restaurant-card">
-              <div class="area">SoHo</div>
-              <h3>Revelie Luncheonette</h3>
-              <div class="restaurant-meta">브런치, 클래식 다이너 감성</div>
-              <p>소호에서 가볍게 시작하기 좋은 브런치 카드. 너무 힘주지 않은 예쁜 선택지.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Revelie+Luncheonette+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-            <article class="restaurant-card">
-              <div class="area">West Village</div>
-              <h3>Buvette</h3>
-              <div class="restaurant-meta">브런치, 프렌치, 분위기 좋음</div>
-              <p>여행 페이지에 넣기 좋은 대표 브런치 카드. 웨스트빌리지 산책과 궁합이 좋습니다.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Buvette+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <h3>피자</h3>
-          <div class="restaurant-grid">
-            <article class="restaurant-card">
-              <div class="area">Lower East Side</div>
-              <h3>Una Pizza Napoletana</h3>
-              <div class="restaurant-meta">나폴리 피자</div>
-              <p>피자 하나만으로도 목적지가 되는 카드.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-            <article class="restaurant-card">
-              <div class="area">Greenwich Village</div>
-              <h3>Joe's Pizza</h3>
-              <div class="restaurant-meta">슬라이스 피자, 관광 동선 친화적</div>
-              <p>클래식한 뉴욕 슬라이스 감성으로, 가볍게 들르기 좋습니다.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Joe%27s+Pizza+Carmine+Street+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <h3>베이글</h3>
-          <div class="restaurant-grid">
-            <article class="restaurant-card">
-              <div class="area">West Village</div>
-              <h3>Popup Bagels</h3>
-              <div class="restaurant-meta">베이글, 가볍게 들르기 좋음</div>
-              <p>빠르게 베이글 체크하기 좋은 카드. 동선 넣기 편합니다.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Popup+Bagels+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-            <article class="restaurant-card">
-              <div class="area">Upper West Side</div>
-              <h3>Absolute Bagels</h3>
-              <div class="restaurant-meta">클래식 베이글</div>
-              <p>베이글 우선순위가 높다면 이름값 있는 후보.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Absolute+Bagels+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <h3>스테이크</h3>
-          <div class="restaurant-grid">
-            <article class="restaurant-card">
-              <div class="area">Midtown</div>
-              <h3>Keens Steakhouse</h3>
-              <div class="restaurant-meta">클래식 스테이크하우스</div>
-              <p>뉴욕 클래식 무드가 확실한 카드. 관광객에게도 만족도가 높습니다.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Keens+Steakhouse+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-            <article class="restaurant-card">
-              <div class="area">Midtown East</div>
-              <h3>4 Charles Prime Rib</h3>
-              <div class="restaurant-meta">프라임 립, 예약 난도 높음</div>
-              <p>가장 화제성 있는 스테이크 카드 중 하나. 잡히면 강력 우선순위.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=4+Charles+Prime+Rib+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <h3>바 / 칵테일</h3>
-          <div class="restaurant-grid">
-            <article class="restaurant-card">
-              <div class="area">East Village</div>
-              <h3>Attaboy</h3>
-              <div class="restaurant-meta">칵테일 바, 뉴욕 대표급</div>
-              <p>뉴욕 칵테일 바 경험 자체를 위해 넣기 좋은 카드.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Attaboy+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-            <article class="restaurant-card">
-              <div class="area">Lower East Side</div>
-              <h3>Double Chicken Please</h3>
-              <div class="restaurant-meta">칵테일, 인기 매우 높음</div>
-              <p>요즘 뉴욕 바 씬에서 가장 공유하기 좋은 카드 중 하나.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Double+Chicken+Please+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <h3>디저트</h3>
-          <div class="restaurant-grid">
-            <article class="restaurant-card">
-              <div class="area">SoHo</div>
-              <h3>Dominique Ansel Bakery</h3>
-              <div class="restaurant-meta">베이커리, 디저트 대표</div>
-              <p>뉴욕 디저트 카드로 가장 설명하기 쉬운 편. 관광 동선과도 잘 붙습니다.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Dominique+Ansel+Bakery+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-            <article class="restaurant-card">
-              <div class="area">West Village</div>
-              <h3>Magnolia Bakery</h3>
-              <div class="restaurant-meta">바나나 푸딩, 가볍게 들르기 좋음</div>
-              <p>무겁지 않게 넣기 좋은 디저트 카드. 여행 중 쉬는 타이밍에 잘 맞습니다.</p>
-              <div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Magnolia+Bakery+West+Village+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>다음 작업 방향</h2>
-        <div class="note">
-          다음 단계는 이 리스트를 수현 취향 기준으로 줄이고, 각 식당마다 예약 필요 여부, 가격대, 추천 메뉴, 어느 날 일정에 넣을지까지 붙이는 것입니다. 그러면 진짜 여행 실사용 문서가 됩니다.
-        </div>
+        <div class="category-block"><h3>브런치</h3><div class="restaurant-grid"><article class="restaurant-card"><div class="area">SoHo</div><h3>Revelie Luncheonette</h3><div class="restaurant-meta">브런치, 클래식 다이너 감성</div><p>소호에서 가볍게 시작하기 좋은 브런치 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Revelie+Luncheonette+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article><article class="restaurant-card"><div class="area">West Village</div><h3>Buvette</h3><div class="restaurant-meta">브런치, 프렌치</div><p>웨스트빌리지 산책과 궁합이 좋은 브런치 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Buvette+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article></div></div>
+        <div class="category-block"><h3>피자</h3><div class="restaurant-grid"><article class="restaurant-card"><div class="area">Lower East Side</div><h3>Una Pizza Napoletana</h3><div class="restaurant-meta">나폴리 피자</div><p>피자 하나만으로도 목적지가 되는 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Una+Pizza+Napoletana+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article><article class="restaurant-card"><div class="area">Greenwich Village</div><h3>Joe's Pizza</h3><div class="restaurant-meta">슬라이스 피자</div><p>가볍게 들르기 좋은 클래식 뉴욕 슬라이스.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Joe%27s+Pizza+Carmine+Street+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article></div></div>
+        <div class="category-block"><h3>베이글</h3><div class="restaurant-grid"><article class="restaurant-card"><div class="area">West Village</div><h3>Popup Bagels</h3><div class="restaurant-meta">베이글</div><p>동선 넣기 편한 빠른 베이글 체크 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Popup+Bagels+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article><article class="restaurant-card"><div class="area">Upper West Side</div><h3>Absolute Bagels</h3><div class="restaurant-meta">클래식 베이글</div><p>베이글 우선순위가 높다면 이름값 있는 후보.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Absolute+Bagels+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article></div></div>
+        <div class="category-block"><h3>스테이크</h3><div class="restaurant-grid"><article class="restaurant-card"><div class="area">Midtown</div><h3>Keens Steakhouse</h3><div class="restaurant-meta">클래식 스테이크하우스</div><p>뉴욕 클래식 무드가 확실한 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Keens+Steakhouse+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article><article class="restaurant-card"><div class="area">Midtown East</div><h3>4 Charles Prime Rib</h3><div class="restaurant-meta">프라임 립</div><p>예약이 잡히면 우선순위가 급상승하는 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=4+Charles+Prime+Rib+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article></div></div>
+        <div class="category-block"><h3>바 / 칵테일</h3><div class="restaurant-grid"><article class="restaurant-card"><div class="area">East Village</div><h3>Attaboy</h3><div class="restaurant-meta">칵테일 바</div><p>뉴욕 칵테일 바 경험 자체를 위해 넣기 좋은 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Attaboy+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article><article class="restaurant-card"><div class="area">Lower East Side</div><h3>Double Chicken Please</h3><div class="restaurant-meta">칵테일</div><p>요즘 뉴욕 바 씬에서 가장 공유하기 좋은 카드 중 하나.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Double+Chicken+Please+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article></div></div>
+        <div class="category-block"><h3>디저트</h3><div class="restaurant-grid"><article class="restaurant-card"><div class="area">SoHo</div><h3>Dominique Ansel Bakery</h3><div class="restaurant-meta">베이커리, 디저트 대표</div><p>관광 동선과도 잘 붙는 대표 디저트 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Dominique+Ansel+Bakery+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article><article class="restaurant-card"><div class="area">West Village</div><h3>Magnolia Bakery</h3><div class="restaurant-meta">바나나 푸딩</div><p>무겁지 않게 넣기 좋은 디저트 카드.</p><div class="links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Magnolia+Bakery+West+Village+New+York" target="_blank" rel="noopener noreferrer">구글 지도</a></div></article></div></div>
       </section>
     </div>
   </main>

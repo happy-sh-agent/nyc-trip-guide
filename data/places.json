@@ -6,8 +6,8 @@
   },
   "days": {
     "DAY 1": [
-      {"id":"hotel-ts","name":"Hotel","kind":"stay","address":"Times Square Area Manhattan New York NY","mapQuery":"Times Square Manhattan New York","lat":40.7580,"lng":-73.9855,"image":{"url":"https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"midtown hotel exterior mood"}},
-      {"id":"times-square","name":"Times Square","kind":"landmark","address":"Times Square Manhattan New York NY","mapQuery":"Times Square New York","lat":40.7580,"lng":-73.9855,"image":{"url":"https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"actual Times Square streetscape"}}
+      {"id":"hotel-ts","name":"Arlo Midtown","kind":"stay","address":"351 W 38th St New York NY 10018","mapQuery":"Arlo Midtown New York","lat":40.7546,"lng":-73.9932,"mapsUrl":"https://maps.app.goo.gl/AX4PGm9QWiuUojwF7?g_st=ic","image":{"url":"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"modern hotel exterior/interior closer to actual stay type"}},
+      {"id":"times-square","name":"Times Square","kind":"landmark","address":"Times Square Manhattan New York NY","mapQuery":"Times Square New York","lat":40.7580,"lng":-73.9855,"image":{"url":"https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Times Square billboard streetscape"}}
     ],
     "DAY 2": [
       {"id":"nypl","name":"New York Public Library","kind":"landmark","address":"476 5th Ave New York NY 10018","mapQuery":"New York Public Library Stephen A. Schwarzman Building","lat":40.7532,"lng":-73.9822,"image":{"url":"https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"library facade and reading room style"}},

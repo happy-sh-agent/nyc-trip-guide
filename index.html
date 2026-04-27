@@ -134,7 +134,8 @@
     let itinerary = [];
     let places = {};
     let reservations = {};
-    let currentDay = 0;
+    let currentDay = Number(localStorage.getItem('nycTripCurrentDay') || 0);
+    const dataUrl = path => `${path}?v=${Date.now()}`;
 
     const dayKeyLabel = (day) => `${day.dayKey} · ${day.date} (${day.weekdayKo})`;
 
@@ -156,7 +157,11 @@
 
     function renderTabs() {
       dayTabs.innerHTML = itinerary.map((day, index) => `<div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.dayKey}<br>${day.date} (${day.weekdayKo})</div>`).join('');
-      dayTabs.querySelectorAll('.day-pill').forEach((pill) => pill.addEventListener('click', () => { currentDay = Number(pill.dataset.index); render(); }));
+      dayTabs.querySelectorAll('.day-pill').forEach((pill) => pill.addEventListener('click', () => {
+        currentDay = Number(pill.dataset.index);
+        localStorage.setItem('nycTripCurrentDay', currentDay);
+        render();
+      }));
     }
 
     function renderTimeline() {
@@ -218,13 +223,14 @@
     }
 
     Promise.all([
-      fetch('./data/itinerary.json').then(res => res.json()),
-      fetch('./data/places.json').then(res => res.json()),
-      fetch('./data/reservations.json').then(res => res.json())
+      fetch(dataUrl('./data/itinerary.json')).then(res => res.json()),
+      fetch(dataUrl('./data/places.json')).then(res => res.json()),
+      fetch(dataUrl('./data/reservations.json')).then(res => res.json())
     ])
       .then(([itineraryData, placesData, reservationData]) => {
         itinerary = itineraryData;
         places = placesData;
+        if (!Number.isInteger(currentDay) || currentDay < 0 || currentDay >= itinerary.length) currentDay = 0;
         reservations = reservationData.reduce((acc, reservation) => {
           acc[reservation.id] = reservation;
           return acc;

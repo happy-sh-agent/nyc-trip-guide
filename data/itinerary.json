@@ -64,43 +64,41 @@
     "dayKey": "DAY 4",
     "date": "05.03",
     "weekdayKo": "일",
-    "map": "https://www.google.com/maps/dir/?api=1&origin=Buffalo+Niagara+International+Airport&destination=Niagara+Falls+State+Park&waypoints=Prospect+Point+Observation+Tower+Niagara+Falls|Goat+Island+Niagara+Falls",
-    "routePlaceIds": ["buf-airport", "prospect-point", "goat-island", "niagara-state-park"],
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Brooklyn+Bridge+Park&destination=DUMBO+Brooklyn&waypoints=Time+Out+Market+New+York|Brooklyn+Heights+Promenade",
+    "routePlaceIds": [],
     "food": [
-      {"name": "Niagara Falls lunch", "desc": "Falls 근처 빠른 점심", "tag": "점심 후보"},
-      {"name": "Fallsview dinner", "desc": "야경 보기 좋은 저녁", "tag": "저녁 후보"}
+      {"name": "Time Out Market New York", "desc": "브루클린 브리지 파크와 이어가기 좋은 점심", "tag": "점심 추천"},
+      {"name": "DUMBO / Brooklyn dinner", "desc": "야경 전 가볍게 마무리하기 좋은 저녁", "tag": "저녁 후보"}
     ],
     "notes": [
-      {"name": "나이아가라 1박 2일 전환", "desc": "우드버리를 빼고 05/03~05/04를 나이아가라 일정으로 재배치했습니다.", "tag": "일정 변경"},
-      {"name": "이동 방식 메모", "desc": "이번 일정은 항공 또는 투어 기준으로 짜는 편이 현실적입니다.", "tag": "최신 확인"},
-      {"name": "계절 운영 체크", "desc": "보트류 어트랙션은 계절·날씨에 따라 운영 여부가 달라집니다.", "tag": "최신 확인"}
+      {"name": "나이아가라 일정 제거", "desc": "기존 일요일 나이아가라 이동 일정은 제거하고 뉴욕 시내 일정으로 비워두었습니다.", "tag": "일정 변경"}
     ],
     "items": [
-      {"time": "06:00", "title": "나이아가라 이동", "desc": "이른 출발 전제로 Buffalo행 이동", "tag": "이동", "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "10:00", "title": "Buffalo 도착 · Niagara 이동", "desc": "공항 도착 후 Falls 구역 진입", "tag": "이동", "placeId": "buf-airport"},
-      {"time": "12:00", "title": "Prospect Point", "desc": "첫 뷰 포인트에서 전체 폭포 감상", "tag": "뷰포인트", "placeId": "prospect-point"},
-      {"time": "14:00", "title": "Goat Island 산책", "desc": "Terrapin Point, Bridal Veil 방향 메인 산책", "tag": "산책", "placeId": "goat-island"},
-      {"time": "18:00", "title": "야경 감상 · 1박", "desc": "조명 들어온 폭포까지 보고 마무리", "tag": "숙박", "placeId": "niagara-state-park"}
+      {"time": "10:00", "title": "Brooklyn Bridge Park", "desc": "물가 산책과 맨해튼 스카이라인 뷰 중심 시작", "tag": "산책"},
+      {"time": "12:00", "title": "Time Out Market 점심", "desc": "브루클린 쪽에서 점심 해결", "tag": "식사"},
+      {"time": "14:00", "title": "DUMBO · Brooklyn Heights", "desc": "사진, 산책, 전망 포인트를 한 묶음으로 진행", "tag": "뷰포인트"},
+      {"time": "18:00", "title": "자유시간", "desc": "브루클린 저녁 또는 맨해튼 복귀 후 여유 시간", "tag": "자유시간", "free": true, "suggestions": "추천 액션: Jane's Carousel, 카페, 브루클린 브리지 야경, 덤보 사진 스팟", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"}
     ]
   },
   {
     "dayKey": "DAY 5",
     "date": "05.04",
     "weekdayKo": "월",
-    "map": "https://www.google.com/maps/dir/?api=1&origin=Niagara+Falls+State+Park&destination=Ambassador+Theatre+New+York&waypoints=Buffalo+Niagara+International+Airport|Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
-    "routePlaceIds": ["niagara-state-park", "buf-airport", "hotel-ts", "ambassador-theatre"],
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Washington+Square+Park+New+York&destination=Ambassador+Theatre+New+York&waypoints=SoHo+New+York|Buvette+New+York|West+Village+New+York|Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+    "routePlaceIds": ["ambassador-theatre"],
     "food": [
-      {"name": "Niagara brunch / cafe", "desc": "복귀 전 가볍게 아침 겸 점심", "tag": "식사 후보"},
+      {"name": "Buvette", "desc": "West Village에서 브런치나 늦은 점심으로 좋은 카드", "tag": "추천"},
       {"name": "공연 전 가벼운 식사", "desc": "Chicago 전에 소화 편한 메뉴 위주", "tag": "저녁 후보"}
     ],
     "notes": [
       {"name": "Chicago 티켓 확인", "desc": "Broadway.com 티켓 기준 05/04 19:00 공연으로 확인했습니다.", "tag": "이메일 확인"},
-      {"name": "복귀 버퍼 확보", "desc": "공연 전 회복 시간을 남겨두는 편이 안전합니다.", "tag": "일정 조정"}
+      {"name": "나이아가라 일정 제거", "desc": "기존 월요일 복귀 일정은 제거하고 맨해튼 시내 일정으로 재정리했습니다.", "tag": "일정 변경"}
     ],
     "items": [
-      {"time": "09:00", "title": "폭포 아침 산책", "desc": "아침 뷰 위주로 짧게 마무리", "tag": "자유 일정", "placeId": "niagara-state-park"},
-      {"time": "11:00", "title": "Buffalo 공항 이동", "desc": "오후 NYC 복귀 목표 이동", "tag": "이동", "placeId": "buf-airport"},
-      {"time": "16:00", "title": "NYC 복귀 · 호텔 휴식", "desc": "짐 정리, 샤워, 간단한 식사까지 가능한 완충 시간", "tag": "완충 시간", "placeId": "hotel-ts"},
+      {"time": "10:00", "title": "Washington Square Park · SoHo", "desc": "여유 있는 오전 산책과 쇼핑 동선", "tag": "산책"},
+      {"time": "12:00", "title": "West Village 브런치", "desc": "Buvette 등 분위기 좋은 브런치 선택", "tag": "식사"},
+      {"time": "14:00", "title": "자유시간", "desc": "카페, 쇼핑, 호텔 복귀 전 여유 시간", "tag": "자유시간", "free": true, "suggestions": "추천 액션: SoHo 쇼핑, West Village 산책, 카페, 호텔에서 휴식", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "17:00", "title": "호텔 복귀 · 공연 준비", "desc": "저녁 공연 전 휴식과 이동 준비", "tag": "완충 시간", "placeId": "hotel-ts"},
       {"time": "19:00", "title": "Chicago", "desc": "저녁 공연 일정", "tag": "티켓", "placeId": "ambassador-theatre"}
     ]
   },

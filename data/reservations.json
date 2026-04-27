@@ -14,6 +14,21 @@
     "summary": "05/01 금요일 11:45, Table for 2"
   },
   {
+    "id": "summit-one-vanderbilt-2026-05-01-1700",
+    "type": "ticket",
+    "source": "SUMMIT One Vanderbilt email",
+    "provider": "SUMMIT One Vanderbilt",
+    "name": "SUMMIT Experience (Prime)",
+    "date": "2026-05-01",
+    "weekdayKo": "금",
+    "time": "17:00",
+    "partySize": 2,
+    "placeId": "summit",
+    "venue": "SUMMIT One Vanderbilt",
+    "confirmationNumber": "20260407-43792890",
+    "summary": "05/01 금요일 17:00, SUMMIT Experience (Prime), Adult 2장"
+  },
+  {
     "id": "broadway-aladdin-2026-05-02-1400",
     "type": "show",
     "source": "Broadway.com email",

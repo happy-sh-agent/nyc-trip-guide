@@ -31,14 +31,14 @@
       {"name": "Midtown dinner", "desc": "SUMMIT 이후 Midtown에서 가볍게 마무리", "tag": "저녁 후보"}
     ],
     "notes": [
-      {"name": "SUMMIT 티켓 확인", "desc": "SUMMIT Experience (Prime) 티켓 기준 05/01 17:00 입장으로 반영했습니다.", "tag": "이메일 확인"},
+      {"name": "SUMMIT 티켓 확인", "desc": "SUMMIT One Vanderbilt 메일 기준 05/01 금요일 17:00, SUMMIT Experience (Prime) Adult 2장입니다.", "tag": "메일 확인"},
       {"name": "Gallaghers 예약 확인", "desc": "OpenTable 메일 기준 05/01 금요일 11:45, Table for 2 예약입니다.", "tag": "메일 확인"}
     ],
     "items": [
       {"time": "09:00", "title": "NYPL · Bryant Park", "desc": "아침 시작 코스를 한 묶음으로 진행", "tag": "명소", "placeId": "nypl"},
       {"time": "11:45", "title": "Gallaghers Steakhouse", "desc": "OpenTable 확인 완료, Table for 2", "tag": "고정 예약", "immutable": true, "reservationId": "opentable-gallaghers-2026-05-01-1145", "placeId": "gallaghers"},
       {"time": "15:00", "title": "자유시간", "desc": "Grand Central 근처 카페, 쇼핑, 잠깐 휴식", "tag": "자유시간", "free": true, "suggestions": "추천 액션: Grand Central 푸드홀, 카페, Bryant Park 재방문, 기념품 쇼핑", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "17:00", "title": "SUMMIT One Vanderbilt", "desc": "17:00 입장 일정", "tag": "티켓", "placeId": "summit"}
+      {"time": "17:00", "title": "SUMMIT One Vanderbilt", "desc": "SUMMIT Experience (Prime) 확인 완료, Adult 2장", "tag": "고정 티켓", "immutable": true, "reservationId": "summit-one-vanderbilt-2026-05-01-1700", "placeId": "summit"}
     ]
   },
   {
@@ -66,42 +66,50 @@
     "dayKey": "DAY 4",
     "date": "05.03",
     "weekdayKo": "일",
-    "map": "https://www.google.com/maps/dir/?api=1&origin=DUMBO+Brooklyn&destination=Top+of+the+Rock+New+York&waypoints=Brooklyn+Bridge+Park|Time+Out+Market+New+York|Brooklyn+Heights+Promenade",
-    "routePlaceIds": [],
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=Port+Authority+Bus+Terminal+New+York|Woodbury+Common+Premium+Outlets",
+    "routePlaceIds": ["hotel-ts", "port-authority", "woodbury-common"],
     "food": [
-      {"name": "Time Out Market New York", "desc": "브루클린 브리지 파크와 이어가기 좋은 점심", "tag": "점심 추천"},
-      {"name": "야경 전 가벼운 저녁", "desc": "Top of the Rock 또는 야경 동선 전 가볍게 마무리하기 좋은 저녁", "tag": "저녁 후보"}
+      {"name": "Woodbury Market Hall", "desc": "쇼핑 중간에 동선 끊지 않고 빠르게 점심 해결", "tag": "점심 후보"},
+      {"name": "Shake Shack / Bareburger", "desc": "아울렛 안에서 무난하게 먹기 좋은 선택지", "tag": "캐주얼"},
+      {"name": "호텔 근처 가벼운 저녁", "desc": "복귀 후 짐 정리와 휴식 우선, Times Square 근처에서 간단히", "tag": "복귀 후"}
     ],
     "notes": [
-      {"name": "나이아가라 일정 제거", "desc": "기존 일요일 나이아가라 이동 일정은 제거하고 뉴욕 시내 일정으로 재구성했습니다.", "tag": "일정 변경"},
-      {"name": "야경 하이라이트 추가", "desc": "일요일 밤은 대표 야경 포인트를 넣어 여행의 인상적인 장면으로 만들었습니다.", "tag": "추천 반영"}
+      {"name": "우드버리 전용일", "desc": "고정 공연/예약이 없는 05/03 일요일을 Woodbury Common Premium Outlets 쇼핑일로 확정했습니다.", "tag": "일정 변경"},
+      {"name": "이동 방식", "desc": "맨해튼에서 버스 또는 셔틀 왕복 기준으로 계획했습니다. 출발 전 왕복 티켓과 리턴 시간을 확인하세요.", "tag": "교통 확인"},
+      {"name": "쇼핑 팁", "desc": "일요일은 붐빌 수 있으니 우선순위 브랜드를 먼저 돌고, 오후에는 짐과 체력에 맞춰 마무리합니다.", "tag": "현장 팁"}
     ],
     "items": [
-      {"time": "10:00", "title": "DUMBO · Brooklyn Bridge Park", "desc": "브루클린 대표 풍경과 물가 산책을 한 묶음으로 진행", "tag": "산책"},
-      {"time": "12:00", "title": "Time Out Market 점심", "desc": "브루클린 쪽에서 점심 해결", "tag": "식사"},
-      {"time": "14:00", "title": "Brooklyn Heights Promenade", "desc": "전망과 산책 위주로 여유 있게 이동", "tag": "뷰포인트"},
-      {"time": "16:00", "title": "자유시간", "desc": "맨해튼 복귀 또는 카페, 휴식으로 템포 조절", "tag": "자유시간", "free": true, "suggestions": "추천 액션: Jane's Carousel, 카페, 덤보 사진 스팟, 호텔 잠깐 복귀", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "19:00", "title": "Top of the Rock 야경", "desc": "여행 전체의 대표 야경 포인트로 마무리", "tag": "야경"}
+      {"time": "08:30", "title": "호텔 출발 · 버스 터미널 이동", "desc": "Port Authority 또는 예약한 셔틀 픽업 지점으로 이동", "tag": "이동", "placeId": "port-authority"},
+      {"time": "09:00", "title": "Woodbury행 버스 탑승", "desc": "왕복 티켓, 리턴 시간, 승차 위치를 출발 전 확인", "tag": "교통", "placeId": "port-authority"},
+      {"time": "10:15", "title": "Woodbury Common 도착", "desc": "도착 후 지도 확인, 우선순위 브랜드부터 쇼핑 시작", "tag": "쇼핑", "placeId": "woodbury-common"},
+      {"time": "13:00", "title": "아울렛 점심", "desc": "Market Hall 또는 Shake Shack / Bareburger 등에서 빠르게 점심", "tag": "식사", "placeId": "woodbury-common"},
+      {"time": "14:00", "title": "오후 쇼핑", "desc": "명품/의류/신발 중심으로 남은 브랜드를 압축해서 이동", "tag": "쇼핑", "placeId": "woodbury-common"},
+      {"time": "16:30", "title": "맨해튼 복귀", "desc": "짐 정리 시간을 고려해 너무 늦지 않은 리턴 버스 권장", "tag": "복귀", "placeId": "woodbury-common"},
+      {"time": "18:00", "title": "호텔 복귀 · 휴식", "desc": "쇼핑 짐 정리, 저녁은 Times Square 근처에서 가볍게", "tag": "휴식", "placeId": "hotel-ts"}
     ]
   },
   {
     "dayKey": "DAY 5",
     "date": "05.04",
     "weekdayKo": "월",
-    "map": "https://www.google.com/maps/dir/?api=1&origin=Buvette+New+York&destination=Ambassador+Theatre+New+York&waypoints=West+Village+New+York|Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
-    "routePlaceIds": ["ambassador-theatre", "hotel-ts"],
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Ambassador+Theatre+New+York&waypoints=Battery+Park+New+York|Statue+of+Liberty+National+Monument|Ellis+Island+New+York|Buvette+New+York|Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+    "routePlaceIds": ["hotel-ts", "battery-park", "liberty-island", "ellis-island", "buvette", "ambassador-theatre"],
     "food": [
-      {"name": "Buvette", "desc": "West Village에서 브런치로 가장 잘 어울리는 카드", "tag": "추천"},
+      {"name": "Battery Park / FiDi 간단한 아침", "desc": "페리 전 보안검색 시간을 고려해 가볍게 해결", "tag": "아침 후보"},
+      {"name": "Buvette", "desc": "자유의 여신상 일정 후 시간이 남으면 늦은 점심 또는 카페로 사용", "tag": "선택 카드"},
       {"name": "공연 전 가벼운 식사", "desc": "Chicago 전에 소화 편한 메뉴 위주", "tag": "저녁 후보"}
     ],
     "notes": [
       {"name": "Chicago 티켓 확인", "desc": "Broadway.com 메일 기준 05/04 월요일 19:00, Ambassador Theatre, Orchestra CC107-108입니다.", "tag": "메일 확인"},
-      {"name": "월요일 템포 조정", "desc": "SoHo 비중을 줄이고 West Village 중심의 가벼운 일정으로 재조정했습니다.", "tag": "추천 반영"}
+      {"name": "자유의 여신상 추가", "desc": "05/04 오전~오후 초반을 Statue City Cruises 공식 페리 기준 Liberty Island와 Ellis Island 방문 블록으로 재구성했습니다.", "tag": "추천 반영"},
+      {"name": "공식 티켓 주의", "desc": "Liberty Island에 실제 하선하려면 Statue City Cruises 공식 티켓을 사용해야 합니다. Battery Park 주변 비공식 호객은 피하세요.", "tag": "예약 필요"}
     ],
     "items": [
-      {"time": "10:00", "title": "West Village 산책", "desc": "공연 전 무리 없는 동네 산책 중심 일정", "tag": "산책"},
-      {"time": "12:00", "title": "Buvette 브런치", "desc": "분위기 좋은 브런치로 여유 있게 진행", "tag": "식사"},
-      {"time": "14:00", "title": "자유시간", "desc": "카페, 산책, 호텔 복귀 전 휴식 중심 시간", "tag": "자유시간", "free": true, "suggestions": "추천 액션: West Village 산책, 카페, 호텔 복귀 후 쉬기", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "08:30", "title": "Battery Park 이동 · 보안검색", "desc": "Castle Clinton 쪽 공식 페리 탑승장으로 이동, 예약 시간보다 여유 있게 도착", "tag": "이동", "placeId": "battery-park"},
+      {"time": "09:30", "title": "Statue City Cruises 페리", "desc": "Battery Park 출발 공식 페리, Liberty Island 하선", "tag": "페리", "placeId": "battery-park"},
+      {"time": "10:15", "title": "Liberty Island · 자유의 여신상", "desc": "섬 산책, 자유의 여신상 박물관, 맨해튼 항구 전망을 한 묶음으로 진행", "tag": "명소", "placeId": "liberty-island"},
+      {"time": "12:30", "title": "Ellis Island", "desc": "시간과 체력에 맞춰 이민 박물관 핵심 전시 위주로 관람", "tag": "역사", "placeId": "ellis-island"},
+      {"time": "14:30", "title": "맨해튼 복귀 · 늦은 점심", "desc": "Battery Park 복귀 후 컨디션에 따라 Buvette 또는 가까운 카페로 조정", "tag": "식사", "placeId": "buvette"},
       {"time": "17:00", "title": "호텔 복귀 · 공연 준비", "desc": "저녁 공연 전 휴식과 이동 준비", "tag": "완충 시간", "placeId": "hotel-ts"},
       {"time": "19:00", "title": "Chicago", "desc": "Broadway.com 확인 완료, Orchestra CC107-108", "tag": "고정 티켓", "immutable": true, "reservationId": "broadway-chicago-2026-05-04-1900", "placeId": "ambassador-theatre"}
     ]

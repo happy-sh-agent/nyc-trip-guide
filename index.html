@@ -6,7 +6,7 @@
   <title>뉴욕 여행 가이드</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <style>
-    :root { --bg:#f4f7fb; --card:rgba(255,255,255,0.97); --text:#14213d; --muted:#6b7488; --line:#e5eaf3; --primary:#173b7a; --primary-soft:#eef3ff; --accent:#5b8cff; --shadow:0 14px 40px rgba(15, 28, 63, 0.10); --radius:24px; --success:#1f8f5f; --free-bg:#f9fbff; --free-border:#cfdcf5; }
+    :root { --bg:#f4f7fb; --card:rgba(255,255,255,0.97); --text:#14213d; --muted:#6b7488; --line:#e5eaf3; --primary:#173b7a; --primary-soft:#eef3ff; --accent:#5b8cff; --shadow:0 14px 40px rgba(15, 28, 63, 0.10); --radius:24px; --success:#1f8f5f; --free-bg:#f9fbff; --free-border:#cfdcf5; --fixed:#8a4b00; --fixed-bg:#fff8e8; --fixed-border:#f0c36a; }
     * { box-sizing: border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
     .page { max-width:760px; margin:0 auto; padding:0 14px 48px; }
@@ -36,9 +36,12 @@
     .timeline-item { position:relative; display:grid; grid-template-columns:96px 1fr; gap:12px; margin-bottom:14px; align-items:stretch; }
     .timeline-item::before { content:''; position:absolute; left:-17px; top:12px; width:10px; height:10px; border-radius:999px; background:white; border:2px solid var(--primary); }
     .timeline-item.free::before { border-style:dashed; border-color:var(--accent); }
+    .timeline-item.fixed::before { border-color:var(--fixed); background:var(--fixed-bg); }
     .thumb { border-radius:14px; width:100%; aspect-ratio: 4 / 3; min-height:78px; background-size:cover; background-position:center; border:1px solid var(--line); overflow:hidden; }
+    .thumb.poster { background-size:contain; background-repeat:no-repeat; background-color:#111827; }
     .event-card, .food-card, .pin-card { border:1px solid var(--line); border-radius:16px; padding:12px 14px; background:#fff; }
     .event-card.free { background:var(--free-bg); border-style:dashed; border-color:var(--free-border); }
+    .event-card.fixed, .food-card.fixed { background:var(--fixed-bg); border-color:var(--fixed-border); }
     .time { color:var(--primary); font-size:13px; font-weight:700; }
     .event-title, .food-title { font-size:18px; font-weight:800; margin-top:2px; }
     .tagline, .food-desc, .pin-desc { margin-top:4px; color:var(--muted); font-size:13px; }
@@ -46,6 +49,7 @@
     .meta-line { margin-top:8px; font-size:12px; color:var(--muted); }
     .meta-chip { display:inline-flex; align-items:center; margin-right:6px; margin-top:4px; padding:4px 8px; border-radius:999px; background:#f4f7fc; color:#42506b; font-weight:600; }
     .event-card.free .event-tag { background:#eef6ff; color:var(--accent); }
+    .event-card.fixed .event-tag, .food-card.fixed .food-tag { background:#fff0bf; color:var(--fixed); }
     .free-suggestions { margin-top:8px; font-size:12px; color:var(--muted); line-height:1.5; }
     .free-suggestions strong { color:var(--text); }
     .button { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:11px 16px; border-radius:14px; text-decoration:none; border:1px solid transparent; background:white; color:var(--text); font-size:14px; font-weight:600; cursor:pointer; }
@@ -129,6 +133,7 @@
     let routeLayer = null;
     let itinerary = [];
     let places = {};
+    let reservations = {};
     let currentDay = 0;
 
     const dayKeyLabel = (day) => `${day.dayKey} · ${day.date} (${day.weekdayKo})`;
@@ -145,6 +150,10 @@
       return item.image || 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80';
     }
 
+    function isPosterImage(item, dayPlaces) {
+      return Boolean(item.placeId && dayPlaces[item.placeId]?.image?.source?.includes('show-poster'));
+    }
+
     function renderTabs() {
       dayTabs.innerHTML = itinerary.map((day, index) => `<div class="day-pill ${index === currentDay ? 'active' : ''}" data-index="${index}">${day.dayKey}<br>${day.date} (${day.weekdayKo})</div>`).join('');
       dayTabs.querySelectorAll('.day-pill').forEach((pill) => pill.addEventListener('click', () => { currentDay = Number(pill.dataset.index); render(); }));
@@ -158,11 +167,22 @@
       dayMapLink.href = day.map;
       timeline.innerHTML = day.items.map(item => {
         const image = resolveItemImage(item, dayPlaces);
+        const posterClass = isPosterImage(item, dayPlaces) ? ' poster' : '';
         const place = item.placeId ? dayPlaces[item.placeId] : null;
+        const reservation = item.reservationId ? reservations[item.reservationId] : null;
         const meta = place ? `<div class="meta-line"><span class="meta-chip">📍 ${place.name}</span><span class="meta-chip">${place.kind || 'place'}</span></div>` : '';
-        return `<div class="timeline-item ${item.free ? 'free' : ''}"><div class="thumb" style="background-image:url('${image}')"></div><div class="event-card ${item.free ? 'free' : ''}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${meta}${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`;
+        const immutable = item.immutable || Boolean(item.reservationId);
+        const stateClass = `${item.free ? 'free' : ''} ${immutable ? 'fixed' : ''}`.trim();
+        const fixedMeta = immutable ? '<span class="meta-chip">불변 일정</span>' : '';
+        const reservationMeta = reservation ? `<span class="meta-chip">${reservation.provider}</span>` : '';
+        const reservationLine = reservation ? `<div class="free-suggestions"><strong>${reservation.summary}</strong></div>` : '';
+        return `<div class="timeline-item ${stateClass}"><div class="thumb${posterClass}" style="background-image:url('${image}')"></div><div class="event-card ${stateClass}"><div class="time">${item.time}</div><div class="event-title">${item.title}</div><div class="tagline">${item.desc}</div><div class="event-tag">${item.tag}</div>${meta || fixedMeta || reservationMeta ? `<div class="meta-line">${fixedMeta}${reservationMeta}${meta.replace('<div class="meta-line">', '').replace('</div>', '')}</div>` : ''}${reservationLine}${item.suggestions ? `<div class="free-suggestions"><strong>${item.suggestions}</strong></div>` : ''}</div></div>`;
       }).join('');
-      dayFood.innerHTML = day.food.map(food => `<div class="food-card"><div class="food-title">${food.name}</div><div class="food-desc">${food.desc}</div><div class="food-tag">${food.tag}</div>${food.link ? `<div class="food-note"><a href="${food.link}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Google Maps 바로가기</a></div>` : ''}</div>`).join('');
+      dayFood.innerHTML = day.food.map(food => {
+        const reservation = food.reservationId ? reservations[food.reservationId] : null;
+        const immutable = food.immutable || Boolean(food.reservationId);
+        return `<div class="food-card ${immutable ? 'fixed' : ''}"><div class="food-title">${food.name}</div><div class="food-desc">${food.desc}</div><div class="food-tag">${food.tag}</div>${immutable ? '<div class="meta-line"><span class="meta-chip">불변 예약</span></div>' : ''}${reservation ? `<div class="free-suggestions"><strong>${reservation.summary}</strong></div>` : ''}${food.link ? `<div class="food-note"><a href="${food.link}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Google Maps 바로가기</a></div>` : ''}</div>`;
+      }).join('');
       dayNotes.innerHTML = (day.notes && day.notes.length) ? day.notes.map(note => `<div class="food-card"><div class="food-title">${note.name}</div><div class="food-desc">${note.desc}</div><div class="food-tag">${note.tag}</div></div>`).join('') : `<div class="food-card"><div class="food-title">특이사항 없음</div><div class="food-desc">현재 날짜에는 별도 메모가 없습니다.</div><div class="food-tag">기본</div></div>`;
     }
 
@@ -199,11 +219,16 @@
 
     Promise.all([
       fetch('./data/itinerary.json').then(res => res.json()),
-      fetch('./data/places.json').then(res => res.json())
+      fetch('./data/places.json').then(res => res.json()),
+      fetch('./data/reservations.json').then(res => res.json())
     ])
-      .then(([itineraryData, placesData]) => {
+      .then(([itineraryData, placesData, reservationData]) => {
         itinerary = itineraryData;
         places = placesData;
+        reservations = reservationData.reduce((acc, reservation) => {
+          acc[reservation.id] = reservation;
+          return acc;
+        }, {});
         render();
       })
       .catch(() => {

@@ -12,11 +12,16 @@
 - `itinerary.json`: 일정 구조 데이터
   - `routePlaceIds`로 장소 연결
   - 각 일정 항목은 `placeId`로 장소와 연결 가능
+- `reservations.json`: 메일로 확인된 예약/티켓 원본 데이터
+  - 예약 번호, 좌석, 인원, 공급자, 원본 메일 출처
+  - 변경되면 안 되는 확정 예약의 기준 원본
 - `food.json`: 맛집 페이지 노출 순서용 참조 목록
 
 ## 연결 규칙
 - 일정 지도는 `itinerary.json.routePlaceIds`를 읽고 `places.json.days[DAY X]`에서 좌표를 찾아 핀과 경로를 표시합니다.
 - 일정 카드 이미지는 `item.placeId`가 있으면 `places.json`의 이미지 URL을 우선 사용합니다.
+- 확정 예약/티켓은 `itinerary.json`의 `reservationId`로 `reservations.json`을 참조합니다.
+- 일정이나 음식 항목의 `immutable: true`는 추천 일정 조정 시 이동하거나 삭제하면 안 되는 불변 항목을 뜻합니다.
 - 맛집 페이지는 `food.json`의 `placeId`를 기준으로 `places.json.food`를 조회합니다.
 
 ## 향후 자동 생성 방향

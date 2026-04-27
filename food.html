@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:," />
   <title>뉴욕 맛집 리스트</title>
   <style>
     :root { --bg:#f4f7fb; --card:rgba(255,255,255,0.97); --text:#14213d; --muted:#6b7488; --line:#e5eaf3; --primary:#173b7a; --shadow:0 14px 40px rgba(15,28,63,0.10); --radius:24px; }
@@ -26,16 +27,23 @@
     .meta-item { padding:12px; border:1px solid var(--line); border-radius:16px; background:#fbfcff; }
     .meta-label { color:var(--muted); font-size:12px; }
     .meta-value { font-weight:700; font-size:14px; margin-top:4px; }
+    .filters { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:10px; margin-top:14px; }
+    .filter-control { width:100%; min-height:42px; border:1px solid var(--line); border-radius:14px; background:white; color:var(--text); padding:0 12px; font:inherit; font-size:14px; }
+    .filter-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+    .filter-tag { border:1px solid var(--line); background:white; color:var(--muted); border-radius:999px; padding:8px 11px; font-weight:800; font-size:12px; cursor:pointer; }
+    .filter-tag.active { background:var(--primary); border-color:var(--primary); color:white; }
     .place-list { display:grid; gap:12px; }
     .place-card { display:grid; grid-template-columns:120px 1fr auto; gap:14px; align-items:center; border:1px solid var(--line); border-radius:18px; padding:12px; background:white; }
     .thumb { width:120px; aspect-ratio: 4 / 3; min-height:90px; border-radius:14px; background-size:cover; background-position:center; overflow:hidden; }
     .title { font-size:22px; font-weight:800; }
     .desc { color:var(--muted); font-size:14px; margin-top:4px; }
+    .details { color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; font-size:12px; font-weight:700; margin-top:7px; }
+    .detail-dot::before { content:"·"; margin-right:8px; color:#b6becc; }
     .chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
     .chip { font-size:12px; padding:5px 8px; border-radius:999px; background:#f3f6fd; color:var(--primary); font-weight:700; }
     .button { display:inline-flex; align-items:center; justify-content:center; padding:11px 14px; border-radius:14px; text-decoration:none; border:1px solid #dce5f4; color:var(--primary); font-weight:700; background:white; }
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
-    @media (max-width:640px) { .meta-grid { grid-template-columns:1fr 1fr; } .place-card { grid-template-columns:1fr; } .thumb { width:100%; aspect-ratio: 4 / 3; min-height:180px; } }
+    @media (max-width:640px) { .meta-grid, .filters { grid-template-columns:1fr 1fr; } .filters input { grid-column:1 / -1; } .place-card { grid-template-columns:1fr; } .thumb { width:100%; aspect-ratio: 4 / 3; min-height:180px; } }
   </style>
 </head>
 <body>
@@ -54,11 +62,24 @@
       <div class="card">
         <div class="section-title"><h2>뉴욕 맛집 리스트</h2><div class="subtle">places.json 기준 장소 정보를 사용합니다</div></div>
         <div class="meta-grid">
-          <div class="meta-item"><div class="meta-label">지역</div><div class="meta-value">Manhattan, NY</div></div>
-          <div class="meta-item"><div class="meta-label">분위기</div><div class="meta-value">브런치 · 클래식 · 현지맛집</div></div>
+          <div class="meta-item"><div class="meta-label">지역</div><div class="meta-value">Manhattan · Brooklyn · Queens</div></div>
+          <div class="meta-item"><div class="meta-label">분위기</div><div class="meta-value">신상 · 화제성 · 클래식</div></div>
           <div class="meta-item"><div class="meta-label">예산</div><div class="meta-value">₩₩ ~ ₩₩₩₩</div></div>
           <div class="meta-item"><div class="meta-label">추천</div><div class="meta-value" id="foodCount">로딩 중</div></div>
         </div>
+        <div class="filters" aria-label="맛집 필터">
+          <input class="filter-control" id="searchInput" type="search" placeholder="식당, 동네, 장르 검색" />
+          <select class="filter-control" id="boroughFilter" aria-label="지역">
+            <option value="">전체 지역</option>
+          </select>
+          <select class="filter-control" id="priceFilter" aria-label="예산">
+            <option value="">전체 예산</option>
+          </select>
+          <select class="filter-control" id="reservationFilter" aria-label="예약">
+            <option value="">전체 예약 방식</option>
+          </select>
+        </div>
+        <div class="filter-tags" id="buzzFilters" aria-label="화제성 태그"></div>
       </div>
     </section>
     <section class="section">
@@ -68,25 +89,134 @@
     </section>
   </main>
   <script>
+    const state = {
+      allItems: [],
+      filters: {
+        search: '',
+        borough: '',
+        price: '',
+        reservation: '',
+        buzz: ''
+      }
+    };
+
+    const priceLabels = {
+      '$': '가볍게',
+      '$$': '보통',
+      '$$$': '예약 저녁',
+      '$$$$': '스페셜'
+    };
+
+    const byId = id => document.getElementById(id);
+    const normalize = value => String(value || '').toLowerCase().trim();
+    const unique = values => [...new Set(values.filter(Boolean))];
+
+    function renderOptions(selectId, values, labeler = value => value) {
+      const select = byId(selectId);
+      const first = select.options[0];
+      select.innerHTML = '';
+      select.appendChild(first);
+      values.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = labeler(value);
+        select.appendChild(option);
+      });
+    }
+
+    function itemMatches(item) {
+      const haystack = normalize([
+        item.name,
+        item.desc,
+        item.neighborhood,
+        item.borough,
+        item.cuisine,
+        ...(item.chips || []),
+        ...(item.buzz || [])
+      ].join(' '));
+
+      return (!state.filters.search || haystack.includes(normalize(state.filters.search)))
+        && (!state.filters.borough || item.borough === state.filters.borough)
+        && (!state.filters.price || item.price === state.filters.price)
+        && (!state.filters.reservation || item.reservation === state.filters.reservation)
+        && (!state.filters.buzz
+          || item.borough === state.filters.buzz
+          || item.neighborhood === state.filters.buzz
+          || (item.buzz || []).includes(state.filters.buzz)
+          || (item.chips || []).includes(state.filters.buzz));
+    }
+
+    function renderBuzzFilters(items) {
+      const preferred = ['신상', 'James Beard', 'Michelin', 'Eater 38', 'Resy Hit List', '워크인', '클래식', 'Queens', 'Brooklyn'];
+      const available = unique(items.flatMap(item => [...(item.buzz || []), ...(item.chips || [])]));
+      const tags = preferred.filter(tag => available.includes(tag));
+      byId('buzzFilters').innerHTML = [
+        `<button class="filter-tag ${state.filters.buzz === '' ? 'active' : ''}" type="button" data-buzz="">전체</button>`,
+        ...tags.map(tag => `<button class="filter-tag ${state.filters.buzz === tag ? 'active' : ''}" type="button" data-buzz="${tag}">${tag}</button>`)
+      ].join('');
+      byId('buzzFilters').querySelectorAll('.filter-tag').forEach(button => {
+        button.addEventListener('click', () => {
+          state.filters.buzz = button.dataset.buzz;
+          render();
+        });
+      });
+    }
+
+    function render() {
+      const filtered = state.allItems.filter(itemMatches);
+      byId('foodCount').textContent = `${filtered.length} / ${state.allItems.length}곳`;
+      renderBuzzFilters(state.allItems);
+
+      byId('foodList').innerHTML = filtered.length ? filtered.map(item => `
+        <div class="place-card">
+          <div class="thumb" style="background-image:url('${item.image.url}')"></div>
+          <div>
+            <div class="title">${item.name}</div>
+            <div class="desc">${item.desc}</div>
+            <div class="details">
+              <span>${item.borough || 'NYC'}</span>
+              <span class="detail-dot">${item.neighborhood || '동네 미정'}</span>
+              <span class="detail-dot">${item.cuisine || '장르 미정'}</span>
+              <span class="detail-dot">${item.price || '-'}</span>
+              <span class="detail-dot">${item.reservation || '예약 정보 미정'}</span>
+            </div>
+            <div class="chips">${(item.chips || []).map(chip => `<span class="chip">${chip}</span>`).join('')}</div>
+          </div>
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
+        </div>
+      `).join('') : '<div class="loading">조건에 맞는 맛집이 없습니다. 필터를 줄여보세요.</div>';
+    }
+
     Promise.all([
       fetch('./data/food.json').then(res => res.json()),
       fetch('./data/places.json').then(res => res.json())
     ])
       .then(([foodRefs, places]) => {
         const placeMap = new Map((places.food || []).map(place => [place.id, place]));
-        const items = foodRefs.map(ref => placeMap.get(ref.placeId)).filter(Boolean);
-        document.getElementById('foodCount').textContent = `${items.length}곳`;
-        document.getElementById('foodList').innerHTML = items.map(item => `
-          <div class="place-card">
-            <div class="thumb" style="background-image:url('${item.image.url}')"></div>
-            <div>
-              <div class="title">${item.name}</div>
-              <div class="desc">${item.desc}</div>
-              <div class="chips">${(item.chips || []).map(chip => `<span class="chip">${chip}</span>`).join('')}</div>
-            </div>
-            <a class="button" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer">Google Maps로 보기</a>
-          </div>
-        `).join('');
+        state.allItems = foodRefs.map(ref => placeMap.get(ref.placeId)).filter(Boolean);
+
+        renderOptions('boroughFilter', unique(state.allItems.map(item => item.borough)).sort());
+        renderOptions('priceFilter', unique(state.allItems.map(item => item.price)).sort((a, b) => a.length - b.length), value => `${value} · ${priceLabels[value] || value}`);
+        renderOptions('reservationFilter', unique(state.allItems.map(item => item.reservation)).sort());
+
+        byId('searchInput').addEventListener('input', event => {
+          state.filters.search = event.target.value;
+          render();
+        });
+        byId('boroughFilter').addEventListener('change', event => {
+          state.filters.borough = event.target.value;
+          render();
+        });
+        byId('priceFilter').addEventListener('change', event => {
+          state.filters.price = event.target.value;
+          render();
+        });
+        byId('reservationFilter').addEventListener('change', event => {
+          state.filters.reservation = event.target.value;
+          render();
+        });
+
+        render();
       })
       .catch(() => {
         document.getElementById('foodCount').textContent = '불러오기 실패';

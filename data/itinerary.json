@@ -46,18 +46,23 @@
     "dayKey": "DAY 3",
     "date": "05.02",
     "weekdayKo": "토",
-    "map": "https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York&destination=Rockefeller+Center+New+York&waypoints=Shake+Shack+Madison+Square+Park+New+York|New+Amsterdam+Theatre+New+York",
-    "routePlaceIds": ["harry-potter-ny", "shake-shack-msp", "new-amsterdam", "rockefeller"],
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=Woodbury+Common+Premium+Outlets",
+    "routePlaceIds": [],
     "food": [
-      {"name": "Shake Shack Madison Square Park", "desc": "동선 효율 좋은 점심", "tag": "점심 확정", "link": "https://www.google.com/maps/search/?api=1&query=Shake+Shack+Madison+Square+Park"},
-      {"name": "Midtown dinner", "desc": "공연 후 무리 없는 저녁 추천", "tag": "저녁 후보"}
+      {"name": "Woodbury food court / casual lunch", "desc": "쇼핑 중간에 가장 효율적으로 끼우기 좋은 점심", "tag": "현장 식사"},
+      {"name": "Midtown late dinner", "desc": "맨해튼 복귀 후 너무 무겁지 않은 저녁 추천", "tag": "저녁 후보"}
     ],
-    "notes": [],
+    "notes": [
+      {"name": "우드버리 쇼핑 데이", "desc": "토요일은 맨해튼 시내 대신 하루를 우드버리 쇼핑 일정으로 전환했습니다.", "tag": "일정 변경"},
+      {"name": "일찍 출발 권장", "desc": "우드버리는 이동 시간이 길어 아침 일찍 출발할수록 체감 만족도가 좋습니다.", "tag": "운영 팁"}
+    ],
     "items": [
-      {"time": "09:00", "title": "Harry Potter New York", "desc": "굿즈와 체험 중심 오전 일정", "tag": "쇼핑", "placeId": "harry-potter-ny"},
-      {"time": "12:00", "title": "Shake Shack", "desc": "가볍고 효율적인 점심", "tag": "식사", "placeId": "shake-shack-msp"},
-      {"time": "14:00", "title": "Aladdin", "desc": "오후 메인 브로드웨이 일정", "tag": "브로드웨이", "placeId": "new-amsterdam"},
-      {"time": "16:00", "title": "자유시간", "desc": "공연 후 Times Square, Rockefeller 일대 자유 이동", "tag": "자유시간", "free": true, "suggestions": "추천 액션: M&M, LEGO, 라운지 카페, Top of the Rock 주변 산책", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"}
+      {"time": "08:00", "title": "우드버리 출발", "desc": "버스 또는 차량으로 아울렛 이동 시작", "tag": "이동", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "10:00", "title": "Woodbury Common 쇼핑", "desc": "오전 메인 쇼핑 블록", "tag": "쇼핑", "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "13:00", "title": "점심", "desc": "현장 푸드코트 또는 캐주얼 식사", "tag": "식사", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "14:00", "title": "Woodbury Common 추가 쇼핑", "desc": "오후 브랜드 중심 쇼핑 마무리", "tag": "쇼핑", "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "18:00", "title": "맨해튼 복귀", "desc": "호텔 복귀 또는 Midtown 저녁 이동", "tag": "복귀", "placeId": "hotel-ts"},
+      {"time": "19:00", "title": "가벼운 저녁 · 휴식", "desc": "복귀 후 무리 없이 마무리", "tag": "저녁", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"}
     ]
   },
   {
@@ -198,7 +203,7 @@
     ],
     "notes": [
       {"name": "호텔 체크아웃 시간", "desc": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG 체크아웃은 11:00 이전입니다.", "tag": "이메일 확인"},
-      {"name": "마지막 날 일정 조정", "desc": "Museum of Ice Cream / SoHo / Prince Street Pizza 일부를 마지막 날에 회수했습니다.", "tag": "일정 변경"},
+      {"name": "마지막 날 일정 조정", "desc": "마지막 날은 쇼핑보다 SoHo 체험, 점심, 출국 준비 중심으로 가볍게 정리했습니다.", "tag": "일정 변경"},
       {"name": "Smith & Wollensky 이동 반영", "desc": "Smith & Wollensky 저녁 예약은 금요일 18:00 일정으로 옮겨 반영했습니다.", "tag": "일정 변경"}
     ],
     "items": [

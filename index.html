@@ -29,6 +29,8 @@
     .label { color:var(--muted); font-size:12px; margin-bottom:4px; }
     .value { font-size:15px; font-weight:700; }
     .weather-card { display:flex; align-items:center; gap:12px; margin:0 0 14px; padding:12px 14px; border:1px solid #d8e2f4; border-radius:18px; background:linear-gradient(135deg, #f8fbff, #eef5ff); }
+    .weather-link { display:block; color:inherit; text-decoration:none; }
+    .weather-link:hover .weather-card { border-color:#b8caf0; box-shadow:0 10px 24px rgba(15, 28, 63, 0.08); }
     .weather-icon { flex:0 0 auto; width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:white; font-size:26px; box-shadow:0 6px 16px rgba(15, 28, 63, 0.08); }
     .weather-main { min-width:0; flex:1; }
     .weather-title { font-size:14px; font-weight:800; color:var(--primary); }
@@ -150,6 +152,7 @@
     let places = {};
     let reservations = {};
     let currentDay = Number(localStorage.getItem('nycTripCurrentDay') || 0);
+    const nycWeatherUrl = 'https://forecast.weather.gov/MapClick.php?FcstType=text&lat=40.7038&lg=en&lon=-74.0131&unit=1';
     const dataUrl = path => `${path}?v=${Date.now()}`;
     const HOTEL_PLACE_ID = 'hotel-ts';
 
@@ -219,7 +222,7 @@
       const dayPlaces = getDayPlaces(day);
       dayLabel.textContent = dayKeyLabel(day);
       const weather = day.weather;
-      dayWeather.innerHTML = weather ? `<div class="weather-card"><div class="weather-icon">${weather.icon || '🌤️'}</div><div class="weather-main"><div class="weather-title">${day.date} (${day.weekdayKo}) 뉴욕 예보</div><div class="weather-summary">${weather.summary}</div><div class="weather-note">${weather.note || '출발 전 최신 예보를 한 번 더 확인하세요.'}</div></div><div class="weather-temp">${weather.highC}° / ${weather.lowC}°C<small>${weather.highF}° / ${weather.lowF}°F</small></div></div>` : '';
+      dayWeather.innerHTML = weather ? `<a class="weather-link" href="${weather.link || nycWeatherUrl}" target="_blank" rel="noopener noreferrer" aria-label="${day.date} 뉴욕 상세 날씨 예보 보기"><div class="weather-card"><div class="weather-icon">${weather.icon || '🌤️'}</div><div class="weather-main"><div class="weather-title">${day.date} (${day.weekdayKo}) 뉴욕 예보</div><div class="weather-summary">${weather.summary}</div><div class="weather-note">${weather.note || '출발 전 최신 예보를 한 번 더 확인하세요.'} · 자세히 보기</div></div><div class="weather-temp">${weather.highC}° / ${weather.lowC}°C<small>${weather.highF}° / ${weather.lowF}°F</small></div></div></a>` : '';
       const startsAtHotel = day.routePlaceIds[0] === HOTEL_PLACE_ID;
       dayMapLink.href = currentDay > 0 && !startsAtHotel ? buildMapUrl(getRoutePlaces(day, dayPlaces)) : day.map;
       timeline.innerHTML = day.items.map(item => {

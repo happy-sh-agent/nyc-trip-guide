@@ -17,7 +17,6 @@
   - 변경되면 안 되는 확정 예약의 기준 원본
 - `food.json`: 맛집 페이지 노출 순서용 참조 목록
 - `photo-spots.json`: 포토스팟 페이지 원본 데이터
-- `banksy.json`: 뉴욕에 남아 있거나 보존된 Banksy 작품 추적 데이터
 
 ## 연결 규칙
 - 일정 지도는 `itinerary.json.routePlaceIds`를 읽고 `places.json.days[DAY X]`에서 좌표를 찾아 핀과 경로를 표시합니다.
@@ -26,7 +25,6 @@
 - 일정이나 음식 항목의 `immutable: true`는 추천 일정 조정 시 이동하거나 삭제하면 안 되는 불변 항목을 뜻합니다.
 - 맛집 페이지는 `food.json`의 `placeId`를 기준으로 `places.json.food`를 조회합니다.
 - 포토스팟 페이지는 `photo-spots.json`의 장소, 촬영 시간대, 구도 팁을 직접 렌더링합니다.
-- 뱅크시 페이지는 `banksy.json`의 접근성, 보존 상태, 출처 링크를 직접 렌더링합니다.
 
 ## 향후 자동 생성 방향
 추천 기준 원본: `places.json`

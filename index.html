@@ -10,10 +10,9 @@
     * { box-sizing: border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
     .page { max-width:760px; margin:0 auto; padding:0 14px 48px; }
-    .hero { margin:0 -14px; min-height:240px; padding:22px 20px 28px; color:white; background:linear-gradient(180deg, rgba(8,20,48,0.28), rgba(8,20,48,0.78)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80') center/cover; border-bottom-left-radius:26px; border-bottom-right-radius:26px; overflow:hidden; }
-    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; font-size:14px; opacity:0.95; }
+    .hero { margin:0 -14px; min-height:240px; padding:92px 20px 28px; color:white; background:linear-gradient(180deg, rgba(8,20,48,0.28), rgba(8,20,48,0.78)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80') center/cover; border-bottom-left-radius:26px; border-bottom-right-radius:26px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; }
     .hero-kicker { font-style:italic; opacity:0.92; font-size:18px; }
-    .hero h1 { margin:8px 0 0; font-size:48px; line-height:1; letter-spacing:-0.03em; }
+    .hero h1 { margin:8px 0 0; font-size:48px; line-height:1; letter-spacing:0; }
     .hero-sub { margin-top:10px; font-size:17px; color:rgba(255,255,255,0.9); }
     .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.94); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; }
     .quick-actions { display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
@@ -31,7 +30,6 @@
     .weather-card { display:flex; align-items:center; gap:12px; margin:0 0 14px; padding:12px 14px; border:1px solid #d8e2f4; border-radius:18px; background:linear-gradient(135deg, #f8fbff, #eef5ff); }
     .weather-link { display:block; color:inherit; text-decoration:none; }
     .weather-link:hover .weather-card { border-color:#b8caf0; box-shadow:0 10px 24px rgba(15, 28, 63, 0.08); }
-    .weather-icon { flex:0 0 auto; width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:white; font-size:26px; box-shadow:0 6px 16px rgba(15, 28, 63, 0.08); }
     .weather-main { min-width:0; flex:1; }
     .weather-title { font-size:14px; font-weight:800; color:var(--primary); }
     .weather-summary { margin-top:2px; font-size:13px; color:#34425e; }
@@ -87,17 +85,15 @@
 <body>
   <main class="page">
     <section class="hero">
-      <div class="topbar"><div>☰</div><div>🗽</div></div>
       <div class="hero-kicker">Trip planner</div>
       <h1>New York Trip</h1>
       <div class="hero-sub">일정, 동선, 맛집, 포토스팟을 한 번에 보는 뉴욕 여행 플래너</div>
     </section>
     <div class="tabbar">
-      <a class="tab active" href="./index.html">🗓️ 일정표</a>
-      <a class="tab" href="./food.html">🍽️ 맛집</a>
-      <a class="tab" href="./photo-spots.html">📷 포토스팟</a>
-      <a class="tab" href="./banksy.html">🎨 뱅크시</a>
-      <a class="tab" href="./woodbury.html">🛍️ 쇼핑</a>
+      <a class="tab active" href="./index.html">일정표</a>
+      <a class="tab" href="./food.html">맛집</a>
+      <a class="tab" href="./photo-spots.html">포토스팟</a>
+      <a class="tab" href="./woodbury.html">쇼핑</a>
     </div>
     <div class="quick-actions">
       <a class="button primary" href="https://www.google.com/maps/dir/?api=1&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG" target="_blank" rel="noopener noreferrer">숙소로 돌아가기</a>
@@ -224,7 +220,7 @@
       const dayPlaces = getDayPlaces(day);
       dayLabel.textContent = dayKeyLabel(day);
       const weather = day.weather;
-      dayWeather.innerHTML = weather ? `<a class="weather-link" href="${weather.link || nycWeatherUrl}" target="_blank" rel="noopener noreferrer" aria-label="${day.date} 뉴욕 상세 날씨 예보 보기"><div class="weather-card"><div class="weather-icon">${weather.icon || '🌤️'}</div><div class="weather-main"><div class="weather-title">${day.date} (${day.weekdayKo}) 뉴욕 예보</div><div class="weather-summary">${weather.summary}</div><div class="weather-note">${weather.note || '출발 전 최신 예보를 한 번 더 확인하세요.'} · 자세히 보기</div></div><div class="weather-temp">${weather.highC}° / ${weather.lowC}°C<small>${weather.highF}° / ${weather.lowF}°F</small></div></div></a>` : '';
+      dayWeather.innerHTML = weather ? `<a class="weather-link" href="${weather.link || nycWeatherUrl}" target="_blank" rel="noopener noreferrer" aria-label="${day.date} 뉴욕 상세 날씨 예보 보기"><div class="weather-card"><div class="weather-main"><div class="weather-title">${day.date} (${day.weekdayKo}) 뉴욕 예보</div><div class="weather-summary">${weather.summary}</div><div class="weather-note">${weather.note || '출발 전 최신 예보를 한 번 더 확인하세요.'} · 자세히 보기</div></div><div class="weather-temp">${weather.highC}° / ${weather.lowC}°C<small>${weather.highF}° / ${weather.lowF}°F</small></div></div></a>` : '';
       const startsAtHotel = day.routePlaceIds[0] === HOTEL_PLACE_ID;
       dayMapLink.href = currentDay > 0 && !startsAtHotel ? buildMapUrl(getRoutePlaces(day, dayPlaces)) : day.map;
       timeline.innerHTML = day.items.map(item => {
@@ -232,7 +228,7 @@
         const posterClass = isPosterImage(item, dayPlaces) ? ' poster' : '';
         const place = item.placeId ? dayPlaces[item.placeId] : null;
         const reservation = item.reservationId ? reservations[item.reservationId] : null;
-        const meta = place ? `<div class="meta-line"><span class="meta-chip">📍 ${place.name}</span><span class="meta-chip">${place.kind || 'place'}</span></div>` : '';
+        const meta = place ? `<div class="meta-line"><span class="meta-chip">${place.name}</span><span class="meta-chip">${place.kind || 'place'}</span></div>` : '';
         const immutable = item.immutable || Boolean(item.reservationId);
         const stateClass = `${item.free ? 'free' : ''} ${immutable ? 'fixed' : ''}`.trim();
         const fixedMeta = immutable ? '<span class="meta-chip">불변 일정</span>' : '';
@@ -270,7 +266,7 @@
       } else {
         map.setView([40.758, -73.9855], 12);
       }
-      dayPins.innerHTML = mergedPlaces.map((place, index) => `<div class="pin-card"><div class="food-title">📍 ${getPinNumber(place, index)}. ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
+      dayPins.innerHTML = mergedPlaces.map((place, index) => `<div class="pin-card"><div class="food-title">${getPinNumber(place, index)}. ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
     }
 
     function render() {

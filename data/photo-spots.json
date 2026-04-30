@@ -644,7 +644,7 @@
       "Lower Manhattan"
     ],
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/National_September_11_Memorial_Pool_Panorama_-_Flickr_id_21855606231.jpg/960px-National_September_11_Memorial_Pool_Panorama_-_Flickr_id_21855606231.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/9-11%20Memorial%20%28New%20York%29%20%2845192731422%29.jpg?width=960",
       "source": "wikimedia-commons",
       "note": "National September 11 Memorial pool"
     },
@@ -675,7 +675,7 @@
       "거리공연"
     ],
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Washington_Square_Arch_by_David_Shankbone.jpg/960px-Washington_Square_Arch_by_David_Shankbone.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Washington%20Square%20Arch%2C%20New%20York.jpg?width=960",
       "source": "wikimedia-commons",
       "note": "Washington Square Arch"
     },
@@ -706,7 +706,7 @@
       "Flatiron"
     ],
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flatiron_and_Madison_Square_Park.jpg/960px-Flatiron_and_Madison_Square_Park.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron%20Building%2C%20Madison%20Square%2C%20Broadway%20-%20NYC%20Panorama%20-%20panoramio.jpg?width=960",
       "source": "wikimedia-commons",
       "note": "Flatiron Building and Madison Square Park"
     },
@@ -737,7 +737,7 @@
       "건축"
     ],
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/15_Hudson_Yards_%26_The_Vessel.jpg/960px-15_Hudson_Yards_%26_The_Vessel.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/15%20Hudson%20Yards%20%26%20The%20Vessel.jpg?width=960",
       "source": "wikimedia-commons",
       "note": "Vessel at Hudson Yards"
     },
@@ -962,6 +962,39 @@
     },
     "sources": [
       "https://www.dominopark.com/"
+    ]
+  },
+  {
+    "id": "banksy-hammer-boy",
+    "name": "Hammer Boy",
+    "kind": "street art",
+    "address": "227-233 W 79th St New York NY 10024",
+    "mapQuery": "Banksy Hammer Boy 233 W 79th St New York NY 10024",
+    "lat": 40.7835,
+    "lng": -73.9802,
+    "borough": "Manhattan",
+    "neighborhood": "Upper West Side",
+    "category": "스트리트아트",
+    "bestTime": "오전",
+    "fee": "무료",
+    "indoorOutdoor": "Outdoor",
+    "priority": "추천",
+    "desc": "Upper West Side 79번가에 남아 있는 Banksy 현장 포인트.",
+    "shotTip": "보호 커버 반사를 피해 비스듬히 보고, 주변 보행 흐름을 방해하지 않게 짧게 촬영하세요.",
+    "chips": [
+      "Banksy",
+      "스트리트아트",
+      "Upper West Side",
+      "원위치"
+    ],
+    "image": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/West%2079th%20Street.jpg?width=960",
+      "source": "wikimedia-commons",
+      "note": "West 79th Street on the Upper West Side"
+    },
+    "sources": [
+      "https://www.neotericslate.com/banksy",
+      "https://fotospot.com/attractions/new-york/banksy-hammer-boy-mural"
     ]
   }
 ]

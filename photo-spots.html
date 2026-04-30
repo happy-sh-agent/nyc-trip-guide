@@ -70,7 +70,6 @@
       <a class="tab" href="./index.html">🗓️ 일정표</a>
       <a class="tab" href="./food.html">🍽️ 맛집</a>
       <a class="tab active" href="./photo-spots.html">📷 포토스팟</a>
-      <a class="tab" href="./banksy.html">🎨 뱅크시</a>
       <a class="tab" href="./woodbury.html">🛍️ 쇼핑</a>
     </div>
     <section class="section">
@@ -159,7 +158,7 @@
     }
 
     function renderQuickFilters(items) {
-      const preferred = ['최우선', '무료', '유료', '실내', '야경', '스카이라인', '루프탑', 'Queens', '일출추천', '석양추천', '비오는날가능', '혼잡'];
+      const preferred = ['최우선', '무료', '유료', '실내', '야경', '스카이라인', '루프탑', 'Banksy', '스트리트아트', 'Queens', '일출추천', '석양추천', '비오는날가능', '혼잡'];
       const available = unique(items.flatMap(item => [item.priority, item.fee, item.indoorOutdoor, ...(item.chips || [])].flatMap(value => String(value || '').split(' · '))));
       const tags = preferred.filter(tag => available.includes(tag));
       byId('quickFilters').innerHTML = [

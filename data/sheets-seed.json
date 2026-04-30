@@ -4,7 +4,7 @@
       "version": 3,
       "canonicalSource": "places.json",
       "description": "NYC trip place master data. All place coordinates, map queries, and image URLs are maintained here.",
-      "imageRefresh": "2026-04-23-full-pass"
+      "imageRefresh": "2026-04-30-actual-place-pass"
     },
     "days": {
       "DAY 1": [
@@ -18,9 +18,9 @@
           "lng": -73.9927,
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
           "image": {
-            "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+            "url": "https://digital.ihg.com/is/image/ihg/holiday-inn-new-york-4132403197-original?wid=1400&hei=900&fit=crop",
+            "source": "ihg-official",
+            "note": "Holiday Inn New York City - Times Square official gallery exterior image"
           }
         },
         {
@@ -32,9 +32,9 @@
           "lat": 40.758,
           "lng": -73.9855,
           "image": {
-            "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "night city billboard scene closer to Times Square feel"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/TKTS_red_stairs_jeh.JPG/960px-TKTS_red_stairs_jeh.JPG",
+            "source": "wikimedia-commons",
+            "note": "Times Square TKTS red steps actual place photo"
           }
         }
       ],
@@ -48,9 +48,9 @@
           "lat": 40.7532,
           "lng": -73.9822,
           "image": {
-            "url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "iconic library reading room / heritage interior mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/New_York_Public_Library_Rose_Main_Reading_Room.jpeg/960px-New_York_Public_Library_Rose_Main_Reading_Room.jpeg",
+            "source": "wikimedia-commons",
+            "note": "New York Public Library Rose Main Reading Room actual place photo"
           }
         },
         {
@@ -62,9 +62,9 @@
           "lat": 40.7536,
           "lng": -73.9832,
           "image": {
-            "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "urban park and lawn mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bryant%20Park%20with%20NYPL.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Bryant Park lawn with New York Public Library actual place photo"
           }
         },
         {
@@ -76,9 +76,9 @@
           "lat": 40.7594,
           "lng": -73.9868,
           "image": {
-            "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "classic New York steakhouse dining mood"
+            "url": "https://images.getbento.com/accounts/7c910cf13273a97e19cdecd9233e3e5e/media/images/95640slide-01.jpg?w=1400&fit=max&auto=compress,format&cs=origin",
+            "source": "gallaghers-official",
+            "note": "Gallaghers Steakhouse official New York restaurant image"
           }
         },
         {
@@ -90,9 +90,9 @@
           "lat": 40.7587,
           "lng": -73.9787,
           "image": {
-            "url": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown landmark plaza mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/960px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+            "source": "wikimedia-commons",
+            "note": "Rockefeller Center observation area actual skyline view photo"
           }
         },
         {
@@ -104,9 +104,9 @@
           "lat": 40.7527,
           "lng": -73.9772,
           "image": {
-            "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "grand station and Midtown landmark atmosphere"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Grand_Central_Terminal_Main_Concourse_2019-10-03_20-02.jpg/960px-Grand_Central_Terminal_Main_Concourse_2019-10-03_20-02.jpg",
+            "source": "wikimedia-commons",
+            "note": "Grand Central Terminal Main Concourse actual place photo"
           }
         },
         {
@@ -118,9 +118,9 @@
           "lat": 40.7527,
           "lng": -73.9787,
           "image": {
-            "url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "high observation deck skyline mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/SUMMIT_One_Vanderbilt_-_Affinity_-_NYC.jpg/960px-SUMMIT_One_Vanderbilt_-_Affinity_-_NYC.jpg",
+            "source": "wikimedia-commons",
+            "note": "SUMMIT One Vanderbilt Affinity room actual place photo"
           }
         },
         {
@@ -132,9 +132,9 @@
           "lat": 40.7613,
           "lng": -73.9846,
           "image": {
-            "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "busy retro diner counter mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ellen%27s%20Stardust%20Diner%20%28Manhattan%2C%20New%20York%29%20006.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Ellen's Stardust Diner actual exterior photo"
           }
         },
         {
@@ -146,9 +146,9 @@
           "lat": 40.7607,
           "lng": -73.9885,
           "image": {
-            "url": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1400&q=80",
-            "source": "search-derived",
-            "note": "검색 결과 기반으로 선택한 재즈 바 실사 이미지"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Birdland%20%22The%20Jazz%20Corner%20of%20the%20World%2C%22%20on%20W.%2044th%2C%20NYC%20%282954336429%29.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Birdland Jazz Club West 44th Street actual entrance photo"
           }
         }
       ],
@@ -162,9 +162,9 @@
           "lat": 40.741,
           "lng": -73.9897,
           "image": {
-            "url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "fantasy retail/bookstore mood"
+            "url": "https://contentful.harrypotter.com/usf1vwtuqyxm/4CSFhugpnlyFCG6S4gA2QZ/1f1bc46f5d47b2d9e45656693c342156/HP_StoreSocial_158.jpg?q=75&fm=jpg&w=1440",
+            "source": "harrypotter-official",
+            "note": "Harry Potter New York official store image"
           }
         },
         {
@@ -176,9 +176,9 @@
           "lat": 40.7416,
           "lng": -73.9881,
           "image": {
-            "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "burger and fast casual restaurant mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shake%20Shack%20Madison%20Square.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Original Shake Shack in Madison Square Park actual place photo"
           }
         },
         {
@@ -204,9 +204,9 @@
           "lat": 40.7587,
           "lng": -73.9787,
           "image": {
-            "url": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown landmark plaza mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/960px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+            "source": "wikimedia-commons",
+            "note": "Rockefeller Center observation area actual skyline view photo"
           }
         }
       ],
@@ -221,9 +221,9 @@
           "lng": -73.9927,
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
           "image": {
-            "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+            "url": "https://digital.ihg.com/is/image/ihg/holiday-inn-new-york-4132403197-original?wid=1400&hei=900&fit=crop",
+            "source": "ihg-official",
+            "note": "Holiday Inn New York City - Times Square official gallery exterior image"
           }
         },
         {
@@ -235,9 +235,9 @@
           "lat": 40.7569,
           "lng": -73.9903,
           "image": {
-            "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "coach bus departure mood for Woodbury day trip"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Port%20Authority%20Bus%20Terminal%20July%202019.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Port Authority Bus Terminal actual exterior photo"
           }
         },
         {
@@ -249,9 +249,9 @@
           "lat": 41.3165,
           "lng": -74.1263,
           "image": {
-            "url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "outlet shopping and fashion retail mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Woodbury%20Common%20Premium%20Outlets%20Hudson%20Valley%20District.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Woodbury Common Premium Outlets Hudson Valley District actual place photo"
           }
         }
       ],
@@ -266,9 +266,9 @@
           "lng": -73.9927,
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
           "image": {
-            "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+            "url": "https://digital.ihg.com/is/image/ihg/holiday-inn-new-york-4132403197-original?wid=1400&hei=900&fit=crop",
+            "source": "ihg-official",
+            "note": "Holiday Inn New York City - Times Square official gallery exterior image"
           }
         },
         {
@@ -280,9 +280,9 @@
           "lat": 40.7033,
           "lng": -74.017,
           "image": {
-            "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "harbor park and waterfront departure mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle%20Clinton%20at%20Battery%20Park.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Castle Clinton at Battery Park actual place photo"
           }
         },
         {
@@ -294,9 +294,9 @@
           "lat": 40.6892,
           "lng": -74.0445,
           "image": {
-            "url": "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Statue of Liberty and New York Harbor mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Liberty%20Island%20photo%20D%20Ramey%20Logan.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Liberty Island and Statue of Liberty actual place photo"
           }
         },
         {
@@ -308,9 +308,9 @@
           "lat": 40.6995,
           "lng": -74.0396,
           "image": {
-            "url": "https://images.unsplash.com/photo-1564597599963-2d3d3c0667da?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "historic immigration museum and harbor mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ellis%20Island%20Main%20Building.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Ellis Island Main Building actual place photo"
           }
         },
         {
@@ -322,9 +322,9 @@
           "lat": 40.733,
           "lng": -74.0043,
           "image": {
-            "url": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "European-style brunch cafe mood"
+            "url": "https://images.squarespace-cdn.com/content/57d5ccab03596e4e5bef4adb/1608031690308-W6XH2SLL4TK42754O06J/BUVETTE+SIGNAGE+copy.jpg?content-type=image%2Fjpeg",
+            "source": "buvette-official",
+            "note": "Buvette New York official storefront/signage image"
           }
         },
         {
@@ -352,9 +352,9 @@
           "lat": 40.758,
           "lng": -73.9855,
           "image": {
-            "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "night city billboard scene closer to Times Square feel"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/TKTS_red_stairs_jeh.JPG/960px-TKTS_red_stairs_jeh.JPG",
+            "source": "wikimedia-commons",
+            "note": "Times Square TKTS red steps actual place photo"
           }
         },
         {
@@ -366,9 +366,9 @@
           "lat": 40.7532,
           "lng": -73.9822,
           "image": {
-            "url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "iconic library reading room / heritage interior mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/New_York_Public_Library_Rose_Main_Reading_Room.jpeg/960px-New_York_Public_Library_Rose_Main_Reading_Room.jpeg",
+            "source": "wikimedia-commons",
+            "note": "New York Public Library Rose Main Reading Room actual place photo"
           }
         },
         {
@@ -380,9 +380,9 @@
           "lat": 40.7536,
           "lng": -73.9832,
           "image": {
-            "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "urban park and lawn mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bryant%20Park%20with%20NYPL.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Bryant Park lawn with New York Public Library actual place photo"
           }
         },
         {
@@ -394,9 +394,9 @@
           "lat": 40.7527,
           "lng": -73.9772,
           "image": {
-            "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "grand station and Midtown landmark atmosphere"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Grand_Central_Terminal_Main_Concourse_2019-10-03_20-02.jpg/960px-Grand_Central_Terminal_Main_Concourse_2019-10-03_20-02.jpg",
+            "source": "wikimedia-commons",
+            "note": "Grand Central Terminal Main Concourse actual place photo"
           }
         },
         {
@@ -408,9 +408,9 @@
           "lat": 40.7614,
           "lng": -73.9776,
           "image": {
-            "url": "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "clean modern gallery mood closer to MoMA type"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Museum%20of%20Modern%20Art%20%28New%20York%20City%29%20-%20entrance.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Museum of Modern Art New York entrance actual place photo"
           }
         },
         {
@@ -422,9 +422,9 @@
           "lat": 40.7607,
           "lng": -73.9885,
           "image": {
-            "url": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1400&q=80",
-            "source": "search-derived",
-            "note": "검색 결과 기반으로 선택한 재즈 바 실사 이미지"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Birdland%20%22The%20Jazz%20Corner%20of%20the%20World%2C%22%20on%20W.%2044th%2C%20NYC%20%282954336429%29.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Birdland Jazz Club West 44th Street actual entrance photo"
           }
         },
         {
@@ -436,9 +436,9 @@
           "lat": 40.7794,
           "lng": -73.9632,
           "image": {
-            "url": "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "grand museum stairs/gallery mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Metropolitan%20Museum%20of%20Art.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "The Metropolitan Museum of Art Fifth Avenue facade actual place photo"
           }
         }
       ],
@@ -452,9 +452,9 @@
           "lat": 40.7613,
           "lng": -73.9846,
           "image": {
-            "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "busy retro diner counter mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ellen%27s%20Stardust%20Diner%20%28Manhattan%2C%20New%20York%29%20006.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Ellen's Stardust Diner actual exterior photo"
           }
         },
         {
@@ -482,9 +482,9 @@
           "lat": 40.7813,
           "lng": -73.9735,
           "image": {
-            "url": "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "natural history museum hall / exhibit mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/American%20Museum%20of%20Natural%20History%20on%20Central%20Park%20West%2004.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "American Museum of Natural History exterior actual place photo"
           }
         },
         {
@@ -496,9 +496,9 @@
           "lat": 40.7812,
           "lng": -73.9665,
           "image": {
-            "url": "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Central Park path and skyline edge mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Gapstow_bridge_of_central_park_in_november.jpg/960px-Gapstow_bridge_of_central_park_in_november.jpg",
+            "source": "wikimedia-commons",
+            "note": "Central Park Gapstow Bridge actual place photo"
           }
         },
         {
@@ -525,9 +525,9 @@
           "lng": -73.9927,
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
           "image": {
-            "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+            "url": "https://digital.ihg.com/is/image/ihg/holiday-inn-new-york-4132403197-original?wid=1400&hei=900&fit=crop",
+            "source": "ihg-official",
+            "note": "Holiday Inn New York City - Times Square official gallery exterior image"
           }
         },
         {
@@ -539,9 +539,9 @@
           "lat": 40.7614,
           "lng": -73.9776,
           "image": {
-            "url": "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "clean modern gallery mood closer to MoMA type"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Museum%20of%20Modern%20Art%20%28New%20York%20City%29%20-%20entrance.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "Museum of Modern Art New York entrance actual place photo"
           }
         }
       ],
@@ -555,9 +555,9 @@
           "lat": 40.7794,
           "lng": -73.9632,
           "image": {
-            "url": "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "grand museum stairs/gallery mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Metropolitan%20Museum%20of%20Art.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "The Metropolitan Museum of Art Fifth Avenue facade actual place photo"
           }
         },
         {
@@ -569,9 +569,9 @@
           "lat": 40.7539,
           "lng": -74.0021,
           "image": {
-            "url": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "iconic geometric landmark mood closer to Vessel type"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/15%20Hudson%20Yards%20%26%20The%20Vessel.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "The Vessel at Hudson Yards actual place photo"
           }
         },
         {
@@ -583,9 +583,9 @@
           "lat": 40.748,
           "lng": -74.0048,
           "image": {
-            "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "elevated park greenery mood"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/New_York%27s_High_Line_in_March_2025_17_stairs_overlooking_the_intersection.jpg/960px-New_York%27s_High_Line_in_March_2025_17_stairs_overlooking_the_intersection.jpg",
+            "source": "wikimedia-commons",
+            "note": "High Line 10th Avenue overlook actual place photo"
           }
         },
         {
@@ -597,9 +597,9 @@
           "lat": 40.7616,
           "lng": -73.9718,
           "image": {
-            "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "classic New York steakhouse plate mood"
+            "url": "https://www.smithandwollenskynyc.com/wp-content/uploads/2017/06/Hero-Image.jpg",
+            "source": "smith-wollensky-official",
+            "note": "Smith & Wollensky New York official restaurant image"
           }
         },
         {
@@ -612,7 +612,7 @@
           "lng": -74.0007,
           "image": {
             "url": "https://www.bluenotejazz.com/nyc/wp-content/uploads/sites/2/2025/07/Blue-Note-Jazz_NYC_featured_1200x630.jpg",
-            "source": "official",
+            "source": "blue-note-official",
             "note": "Blue Note New York official site featured image"
           }
         },
@@ -626,9 +626,9 @@
           "lng": -73.9927,
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
           "image": {
-            "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+            "url": "https://digital.ihg.com/is/image/ihg/holiday-inn-new-york-4132403197-original?wid=1400&hei=900&fit=crop",
+            "source": "ihg-official",
+            "note": "Holiday Inn New York City - Times Square official gallery exterior image"
           }
         },
         {
@@ -640,9 +640,9 @@
           "lat": 40.758,
           "lng": -73.9855,
           "image": {
-            "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "night city billboard scene closer to Times Square feel"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/TKTS_red_stairs_jeh.JPG/960px-TKTS_red_stairs_jeh.JPG",
+            "source": "wikimedia-commons",
+            "note": "Times Square TKTS red steps actual place photo"
           }
         }
       ],
@@ -657,9 +657,9 @@
           "lng": -73.9927,
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
           "image": {
-            "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+            "url": "https://digital.ihg.com/is/image/ihg/holiday-inn-new-york-4132403197-original?wid=1400&hei=900&fit=crop",
+            "source": "ihg-official",
+            "note": "Holiday Inn New York City - Times Square official gallery exterior image"
           }
         },
         {
@@ -671,9 +671,9 @@
           "lat": 40.7241,
           "lng": -73.9982,
           "image": {
-            "url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "playful pastel experiential museum mood"
+            "url": "https://www.museumoficecream.com/wp-content/uploads/2023/05/1-2.jpg",
+            "source": "museum-of-ice-cream-official",
+            "note": "Museum of Ice Cream New York official image"
           }
         },
         {
@@ -685,9 +685,9 @@
           "lat": 40.7231,
           "lng": -73.9942,
           "image": {
-            "url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "crispy square pepperoni pizza mood"
+            "url": "https://princestreetpizza.com/wp-content/uploads/2023/10/PrinceStreetPizza_HeroImage-1024x689.png",
+            "source": "prince-street-pizza-official",
+            "note": "Prince Street Pizza official hero image"
           }
         },
         {
@@ -699,9 +699,9 @@
           "lat": 40.7616,
           "lng": -73.9718,
           "image": {
-            "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "classic New York steakhouse plate mood"
+            "url": "https://www.smithandwollenskynyc.com/wp-content/uploads/2017/06/Hero-Image.jpg",
+            "source": "smith-wollensky-official",
+            "note": "Smith & Wollensky New York official restaurant image"
           }
         },
         {
@@ -713,9 +713,9 @@
           "lat": 40.7813,
           "lng": -73.9735,
           "image": {
-            "url": "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1400&q=80",
-            "source": "unsplash",
-            "note": "natural history museum hall / exhibit mood"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/American%20Museum%20of%20Natural%20History%20on%20Central%20Park%20West%2004.jpg?width=960",
+            "source": "wikimedia-commons",
+            "note": "American Museum of Natural History exterior actual place photo"
           }
         }
       ]
@@ -1425,9 +1425,9 @@
           "클래식"
         ],
         "image": {
-          "url": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
-          "source": "unsplash",
-          "note": "European-style brunch cafe mood"
+          "url": "https://images.squarespace-cdn.com/content/57d5ccab03596e4e5bef4adb/1608031690308-W6XH2SLL4TK42754O06J/BUVETTE+SIGNAGE+copy.jpg?content-type=image%2Fjpeg",
+          "source": "buvette-official",
+          "note": "Buvette New York official storefront/signage image"
         },
         "desc": "프렌치 브런치 · West Village",
         "chips": [
@@ -1544,6 +1544,1280 @@
         "chips": [
           "전망 좋은 루프탑",
           "예약필수"
+        ]
+      },
+      {
+        "id": "katzs",
+        "name": "Katz's Delicatessen",
+        "kind": "restaurant",
+        "address": "205 E Houston St New York NY 10002",
+        "mapQuery": "Katz's Delicatessen New York",
+        "lat": 40.7223,
+        "lng": -73.9874,
+        "borough": "Manhattan",
+        "neighborhood": "Lower East Side",
+        "cuisine": "Deli · Pastrami",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 10k+",
+          "사진 1k+",
+          "클래식",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "hearty deli sandwich board mood"
+        },
+        "desc": "Pastrami on rye로 검증된 NYC 델리 · Yelp 16.9k reviews급",
+        "chips": [
+          "리뷰 10k+",
+          "사진 1k+",
+          "클래식",
+          "워크인"
+        ]
+      },
+      {
+        "id": "russ-daughters",
+        "name": "Russ & Daughters",
+        "kind": "restaurant",
+        "address": "179 E Houston St New York NY 10002",
+        "mapQuery": "Russ and Daughters 179 E Houston St New York",
+        "lat": 40.7229,
+        "lng": -73.9882,
+        "borough": "Manhattan",
+        "neighborhood": "Lower East Side",
+        "cuisine": "Bagels · Smoked Fish",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "아침"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1585478259715-876acc5be8eb?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "bagel and smoked salmon mood"
+        },
+        "desc": "Smoked fish와 bagel/lox의 NYC 클래식 · Yelp 2.9k reviews / 4.9k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "아침"
+        ]
+      },
+      {
+        "id": "ess-a-bagel",
+        "name": "Ess-a-Bagel",
+        "kind": "restaurant",
+        "address": "831 3rd Ave New York NY 10022",
+        "mapQuery": "Ess-a-Bagel 831 3rd Avenue New York",
+        "lat": 40.756,
+        "lng": -73.9703,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown East",
+        "cuisine": "Bagels · Breakfast",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "아침",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1585478259715-876acc5be8eb?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "New York bagel breakfast mood"
+        },
+        "desc": "대표적인 NYC bagel stop · Yelp 5k reviews / 4.6k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "아침",
+          "워크인"
+        ]
+      },
+      {
+        "id": "los-tacos-chelsea",
+        "name": "Los Tacos No. 1 Chelsea Market",
+        "kind": "restaurant",
+        "address": "75 9th Ave New York NY 10011",
+        "mapQuery": "Los Tacos No. 1 Chelsea Market New York",
+        "lat": 40.7422,
+        "lng": -74.006,
+        "borough": "Manhattan",
+        "neighborhood": "Chelsea",
+        "cuisine": "Tacos",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "taco table mood"
+        },
+        "desc": "Chelsea Market 대표 타코 · Yelp 4k reviews / 4.5k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "타코",
+          "워크인"
+        ]
+      },
+      {
+        "id": "los-tacos-times-square",
+        "name": "Los Tacos No. 1 Times Square",
+        "kind": "restaurant",
+        "address": "229 W 43rd St New York NY 10036",
+        "mapQuery": "Los Tacos No. 1 229 W 43rd St New York",
+        "lat": 40.7575,
+        "lng": -73.9878,
+        "borough": "Manhattan",
+        "neighborhood": "Theater District",
+        "cuisine": "Tacos",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "taco table mood"
+        },
+        "desc": "공연 전후 넣기 좋은 Times Square 타코 · Yelp 3k+ reviews급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Theater District",
+          "워크인"
+        ]
+      },
+      {
+        "id": "joes-pizza-west-village",
+        "name": "Joe's Pizza West Village",
+        "kind": "restaurant",
+        "address": "7 Carmine St New York NY 10014",
+        "mapQuery": "Joe's Pizza 7 Carmine Street New York",
+        "lat": 40.7306,
+        "lng": -74.0021,
+        "borough": "Manhattan",
+        "neighborhood": "West Village",
+        "cuisine": "Pizza",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "캐주얼"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "New York pizza slice mood"
+        },
+        "desc": "뉴욕 슬라이스 대표주자 · Yelp West Village 3.4k reviews급",
+        "chips": [
+          "리뷰 1k+",
+          "클래식",
+          "피자",
+          "워크인"
+        ]
+      },
+      {
+        "id": "joes-pizza-times-square",
+        "name": "Joe's Pizza Times Square",
+        "kind": "restaurant",
+        "address": "1435 Broadway New York NY 10018",
+        "mapQuery": "Joe's Pizza 1435 Broadway New York",
+        "lat": 40.7546,
+        "lng": -73.9866,
+        "borough": "Manhattan",
+        "neighborhood": "Times Square",
+        "cuisine": "Pizza",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "관광동선",
+          "캐주얼"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "New York pizza slice mood"
+        },
+        "desc": "Times Square 동선에서 쓰기 쉬운 Joe's · Yelp 2.7k reviews급",
+        "chips": [
+          "리뷰 1k+",
+          "Times Square",
+          "피자",
+          "워크인"
+        ]
+      },
+      {
+        "id": "prince-st-food",
+        "name": "Prince Street Pizza",
+        "kind": "restaurant",
+        "address": "27 Prince St A New York NY 10012",
+        "mapQuery": "Prince Street Pizza New York",
+        "lat": 40.7231,
+        "lng": -73.9942,
+        "borough": "Manhattan",
+        "neighborhood": "Nolita",
+        "cuisine": "Pizza",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "줄"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "crispy square pepperoni pizza mood"
+        },
+        "desc": "Spicy square slice로 검증된 피자 · Yelp 5.6k reviews / 6.1k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "피자",
+          "워크인"
+        ]
+      },
+      {
+        "id": "johns-bleecker",
+        "name": "John's of Bleecker Street",
+        "kind": "restaurant",
+        "address": "278 Bleecker St New York NY 10014",
+        "mapQuery": "John's of Bleecker Street New York",
+        "lat": 40.7316,
+        "lng": -74.0034,
+        "borough": "Manhattan",
+        "neighborhood": "West Village",
+        "cuisine": "Pizza",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "coal oven pizza mood"
+        },
+        "desc": "오래된 coal-oven pizza 클래식 · Yelp 3.1k reviews / 3.2k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "피자"
+        ]
+      },
+      {
+        "id": "lindustrie-pizzeria",
+        "name": "L'industrie Pizzeria",
+        "kind": "restaurant",
+        "address": "254 S 2nd St Brooklyn NY 11211",
+        "mapQuery": "L'industrie Pizzeria Brooklyn",
+        "lat": 40.7116,
+        "lng": -73.9575,
+        "borough": "Brooklyn",
+        "neighborhood": "Williamsburg",
+        "cuisine": "Pizza",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Brooklyn",
+          "캐주얼"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "artisanal pizza mood"
+        },
+        "desc": "Williamsburg 인기 슬라이스 · Yelp 1.7k reviews / 3.1k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Brooklyn",
+          "피자"
+        ]
+      },
+      {
+        "id": "rubirosa",
+        "name": "Rubirosa",
+        "kind": "restaurant",
+        "address": "235 Mulberry St New York NY 10012",
+        "mapQuery": "Rubirosa New York",
+        "lat": 40.7228,
+        "lng": -73.9962,
+        "borough": "Manhattan",
+        "neighborhood": "Nolita",
+        "cuisine": "Italian · Pizza",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "예약추천",
+          "이탈리안"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Italian pizza and pasta mood"
+        },
+        "desc": "Tie-dye pizza로 유명한 Nolita 이탈리안 · Yelp 3.7k reviews / 5k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "예약추천",
+          "피자"
+        ]
+      },
+      {
+        "id": "balthazar",
+        "name": "Balthazar",
+        "kind": "restaurant",
+        "address": "80 Spring St New York NY 10012",
+        "mapQuery": "Balthazar 80 Spring Street New York",
+        "lat": 40.7227,
+        "lng": -73.9982,
+        "borough": "Manhattan",
+        "neighborhood": "SoHo",
+        "cuisine": "French Brasserie",
+        "price": "$$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "브런치"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "classic brasserie dining mood"
+        },
+        "desc": "SoHo 브라세리 클래식 · Yelp 3.9k reviews / 4.7k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "클래식"
+        ]
+      },
+      {
+        "id": "buvette",
+        "name": "Buvette",
+        "kind": "restaurant",
+        "address": "42 Grove St New York NY 10014",
+        "mapQuery": "Buvette New York",
+        "lat": 40.733,
+        "lng": -74.0043,
+        "borough": "Manhattan",
+        "neighborhood": "West Village",
+        "cuisine": "French Brunch",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "클래식"
+        ],
+        "image": {
+          "url": "https://images.squarespace-cdn.com/content/57d5ccab03596e4e5bef4adb/1608031690308-W6XH2SLL4TK42754O06J/BUVETTE+SIGNAGE+copy.jpg?content-type=image%2Fjpeg",
+          "source": "buvette-official",
+          "note": "Buvette New York official storefront/signage image"
+        },
+        "desc": "West Village 브런치/와인바 클래식 · Yelp 2.4k reviews / 3.9k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "클래식"
+        ]
+      },
+      {
+        "id": "jacks-wife-freda",
+        "name": "Jack's Wife Freda",
+        "kind": "restaurant",
+        "address": "226 Lafayette St New York NY 10012",
+        "mapQuery": "Jack's Wife Freda 226 Lafayette St New York",
+        "lat": 40.722,
+        "lng": -73.9975,
+        "borough": "Manhattan",
+        "neighborhood": "SoHo",
+        "cuisine": "Breakfast · Mediterranean",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "brunch cafe table mood"
+        },
+        "desc": "관광객에게 강한 SoHo 브런치 · Yelp 2.7k reviews / 4.1k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "sadelles",
+        "name": "Sadelle's",
+        "kind": "restaurant",
+        "address": "463 W Broadway New York NY 10012",
+        "mapQuery": "Sadelle's New York",
+        "lat": 40.7263,
+        "lng": -74.0001,
+        "borough": "Manhattan",
+        "neighborhood": "SoHo",
+        "cuisine": "Bagels · Brunch",
+        "price": "$$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "사진 1k+",
+          "브런치",
+          "예약추천"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1585478259715-876acc5be8eb?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "bagel brunch tower mood"
+        },
+        "desc": "Bagel tower와 smoked fish brunch · Yelp 962 reviews / 1.7k photos급",
+        "chips": [
+          "사진 1k+",
+          "브런치",
+          "예약추천",
+          "SoHo"
+        ]
+      },
+      {
+        "id": "xian-midtown",
+        "name": "Xi'an Famous Foods Midtown",
+        "kind": "restaurant",
+        "address": "60 W 45th St New York NY 10036",
+        "mapQuery": "Xi'an Famous Foods 60 W 45th St New York",
+        "lat": 40.7567,
+        "lng": -73.9818,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown",
+        "cuisine": "Chinese · Noodles",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "spicy noodle bowl mood"
+        },
+        "desc": "Spicy cumin lamb noodles 대표 체인 · Yelp 1.8k reviews / 2k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "면",
+          "워크인"
+        ]
+      },
+      {
+        "id": "xian-chinatown",
+        "name": "Xi'an Famous Foods Chinatown",
+        "kind": "restaurant",
+        "address": "45 Bayard St New York NY 10013",
+        "mapQuery": "Xi'an Famous Foods 45 Bayard St New York",
+        "lat": 40.7157,
+        "lng": -73.9974,
+        "borough": "Manhattan",
+        "neighborhood": "Chinatown",
+        "cuisine": "Chinese · Noodles",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼",
+          "Chinatown"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "spicy noodle bowl mood"
+        },
+        "desc": "Chinatown 동선의 hand-ripped noodles · Yelp 1.4k reviews / 2.1k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Chinatown",
+          "워크인"
+        ]
+      },
+      {
+        "id": "vanessas-dumpling",
+        "name": "Vanessa's Dumpling House",
+        "kind": "restaurant",
+        "address": "118A Eldridge St New York NY 10002",
+        "mapQuery": "Vanessa's Dumpling House 118A Eldridge St New York",
+        "lat": 40.7187,
+        "lng": -73.9917,
+        "borough": "Manhattan",
+        "neighborhood": "Lower East Side",
+        "cuisine": "Chinese · Dumplings",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "dumpling plate mood"
+        },
+        "desc": "저렴한 dumpling/ sesame pancake spot · Yelp 2.9k reviews / 2.2k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "덤플링",
+          "워크인"
+        ]
+      },
+      {
+        "id": "ippudo-ny",
+        "name": "Ippudo NY",
+        "kind": "restaurant",
+        "address": "65 4th Ave New York NY 10003",
+        "mapQuery": "Ippudo NY 65 4th Avenue New York",
+        "lat": 40.7309,
+        "lng": -73.9904,
+        "borough": "Manhattan",
+        "neighborhood": "East Village",
+        "cuisine": "Ramen",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 10k+",
+          "사진 1k+",
+          "라멘"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "ramen bowl mood"
+        },
+        "desc": "NYC 라멘 대표 스테디셀러 · Yelp 10.8k reviews급",
+        "chips": [
+          "리뷰 10k+",
+          "사진 1k+",
+          "라멘",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "ippudo-westside",
+        "name": "Ippudo Westside",
+        "kind": "restaurant",
+        "address": "321 W 51st St New York NY 10019",
+        "mapQuery": "Ippudo Westside 321 W 51st New York",
+        "lat": 40.7634,
+        "lng": -73.9858,
+        "borough": "Manhattan",
+        "neighborhood": "Theater District",
+        "cuisine": "Ramen",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "라멘",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "ramen bowl mood"
+        },
+        "desc": "공연장 근처 라멘 백업 · Yelp 4.2k reviews / 7.7k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Theater District",
+          "라멘"
+        ]
+      },
+      {
+        "id": "her-name-is-han",
+        "name": "Her Name Is Han",
+        "kind": "restaurant",
+        "address": "17 E 31st St New York NY 10016",
+        "mapQuery": "Her Name Is Han New York",
+        "lat": 40.7464,
+        "lng": -73.9847,
+        "borough": "Manhattan",
+        "neighborhood": "NoMad",
+        "cuisine": "Korean",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "한식"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Korean shared table mood"
+        },
+        "desc": "현대식 한식/브런치 인기점 · Yelp 2.2k reviews / 6.1k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "한식",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "jacobs-pickles",
+        "name": "Jacob's Pickles",
+        "kind": "restaurant",
+        "address": "680 Columbus Ave New York NY 10025",
+        "mapQuery": "Jacob's Pickles New York",
+        "lat": 40.7866,
+        "lng": -73.9721,
+        "borough": "Manhattan",
+        "neighborhood": "Upper West Side",
+        "cuisine": "Southern · Comfort Food",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "Upper West Side"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "comfort food brunch mood"
+        },
+        "desc": "UWS comfort food/brunch · Yelp 5.9k reviews / 8k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "gramercy-tavern",
+        "name": "Gramercy Tavern",
+        "kind": "restaurant",
+        "address": "42 E 20th St New York NY 10003",
+        "mapQuery": "Gramercy Tavern New York",
+        "lat": 40.7385,
+        "lng": -73.9885,
+        "borough": "Manhattan",
+        "neighborhood": "Flatiron",
+        "cuisine": "New American",
+        "price": "$$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "파인다이닝"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "upscale seasonal dining mood"
+        },
+        "desc": "Danny Meyer 계열 NYC 클래식 · Yelp 3.8k reviews / 7.5k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "파인다이닝",
+          "예약필수"
+        ]
+      },
+      {
+        "id": "keens",
+        "name": "Keens Steakhouse",
+        "kind": "restaurant",
+        "address": "72 W 36th St New York NY 10018",
+        "mapQuery": "Keens Steakhouse New York",
+        "lat": 40.7508,
+        "lng": -73.9867,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown",
+        "cuisine": "Steakhouse",
+        "price": "$$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "스테이크"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "classic steakhouse mood"
+        },
+        "desc": "mutton chop와 old New York 분위기 · Yelp 3.6k reviews / 5.3k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "스테이크",
+          "예약필수"
+        ]
+      },
+      {
+        "id": "gallaghers-food",
+        "name": "Gallaghers Steakhouse",
+        "kind": "restaurant",
+        "address": "228 W 52nd St New York NY 10019",
+        "mapQuery": "Gallaghers Steakhouse New York",
+        "lat": 40.7594,
+        "lng": -73.9868,
+        "borough": "Manhattan",
+        "neighborhood": "Theater District",
+        "cuisine": "Steakhouse",
+        "price": "$$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "스테이크",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "classic New York steakhouse dining mood"
+        },
+        "desc": "Broadway 전후 예약하기 좋은 steakhouse · Yelp 2.2k reviews / 4.1k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Theater District",
+          "예약필수"
+        ]
+      },
+      {
+        "id": "le-bernardin",
+        "name": "Le Bernardin",
+        "kind": "restaurant",
+        "address": "155 W 51st St New York NY 10019",
+        "mapQuery": "Le Bernardin New York",
+        "lat": 40.7615,
+        "lng": -73.9818,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown",
+        "cuisine": "Seafood · French",
+        "price": "$$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "파인다이닝",
+          "예약필수"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "fine dining seafood mood"
+        },
+        "desc": "NYC 해산물 파인다이닝 대표 · Yelp 3.2k reviews / 10k+ photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "파인다이닝",
+          "예약필수"
+        ]
+      },
+      {
+        "id": "peter-luger",
+        "name": "Peter Luger",
+        "kind": "restaurant",
+        "address": "178 Broadway Brooklyn NY 11211",
+        "mapQuery": "Peter Luger Steak House Brooklyn",
+        "lat": 40.7099,
+        "lng": -73.9622,
+        "borough": "Brooklyn",
+        "neighborhood": "Williamsburg",
+        "cuisine": "Steakhouse",
+        "price": "$$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "스테이크"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "legendary steakhouse plating mood"
+        },
+        "desc": "Brooklyn steakhouse classic · Yelp 7.4k reviews / 11k+ photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "스테이크",
+          "예약필수"
+        ]
+      },
+      {
+        "id": "river-cafe",
+        "name": "The River Café",
+        "kind": "restaurant",
+        "address": "1 Water St Brooklyn NY 11201",
+        "mapQuery": "The River Cafe Brooklyn",
+        "lat": 40.7037,
+        "lng": -73.9947,
+        "borough": "Brooklyn",
+        "neighborhood": "DUMBO",
+        "cuisine": "Fine Dining",
+        "price": "$$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "전망",
+          "파인다이닝"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "fine dining waterfront terrace mood"
+        },
+        "desc": "Brooklyn Bridge 전망 파인다이닝 · Yelp 1.4k reviews / 3.4k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "전망",
+          "예약필수"
+        ]
+      },
+      {
+        "id": "juniors-times-square",
+        "name": "Junior's Restaurant Times Square",
+        "kind": "restaurant",
+        "address": "1515 Broadway New York NY 10036",
+        "mapQuery": "Junior's Restaurant 1515 Broadway New York",
+        "lat": 40.7586,
+        "lng": -73.9864,
+        "borough": "Manhattan",
+        "neighborhood": "Times Square",
+        "cuisine": "Cheesecake · Diner",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "디저트",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "cheesecake dessert mood"
+        },
+        "desc": "치즈케이크와 다이너 음식 · Yelp 6.7k reviews / 9.3k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Times Square",
+          "디저트"
+        ]
+      },
+      {
+        "id": "carmines-times-square",
+        "name": "Carmine's Times Square",
+        "kind": "restaurant",
+        "address": "200 W 44th St New York NY 10036",
+        "mapQuery": "Carmine's Italian Restaurant Times Square New York",
+        "lat": 40.7575,
+        "lng": -73.9868,
+        "borough": "Manhattan",
+        "neighborhood": "Times Square",
+        "cuisine": "Italian · Family Style",
+        "price": "$$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "관광동선",
+          "단체"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "family style Italian dining mood"
+        },
+        "desc": "Times Square 단체/가족형 이탈리안 · Yelp 5.3k reviews / 5.8k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Times Square",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "shake-shack-msp-food",
+        "name": "Shake Shack Madison Square Park",
+        "kind": "restaurant",
+        "address": "Madison Ave & E 23rd St New York NY 10010",
+        "mapQuery": "Shake Shack Madison Square Park New York",
+        "lat": 40.7416,
+        "lng": -73.9881,
+        "borough": "Manhattan",
+        "neighborhood": "Flatiron",
+        "cuisine": "Burger",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "burger and fast casual restaurant mood"
+        },
+        "desc": "원조 Shack에 가까운 상징적 지점 · Yelp 5.8k reviews / 2.8k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "버거",
+          "워크인"
+        ]
+      },
+      {
+        "id": "shake-shack-theater",
+        "name": "Shake Shack Theater District",
+        "kind": "restaurant",
+        "address": "691 8th Ave New York NY 10036",
+        "mapQuery": "Shake Shack Theater District New York",
+        "lat": 40.7585,
+        "lng": -73.9896,
+        "borough": "Manhattan",
+        "neighborhood": "Theater District",
+        "cuisine": "Burger",
+        "price": "$$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "관광동선",
+          "캐주얼"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "burger and fast casual restaurant mood"
+        },
+        "desc": "공연장 근처 빠른 버거 옵션 · Yelp 3.1k reviews / 2.4k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "Theater District",
+          "워크인"
+        ]
+      },
+      {
+        "id": "magnolia-bakery",
+        "name": "Magnolia Bakery Rockefeller Center",
+        "kind": "restaurant",
+        "address": "1240 6th Ave New York NY 10020",
+        "mapQuery": "Magnolia Bakery 1240 6th Avenue New York",
+        "lat": 40.7596,
+        "lng": -73.9806,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown",
+        "cuisine": "Dessert · Bakery",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "디저트",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "bakery dessert display mood"
+        },
+        "desc": "banana pudding으로 유명한 관광 동선 디저트 · Yelp 3.1k reviews / 3.3k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "디저트",
+          "워크인"
+        ]
+      },
+      {
+        "id": "halal-guys",
+        "name": "The Halal Guys 53rd & 6th",
+        "kind": "restaurant",
+        "address": "W 53rd St & 6th Ave New York NY 10019",
+        "mapQuery": "The Halal Guys W 53rd St 6th Ave New York",
+        "lat": 40.7618,
+        "lng": -73.9793,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown",
+        "cuisine": "Halal Cart",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 10k+",
+          "사진 1k+",
+          "캐주얼",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "street food rice platter mood"
+        },
+        "desc": "NYC halal cart 대표 · Yelp 10.5k reviews / 5.8k photos급",
+        "chips": [
+          "리뷰 10k+",
+          "사진 1k+",
+          "할랄",
+          "워크인"
+        ]
+      },
+      {
+        "id": "adels-halal",
+        "name": "Adel's Famous Halal Food",
+        "kind": "restaurant",
+        "address": "1221 6th Ave New York NY 10020",
+        "mapQuery": "Adel's Famous Halal Food New York",
+        "lat": 40.7592,
+        "lng": -73.9819,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown",
+        "cuisine": "Halal Cart",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "캐주얼",
+          "야식"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "street food rice platter mood"
+        },
+        "desc": "최근 리뷰가 강한 Midtown halal cart · Yelp 1k reviews / 1.3k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "야식",
+          "워크인"
+        ]
+      },
+      {
+        "id": "grays-papaya",
+        "name": "Gray's Papaya",
+        "kind": "restaurant",
+        "address": "2090 Broadway New York NY 10023",
+        "mapQuery": "Gray's Papaya 2090 Broadway New York",
+        "lat": 40.7792,
+        "lng": -73.9815,
+        "borough": "Manhattan",
+        "neighborhood": "Upper West Side",
+        "cuisine": "Hot Dogs",
+        "price": "$",
+        "reservation": "워크인",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "클래식",
+          "캐주얼"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "hot dog street food mood"
+        },
+        "desc": "UWS hot dog classic · Yelp 1.7k reviews / 1.4k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "핫도그",
+          "워크인"
+        ]
+      },
+      {
+        "id": "don-angie",
+        "name": "Don Angie",
+        "kind": "restaurant",
+        "address": "103 Greenwich Ave New York NY 10014",
+        "mapQuery": "Don Angie New York",
+        "lat": 40.7378,
+        "lng": -74.0019,
+        "borough": "Manhattan",
+        "neighborhood": "West Village",
+        "cuisine": "Italian · New American",
+        "price": "$$$",
+        "reservation": "예약필수",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "예약필수",
+          "이탈리안"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Italian pasta dining mood"
+        },
+        "desc": "예약 난이도 높은 West Village 이탈리안 · Yelp 1.1k reviews / 3.4k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "예약필수",
+          "이탈리안"
+        ]
+      },
+      {
+        "id": "the-smith-midtown",
+        "name": "The Smith Midtown East",
+        "kind": "restaurant",
+        "address": "956 2nd Ave New York NY 10022",
+        "mapQuery": "The Smith 956 2nd Ave New York",
+        "lat": 40.7556,
+        "lng": -73.9686,
+        "borough": "Manhattan",
+        "neighborhood": "Midtown East",
+        "cuisine": "New American · Brunch",
+        "price": "$$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "관광동선"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "busy American restaurant mood"
+        },
+        "desc": "넓고 무난한 brunch/dinner 백업 · Yelp 3.3k reviews / 4.2k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "the-smith-east-village",
+        "name": "The Smith East Village",
+        "kind": "restaurant",
+        "address": "55 3rd Ave New York NY 10003",
+        "mapQuery": "The Smith 55 3rd Ave New York",
+        "lat": 40.731,
+        "lng": -73.9887,
+        "borough": "Manhattan",
+        "neighborhood": "East Village",
+        "cuisine": "New American · Brunch",
+        "price": "$$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "busy American restaurant mood"
+        },
+        "desc": "East Village 쪽 무난한 대형 레스토랑 · Yelp 2.3k reviews / 2k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "브런치",
+          "예약추천"
+        ]
+      },
+      {
+        "id": "ellens-stardust-food",
+        "name": "Ellen's Stardust Diner",
+        "kind": "restaurant",
+        "address": "1650 Broadway New York NY 10019",
+        "mapQuery": "Ellen's Stardust Diner New York",
+        "lat": 40.7613,
+        "lng": -73.9846,
+        "borough": "Manhattan",
+        "neighborhood": "Theater District",
+        "cuisine": "Diner · Live Music",
+        "price": "$$",
+        "reservation": "예약추천",
+        "buzz": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "관광동선",
+          "체험형"
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "busy retro diner counter mood"
+        },
+        "desc": "맛보다 Broadway식 체험형 diner · Yelp 2.9k reviews / 2.9k photos급",
+        "chips": [
+          "리뷰 1k+",
+          "사진 1k+",
+          "체험형",
+          "Theater District"
         ]
       }
     ]
@@ -2477,88 +3751,124 @@
   ],
   "food": [
     {
-      "placeId": "lei"
+      "placeId": "katzs"
     },
     {
-      "placeId": "bistrot-ha"
+      "placeId": "russ-daughters"
     },
     {
-      "placeId": "wild-cherry"
+      "placeId": "ess-a-bagel"
     },
     {
-      "placeId": "deans"
+      "placeId": "los-tacos-chelsea"
     },
     {
-      "placeId": "cote-550"
+      "placeId": "los-tacos-times-square"
     },
     {
-      "placeId": "bong"
+      "placeId": "joes-pizza-west-village"
     },
     {
-      "placeId": "kabawa"
+      "placeId": "joes-pizza-times-square"
     },
     {
-      "placeId": "borgo"
+      "placeId": "prince-st-food"
     },
     {
-      "placeId": "le-chene"
+      "placeId": "johns-bleecker"
     },
     {
-      "placeId": "ramen-by-ra"
+      "placeId": "lindustrie-pizzeria"
     },
     {
-      "placeId": "cleo"
+      "placeId": "rubirosa"
     },
     {
-      "placeId": "marcel"
-    },
-    {
-      "placeId": "bar-ferdinando"
-    },
-    {
-      "placeId": "soba-ulala"
-    },
-    {
-      "placeId": "odo-east-village"
-    },
-    {
-      "placeId": "kelang"
-    },
-    {
-      "placeId": "border-town"
-    },
-    {
-      "placeId": "balera"
-    },
-    {
-      "placeId": "honey-badger"
-    },
-    {
-      "placeId": "diljan"
-    },
-    {
-      "placeId": "dumpling-wang"
-    },
-    {
-      "placeId": "gangjong-thunpa-phunshi"
-    },
-    {
-      "placeId": "baos-pastry"
+      "placeId": "balthazar"
     },
     {
       "placeId": "buvette"
     },
     {
-      "placeId": "katzs"
+      "placeId": "jacks-wife-freda"
     },
     {
-      "placeId": "prince-st-food"
+      "placeId": "sadelles"
+    },
+    {
+      "placeId": "xian-midtown"
+    },
+    {
+      "placeId": "xian-chinatown"
+    },
+    {
+      "placeId": "vanessas-dumpling"
+    },
+    {
+      "placeId": "ippudo-ny"
+    },
+    {
+      "placeId": "ippudo-westside"
+    },
+    {
+      "placeId": "her-name-is-han"
+    },
+    {
+      "placeId": "jacobs-pickles"
+    },
+    {
+      "placeId": "gramercy-tavern"
+    },
+    {
+      "placeId": "keens"
+    },
+    {
+      "placeId": "gallaghers-food"
+    },
+    {
+      "placeId": "le-bernardin"
     },
     {
       "placeId": "peter-luger"
     },
     {
       "placeId": "river-cafe"
+    },
+    {
+      "placeId": "juniors-times-square"
+    },
+    {
+      "placeId": "carmines-times-square"
+    },
+    {
+      "placeId": "shake-shack-msp-food"
+    },
+    {
+      "placeId": "shake-shack-theater"
+    },
+    {
+      "placeId": "magnolia-bakery"
+    },
+    {
+      "placeId": "halal-guys"
+    },
+    {
+      "placeId": "adels-halal"
+    },
+    {
+      "placeId": "grays-papaya"
+    },
+    {
+      "placeId": "don-angie"
+    },
+    {
+      "placeId": "the-smith-midtown"
+    },
+    {
+      "placeId": "the-smith-east-village"
+    },
+    {
+      "placeId": "ellens-stardust-food"
     }
   ]
 }

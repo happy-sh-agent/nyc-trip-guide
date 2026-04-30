@@ -3,234 +3,916 @@
     "dayKey": "DAY 1",
     "date": "04.30",
     "weekdayKo": "목",
-    "weather": {"icon": "🌤️", "summary": "오전 흐림, 오후 구름 사이 해. 바람 있음", "highF": 64, "lowF": 47, "highC": 18, "lowC": 8, "note": "얇은 겉옷 권장"},
+    "weather": {
+      "icon": "🌤️",
+      "summary": "오전 흐림, 오후 구름 사이 해. 바람 있음",
+      "highF": 64,
+      "lowF": 47,
+      "highC": 18,
+      "lowC": 8,
+      "note": "얇은 겉옷 권장"
+    },
     "map": "https://www.google.com/maps/dir/?api=1&origin=Moynihan+Train+Hall+New+York&destination=Times+Square+New+York&waypoints=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&travelmode=walking",
-    "routePlaceIds": ["hotel-ts", "times-square"],
+    "routePlaceIds": [
+      "hotel-ts",
+      "times-square"
+    ],
     "food": [
-      {"name": "가벼운 저녁식사", "desc": "첫날은 무리하지 않고 Times Square 근처에서 가볍게", "tag": "첫날 추천"},
-      {"name": "Los Tacos No.1", "desc": "빠르고 실패 적은 첫날 식사 카드", "tag": "간편 식사", "link": "https://www.google.com/maps/search/?api=1&query=Los+Tacos+No.1+Times+Square"}
+      {
+        "name": "가벼운 저녁식사",
+        "desc": "첫날은 무리하지 않고 Times Square 근처에서 가볍게",
+        "tag": "첫날 추천"
+      },
+      {
+        "name": "Los Tacos No.1",
+        "desc": "빠르고 실패 적은 첫날 식사 카드",
+        "tag": "간편 식사",
+        "link": "https://www.google.com/maps/search/?api=1&query=Los+Tacos+No.1+Times+Square"
+      }
     ],
     "notes": [
-      {"name": "실예약 반영", "desc": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG 체크인은 15:00 이후, 체크아웃은 05/09 11:00 이전입니다.", "tag": "이메일 확인"},
-      {"name": "Amtrak eTicket 반영", "desc": "Train 178 기준 04/30 16:29 BWI 출발, 19:24 NY Penn 도착으로 수정했습니다.", "tag": "이메일 확인"}
+      {
+        "name": "실예약 반영",
+        "desc": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG 체크인은 15:00 이후, 체크아웃은 05/09 11:00 이전입니다.",
+        "tag": "이메일 확인"
+      },
+      {
+        "name": "Amtrak eTicket 반영",
+        "desc": "Train 178 기준 04/30 16:29 BWI 출발, 19:24 NY Penn 도착으로 수정했습니다.",
+        "tag": "이메일 확인"
+      }
     ],
     "items": [
-      {"time": "16:00", "title": "이동", "desc": "Amtrak 탑승 및 뉴욕 이동", "tag": "이동", "image": "https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "19:00", "title": "NY Penn 도착 및 체크인", "desc": "도착 후 호텔 체크인까지 한 번에 진행", "tag": "도착", "placeId": "hotel-ts"},
-      {"time": "20:00", "title": "Times Square 산책", "desc": "체크인 후 가볍게 첫날 분위기 익히기", "tag": "관광", "placeId": "times-square"},
-      {"time": "22:00", "title": "동행인 합류", "desc": "합류 후 다음날 본격 일정 준비", "tag": "합류", "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"}
+      {
+        "time": "16:00",
+        "title": "이동",
+        "desc": "Amtrak 탑승 및 뉴욕 이동",
+        "tag": "이동",
+        "image": "https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "19:00",
+        "title": "NY Penn 도착 및 체크인",
+        "desc": "도착 후 호텔 체크인까지 한 번에 진행",
+        "tag": "도착",
+        "placeId": "hotel-ts"
+      },
+      {
+        "time": "20:00",
+        "title": "Times Square 산책",
+        "desc": "체크인 후 가볍게 첫날 분위기 익히기",
+        "tag": "관광",
+        "placeId": "times-square"
+      },
+      {
+        "time": "22:00",
+        "title": "동행인 합류",
+        "desc": "합류 후 다음날 본격 일정 준비",
+        "tag": "합류",
+        "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"
+      }
     ]
   },
   {
     "dayKey": "DAY 2",
     "date": "05.01",
     "weekdayKo": "금",
-    "weather": {"icon": "⛅", "summary": "부분적으로 맑음", "highF": 64, "lowF": 49, "highC": 18, "lowC": 10, "note": "도보 일정 무난"},
+    "weather": {
+      "icon": "⛅",
+      "summary": "부분적으로 맑음",
+      "highF": 64,
+      "lowF": 49,
+      "highC": 18,
+      "lowC": 10,
+      "note": "도보 일정 무난"
+    },
     "map": "https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=SUMMIT+One+Vanderbilt+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Grand+Central+Terminal+New+York",
-    "routePlaceIds": ["nypl", "bryant-park", "gallaghers", "grand-central", "summit"],
+    "routePlaceIds": [
+      "nypl",
+      "bryant-park",
+      "gallaghers",
+      "grand-central",
+      "summit"
+    ],
     "food": [
-      {"name": "Gallaghers Steakhouse", "desc": "OpenTable 메일 기준 05/01 11:45, Table for 2", "tag": "고정 예약", "immutable": true, "reservationId": "opentable-gallaghers-2026-05-01-1145", "link": "https://www.google.com/maps/search/?api=1&query=Gallaghers+Steakhouse+New+York"},
-      {"name": "Midtown dinner", "desc": "SUMMIT 이후 Midtown에서 가볍게 마무리", "tag": "저녁 후보"}
+      {
+        "name": "Gallaghers Steakhouse",
+        "desc": "OpenTable 메일 기준 05/01 11:45, Table for 2",
+        "tag": "고정 예약",
+        "immutable": true,
+        "reservationId": "opentable-gallaghers-2026-05-01-1145",
+        "link": "https://www.google.com/maps/search/?api=1&query=Gallaghers+Steakhouse+New+York"
+      },
+      {
+        "name": "Midtown dinner",
+        "desc": "SUMMIT 이후 Midtown에서 가볍게 마무리",
+        "tag": "저녁 후보"
+      }
     ],
     "notes": [
-      {"name": "SUMMIT 티켓 확인", "desc": "SUMMIT One Vanderbilt 메일 기준 05/01 금요일 17:00, SUMMIT Experience (Prime) Adult 2장입니다.", "tag": "메일 확인"},
-      {"name": "Gallaghers 예약 확인", "desc": "OpenTable 메일 기준 05/01 금요일 11:45, Table for 2 예약입니다.", "tag": "메일 확인"}
+      {
+        "name": "SUMMIT 티켓 확인",
+        "desc": "SUMMIT One Vanderbilt 메일 기준 05/01 금요일 17:00, SUMMIT Experience (Prime) Adult 2장입니다.",
+        "tag": "메일 확인"
+      },
+      {
+        "name": "Gallaghers 예약 확인",
+        "desc": "OpenTable 메일 기준 05/01 금요일 11:45, Table for 2 예약입니다.",
+        "tag": "메일 확인"
+      }
     ],
     "items": [
-      {"time": "09:00", "title": "NYPL · Bryant Park", "desc": "아침 시작 코스를 한 묶음으로 진행", "tag": "명소", "placeId": "nypl"},
-      {"time": "11:45", "title": "Gallaghers Steakhouse", "desc": "OpenTable 확인 완료, Table for 2", "tag": "고정 예약", "immutable": true, "reservationId": "opentable-gallaghers-2026-05-01-1145", "placeId": "gallaghers"},
-      {"time": "15:00", "title": "자유시간", "desc": "Grand Central 근처 카페, 쇼핑, 잠깐 휴식", "tag": "자유시간", "free": true, "suggestions": "추천 액션: Grand Central 푸드홀, 카페, Bryant Park 재방문, 기념품 쇼핑", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "17:00", "title": "SUMMIT One Vanderbilt", "desc": "SUMMIT Experience (Prime) 확인 완료, Adult 2장", "tag": "고정 티켓", "immutable": true, "reservationId": "summit-one-vanderbilt-2026-05-01-1700", "placeId": "summit"}
+      {
+        "time": "09:00",
+        "title": "NYPL · Bryant Park",
+        "desc": "아침 시작 코스를 한 묶음으로 진행",
+        "tag": "명소",
+        "placeId": "nypl"
+      },
+      {
+        "time": "11:45",
+        "title": "Gallaghers Steakhouse",
+        "desc": "OpenTable 확인 완료, Table for 2",
+        "tag": "고정 예약",
+        "immutable": true,
+        "reservationId": "opentable-gallaghers-2026-05-01-1145",
+        "placeId": "gallaghers"
+      },
+      {
+        "time": "15:00",
+        "title": "자유시간",
+        "desc": "Grand Central 근처 카페, 쇼핑, 잠깐 휴식",
+        "tag": "자유시간",
+        "free": true,
+        "suggestions": "추천 액션: Grand Central 푸드홀, 카페, Bryant Park 재방문, 기념품 쇼핑",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "17:00",
+        "title": "SUMMIT One Vanderbilt",
+        "desc": "SUMMIT Experience (Prime) 확인 완료, Adult 2장",
+        "tag": "고정 티켓",
+        "immutable": true,
+        "reservationId": "summit-one-vanderbilt-2026-05-01-1700",
+        "placeId": "summit"
+      }
     ]
   },
   {
     "dayKey": "DAY 3",
     "date": "05.02",
     "weekdayKo": "토",
-    "weather": {"icon": "🌥️", "summary": "해가 보이다가 흐려짐, 소나기 가능", "highF": 59, "lowF": 46, "highC": 15, "lowC": 8, "note": "작은 우산 준비"},
+    "weather": {
+      "icon": "🌥️",
+      "summary": "해가 보이다가 흐려짐, 소나기 가능",
+      "highF": 59,
+      "lowF": 46,
+      "highC": 15,
+      "lowC": 8,
+      "note": "작은 우산 준비"
+    },
     "map": "https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York+Flatiron&destination=New+Amsterdam+Theatre+New+York&waypoints=Shake+Shack+Madison+Square+Park",
-    "routePlaceIds": ["harry-potter-ny", "shake-shack-msp", "new-amsterdam"],
+    "routePlaceIds": [
+      "harry-potter-ny",
+      "shake-shack-msp",
+      "new-amsterdam"
+    ],
     "food": [
-      {"name": "Shake Shack Madison Square Park", "desc": "Aladdin 14:00 공연 전 동선이 짧은 점심", "tag": "점심 후보"},
-      {"name": "Midtown dinner", "desc": "공연 후 극장가 또는 Rockefeller 근처 저녁", "tag": "저녁 후보"}
+      {
+        "name": "Shake Shack Madison Square Park",
+        "desc": "Aladdin 14:00 공연 전 동선이 짧은 점심",
+        "tag": "점심 후보"
+      },
+      {
+        "name": "Midtown dinner",
+        "desc": "공연 후 극장가 또는 Rockefeller 근처 저녁",
+        "tag": "저녁 후보"
+      }
     ],
     "notes": [
-      {"name": "Aladdin 티켓 확인", "desc": "Broadway.com 메일 기준 05/02 토요일 14:00, New Amsterdam Theatre, Orchestra M2-4입니다.", "tag": "메일 확인"},
-      {"name": "우드버리 일정 조정", "desc": "05/02 14:00 Aladdin 고정 공연 때문에 우드버리 하루 쇼핑 일정은 충돌되어 제외했습니다.", "tag": "고정 일정 우선"}
+      {
+        "name": "Aladdin 티켓 확인",
+        "desc": "Broadway.com 메일 기준 05/02 토요일 14:00, New Amsterdam Theatre, Orchestra M2-4입니다.",
+        "tag": "메일 확인"
+      },
+      {
+        "name": "우드버리 일정 조정",
+        "desc": "05/02 14:00 Aladdin 고정 공연 때문에 우드버리 하루 쇼핑 일정은 충돌되어 제외했습니다.",
+        "tag": "고정 일정 우선"
+      }
     ],
     "items": [
-      {"time": "10:30", "title": "Flatiron 가벼운 산책", "desc": "Harry Potter New York, Madison Square Park 쪽으로 짧게 진행", "tag": "가벼운 일정", "placeId": "harry-potter-ny"},
-      {"time": "12:00", "title": "공연 전 점심", "desc": "Madison Square Park 또는 Midtown으로 이동 전 간단히 식사", "tag": "식사", "placeId": "shake-shack-msp"},
-      {"time": "14:00", "title": "Aladdin", "desc": "Broadway.com 확인 완료, Orchestra M2-4", "tag": "고정 티켓", "immutable": true, "reservationId": "broadway-aladdin-2026-05-02-1400", "placeId": "new-amsterdam"},
-      {"time": "17:00", "title": "공연 후 자유시간", "desc": "Times Square, Rockefeller, 카페, 기념품 쇼핑으로 가볍게 사용", "tag": "자유시간", "free": true, "suggestions": "추천 액션: Times Square, Rockefeller Center, 카페, 극장가 산책", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"}
+      {
+        "time": "10:30",
+        "title": "Flatiron 가벼운 산책",
+        "desc": "Harry Potter New York, Madison Square Park 쪽으로 짧게 진행",
+        "tag": "가벼운 일정",
+        "placeId": "harry-potter-ny"
+      },
+      {
+        "time": "12:00",
+        "title": "공연 전 점심",
+        "desc": "Madison Square Park 또는 Midtown으로 이동 전 간단히 식사",
+        "tag": "식사",
+        "placeId": "shake-shack-msp"
+      },
+      {
+        "time": "14:00",
+        "title": "Aladdin",
+        "desc": "Broadway.com 확인 완료, Orchestra M2-4",
+        "tag": "고정 티켓",
+        "immutable": true,
+        "reservationId": "broadway-aladdin-2026-05-02-1400",
+        "placeId": "new-amsterdam"
+      },
+      {
+        "time": "17:00",
+        "title": "공연 후 자유시간",
+        "desc": "Times Square, Rockefeller, 카페, 기념품 쇼핑으로 가볍게 사용",
+        "tag": "자유시간",
+        "free": true,
+        "suggestions": "추천 액션: Times Square, Rockefeller Center, 카페, 극장가 산책",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      }
     ]
   },
   {
     "dayKey": "DAY 4",
     "date": "05.03",
     "weekdayKo": "일",
-    "weather": {"icon": "⛅", "summary": "해와 구름이 섞인 날씨", "highF": 62, "lowF": 48, "highC": 16, "lowC": 9, "note": "아울렛 장시간 외부 이동 무난"},
+    "weather": {
+      "icon": "⛅",
+      "summary": "해와 구름이 섞인 날씨",
+      "highF": 62,
+      "lowF": 48,
+      "highC": 16,
+      "lowC": 9,
+      "note": "아울렛 장시간 외부 이동 무난"
+    },
     "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=Port+Authority+Bus+Terminal+New+York|Woodbury+Common+Premium+Outlets",
-    "routePlaceIds": ["hotel-ts", "port-authority", "woodbury-common"],
+    "routePlaceIds": [
+      "hotel-ts",
+      "port-authority",
+      "woodbury-common"
+    ],
     "food": [
-      {"name": "Woodbury Market Hall", "desc": "쇼핑 중간에 동선 끊지 않고 빠르게 점심 해결", "tag": "점심 후보"},
-      {"name": "Shake Shack / Bareburger", "desc": "아울렛 안에서 무난하게 먹기 좋은 선택지", "tag": "캐주얼"},
-      {"name": "호텔 근처 가벼운 저녁", "desc": "복귀 후 짐 정리와 휴식 우선, Times Square 근처에서 간단히", "tag": "복귀 후"}
+      {
+        "name": "Woodbury Market Hall",
+        "desc": "쇼핑 중간에 동선 끊지 않고 빠르게 점심 해결",
+        "tag": "점심 후보"
+      },
+      {
+        "name": "Shake Shack / Bareburger",
+        "desc": "아울렛 안에서 무난하게 먹기 좋은 선택지",
+        "tag": "캐주얼"
+      },
+      {
+        "name": "호텔 근처 가벼운 저녁",
+        "desc": "복귀 후 짐 정리와 휴식 우선, Times Square 근처에서 간단히",
+        "tag": "복귀 후"
+      }
     ],
     "notes": [
-      {"name": "우드버리 전용일", "desc": "고정 공연/예약이 없는 05/03 일요일을 Woodbury Common Premium Outlets 쇼핑일로 확정했습니다.", "tag": "일정 변경"},
-      {"name": "이동 방식", "desc": "맨해튼에서 버스 또는 셔틀 왕복 기준으로 계획했습니다. 출발 전 왕복 티켓과 리턴 시간을 확인하세요.", "tag": "교통 확인"},
-      {"name": "쇼핑 팁", "desc": "일요일은 붐빌 수 있으니 우선순위 브랜드를 먼저 돌고, 오후에는 짐과 체력에 맞춰 마무리합니다.", "tag": "현장 팁"}
+      {
+        "name": "우드버리 전용일",
+        "desc": "고정 공연/예약이 없는 05/03 일요일을 Woodbury Common Premium Outlets 쇼핑일로 확정했습니다.",
+        "tag": "일정 변경"
+      },
+      {
+        "name": "이동 방식",
+        "desc": "맨해튼에서 버스 또는 셔틀 왕복 기준으로 계획했습니다. 출발 전 왕복 티켓과 리턴 시간을 확인하세요.",
+        "tag": "교통 확인"
+      },
+      {
+        "name": "쇼핑 팁",
+        "desc": "일요일은 붐빌 수 있으니 우선순위 브랜드를 먼저 돌고, 오후에는 짐과 체력에 맞춰 마무리합니다.",
+        "tag": "현장 팁"
+      }
     ],
     "items": [
-      {"time": "08:30", "title": "호텔 출발 · 버스 터미널 이동", "desc": "Port Authority 또는 예약한 셔틀 픽업 지점으로 이동", "tag": "이동", "placeId": "port-authority"},
-      {"time": "09:00", "title": "Woodbury행 버스 탑승", "desc": "왕복 티켓, 리턴 시간, 승차 위치를 출발 전 확인", "tag": "교통", "placeId": "port-authority"},
-      {"time": "10:15", "title": "Woodbury Common 도착", "desc": "도착 후 지도 확인, 우선순위 브랜드부터 쇼핑 시작", "tag": "쇼핑", "placeId": "woodbury-common"},
-      {"time": "13:00", "title": "아울렛 점심", "desc": "Market Hall 또는 Shake Shack / Bareburger 등에서 빠르게 점심", "tag": "식사", "placeId": "woodbury-common"},
-      {"time": "14:00", "title": "오후 쇼핑", "desc": "명품/의류/신발 중심으로 남은 브랜드를 압축해서 이동", "tag": "쇼핑", "placeId": "woodbury-common"},
-      {"time": "16:30", "title": "맨해튼 복귀", "desc": "짐 정리 시간을 고려해 너무 늦지 않은 리턴 버스 권장", "tag": "복귀", "placeId": "woodbury-common"},
-      {"time": "18:00", "title": "호텔 복귀 · 휴식", "desc": "쇼핑 짐 정리, 저녁은 Times Square 근처에서 가볍게", "tag": "휴식", "placeId": "hotel-ts"}
+      {
+        "time": "08:30",
+        "title": "호텔 출발 · 버스 터미널 이동",
+        "desc": "Port Authority 또는 예약한 셔틀 픽업 지점으로 이동",
+        "tag": "이동",
+        "placeId": "port-authority"
+      },
+      {
+        "time": "09:00",
+        "title": "Woodbury행 버스 탑승",
+        "desc": "왕복 티켓, 리턴 시간, 승차 위치를 출발 전 확인",
+        "tag": "교통",
+        "placeId": "port-authority"
+      },
+      {
+        "time": "10:15",
+        "title": "Woodbury Common 도착",
+        "desc": "도착 후 지도 확인, 우선순위 브랜드부터 쇼핑 시작",
+        "tag": "쇼핑",
+        "placeId": "woodbury-common"
+      },
+      {
+        "time": "13:00",
+        "title": "아울렛 점심",
+        "desc": "Market Hall 또는 Shake Shack / Bareburger 등에서 빠르게 점심",
+        "tag": "식사",
+        "placeId": "woodbury-common"
+      },
+      {
+        "time": "14:00",
+        "title": "오후 쇼핑",
+        "desc": "명품/의류/신발 중심으로 남은 브랜드를 압축해서 이동",
+        "tag": "쇼핑",
+        "placeId": "woodbury-common"
+      },
+      {
+        "time": "16:30",
+        "title": "맨해튼 복귀",
+        "desc": "짐 정리 시간을 고려해 너무 늦지 않은 리턴 버스 권장",
+        "tag": "복귀",
+        "placeId": "woodbury-common"
+      },
+      {
+        "time": "18:00",
+        "title": "호텔 복귀 · 휴식",
+        "desc": "쇼핑 짐 정리, 저녁은 Times Square 근처에서 가볍게",
+        "tag": "휴식",
+        "placeId": "hotel-ts"
+      }
     ]
   },
   {
     "dayKey": "DAY 5",
     "date": "05.04",
     "weekdayKo": "월",
-    "weather": {"icon": "☀️", "summary": "맑고 약간의 구름", "highF": 66, "lowF": 55, "highC": 19, "lowC": 13, "note": "페리·섬 일정에 좋음"},
+    "weather": {
+      "icon": "☀️",
+      "summary": "맑고 약간의 구름",
+      "highF": 66,
+      "lowF": 55,
+      "highC": 19,
+      "lowC": 13,
+      "note": "페리·섬 일정에 좋음"
+    },
     "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Ambassador+Theatre+New+York&waypoints=Battery+Park+New+York|Statue+of+Liberty+National+Monument|Ellis+Island+New+York|Buvette+New+York|Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
-    "routePlaceIds": ["hotel-ts", "battery-park", "liberty-island", "ellis-island", "buvette", "ambassador-theatre"],
+    "routePlaceIds": [
+      "hotel-ts",
+      "battery-park",
+      "liberty-island",
+      "ellis-island",
+      "buvette",
+      "ambassador-theatre"
+    ],
     "food": [
-      {"name": "Battery Park / FiDi 간단한 아침", "desc": "페리 전 보안검색 시간을 고려해 가볍게 해결", "tag": "아침 후보"},
-      {"name": "Buvette", "desc": "자유의 여신상 일정 후 시간이 남으면 늦은 점심 또는 카페로 사용", "tag": "선택 카드"},
-      {"name": "공연 전 가벼운 식사", "desc": "Chicago 전에 소화 편한 메뉴 위주", "tag": "저녁 후보"}
+      {
+        "name": "Battery Park / FiDi 간단한 아침",
+        "desc": "페리 전 보안검색 시간을 고려해 가볍게 해결",
+        "tag": "아침 후보"
+      },
+      {
+        "name": "Buvette",
+        "desc": "자유의 여신상 일정 후 시간이 남으면 늦은 점심 또는 카페로 사용",
+        "tag": "선택 카드"
+      },
+      {
+        "name": "공연 전 가벼운 식사",
+        "desc": "Chicago 전에 소화 편한 메뉴 위주",
+        "tag": "저녁 후보"
+      }
     ],
     "notes": [
-      {"name": "Chicago 티켓 확인", "desc": "Broadway.com 메일 기준 05/04 월요일 19:00, Ambassador Theatre, Orchestra CC107-108입니다.", "tag": "메일 확인"},
-      {"name": "자유의 여신상 추가", "desc": "05/04 오전~오후 초반을 Statue City Cruises 공식 페리 기준 Liberty Island와 Ellis Island 방문 블록으로 재구성했습니다.", "tag": "추천 반영"},
-      {"name": "공식 티켓 주의", "desc": "Liberty Island에 실제 하선하려면 Statue City Cruises 공식 티켓을 사용해야 합니다. Battery Park 주변 비공식 호객은 피하세요.", "tag": "예약 필요"}
+      {
+        "name": "Chicago 티켓 확인",
+        "desc": "Broadway.com 메일 기준 05/04 월요일 19:00, Ambassador Theatre, Orchestra CC107-108입니다.",
+        "tag": "메일 확인"
+      },
+      {
+        "name": "자유의 여신상 추가",
+        "desc": "05/04 오전~오후 초반을 Statue City Cruises 공식 페리 기준 Liberty Island와 Ellis Island 방문 블록으로 재구성했습니다.",
+        "tag": "추천 반영"
+      },
+      {
+        "name": "공식 티켓 주의",
+        "desc": "Liberty Island에 실제 하선하려면 Statue City Cruises 공식 티켓을 사용해야 합니다. Battery Park 주변 비공식 호객은 피하세요.",
+        "tag": "예약 필요"
+      }
     ],
     "items": [
-      {"time": "08:30", "title": "Battery Park 이동 · 보안검색", "desc": "Castle Clinton 쪽 공식 페리 탑승장으로 이동, 예약 시간보다 여유 있게 도착", "tag": "이동", "placeId": "battery-park"},
-      {"time": "09:30", "title": "Statue City Cruises 페리", "desc": "Battery Park 출발 공식 페리, Liberty Island 하선", "tag": "페리", "placeId": "battery-park"},
-      {"time": "10:15", "title": "Liberty Island · 자유의 여신상", "desc": "섬 산책, 자유의 여신상 박물관, 맨해튼 항구 전망을 한 묶음으로 진행", "tag": "명소", "placeId": "liberty-island"},
-      {"time": "12:30", "title": "Ellis Island", "desc": "시간과 체력에 맞춰 이민 박물관 핵심 전시 위주로 관람", "tag": "역사", "placeId": "ellis-island"},
-      {"time": "14:30", "title": "맨해튼 복귀 · 늦은 점심", "desc": "Battery Park 복귀 후 컨디션에 따라 Buvette 또는 가까운 카페로 조정", "tag": "식사", "placeId": "buvette"},
-      {"time": "17:00", "title": "호텔 복귀 · 공연 준비", "desc": "저녁 공연 전 휴식과 이동 준비", "tag": "완충 시간", "placeId": "hotel-ts"},
-      {"time": "19:00", "title": "Chicago", "desc": "Broadway.com 확인 완료, Orchestra CC107-108", "tag": "고정 티켓", "immutable": true, "reservationId": "broadway-chicago-2026-05-04-1900", "placeId": "ambassador-theatre"}
+      {
+        "time": "08:30",
+        "title": "Battery Park 이동 · 보안검색",
+        "desc": "Castle Clinton 쪽 공식 페리 탑승장으로 이동, 예약 시간보다 여유 있게 도착",
+        "tag": "이동",
+        "placeId": "battery-park"
+      },
+      {
+        "time": "09:30",
+        "title": "Statue City Cruises 페리",
+        "desc": "Battery Park 출발 공식 페리, Liberty Island 하선",
+        "tag": "페리",
+        "placeId": "battery-park"
+      },
+      {
+        "time": "10:15",
+        "title": "Liberty Island · 자유의 여신상",
+        "desc": "섬 산책, 자유의 여신상 박물관, 맨해튼 항구 전망을 한 묶음으로 진행",
+        "tag": "명소",
+        "placeId": "liberty-island"
+      },
+      {
+        "time": "12:30",
+        "title": "Ellis Island",
+        "desc": "시간과 체력에 맞춰 이민 박물관 핵심 전시 위주로 관람",
+        "tag": "역사",
+        "placeId": "ellis-island"
+      },
+      {
+        "time": "14:30",
+        "title": "맨해튼 복귀 · 늦은 점심",
+        "desc": "Battery Park 복귀 후 컨디션에 따라 Buvette 또는 가까운 카페로 조정",
+        "tag": "식사",
+        "placeId": "buvette"
+      },
+      {
+        "time": "17:00",
+        "title": "호텔 복귀 · 공연 준비",
+        "desc": "저녁 공연 전 휴식과 이동 준비",
+        "tag": "완충 시간",
+        "placeId": "hotel-ts"
+      },
+      {
+        "time": "19:00",
+        "title": "Chicago",
+        "desc": "Broadway.com 확인 완료, Orchestra CC107-108",
+        "tag": "고정 티켓",
+        "immutable": true,
+        "reservationId": "broadway-chicago-2026-05-04-1900",
+        "placeId": "ambassador-theatre"
+      }
     ]
   },
   {
     "dayKey": "DAY 6",
     "date": "05.05",
     "weekdayKo": "화",
-    "weather": {"icon": "🌦️", "summary": "구름 사이 해, 소나기 몇 차례 가능", "highF": 71, "lowF": 55, "highC": 22, "lowC": 13, "note": "촬영 전후 우산 체크"},
-    "map": "https://www.google.com/maps/dir/?api=1&origin=Times+Square+New+York&destination=Birdland+Jazz+Club+New+York&waypoints=New+York+Public+Library|Bryant+Park+New+York|Grand+Central+Terminal+New+York|Museum+of+Modern+Art+New+York",
-    "routePlaceIds": ["times-square", "nypl", "bryant-park", "grand-central", "moma", "birdland"],
+    "weather": {
+      "icon": "🌦️",
+      "summary": "구름 사이 해, 소나기 몇 차례 가능",
+      "highF": 71,
+      "lowF": 55,
+      "highC": 22,
+      "lowC": 13,
+      "note": "촬영 전후 우산 체크"
+    },
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Times+Square+New+York&destination=Birdland+Jazz+Club+New+York&waypoints=New+York+Public+Library|Bryant+Park+New+York|Grand+Central+Terminal+New+York|The+Metropolitan+Museum+of+Art+New+York",
+    "routePlaceIds": [
+      "times-square",
+      "nypl",
+      "bryant-park",
+      "grand-central",
+      "met",
+      "birdland"
+    ],
     "food": [
-      {"name": "촬영 후 점심", "desc": "Bryant Park 또는 Grand Central 쪽 점심", "tag": "유동 일정"},
-      {"name": "Birdland 전 간단한 저녁", "desc": "공연장 입장 전 가벼운 식사", "tag": "공연 전 식사"}
+      {
+        "name": "촬영 후 점심",
+        "desc": "Bryant Park 또는 Grand Central 쪽에서 12:00 전후로 식사",
+        "tag": "유동 일정"
+      },
+      {
+        "name": "Birdland 전 간단한 저녁",
+        "desc": "19:30 입장 전 극장가 근처에서 가볍게 식사",
+        "tag": "공연 전 식사"
+      }
     ],
     "notes": [
-      {"name": "스냅 촬영 코스", "desc": "오전 10시부터 오후 12시까지, 타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 구성, 120분 소요", "tag": "여자친구 요청"},
-      {"name": "MoMA 4시간 반영", "desc": "오후 시간을 넉넉하게 비워 최소 4시간 여유 관람으로 재배치했습니다.", "tag": "일정 확정"},
-      {"name": "Birdland 티켓 확인", "desc": "TicketWeb 메일 기준 05/05 화요일 20:30, Birdland Theater, Table Seating입니다.", "tag": "메일 확인"},
-      {"name": "공연장 최소 주문", "desc": "Birdland는 1인당 $20 food/drink minimum 안내가 있습니다.", "tag": "현장 안내"}
+      {
+        "name": "스냅 촬영 코스",
+        "desc": "10:00부터 12:00까지 타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 구성입니다.",
+        "tag": "여자친구 요청"
+      },
+      {
+        "name": "Met 재배치",
+        "desc": "기존 05/08 오전 The Met을 05/05 오후 14:00-17:30 블록으로 이동했습니다.",
+        "tag": "일정 변경"
+      },
+      {
+        "name": "Met 입장 시간 확인",
+        "desc": "The Met은 14:00 입장 기준으로 임시 확정했습니다.",
+        "tag": "임시 확정"
+      },
+      {
+        "name": "Birdland 티켓 확인",
+        "desc": "TicketWeb 메일 기준 05/05 화요일 20:30, Birdland Theater, Table Seating입니다.",
+        "tag": "메일 확인"
+      },
+      {
+        "name": "공연장 최소 주문",
+        "desc": "Birdland는 1인당 $20 food/drink minimum 안내가 있습니다.",
+        "tag": "현장 안내"
+      }
     ],
     "items": [
-      {"time": "10:00-12:00", "title": "스냅 촬영 코스", "desc": "타임스퀘어 → NYPL → Bryant Park → Grand Central, 2시간 코스", "tag": "촬영", "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "12:00", "title": "점심 · 휴식", "desc": "촬영 후 회복 시간 확보", "tag": "휴식", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "14:00", "title": "MoMA", "desc": "전시를 여유 있게 보는 긴 블록 일정", "tag": "여자친구 요청 반영", "placeId": "moma"},
-      {"time": "19:30", "title": "Birdland Theater 입장", "desc": "TicketWeb 기준 doors open, 공연 전 착석과 최소 주문 시간", "tag": "입장", "placeId": "birdland"},
-      {"time": "20:30", "title": "Vince Giordano and the Nighthawks", "desc": "TicketWeb 확인 완료, Birdland Theater Table Seating", "tag": "고정 티켓", "immutable": true, "reservationId": "ticketweb-birdland-2026-05-05-2030", "placeId": "birdland"}
+      {
+        "time": "10:00-12:00",
+        "title": "스냅 촬영 코스",
+        "desc": "타임스퀘어 -> NYPL -> Bryant Park -> Grand Central, 2시간 코스",
+        "tag": "촬영",
+        "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "12:00",
+        "title": "점심 · 휴식",
+        "desc": "촬영 후 Bryant Park 또는 Grand Central 근처에서 회복 시간 확보",
+        "tag": "휴식",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "13:15",
+        "title": "The Met 이동",
+        "desc": "Grand Central 또는 Midtown에서 The Met으로 이동",
+        "tag": "이동",
+        "placeId": "met"
+      },
+      {
+        "time": "14:00-17:30",
+        "title": "The Metropolitan Museum of Art",
+        "desc": "14:00 입장 기준으로 넉넉하게 주요 전시 관람",
+        "tag": "미술관",
+        "placeId": "met"
+      },
+      {
+        "time": "18:15",
+        "title": "Birdland 전 저녁",
+        "desc": "공연장 입장 전 Theater District 근처에서 가볍게 식사",
+        "tag": "식사"
+      },
+      {
+        "time": "19:30",
+        "title": "Birdland Theater 입장",
+        "desc": "TicketWeb 기준 doors open, 공연 전 착석과 최소 주문 시간",
+        "tag": "입장",
+        "placeId": "birdland"
+      },
+      {
+        "time": "20:30",
+        "title": "Vince Giordano and the Nighthawks",
+        "desc": "TicketWeb 확인 완료, Birdland Theater Table Seating",
+        "tag": "고정 티켓",
+        "immutable": true,
+        "reservationId": "ticketweb-birdland-2026-05-05-2030",
+        "placeId": "birdland"
+      }
     ]
   },
   {
     "dayKey": "DAY 7",
     "date": "05.06",
     "weekdayKo": "수",
-    "weather": {"icon": "☀️", "summary": "맑음", "highF": 69, "lowF": 57, "highC": 20, "lowC": 14, "note": "가벼운 산책 좋음"},
+    "weather": {
+      "icon": "☀️",
+      "summary": "맑음",
+      "highF": 69,
+      "lowF": 57,
+      "highC": 20,
+      "lowC": 14,
+      "note": "가벼운 산책 좋음"
+    },
     "map": "https://www.google.com/maps/dir/?api=1&origin=Ellen%27s+Stardust+Diner+New+York&destination=Minskoff+Theatre+New+York",
-    "routePlaceIds": ["ellens-stardust", "minskoff"],
+    "routePlaceIds": [
+      "ellens-stardust",
+      "minskoff"
+    ],
     "food": [
-      {"name": "Ellen’s Stardust Diner", "desc": "브런치 겸 볼거리", "tag": "브런치 확정", "link": "https://www.google.com/maps/search/?api=1&query=Ellen%27s+Stardust+Diner+New+York"},
-      {"name": "Midtown dinner", "desc": "공연 전후 무난한 저녁", "tag": "저녁 후보"}
+      {
+        "name": "Ellen’s Stardust Diner",
+        "desc": "브런치 겸 볼거리",
+        "tag": "브런치 확정",
+        "link": "https://www.google.com/maps/search/?api=1&query=Ellen%27s+Stardust+Diner+New+York"
+      },
+      {
+        "name": "Midtown dinner",
+        "desc": "공연 전후 무난한 저녁",
+        "tag": "저녁 후보"
+      }
     ],
     "notes": [
-      {"name": "MoMA 이동 완료", "desc": "MoMA 4시간 일정은 05/05로 옮기고, 오늘은 공연 중심으로 가볍게 구성했습니다.", "tag": "일정 확정"},
-      {"name": "The Lion King 티켓 확인", "desc": "Broadway.com 메일 기준 05/06 수요일 13:00, Minskoff Theatre, Orchestra B109-110입니다.", "tag": "메일 확인"}
+      {
+        "name": "공연 중심일",
+        "desc": "전날 Met, 다음날 MoMA 일정 사이에 05/06은 Lion King 중심으로 가볍게 구성했습니다.",
+        "tag": "일정 확정"
+      },
+      {
+        "name": "The Lion King 티켓 확인",
+        "desc": "Broadway.com 메일 기준 05/06 수요일 13:00, Minskoff Theatre, Orchestra B109-110입니다.",
+        "tag": "메일 확인"
+      }
     ],
     "items": [
-      {"time": "10:00", "title": "Ellen’s Stardust Diner", "desc": "브런치 겸 볼거리 있는 시작", "tag": "브런치", "placeId": "ellens-stardust"},
-      {"time": "13:00", "title": "The Lion King", "desc": "Broadway.com 확인 완료, Orchestra B109-110", "tag": "고정 티켓", "immutable": true, "reservationId": "broadway-lion-king-2026-05-06-1300", "placeId": "minskoff"},
-      {"time": "15:00", "title": "자유시간", "desc": "공연 후 타임스퀘어, 기념품, 카페 등으로 여유 있게 사용", "tag": "자유시간", "free": true, "suggestions": "추천 액션: 타임스퀘어 카페, 기념품, 간단한 디저트, 주변 산책", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "18:00", "title": "Midtown 자유 저녁", "desc": "이동 부담 적게 저녁이나 휴식으로 마무리", "tag": "가벼운 일정", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"}
+      {
+        "time": "10:00",
+        "title": "Ellen’s Stardust Diner",
+        "desc": "브런치 겸 볼거리 있는 시작",
+        "tag": "브런치",
+        "placeId": "ellens-stardust"
+      },
+      {
+        "time": "13:00",
+        "title": "The Lion King",
+        "desc": "Broadway.com 확인 완료, Orchestra B109-110",
+        "tag": "고정 티켓",
+        "immutable": true,
+        "reservationId": "broadway-lion-king-2026-05-06-1300",
+        "placeId": "minskoff"
+      },
+      {
+        "time": "15:00",
+        "title": "자유시간",
+        "desc": "공연 후 타임스퀘어, 기념품, 카페 등으로 여유 있게 사용",
+        "tag": "자유시간",
+        "free": true,
+        "suggestions": "추천 액션: 타임스퀘어 카페, 기념품, 간단한 디저트, 주변 산책",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "18:00",
+        "title": "Midtown 자유 저녁",
+        "desc": "이동 부담 적게 저녁이나 휴식으로 마무리",
+        "tag": "가벼운 일정",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      }
     ]
   },
   {
     "dayKey": "DAY 8",
     "date": "05.07",
     "weekdayKo": "목",
-    "weather": {"icon": "🌧️", "summary": "대체로 흐리고 오후 소나기", "highF": 66, "lowF": 51, "highC": 19, "lowC": 11, "note": "센트럴파크 전 우산 확인"},
-    "map": "https://www.google.com/maps/dir/?api=1&origin=American+Museum+of+Natural+History+New+York&destination=Gershwin+Theatre+New+York&waypoints=Central+Park+New+York",
-    "routePlaceIds": ["amnh", "central-park", "gershwin"],
+    "weather": {
+      "icon": "🌧️",
+      "summary": "대체로 흐리고 오후 소나기",
+      "highF": 66,
+      "lowF": 51,
+      "highC": 19,
+      "lowC": 11,
+      "note": "센트럴파크 전 우산 확인"
+    },
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Gershwin+Theatre+New+York&waypoints=Museum+of+Modern+Art+New+York",
+    "routePlaceIds": [
+      "hotel-ts",
+      "moma",
+      "gershwin"
+    ],
     "food": [
-      {"name": "Museum area lunch", "desc": "박물관 후 가벼운 점심", "tag": "점심 추천"},
-      {"name": "공연 전 저녁", "desc": "Wicked 전 너무 무겁지 않은 저녁 권장", "tag": "시간 여유 필요"}
+      {
+        "name": "MoMA 전 가벼운 점심",
+        "desc": "Midtown에서 12:30 전후로 식사 후 MoMA 이동",
+        "tag": "점심 추천"
+      },
+      {
+        "name": "공연 전 저녁",
+        "desc": "Wicked 전 17:00-18:00 사이 가볍게 식사",
+        "tag": "시간 여유 필요"
+      }
     ],
     "notes": [
-      {"name": "자연사박물관 4시간 반영", "desc": "10시~14시를 박물관 집중 블록으로 고정했습니다.", "tag": "일정 확정"},
-      {"name": "Wicked 티켓 확인", "desc": "Broadway.com 메일 기준 05/07 목요일 19:00, Gershwin Theatre, Orchestra DD109-110입니다.", "tag": "메일 확인"}
+      {
+        "name": "MoMA 재배치",
+        "desc": "현대카드 무료입장 계획을 반영해 MoMA를 05/07 오후로 이동했습니다.",
+        "tag": "일정 변경"
+      },
+      {
+        "name": "MoMA 입장 시간 확인",
+        "desc": "MoMA는 현대카드 무료입장 사용을 전제로 13:30 입장 기준으로 임시 확정했습니다.",
+        "tag": "임시 확정"
+      },
+      {
+        "name": "Wicked 티켓 확인",
+        "desc": "Broadway.com 메일 기준 05/07 목요일 19:00, Gershwin Theatre, Orchestra DD109-110입니다.",
+        "tag": "메일 확인"
+      }
     ],
     "items": [
-      {"time": "10:00", "title": "자연사박물관", "desc": "오전부터 오후까지 여유 있게 보는 긴 관람 블록", "tag": "박물관", "placeId": "amnh"},
-      {"time": "14:00", "title": "자유시간", "desc": "점심, 커피, 휴식 후 Central Park로 이동", "tag": "자유시간", "free": true, "suggestions": "추천 액션: 박물관샵, 센트럴파크 진입 전 점심, 커피, 벤치 휴식", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "16:00", "title": "Central Park 산책", "desc": "박물관 후 이어가기 좋은 동선", "tag": "산책", "placeId": "central-park"},
-      {"time": "19:00", "title": "Wicked", "desc": "Broadway.com 확인 완료, Orchestra DD109-110", "tag": "고정 티켓", "immutable": true, "reservationId": "broadway-wicked-2026-05-07-1900", "placeId": "gershwin"}
+      {
+        "time": "10:30",
+        "title": "오전 여유 일정",
+        "desc": "호텔 주변 카페, 쇼핑, 휴식 중심으로 무리 없이 시작",
+        "tag": "자유시간",
+        "free": true,
+        "suggestions": "추천 액션: Midtown 카페, 기념품 쇼핑, 공연 전 컨디션 조절",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "12:30",
+        "title": "MoMA 전 점심",
+        "desc": "MoMA 근처 또는 Midtown에서 가볍게 식사",
+        "tag": "식사"
+      },
+      {
+        "time": "13:30-16:30",
+        "title": "MoMA",
+        "desc": "현대카드 무료입장 사용 기준, 주요 전시를 3시간 블록으로 관람",
+        "tag": "미술관",
+        "placeId": "moma"
+      },
+      {
+        "time": "17:00",
+        "title": "Wicked 전 저녁",
+        "desc": "Gershwin Theatre 이동 전 너무 무겁지 않게 식사",
+        "tag": "식사"
+      },
+      {
+        "time": "19:00",
+        "title": "Wicked",
+        "desc": "Broadway.com 확인 완료, Orchestra DD109-110",
+        "tag": "고정 티켓",
+        "immutable": true,
+        "reservationId": "broadway-wicked-2026-05-07-1900",
+        "placeId": "gershwin"
+      }
     ]
   },
   {
     "dayKey": "DAY 9",
     "date": "05.08",
     "weekdayKo": "금",
-    "weather": {"icon": "⛈️", "summary": "흐리고 선선함, 오전 뇌우 뒤 오후 비", "highF": 62, "lowF": 50, "highC": 16, "lowC": 10, "note": "실내·차량 이동 여유 권장"},
-    "map": "https://www.google.com/maps/dir/?api=1&origin=The+Metropolitan+Museum+of+Art+New+York&destination=Smith+%26+Wollensky+New+York&waypoints=Vessel+New+York|High+Line+New+York",
-    "routePlaceIds": ["met", "vessel", "high-line", "smith-wollensky"],
+    "weather": {
+      "icon": "⛈️",
+      "summary": "흐리고 선선함, 오전 뇌우 뒤 오후 비",
+      "highF": 62,
+      "lowF": 50,
+      "highC": 16,
+      "lowC": 10,
+      "note": "실내·차량 이동 여유 권장"
+    },
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Smith+%26+Wollensky+New+York&waypoints=Times+Square+New+York",
+    "routePlaceIds": [
+      "hotel-ts",
+      "times-square",
+      "smith-wollensky"
+    ],
     "food": [
-      {"name": "Lunch near The Met", "desc": "미술관 중심 오전 일정이라 가까운 곳에서 효율적으로", "tag": "점심 추천"},
-      {"name": "Smith & Wollensky", "desc": "OpenTable 변경 메일 기준 05/08 18:00, Table for 2", "tag": "고정 예약", "immutable": true, "reservationId": "opentable-smith-wollensky-2026-05-08-1800", "link": "https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+New+York"}
+      {
+        "name": "버스 투어 중 점심",
+        "desc": "Big Apple 투어 중 12:30 점심으로 임시 배치",
+        "tag": "점심 후보"
+      },
+      {
+        "name": "Smith & Wollensky",
+        "desc": "OpenTable 변경 메일 기준 05/08 18:00, Table for 2",
+        "tag": "고정 예약",
+        "immutable": true,
+        "reservationId": "opentable-smith-wollensky-2026-05-08-1800",
+        "link": "https://www.google.com/maps/search/?api=1&query=Smith+%26+Wollensky+New+York"
+      }
     ],
     "notes": [
-      {"name": "Blue Note 일정 취소", "desc": "기존 05/08 저녁 재즈 일정은 취소하고, 메일 확인된 Smith & Wollensky 예약을 우선 반영했습니다.", "tag": "일정 변경"},
-      {"name": "Smith & Wollensky 예약 변경 확인", "desc": "OpenTable 메일 기준 05/08 금요일 18:00, Table for 2 예약입니다.", "tag": "메일 확인"}
+      {
+        "name": "Big Apple 버스 투어 배치",
+        "desc": "기존 05/08 The Met, Vessel, High Line을 제외하고 Big Apple 버스 투어 중심으로 재배치했습니다.",
+        "tag": "일정 변경"
+      },
+      {
+        "name": "버스 투어 시간 입력",
+        "desc": "Big Apple 버스 투어는 09:00 출발, 16:00 종료 기준으로 임시 확정했습니다.",
+        "tag": "임시 확정"
+      },
+      {
+        "name": "Smith & Wollensky 예약 변경 확인",
+        "desc": "OpenTable 메일 기준 05/08 금요일 18:00, Table for 2 예약입니다.",
+        "tag": "메일 확인"
+      }
     ],
     "items": [
-      {"time": "10:00", "title": "The Met", "desc": "오전 메인 미술관 일정", "tag": "미술관", "placeId": "met"},
-      {"time": "14:00", "title": "자유시간", "desc": "점심, 기념품숍, 주변 카페 조정 가능", "tag": "자유시간", "free": true, "suggestions": "추천 액션: Met gift shop, 카페, 5th Ave 산책, 사진 찍기", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "15:00", "title": "Vessel · High Line", "desc": "Hudson Yards 라인 산책을 한 묶음으로 진행", "tag": "산책", "placeId": "vessel"},
-      {"time": "18:00", "title": "Smith & Wollensky", "desc": "OpenTable 변경 확인 완료, Table for 2", "tag": "고정 예약", "immutable": true, "reservationId": "opentable-smith-wollensky-2026-05-08-1800", "placeId": "smith-wollensky"}
+      {
+        "time": "08:30",
+        "title": "버스 투어 픽업지 이동",
+        "desc": "Times Square 인근 픽업지를 기준으로 여유 있게 이동",
+        "tag": "이동",
+        "placeId": "times-square"
+      },
+      {
+        "time": "09:00-12:30",
+        "title": "Big Apple 버스 투어 · 오전 코스",
+        "desc": "09:00 출발 기준 오전 투어 코스 진행",
+        "tag": "버스 투어",
+        "image": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "12:30-13:30",
+        "title": "투어 중 점심",
+        "desc": "투어 하차 지점 근처에서 점심",
+        "tag": "식사",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "13:30-16:00",
+        "title": "Big Apple 버스 투어 · 오후 코스",
+        "desc": "18:00 식당 예약을 고려해 16:00 종료 기준으로 진행",
+        "tag": "버스 투어",
+        "image": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "time": "16:30",
+        "title": "호텔 복귀 · 저녁 준비",
+        "desc": "Smith & Wollensky 이동 전 짐 정리와 휴식",
+        "tag": "완충 시간",
+        "placeId": "hotel-ts"
+      },
+      {
+        "time": "18:00",
+        "title": "Smith & Wollensky",
+        "desc": "OpenTable 변경 확인 완료, Table for 2",
+        "tag": "고정 예약",
+        "immutable": true,
+        "reservationId": "opentable-smith-wollensky-2026-05-08-1800",
+        "placeId": "smith-wollensky"
+      }
     ]
   },
   {
     "dayKey": "DAY 10",
     "date": "05.09",
     "weekdayKo": "토",
-    "weather": {"icon": "⛅", "summary": "새벽 비 뒤 구름 많다가 오후부터 맑아짐", "highF": 62, "lowF": 51, "highC": 16, "lowC": 11, "note": "오전 이동 시 바닥 젖음 주의"},
-    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=Museum+of+Ice+Cream+New+York|Prince+Street+Pizza+New+York",
-    "routePlaceIds": ["hotel-ts", "museum-of-ice-cream", "prince-street-pizza"],
+    "weather": {
+      "icon": "⛅",
+      "summary": "새벽 비 뒤 구름 많다가 오후부터 맑아짐",
+      "highF": 62,
+      "lowF": 51,
+      "highC": 16,
+      "lowC": 11,
+      "note": "오전 이동 시 바닥 젖음 주의"
+    },
+    "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=American+Museum+of+Natural+History+New+York",
+    "routePlaceIds": [
+      "hotel-ts",
+      "amnh"
+    ],
     "food": [
-      {"name": "Prince Street Pizza", "desc": "마지막 날 SoHo 점심 카드", "tag": "점심 후보", "link": "https://www.google.com/maps/search/?api=1&query=Prince+Street+Pizza+New+York"}
+      {
+        "name": "Museum area lunch",
+        "desc": "자연사박물관 관람 후 13:30 전후로 가까운 곳에서 점심",
+        "tag": "점심 후보"
+      }
     ],
     "notes": [
-      {"name": "호텔 체크아웃 시간", "desc": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG 체크아웃은 11:00 이전입니다.", "tag": "이메일 확인"},
-      {"name": "마지막 날 일정 조정", "desc": "마지막 날은 쇼핑보다 SoHo 체험, 점심, 출국 준비 중심으로 가볍게 정리했습니다.", "tag": "일정 변경"}
+      {
+        "name": "호텔 체크아웃 시간",
+        "desc": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG 체크아웃은 11:00 이전입니다.",
+        "tag": "이메일 확인"
+      },
+      {
+        "name": "자연사박물관 재배치",
+        "desc": "기존 05/07 자연사박물관을 05/09 오전-오후 초반으로 이동했습니다.",
+        "tag": "일정 변경"
+      },
+      {
+        "name": "자연사박물관 입장 시간 확인",
+        "desc": "자연사박물관은 10:00 입장 기준으로 임시 확정했습니다.",
+        "tag": "임시 확정"
+      }
     ],
     "items": [
-      {"time": "09:00", "title": "호텔 체크아웃 · 짐 맡기기", "desc": "체크아웃 후 짐 맡기고 가볍게 이동", "tag": "체크아웃", "placeId": "hotel-ts"},
-      {"time": "11:00", "title": "Museum of Ice Cream", "desc": "출국일에도 무리 없게 조금 더 이르게 배치", "tag": "체험", "placeId": "museum-of-ice-cream"},
-      {"time": "12:30", "title": "Prince Street Pizza", "desc": "SoHo / Nolita 동선 점심", "tag": "식사", "placeId": "prince-street-pizza"},
-      {"time": "14:00", "title": "자유시간", "desc": "Nolita 카페, 디저트, 짧은 산책 중심으로 가볍게", "tag": "자유시간", "free": true, "suggestions": "추천 액션: 디저트, 카페, 짧은 소호 골목 산책", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "15:30", "title": "호텔 복귀 · 공항 준비", "desc": "짐 찾기, 옷 정리, 사진 백업, 공항 이동 전 준비", "tag": "완충 시간", "placeId": "hotel-ts"},
-      {"time": "20:00", "title": "공항 이동 준비", "desc": "마지막 일정 정리 후 복귀 버퍼 시간 확보", "tag": "복귀", "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"}
+      {
+        "time": "09:00",
+        "title": "호텔 체크아웃 · 짐 맡기기",
+        "desc": "체크아웃 후 호텔에 짐을 맡기고 바로 이동",
+        "tag": "체크아웃",
+        "placeId": "hotel-ts"
+      },
+      {
+        "time": "09:30",
+        "title": "자연사박물관 이동",
+        "desc": "택시 또는 지하철로 American Museum of Natural History 이동",
+        "tag": "이동",
+        "placeId": "amnh"
+      },
+      {
+        "time": "10:00-13:00",
+        "title": "자연사박물관",
+        "desc": "10:00 입장 기준으로 핵심 전시 위주 관람",
+        "tag": "박물관",
+        "placeId": "amnh"
+      },
+      {
+        "time": "13:30",
+        "title": "박물관 근처 점심",
+        "desc": "Upper West Side에서 가볍게 점심 후 호텔 복귀",
+        "tag": "식사"
+      },
+      {
+        "time": "15:30",
+        "title": "호텔 복귀 · 공항 준비",
+        "desc": "짐 찾기, 옷 정리, 사진 백업, 공항 이동 전 준비",
+        "tag": "완충 시간",
+        "placeId": "hotel-ts"
+      },
+      {
+        "time": "20:00",
+        "title": "공항 이동 준비",
+        "desc": "마지막 일정 정리 후 복귀 버퍼 시간 확보",
+        "tag": "복귀",
+        "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"
+      }
     ]
   }
 ]

@@ -7,96 +7,1529 @@
   },
   "days": {
     "DAY 1": [
-      {"id":"hotel-ts","name":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","kind":"stay","address":"585 8th Ave Manhattan New York NY 10018","mapQuery":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","lat":40.7540,"lng":-73.9927,"mapsUrl":"https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG","image":{"url":"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Midtown chain hotel placeholder image updated to actual booked hotel"}},
-      {"id":"times-square","name":"Times Square","kind":"landmark","address":"Times Square Manhattan New York NY","mapQuery":"Times Square New York","lat":40.7580,"lng":-73.9855,"image":{"url":"https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"night city billboard scene closer to Times Square feel"}}
+      {
+        "id": "hotel-ts",
+        "name": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "kind": "stay",
+        "address": "585 8th Ave Manhattan New York NY 10018",
+        "mapQuery": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "lat": 40.754,
+        "lng": -73.9927,
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+        }
+      },
+      {
+        "id": "times-square",
+        "name": "Times Square",
+        "kind": "landmark",
+        "address": "Times Square Manhattan New York NY",
+        "mapQuery": "Times Square New York",
+        "lat": 40.758,
+        "lng": -73.9855,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "night city billboard scene closer to Times Square feel"
+        }
+      }
     ],
     "DAY 2": [
-      {"id":"nypl","name":"New York Public Library","kind":"landmark","address":"476 5th Ave New York NY 10018","mapQuery":"New York Public Library Stephen A. Schwarzman Building","lat":40.7532,"lng":-73.9822,"image":{"url":"https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"iconic library reading room / heritage interior mood"}},
-      {"id":"bryant-park","name":"Bryant Park","kind":"park","address":"Bryant Park New York NY 10018","mapQuery":"Bryant Park New York","lat":40.7536,"lng":-73.9832,"image":{"url":"https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"urban park and lawn mood"}},
-      {"id":"gallaghers","name":"Gallaghers Steakhouse","kind":"restaurant","address":"228 W 52nd St New York NY 10019","mapQuery":"Gallaghers Steakhouse New York","lat":40.7594,"lng":-73.9868,"image":{"url":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"classic New York steakhouse dining mood"}},
-      {"id":"rockefeller","name":"Rockefeller Center","kind":"landmark","address":"45 Rockefeller Plaza New York NY 10111","mapQuery":"Rockefeller Center New York","lat":40.7587,"lng":-73.9787,"image":{"url":"https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Midtown landmark plaza mood"}},
-      {"id":"grand-central","name":"Grand Central Terminal","kind":"landmark","address":"89 E 42nd St New York NY 10017","mapQuery":"Grand Central Terminal New York","lat":40.7527,"lng":-73.9772,"image":{"url":"https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"grand station and Midtown landmark atmosphere"}},
-      {"id":"summit","name":"SUMMIT One Vanderbilt","kind":"observation","address":"45 E 42nd St New York NY 10017","mapQuery":"SUMMIT One Vanderbilt New York","lat":40.7527,"lng":-73.9787,"image":{"url":"https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"high observation deck skyline mood"}},
-      {"id":"birdland","name":"Birdland Jazz Club","kind":"venue","address":"315 W 44th St Suite 5402 New York NY 10036","mapQuery":"Birdland Jazz Club New York","lat":40.7607,"lng":-73.9885,"image":{"url":"https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1400&q=80","source":"search-derived","note":"검색 결과 기반으로 선택한 재즈 바 실사 이미지"}}
+      {
+        "id": "nypl",
+        "name": "New York Public Library",
+        "kind": "landmark",
+        "address": "476 5th Ave New York NY 10018",
+        "mapQuery": "New York Public Library Stephen A. Schwarzman Building",
+        "lat": 40.7532,
+        "lng": -73.9822,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "iconic library reading room / heritage interior mood"
+        }
+      },
+      {
+        "id": "bryant-park",
+        "name": "Bryant Park",
+        "kind": "park",
+        "address": "Bryant Park New York NY 10018",
+        "mapQuery": "Bryant Park New York",
+        "lat": 40.7536,
+        "lng": -73.9832,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "urban park and lawn mood"
+        }
+      },
+      {
+        "id": "gallaghers",
+        "name": "Gallaghers Steakhouse",
+        "kind": "restaurant",
+        "address": "228 W 52nd St New York NY 10019",
+        "mapQuery": "Gallaghers Steakhouse New York",
+        "lat": 40.7594,
+        "lng": -73.9868,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "classic New York steakhouse dining mood"
+        }
+      },
+      {
+        "id": "rockefeller",
+        "name": "Rockefeller Center",
+        "kind": "landmark",
+        "address": "45 Rockefeller Plaza New York NY 10111",
+        "mapQuery": "Rockefeller Center New York",
+        "lat": 40.7587,
+        "lng": -73.9787,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown landmark plaza mood"
+        }
+      },
+      {
+        "id": "grand-central",
+        "name": "Grand Central Terminal",
+        "kind": "landmark",
+        "address": "89 E 42nd St New York NY 10017",
+        "mapQuery": "Grand Central Terminal New York",
+        "lat": 40.7527,
+        "lng": -73.9772,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "grand station and Midtown landmark atmosphere"
+        }
+      },
+      {
+        "id": "summit",
+        "name": "SUMMIT One Vanderbilt",
+        "kind": "observation",
+        "address": "45 E 42nd St New York NY 10017",
+        "mapQuery": "SUMMIT One Vanderbilt New York",
+        "lat": 40.7527,
+        "lng": -73.9787,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "high observation deck skyline mood"
+        }
+      },
+      {
+        "id": "birdland",
+        "name": "Birdland Jazz Club",
+        "kind": "venue",
+        "address": "315 W 44th St Suite 5402 New York NY 10036",
+        "mapQuery": "Birdland Jazz Club New York",
+        "lat": 40.7607,
+        "lng": -73.9885,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1400&q=80",
+          "source": "search-derived",
+          "note": "검색 결과 기반으로 선택한 재즈 바 실사 이미지"
+        }
+      }
     ],
     "DAY 3": [
-      {"id":"harry-potter-ny","name":"Harry Potter New York","kind":"store","address":"935 Broadway New York NY 10010","mapQuery":"Harry Potter New York Flatiron","lat":40.7410,"lng":-73.9897,"image":{"url":"https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"fantasy retail/bookstore mood"}},
-      {"id":"shake-shack-msp","name":"Shake Shack Madison Square Park","kind":"restaurant","address":"Madison Ave & E 23rd St New York NY 10010","mapQuery":"Shake Shack Madison Square Park","lat":40.7416,"lng":-73.9881,"image":{"url":"https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"burger and fast casual restaurant mood"}},
-      {"id":"new-amsterdam","name":"New Amsterdam Theatre","kind":"venue","address":"214 W 42nd St New York NY 10036","mapQuery":"New Amsterdam Theatre New York","lat":40.7561,"lng":-73.9897,"image":{"url":"https://imaging.broadway.com/images/poster-178275/w640/222222/135824-5.jpg","source":"broadway.com-show-poster","note":"Aladdin Broadway.com Show Poster"}},
-      {"id":"rockefeller","name":"Rockefeller Center","kind":"landmark","address":"45 Rockefeller Plaza New York NY 10111","mapQuery":"Rockefeller Center New York","lat":40.7587,"lng":-73.9787,"image":{"url":"https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Midtown landmark plaza mood"}}
+      {
+        "id": "harry-potter-ny",
+        "name": "Harry Potter New York",
+        "kind": "store",
+        "address": "935 Broadway New York NY 10010",
+        "mapQuery": "Harry Potter New York Flatiron",
+        "lat": 40.741,
+        "lng": -73.9897,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "fantasy retail/bookstore mood"
+        }
+      },
+      {
+        "id": "shake-shack-msp",
+        "name": "Shake Shack Madison Square Park",
+        "kind": "restaurant",
+        "address": "Madison Ave & E 23rd St New York NY 10010",
+        "mapQuery": "Shake Shack Madison Square Park",
+        "lat": 40.7416,
+        "lng": -73.9881,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "burger and fast casual restaurant mood"
+        }
+      },
+      {
+        "id": "new-amsterdam",
+        "name": "New Amsterdam Theatre",
+        "kind": "venue",
+        "address": "214 W 42nd St New York NY 10036",
+        "mapQuery": "New Amsterdam Theatre New York",
+        "lat": 40.7561,
+        "lng": -73.9897,
+        "image": {
+          "url": "https://imaging.broadway.com/images/poster-178275/w640/222222/135824-5.jpg",
+          "source": "broadway.com-show-poster",
+          "note": "Aladdin Broadway.com Show Poster"
+        }
+      },
+      {
+        "id": "rockefeller",
+        "name": "Rockefeller Center",
+        "kind": "landmark",
+        "address": "45 Rockefeller Plaza New York NY 10111",
+        "mapQuery": "Rockefeller Center New York",
+        "lat": 40.7587,
+        "lng": -73.9787,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown landmark plaza mood"
+        }
+      }
     ],
     "DAY 4": [
-      {"id":"hotel-ts","name":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","kind":"stay","address":"585 8th Ave Manhattan New York NY 10018","mapQuery":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","lat":40.7540,"lng":-73.9927,"mapsUrl":"https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG","image":{"url":"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Midtown chain hotel placeholder image updated to actual booked hotel"}},
-      {"id":"port-authority","name":"Port Authority Bus Terminal","kind":"transit","address":"625 8th Ave New York NY 10018","mapQuery":"Port Authority Bus Terminal New York","lat":40.7569,"lng":-73.9903,"image":{"url":"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"coach bus departure mood for Woodbury day trip"}},
-      {"id":"woodbury-common","name":"Woodbury Common Premium Outlets","kind":"shopping","address":"498 Red Apple Ct Central Valley NY 10917","mapQuery":"Woodbury Common Premium Outlets","lat":41.3165,"lng":-74.1263,"image":{"url":"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"outlet shopping and fashion retail mood"}}
+      {
+        "id": "hotel-ts",
+        "name": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "kind": "stay",
+        "address": "585 8th Ave Manhattan New York NY 10018",
+        "mapQuery": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "lat": 40.754,
+        "lng": -73.9927,
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+        }
+      },
+      {
+        "id": "port-authority",
+        "name": "Port Authority Bus Terminal",
+        "kind": "transit",
+        "address": "625 8th Ave New York NY 10018",
+        "mapQuery": "Port Authority Bus Terminal New York",
+        "lat": 40.7569,
+        "lng": -73.9903,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "coach bus departure mood for Woodbury day trip"
+        }
+      },
+      {
+        "id": "woodbury-common",
+        "name": "Woodbury Common Premium Outlets",
+        "kind": "shopping",
+        "address": "498 Red Apple Ct Central Valley NY 10917",
+        "mapQuery": "Woodbury Common Premium Outlets",
+        "lat": 41.3165,
+        "lng": -74.1263,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "outlet shopping and fashion retail mood"
+        }
+      }
     ],
     "DAY 5": [
-      {"id":"hotel-ts","name":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","kind":"stay","address":"585 8th Ave Manhattan New York NY 10018","mapQuery":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","lat":40.7540,"lng":-73.9927,"mapsUrl":"https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG","image":{"url":"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Midtown chain hotel placeholder image updated to actual booked hotel"}},
-      {"id":"battery-park","name":"Battery Park / Castle Clinton","kind":"terminal","address":"Battery Park New York NY 10004","mapQuery":"Castle Clinton Battery Park New York","lat":40.7033,"lng":-74.0170,"image":{"url":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"harbor park and waterfront departure mood"}},
-      {"id":"liberty-island","name":"Statue of Liberty National Monument","kind":"landmark","address":"Liberty Island New York NY 10004","mapQuery":"Statue of Liberty National Monument","lat":40.6892,"lng":-74.0445,"image":{"url":"https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Statue of Liberty and New York Harbor mood"}},
-      {"id":"ellis-island","name":"Ellis Island","kind":"museum","address":"Ellis Island New York NY 07305","mapQuery":"Ellis Island National Museum of Immigration","lat":40.6995,"lng":-74.0396,"image":{"url":"https://images.unsplash.com/photo-1564597599963-2d3d3c0667da?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"historic immigration museum and harbor mood"}},
-      {"id":"buvette","name":"Buvette","kind":"restaurant","address":"42 Grove St New York NY 10014","mapQuery":"Buvette New York","lat":40.7330,"lng":-74.0043,"image":{"url":"https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"European-style brunch cafe mood"}},
-      {"id":"ambassador-theatre","name":"Ambassador Theatre","kind":"venue","address":"219 W 49th St New York NY 10019","mapQuery":"Ambassador Theatre New York","lat":40.7605,"lng":-73.9848,"image":{"url":"https://imaging.broadway.com/images/poster-178275/w640/222222/138719-3.jpg","source":"broadway.com-show-poster","note":"Chicago Broadway.com Show Poster"}}
+      {
+        "id": "hotel-ts",
+        "name": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "kind": "stay",
+        "address": "585 8th Ave Manhattan New York NY 10018",
+        "mapQuery": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "lat": 40.754,
+        "lng": -73.9927,
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+        }
+      },
+      {
+        "id": "battery-park",
+        "name": "Battery Park / Castle Clinton",
+        "kind": "terminal",
+        "address": "Battery Park New York NY 10004",
+        "mapQuery": "Castle Clinton Battery Park New York",
+        "lat": 40.7033,
+        "lng": -74.017,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "harbor park and waterfront departure mood"
+        }
+      },
+      {
+        "id": "liberty-island",
+        "name": "Statue of Liberty National Monument",
+        "kind": "landmark",
+        "address": "Liberty Island New York NY 10004",
+        "mapQuery": "Statue of Liberty National Monument",
+        "lat": 40.6892,
+        "lng": -74.0445,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Statue of Liberty and New York Harbor mood"
+        }
+      },
+      {
+        "id": "ellis-island",
+        "name": "Ellis Island",
+        "kind": "museum",
+        "address": "Ellis Island New York NY 07305",
+        "mapQuery": "Ellis Island National Museum of Immigration",
+        "lat": 40.6995,
+        "lng": -74.0396,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1564597599963-2d3d3c0667da?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "historic immigration museum and harbor mood"
+        }
+      },
+      {
+        "id": "buvette",
+        "name": "Buvette",
+        "kind": "restaurant",
+        "address": "42 Grove St New York NY 10014",
+        "mapQuery": "Buvette New York",
+        "lat": 40.733,
+        "lng": -74.0043,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "European-style brunch cafe mood"
+        }
+      },
+      {
+        "id": "ambassador-theatre",
+        "name": "Ambassador Theatre",
+        "kind": "venue",
+        "address": "219 W 49th St New York NY 10019",
+        "mapQuery": "Ambassador Theatre New York",
+        "lat": 40.7605,
+        "lng": -73.9848,
+        "image": {
+          "url": "https://imaging.broadway.com/images/poster-178275/w640/222222/138719-3.jpg",
+          "source": "broadway.com-show-poster",
+          "note": "Chicago Broadway.com Show Poster"
+        }
+      }
     ],
     "DAY 6": [
-      {"id":"times-square","name":"Times Square","kind":"landmark","address":"Times Square Manhattan New York NY","mapQuery":"Times Square New York","lat":40.7580,"lng":-73.9855,"image":{"url":"https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"night city billboard scene closer to Times Square feel"}},
-      {"id":"nypl","name":"New York Public Library","kind":"landmark","address":"476 5th Ave New York NY 10018","mapQuery":"New York Public Library Stephen A. Schwarzman Building","lat":40.7532,"lng":-73.9822,"image":{"url":"https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"iconic library reading room / heritage interior mood"}},
-      {"id":"bryant-park","name":"Bryant Park","kind":"park","address":"Bryant Park New York NY 10018","mapQuery":"Bryant Park New York","lat":40.7536,"lng":-73.9832,"image":{"url":"https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"urban park and lawn mood"}},
-      {"id":"grand-central","name":"Grand Central Terminal","kind":"landmark","address":"89 E 42nd St New York NY 10017","mapQuery":"Grand Central Terminal New York","lat":40.7527,"lng":-73.9772,"image":{"url":"https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"grand station and Midtown landmark atmosphere"}},
-      {"id":"moma","name":"MoMA","kind":"museum","address":"11 W 53rd St New York NY 10019","mapQuery":"Museum of Modern Art New York","lat":40.7614,"lng":-73.9776,"image":{"url":"https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"clean modern gallery mood closer to MoMA type"}},
-      {"id":"birdland","name":"Birdland Jazz Club","kind":"venue","address":"315 W 44th St Suite 5402 New York NY 10036","mapQuery":"Birdland Jazz Club New York","lat":40.7607,"lng":-73.9885,"image":{"url":"https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1400&q=80","source":"search-derived","note":"검색 결과 기반으로 선택한 재즈 바 실사 이미지"}}
+      {
+        "id": "times-square",
+        "name": "Times Square",
+        "kind": "landmark",
+        "address": "Times Square Manhattan New York NY",
+        "mapQuery": "Times Square New York",
+        "lat": 40.758,
+        "lng": -73.9855,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "night city billboard scene closer to Times Square feel"
+        }
+      },
+      {
+        "id": "nypl",
+        "name": "New York Public Library",
+        "kind": "landmark",
+        "address": "476 5th Ave New York NY 10018",
+        "mapQuery": "New York Public Library Stephen A. Schwarzman Building",
+        "lat": 40.7532,
+        "lng": -73.9822,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "iconic library reading room / heritage interior mood"
+        }
+      },
+      {
+        "id": "bryant-park",
+        "name": "Bryant Park",
+        "kind": "park",
+        "address": "Bryant Park New York NY 10018",
+        "mapQuery": "Bryant Park New York",
+        "lat": 40.7536,
+        "lng": -73.9832,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "urban park and lawn mood"
+        }
+      },
+      {
+        "id": "grand-central",
+        "name": "Grand Central Terminal",
+        "kind": "landmark",
+        "address": "89 E 42nd St New York NY 10017",
+        "mapQuery": "Grand Central Terminal New York",
+        "lat": 40.7527,
+        "lng": -73.9772,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "grand station and Midtown landmark atmosphere"
+        }
+      },
+      {
+        "id": "moma",
+        "name": "MoMA",
+        "kind": "museum",
+        "address": "11 W 53rd St New York NY 10019",
+        "mapQuery": "Museum of Modern Art New York",
+        "lat": 40.7614,
+        "lng": -73.9776,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "clean modern gallery mood closer to MoMA type"
+        }
+      },
+      {
+        "id": "birdland",
+        "name": "Birdland Jazz Club",
+        "kind": "venue",
+        "address": "315 W 44th St Suite 5402 New York NY 10036",
+        "mapQuery": "Birdland Jazz Club New York",
+        "lat": 40.7607,
+        "lng": -73.9885,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1400&q=80",
+          "source": "search-derived",
+          "note": "검색 결과 기반으로 선택한 재즈 바 실사 이미지"
+        }
+      },
+      {
+        "id": "met",
+        "name": "The Metropolitan Museum of Art",
+        "kind": "museum",
+        "address": "1000 5th Ave New York NY 10028",
+        "mapQuery": "The Metropolitan Museum of Art New York",
+        "lat": 40.7794,
+        "lng": -73.9632,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "grand museum stairs/gallery mood"
+        }
+      }
     ],
     "DAY 7": [
-      {"id":"ellens-stardust","name":"Ellen's Stardust Diner","kind":"restaurant","address":"1650 Broadway New York NY 10019","mapQuery":"Ellen's Stardust Diner New York","lat":40.7613,"lng":-73.9846,"image":{"url":"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"busy retro diner counter mood"}},
-      {"id":"minskoff","name":"Minskoff Theatre","kind":"venue","address":"200 W 45th St New York NY 10036","mapQuery":"Minskoff Theatre New York","lat":40.7580,"lng":-73.9855,"image":{"url":"https://imaging.broadway.com/images/poster-178275/w640/222222/135756-5.jpg","source":"broadway.com-show-poster","note":"The Lion King Broadway.com Show Poster"}}
+      {
+        "id": "ellens-stardust",
+        "name": "Ellen's Stardust Diner",
+        "kind": "restaurant",
+        "address": "1650 Broadway New York NY 10019",
+        "mapQuery": "Ellen's Stardust Diner New York",
+        "lat": 40.7613,
+        "lng": -73.9846,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "busy retro diner counter mood"
+        }
+      },
+      {
+        "id": "minskoff",
+        "name": "Minskoff Theatre",
+        "kind": "venue",
+        "address": "200 W 45th St New York NY 10036",
+        "mapQuery": "Minskoff Theatre New York",
+        "lat": 40.758,
+        "lng": -73.9855,
+        "image": {
+          "url": "https://imaging.broadway.com/images/poster-178275/w640/222222/135756-5.jpg",
+          "source": "broadway.com-show-poster",
+          "note": "The Lion King Broadway.com Show Poster"
+        }
+      }
     ],
     "DAY 8": [
-      {"id":"amnh","name":"American Museum of Natural History","kind":"museum","address":"200 Central Park W New York NY 10024","mapQuery":"American Museum of Natural History New York","lat":40.7813,"lng":-73.9735,"image":{"url":"https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"natural history museum hall / exhibit mood"}},
-      {"id":"central-park","name":"Central Park","kind":"park","address":"Central Park New York NY","mapQuery":"Central Park New York","lat":40.7812,"lng":-73.9665,"image":{"url":"https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Central Park path and skyline edge mood"}},
-      {"id":"gershwin","name":"Gershwin Theatre","kind":"venue","address":"222 W 51st St New York NY 10019","mapQuery":"Gershwin Theatre New York","lat":40.7624,"lng":-73.9854,"image":{"url":"https://imaging.broadway.com/images/poster-178275/w640/222222/136293-7.jpg","source":"broadway.com-show-poster","note":"Wicked Broadway.com Show Poster"}}
+      {
+        "id": "amnh",
+        "name": "American Museum of Natural History",
+        "kind": "museum",
+        "address": "200 Central Park W New York NY 10024",
+        "mapQuery": "American Museum of Natural History New York",
+        "lat": 40.7813,
+        "lng": -73.9735,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "natural history museum hall / exhibit mood"
+        }
+      },
+      {
+        "id": "central-park",
+        "name": "Central Park",
+        "kind": "park",
+        "address": "Central Park New York NY",
+        "mapQuery": "Central Park New York",
+        "lat": 40.7812,
+        "lng": -73.9665,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Central Park path and skyline edge mood"
+        }
+      },
+      {
+        "id": "gershwin",
+        "name": "Gershwin Theatre",
+        "kind": "venue",
+        "address": "222 W 51st St New York NY 10019",
+        "mapQuery": "Gershwin Theatre New York",
+        "lat": 40.7624,
+        "lng": -73.9854,
+        "image": {
+          "url": "https://imaging.broadway.com/images/poster-178275/w640/222222/136293-7.jpg",
+          "source": "broadway.com-show-poster",
+          "note": "Wicked Broadway.com Show Poster"
+        }
+      },
+      {
+        "id": "hotel-ts",
+        "name": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "kind": "stay",
+        "address": "585 8th Ave Manhattan New York NY 10018",
+        "mapQuery": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "lat": 40.754,
+        "lng": -73.9927,
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+        }
+      },
+      {
+        "id": "moma",
+        "name": "MoMA",
+        "kind": "museum",
+        "address": "11 W 53rd St New York NY 10019",
+        "mapQuery": "Museum of Modern Art New York",
+        "lat": 40.7614,
+        "lng": -73.9776,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "clean modern gallery mood closer to MoMA type"
+        }
+      }
     ],
     "DAY 9": [
-      {"id":"met","name":"The Metropolitan Museum of Art","kind":"museum","address":"1000 5th Ave New York NY 10028","mapQuery":"The Metropolitan Museum of Art New York","lat":40.7794,"lng":-73.9632,"image":{"url":"https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"grand museum stairs/gallery mood"}},
-      {"id":"vessel","name":"Vessel","kind":"landmark","address":"20 Hudson Yards New York NY 10001","mapQuery":"Vessel New York","lat":40.7539,"lng":-74.0021,"image":{"url":"https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"iconic geometric landmark mood closer to Vessel type"}},
-      {"id":"high-line","name":"High Line","kind":"park","address":"High Line New York NY","mapQuery":"High Line New York","lat":40.7480,"lng":-74.0048,"image":{"url":"https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"elevated park greenery mood"}},
-      {"id":"smith-wollensky","name":"Smith & Wollensky","kind":"restaurant","address":"797 3rd Ave New York NY 10022","mapQuery":"Smith & Wollensky New York","lat":40.7616,"lng":-73.9718,"image":{"url":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"classic New York steakhouse plate mood"}},
-      {"id":"blue-note","name":"Blue Note New York","kind":"venue","address":"131 W 3rd St New York NY 10012","mapQuery":"Blue Note New York","lat":40.7309,"lng":-74.0007,"image":{"url":"https://www.bluenotejazz.com/nyc/wp-content/uploads/sites/2/2025/07/Blue-Note-Jazz_NYC_featured_1200x630.jpg","source":"official","note":"Blue Note New York official site featured image"}}
+      {
+        "id": "met",
+        "name": "The Metropolitan Museum of Art",
+        "kind": "museum",
+        "address": "1000 5th Ave New York NY 10028",
+        "mapQuery": "The Metropolitan Museum of Art New York",
+        "lat": 40.7794,
+        "lng": -73.9632,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "grand museum stairs/gallery mood"
+        }
+      },
+      {
+        "id": "vessel",
+        "name": "Vessel",
+        "kind": "landmark",
+        "address": "20 Hudson Yards New York NY 10001",
+        "mapQuery": "Vessel New York",
+        "lat": 40.7539,
+        "lng": -74.0021,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "iconic geometric landmark mood closer to Vessel type"
+        }
+      },
+      {
+        "id": "high-line",
+        "name": "High Line",
+        "kind": "park",
+        "address": "High Line New York NY",
+        "mapQuery": "High Line New York",
+        "lat": 40.748,
+        "lng": -74.0048,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "elevated park greenery mood"
+        }
+      },
+      {
+        "id": "smith-wollensky",
+        "name": "Smith & Wollensky",
+        "kind": "restaurant",
+        "address": "797 3rd Ave New York NY 10022",
+        "mapQuery": "Smith & Wollensky New York",
+        "lat": 40.7616,
+        "lng": -73.9718,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "classic New York steakhouse plate mood"
+        }
+      },
+      {
+        "id": "blue-note",
+        "name": "Blue Note New York",
+        "kind": "venue",
+        "address": "131 W 3rd St New York NY 10012",
+        "mapQuery": "Blue Note New York",
+        "lat": 40.7309,
+        "lng": -74.0007,
+        "image": {
+          "url": "https://www.bluenotejazz.com/nyc/wp-content/uploads/sites/2/2025/07/Blue-Note-Jazz_NYC_featured_1200x630.jpg",
+          "source": "official",
+          "note": "Blue Note New York official site featured image"
+        }
+      },
+      {
+        "id": "hotel-ts",
+        "name": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "kind": "stay",
+        "address": "585 8th Ave Manhattan New York NY 10018",
+        "mapQuery": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "lat": 40.754,
+        "lng": -73.9927,
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+        }
+      },
+      {
+        "id": "times-square",
+        "name": "Times Square",
+        "kind": "landmark",
+        "address": "Times Square Manhattan New York NY",
+        "mapQuery": "Times Square New York",
+        "lat": 40.758,
+        "lng": -73.9855,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "night city billboard scene closer to Times Square feel"
+        }
+      }
     ],
     "DAY 10": [
-      {"id":"hotel-ts","name":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","kind":"stay","address":"585 8th Ave Manhattan New York NY 10018","mapQuery":"Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG","lat":40.7540,"lng":-73.9927,"mapsUrl":"https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG","image":{"url":"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Midtown chain hotel placeholder image updated to actual booked hotel"}},
-      {"id":"museum-of-ice-cream","name":"Museum of Ice Cream","kind":"museum","address":"558 Broadway New York NY 10012","mapQuery":"Museum of Ice Cream New York","lat":40.7241,"lng":-73.9982,"image":{"url":"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"playful pastel experiential museum mood"}},
-      {"id":"prince-street-pizza","name":"Prince Street Pizza","kind":"restaurant","address":"27 Prince St A New York NY 10012","mapQuery":"Prince Street Pizza New York","lat":40.7231,"lng":-73.9942,"image":{"url":"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"crispy square pepperoni pizza mood"}},
-      {"id":"smith-wollensky","name":"Smith & Wollensky","kind":"restaurant","address":"797 3rd Ave New York NY 10022","mapQuery":"Smith & Wollensky New York","lat":40.7616,"lng":-73.9718,"image":{"url":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"classic New York steakhouse plate mood"}}
+      {
+        "id": "hotel-ts",
+        "name": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "kind": "stay",
+        "address": "585 8th Ave Manhattan New York NY 10018",
+        "mapQuery": "Holiday Inn NEW YORK CITY - TIMES SQUARE by IHG",
+        "lat": 40.754,
+        "lng": -73.9927,
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "Midtown chain hotel placeholder image updated to actual booked hotel"
+        }
+      },
+      {
+        "id": "museum-of-ice-cream",
+        "name": "Museum of Ice Cream",
+        "kind": "museum",
+        "address": "558 Broadway New York NY 10012",
+        "mapQuery": "Museum of Ice Cream New York",
+        "lat": 40.7241,
+        "lng": -73.9982,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "playful pastel experiential museum mood"
+        }
+      },
+      {
+        "id": "prince-street-pizza",
+        "name": "Prince Street Pizza",
+        "kind": "restaurant",
+        "address": "27 Prince St A New York NY 10012",
+        "mapQuery": "Prince Street Pizza New York",
+        "lat": 40.7231,
+        "lng": -73.9942,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "crispy square pepperoni pizza mood"
+        }
+      },
+      {
+        "id": "smith-wollensky",
+        "name": "Smith & Wollensky",
+        "kind": "restaurant",
+        "address": "797 3rd Ave New York NY 10022",
+        "mapQuery": "Smith & Wollensky New York",
+        "lat": 40.7616,
+        "lng": -73.9718,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "classic New York steakhouse plate mood"
+        }
+      },
+      {
+        "id": "amnh",
+        "name": "American Museum of Natural History",
+        "kind": "museum",
+        "address": "200 Central Park W New York NY 10024",
+        "mapQuery": "American Museum of Natural History New York",
+        "lat": 40.7813,
+        "lng": -73.9735,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "natural history museum hall / exhibit mood"
+        }
+      }
     ]
   },
   "food": [
-    {"id":"lei","name":"Lei","kind":"restaurant","address":"9 Doyers St New York NY 10013","mapQuery":"Lei Doyers Street New York","lat":40.7145,"lng":-73.9982,"borough":"Manhattan","neighborhood":"Chinatown","cuisine":"Chinese American · Wine Bar","price":"$$$","reservation":"예약필수","buzz":["James Beard","신상","와인바"],"image":{"url":"https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"wine bar dining mood"},"desc":"Chinese American 와인바 · Chinatown · 2026 James Beard Best New Restaurant 최종 후보","chips":["최우선","James Beard","예약필수"]},
-    {"id":"bistrot-ha","name":"Bistrot Ha","kind":"restaurant","address":"137 Eldridge St New York NY 10002","mapQuery":"Bistrot Ha New York","lat":40.7191,"lng":-73.9915,"borough":"Manhattan","neighborhood":"Lower East Side","cuisine":"French Vietnamese","price":"$$$","reservation":"예약필수","buzz":["신상","Resy Hit List","Eater Heatmap"],"image":{"url":"https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"busy bistro dining mood"},"desc":"Ha's Snack Bar 팀의 확장판 · French Vietnamese · 예약 빠르게 마감","chips":["최우선","신상","예약필수"]},
-    {"id":"wild-cherry","name":"Wild Cherry","kind":"restaurant","address":"38 Commerce St New York NY 10014","mapQuery":"Wild Cherry 38 Commerce Street New York","lat":40.7317,"lng":-74.0056,"borough":"Manhattan","neighborhood":"West Village","cuisine":"American · French-ish","price":"$$$","reservation":"예약필수","buzz":["신상","셀럽","A24"],"image":{"url":"https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"theater district restaurant mood"},"desc":"Frenchette/Le Veau d'Or 팀과 A24 협업 · Cherry Lane Theatre 옆","chips":["화제성","A24","예약필수"]},
-    {"id":"deans","name":"Dean's","kind":"restaurant","address":"213 6th Ave New York NY 10014","mapQuery":"Dean's NYC 213 Sixth Avenue","lat":40.7287,"lng":-74.0030,"borough":"Manhattan","neighborhood":"SoHo","cuisine":"British Seafood Pub","price":"$$","reservation":"워크인","buzz":["신상","워크인","해산물"],"image":{"url":"https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"pub seafood and beer mood"},"desc":"King/Jupiter 팀의 영국식 seafood pub · stargazy pie와 Guinness","chips":["신상","워크인","펍"]},
-    {"id":"cote-550","name":"Cote 550 Madison","kind":"restaurant","address":"550 Madison Ave New York NY 10022","mapQuery":"Cote 550 Madison New York","lat":40.7612,"lng":-73.9734,"borough":"Manhattan","neighborhood":"Midtown East","cuisine":"Korean Steakhouse","price":"$$$$","reservation":"예약필수","buzz":["신상","핫플","Cote"],"image":{"url":"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"premium steakhouse grill mood"},"desc":"Cote/Coqodaq 팀의 2026년 4월 대형 프로젝트 · Bar Chimera와 같은 건물","chips":["최신오픈","예약필수","스테이크"]},
-    {"id":"bong","name":"Bong","kind":"restaurant","address":"854 St Johns Pl Brooklyn NY 11216","mapQuery":"Bong Cambodian restaurant Crown Heights Brooklyn","lat":40.6710,"lng":-73.9503,"borough":"Brooklyn","neighborhood":"Crown Heights","cuisine":"Cambodian · Khmer","price":"$$","reservation":"예약추천","buzz":["Michelin","신상","Resy"],"image":{"url":"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"colorful Southeast Asian table mood"},"desc":"Khmer 요리 신상 · Michelin 2026년 4월 Guide 신규 추가","chips":["Michelin 신규","Brooklyn","예약추천"]},
-    {"id":"kabawa","name":"Kabawa","kind":"restaurant","address":"8 Extra Pl New York NY 10003","mapQuery":"Kabawa New York","lat":40.7250,"lng":-73.9918,"borough":"Manhattan","neighborhood":"East Village","cuisine":"Caribbean Prix Fixe","price":"$$$$","reservation":"예약필수","buzz":["NYT Top 10","James Beard","Eater 38"],"image":{"url":"https://images.unsplash.com/photo-1539136788836-5699e78bfc75?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Caribbean dinner table mood"},"desc":"Momofuku 계열 Caribbean prix fixe · NYT 2025 Top 10","chips":["NYT Top 10","Eater 38","예약필수"]},
-    {"id":"borgo","name":"Borgo","kind":"restaurant","address":"124 E 27th St New York NY 10016","mapQuery":"Borgo New York restaurant","lat":40.7423,"lng":-73.9826,"borough":"Manhattan","neighborhood":"NoMad","cuisine":"Italian","price":"$$$","reservation":"예약추천","buzz":["Eater 38","James Beard","와인"],"image":{"url":"https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Italian restaurant pasta mood"},"desc":"Eater 38 2026 봄 신규 편입 · beverage 프로그램 주목","chips":["Eater 38","와인","이탈리안"]},
-    {"id":"le-chene","name":"Le Chene","kind":"restaurant","address":"76 Carmine St New York NY 10014","mapQuery":"Le Chene 76 Carmine Street New York","lat":40.7301,"lng":-74.0033,"borough":"Manhattan","neighborhood":"Greenwich Village","cuisine":"French","price":"$$$$","reservation":"예약필수","buzz":["Michelin","신상","와인"],"image":{"url":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"classic French dining mood"},"desc":"Michelin 2026년 4월 Guide 신규 추가 · French dining와 강한 와인 리스트","chips":["Michelin 신규","프렌치","예약필수"]},
-    {"id":"ramen-by-ra","name":"Ramen by Ra","kind":"restaurant","address":"107 1st Ave New York NY 10003","mapQuery":"Ramen by Ra New York","lat":40.7271,"lng":-73.9854,"borough":"Manhattan","neighborhood":"East Village","cuisine":"Ramen","price":"$$","reservation":"예약추천","buzz":["James Beard","카운터","신상"],"image":{"url":"https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"ramen counter mood"},"desc":"Rasheeda Purdie가 2026 James Beard Emerging Chef 최종 후보","chips":["James Beard","라멘","카운터"]},
-    {"id":"cleo","name":"Cleo","kind":"restaurant","address":"621 Hudson St New York NY 10014","mapQuery":"Cleo 621 Hudson Street New York","lat":40.7383,"lng":-74.0059,"borough":"Manhattan","neighborhood":"West Village","cuisine":"Rotisserie","price":"$$$","reservation":"예약추천","buzz":["신상","로티서리"],"image":{"url":"https://images.unsplash.com/photo-1598514982901-ae62764ae75e?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"rotisserie chicken mood"},"desc":"2026년 4월 오픈 · 레바논 향신료 느낌의 rotisserie chicken","chips":["최신오픈","West Village","치킨"]},
-    {"id":"marcel","name":"Marcel","kind":"restaurant","address":"945 Madison Ave New York NY 10021","mapQuery":"Marcel Sotheby's New York restaurant","lat":40.7736,"lng":-73.9637,"borough":"Manhattan","neighborhood":"Upper East Side","cuisine":"French Continental","price":"$$$$","reservation":"예약추천","buzz":["신상","디자인","Sotheby's"],"image":{"url":"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"artful dining room mood"},"desc":"Sotheby's + Roman and Williams 프로젝트 · 미술/디자인 공간성 강함","chips":["최신오픈","디자인","UES"]},
-    {"id":"bar-ferdinando","name":"Bar Ferdinando","kind":"restaurant","address":"151 Union St Brooklyn NY 11231","mapQuery":"Bar Ferdinando Brooklyn","lat":40.6844,"lng":-74.0002,"borough":"Brooklyn","neighborhood":"Carroll Gardens","cuisine":"Sicilian Cafe · Bar","price":"$$","reservation":"워크인","buzz":["신상","리부트","Brooklyn"],"image":{"url":"https://images.unsplash.com/photo-1528712306091-ed0763094c98?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Sicilian cafe snacks mood"},"desc":"121년 된 Ferdinando's Focacceria 자리의 all-day Sicilian bar 리부트","chips":["신상","Brooklyn","워크인"]},
-    {"id":"soba-ulala","name":"Soba Ulala","kind":"restaurant","address":"73 Thompson St New York NY 10012","mapQuery":"Soba Ulala New York","lat":40.7240,"lng":-74.0033,"borough":"Manhattan","neighborhood":"SoHo","cuisine":"Soba · Japanese","price":"$$$","reservation":"예약추천","buzz":["신상","일본식"],"image":{"url":"https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"soba noodle bowl mood"},"desc":"Hirohisa의 soba 신상 · 면을 매장에서 직접 준비","chips":["신상","소바","SoHo"]},
-    {"id":"odo-east-village","name":"Odo East Village","kind":"restaurant","address":"536 E 5th St New York NY 10009","mapQuery":"Odo East Village New York","lat":40.7245,"lng":-73.9834,"borough":"Manhattan","neighborhood":"East Village","cuisine":"Kaiseki Izakaya","price":"$$$","reservation":"예약추천","buzz":["신상","Michelin 팀"],"image":{"url":"https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Japanese counter dining mood"},"desc":"2스타 Odo의 캐주얼 스핀오프 · kaiseki izakaya 콘셉트","chips":["신상","이자카야","예약추천"]},
-    {"id":"kelang","name":"Kelang","kind":"restaurant","address":"715 Manhattan Ave Brooklyn NY 11222","mapQuery":"Kelang Greenpoint Brooklyn","lat":40.7253,"lng":-73.9514,"borough":"Brooklyn","neighborhood":"Greenpoint","cuisine":"Malaysian","price":"$$","reservation":"예약추천","buzz":["Resy Hit List","Eater Heatmap","신상"],"image":{"url":"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Malaysian rice and curry table mood"},"desc":"Hainan Chicken House 패밀리의 개인적 Malaysian · Resy Hit List 상위권","chips":["Resy Hit List","Brooklyn","말레이시안"]},
-    {"id":"border-town","name":"Border Town","kind":"restaurant","address":"189 Nassau Ave Brooklyn NY 11222","mapQuery":"Border Town Greenpoint Brooklyn","lat":40.7245,"lng":-73.9459,"borough":"Brooklyn","neighborhood":"Greenpoint","cuisine":"Northern Mexican","price":"$$","reservation":"예약추천","buzz":["신상","팝업출신","Eater Heatmap"],"image":{"url":"https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"taco and tortilla table mood"},"desc":"인기 팝업의 정식 매장화 · flour tortilla와 guisado 중심","chips":["신상","Brooklyn","멕시칸"]},
-    {"id":"balera","name":"Balera","kind":"restaurant","address":"442 Graham Ave Brooklyn NY 11211","mapQuery":"Balera Williamsburg Brooklyn","lat":40.7178,"lng":-73.9452,"borough":"Brooklyn","neighborhood":"Williamsburg","cuisine":"Pizza · Italian","price":"$$","reservation":"워크인","buzz":["신상","Eater Heatmap","라이브"],"image":{"url":"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"pizza and casual Italian mood"},"desc":"Williamsburg 신상 pizzeria · Roman-style pizza, pasta, 주말 DJ/live music","chips":["신상","피자","워크인"]},
-    {"id":"honey-badger","name":"Honey Badger","kind":"restaurant","address":"67 Fenimore St Brooklyn NY 11225","mapQuery":"Honey Badger Brooklyn restaurant","lat":40.6607,"lng":-73.9590,"borough":"Brooklyn","neighborhood":"Prospect-Lefferts Garden","cuisine":"Tasting Menu","price":"$$$$","reservation":"예약필수","buzz":["재오픈","테이스팅","발효"],"image":{"url":"https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"fine dining tasting menu mood"},"desc":"2026년 3월 재오픈 · fermentation lab와 13코스 tasting menu","chips":["재오픈","테이스팅","예약필수"]},
-    {"id":"diljan","name":"Diljan","kind":"restaurant","address":"330 Hicks St Brooklyn NY 11201","mapQuery":"Diljan Bakery Brooklyn Heights","lat":40.6907,"lng":-73.9976,"borough":"Brooklyn","neighborhood":"Brooklyn Heights","cuisine":"Afghan Bakery","price":"$","reservation":"워크인","buzz":["신상","베이커리","Brooklyn"],"image":{"url":"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"bakery bread and pastry mood"},"desc":"Little Flower Cafe 팀 + Bryan Ford · Afghan naan과 pastries","chips":["신상","베이커리","워크인"]},
-    {"id":"dumpling-wang","name":"Dumpling Wang","kind":"restaurant","address":"42-37 27th St Long Island City NY 11101","mapQuery":"Dumpling Wang Long Island City","lat":40.7479,"lng":-73.9405,"borough":"Queens","neighborhood":"Long Island City","cuisine":"Shanghai","price":"$","reservation":"캐주얼","buzz":["신상","Queens","심야"],"image":{"url":"https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"dumplings and noodles mood"},"desc":"Shanghai cuisine 신상 · xiao long bao, wonton, 늦은 시간까지 운영","chips":["Queens","샤오롱바오","캐주얼"]},
-    {"id":"gangjong-thunpa-phunshi","name":"GangJong Thunpa Phunshi","kind":"restaurant","address":"81-20 Broadway Elmhurst NY 11373","mapQuery":"GangJong Thunpa Phunshi Elmhurst Queens","lat":40.7425,"lng":-73.8830,"borough":"Queens","neighborhood":"Elmhurst","cuisine":"Tibetan","price":"$","reservation":"캐주얼","buzz":["신상","Queens","International Mile"],"image":{"url":"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"noodle soup and dumpling mood"},"desc":"Elmhurst International Mile 신상 · momo, laphing, hand-pulled noodles","chips":["Queens","티베탄","캐주얼"]},
-    {"id":"baos-pastry","name":"Bao's Pastry","kind":"restaurant","address":"Flushing Queens NY","mapQuery":"Bao's Pastry Flushing Queens","lat":40.7590,"lng":-73.8300,"borough":"Queens","neighborhood":"Flushing","cuisine":"Chinese Bakery","price":"$","reservation":"워크인","buzz":["신상","바이럴","베이커리"],"image":{"url":"https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"Chinese bakery pastry mood"},"desc":"2026 Q1 Flushing 화제 베이커리 · taosu, puff cake, egg tart 계열","chips":["Queens","베이커리","워크인"]},
-    {"id":"buvette","name":"Buvette","kind":"restaurant","address":"42 Grove St New York NY 10014","mapQuery":"Buvette New York","lat":40.7330,"lng":-74.0043,"borough":"Manhattan","neighborhood":"West Village","cuisine":"French Brunch","price":"$$","reservation":"예약추천","buzz":["클래식"],"image":{"url":"https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"European-style brunch cafe mood"},"desc":"프렌치 브런치 · West Village","chips":["브런치 명소","클래식"]},
-    {"id":"katzs","name":"Katz's Delicatessen","kind":"restaurant","address":"205 E Houston St New York NY 10002","mapQuery":"Katz's Delicatessen New York","lat":40.7223,"lng":-73.9874,"borough":"Manhattan","neighborhood":"Lower East Side","cuisine":"Deli","price":"$$","reservation":"워크인","buzz":["클래식","관광"],"image":{"url":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"hearty deli sandwich board mood"},"desc":"델리 · 샌드위치 · Lower East Side","chips":["현지 델리","클래식"]},
-    {"id":"prince-st-food","name":"Prince St. Pizza","kind":"restaurant","address":"27 Prince St A New York NY 10012","mapQuery":"Prince Street Pizza New York","lat":40.7231,"lng":-73.9942,"borough":"Manhattan","neighborhood":"SoHo","cuisine":"Pizza","price":"$","reservation":"워크인","buzz":["클래식","줄"],"image":{"url":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"New York slice mood"},"desc":"피자 · SoHo","chips":["치즈 피자","워크인"]},
-    {"id":"peter-luger","name":"Peter Luger","kind":"restaurant","address":"178 Broadway Brooklyn NY 11211","mapQuery":"Peter Luger Steak House Brooklyn","lat":40.7099,"lng":-73.9622,"borough":"Brooklyn","neighborhood":"Williamsburg","cuisine":"Steakhouse","price":"$$$$","reservation":"예약필수","buzz":["클래식"],"image":{"url":"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"legendary steakhouse plating mood"},"desc":"스테이크 · Williamsburg","chips":["클래식 스테이크","예약필수"]},
-    {"id":"river-cafe","name":"The River Café","kind":"restaurant","address":"1 Water St Brooklyn NY 11201","mapQuery":"The River Cafe Brooklyn","lat":40.7037,"lng":-73.9947,"borough":"Brooklyn","neighborhood":"DUMBO","cuisine":"Fine Dining","price":"$$$$","reservation":"예약필수","buzz":["전망","클래식"],"image":{"url":"https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80","source":"unsplash","note":"fine dining waterfront terrace mood"},"desc":"이탈리안 · 파인 다이닝 · DUMBO, Brooklyn","chips":["전망 좋은 루프탑","예약필수"]}
+    {
+      "id": "lei",
+      "name": "Lei",
+      "kind": "restaurant",
+      "address": "9 Doyers St New York NY 10013",
+      "mapQuery": "Lei Doyers Street New York",
+      "lat": 40.7145,
+      "lng": -73.9982,
+      "borough": "Manhattan",
+      "neighborhood": "Chinatown",
+      "cuisine": "Chinese American · Wine Bar",
+      "price": "$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "James Beard",
+        "신상",
+        "와인바"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "wine bar dining mood"
+      },
+      "desc": "Chinese American 와인바 · Chinatown · 2026 James Beard Best New Restaurant 최종 후보",
+      "chips": [
+        "최우선",
+        "James Beard",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "bistrot-ha",
+      "name": "Bistrot Ha",
+      "kind": "restaurant",
+      "address": "137 Eldridge St New York NY 10002",
+      "mapQuery": "Bistrot Ha New York",
+      "lat": 40.7191,
+      "lng": -73.9915,
+      "borough": "Manhattan",
+      "neighborhood": "Lower East Side",
+      "cuisine": "French Vietnamese",
+      "price": "$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "신상",
+        "Resy Hit List",
+        "Eater Heatmap"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "busy bistro dining mood"
+      },
+      "desc": "Ha's Snack Bar 팀의 확장판 · French Vietnamese · 예약 빠르게 마감",
+      "chips": [
+        "최우선",
+        "신상",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "wild-cherry",
+      "name": "Wild Cherry",
+      "kind": "restaurant",
+      "address": "38 Commerce St New York NY 10014",
+      "mapQuery": "Wild Cherry 38 Commerce Street New York",
+      "lat": 40.7317,
+      "lng": -74.0056,
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "cuisine": "American · French-ish",
+      "price": "$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "신상",
+        "셀럽",
+        "A24"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "theater district restaurant mood"
+      },
+      "desc": "Frenchette/Le Veau d'Or 팀과 A24 협업 · Cherry Lane Theatre 옆",
+      "chips": [
+        "화제성",
+        "A24",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "deans",
+      "name": "Dean's",
+      "kind": "restaurant",
+      "address": "213 6th Ave New York NY 10014",
+      "mapQuery": "Dean's NYC 213 Sixth Avenue",
+      "lat": 40.7287,
+      "lng": -74.003,
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "cuisine": "British Seafood Pub",
+      "price": "$$",
+      "reservation": "워크인",
+      "buzz": [
+        "신상",
+        "워크인",
+        "해산물"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "pub seafood and beer mood"
+      },
+      "desc": "King/Jupiter 팀의 영국식 seafood pub · stargazy pie와 Guinness",
+      "chips": [
+        "신상",
+        "워크인",
+        "펍"
+      ]
+    },
+    {
+      "id": "cote-550",
+      "name": "Cote 550 Madison",
+      "kind": "restaurant",
+      "address": "550 Madison Ave New York NY 10022",
+      "mapQuery": "Cote 550 Madison New York",
+      "lat": 40.7612,
+      "lng": -73.9734,
+      "borough": "Manhattan",
+      "neighborhood": "Midtown East",
+      "cuisine": "Korean Steakhouse",
+      "price": "$$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "신상",
+        "핫플",
+        "Cote"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "premium steakhouse grill mood"
+      },
+      "desc": "Cote/Coqodaq 팀의 2026년 4월 대형 프로젝트 · Bar Chimera와 같은 건물",
+      "chips": [
+        "최신오픈",
+        "예약필수",
+        "스테이크"
+      ]
+    },
+    {
+      "id": "bong",
+      "name": "Bong",
+      "kind": "restaurant",
+      "address": "854 St Johns Pl Brooklyn NY 11216",
+      "mapQuery": "Bong Cambodian restaurant Crown Heights Brooklyn",
+      "lat": 40.671,
+      "lng": -73.9503,
+      "borough": "Brooklyn",
+      "neighborhood": "Crown Heights",
+      "cuisine": "Cambodian · Khmer",
+      "price": "$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "Michelin",
+        "신상",
+        "Resy"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "colorful Southeast Asian table mood"
+      },
+      "desc": "Khmer 요리 신상 · Michelin 2026년 4월 Guide 신규 추가",
+      "chips": [
+        "Michelin 신규",
+        "Brooklyn",
+        "예약추천"
+      ]
+    },
+    {
+      "id": "kabawa",
+      "name": "Kabawa",
+      "kind": "restaurant",
+      "address": "8 Extra Pl New York NY 10003",
+      "mapQuery": "Kabawa New York",
+      "lat": 40.725,
+      "lng": -73.9918,
+      "borough": "Manhattan",
+      "neighborhood": "East Village",
+      "cuisine": "Caribbean Prix Fixe",
+      "price": "$$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "NYT Top 10",
+        "James Beard",
+        "Eater 38"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1539136788836-5699e78bfc75?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "Caribbean dinner table mood"
+      },
+      "desc": "Momofuku 계열 Caribbean prix fixe · NYT 2025 Top 10",
+      "chips": [
+        "NYT Top 10",
+        "Eater 38",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "borgo",
+      "name": "Borgo",
+      "kind": "restaurant",
+      "address": "124 E 27th St New York NY 10016",
+      "mapQuery": "Borgo New York restaurant",
+      "lat": 40.7423,
+      "lng": -73.9826,
+      "borough": "Manhattan",
+      "neighborhood": "NoMad",
+      "cuisine": "Italian",
+      "price": "$$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "Eater 38",
+        "James Beard",
+        "와인"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "Italian restaurant pasta mood"
+      },
+      "desc": "Eater 38 2026 봄 신규 편입 · beverage 프로그램 주목",
+      "chips": [
+        "Eater 38",
+        "와인",
+        "이탈리안"
+      ]
+    },
+    {
+      "id": "le-chene",
+      "name": "Le Chene",
+      "kind": "restaurant",
+      "address": "76 Carmine St New York NY 10014",
+      "mapQuery": "Le Chene 76 Carmine Street New York",
+      "lat": 40.7301,
+      "lng": -74.0033,
+      "borough": "Manhattan",
+      "neighborhood": "Greenwich Village",
+      "cuisine": "French",
+      "price": "$$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "Michelin",
+        "신상",
+        "와인"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "classic French dining mood"
+      },
+      "desc": "Michelin 2026년 4월 Guide 신규 추가 · French dining와 강한 와인 리스트",
+      "chips": [
+        "Michelin 신규",
+        "프렌치",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "ramen-by-ra",
+      "name": "Ramen by Ra",
+      "kind": "restaurant",
+      "address": "107 1st Ave New York NY 10003",
+      "mapQuery": "Ramen by Ra New York",
+      "lat": 40.7271,
+      "lng": -73.9854,
+      "borough": "Manhattan",
+      "neighborhood": "East Village",
+      "cuisine": "Ramen",
+      "price": "$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "James Beard",
+        "카운터",
+        "신상"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "ramen counter mood"
+      },
+      "desc": "Rasheeda Purdie가 2026 James Beard Emerging Chef 최종 후보",
+      "chips": [
+        "James Beard",
+        "라멘",
+        "카운터"
+      ]
+    },
+    {
+      "id": "cleo",
+      "name": "Cleo",
+      "kind": "restaurant",
+      "address": "621 Hudson St New York NY 10014",
+      "mapQuery": "Cleo 621 Hudson Street New York",
+      "lat": 40.7383,
+      "lng": -74.0059,
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "cuisine": "Rotisserie",
+      "price": "$$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "신상",
+        "로티서리"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1598514982901-ae62764ae75e?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "rotisserie chicken mood"
+      },
+      "desc": "2026년 4월 오픈 · 레바논 향신료 느낌의 rotisserie chicken",
+      "chips": [
+        "최신오픈",
+        "West Village",
+        "치킨"
+      ]
+    },
+    {
+      "id": "marcel",
+      "name": "Marcel",
+      "kind": "restaurant",
+      "address": "945 Madison Ave New York NY 10021",
+      "mapQuery": "Marcel Sotheby's New York restaurant",
+      "lat": 40.7736,
+      "lng": -73.9637,
+      "borough": "Manhattan",
+      "neighborhood": "Upper East Side",
+      "cuisine": "French Continental",
+      "price": "$$$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "신상",
+        "디자인",
+        "Sotheby's"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "artful dining room mood"
+      },
+      "desc": "Sotheby's + Roman and Williams 프로젝트 · 미술/디자인 공간성 강함",
+      "chips": [
+        "최신오픈",
+        "디자인",
+        "UES"
+      ]
+    },
+    {
+      "id": "bar-ferdinando",
+      "name": "Bar Ferdinando",
+      "kind": "restaurant",
+      "address": "151 Union St Brooklyn NY 11231",
+      "mapQuery": "Bar Ferdinando Brooklyn",
+      "lat": 40.6844,
+      "lng": -74.0002,
+      "borough": "Brooklyn",
+      "neighborhood": "Carroll Gardens",
+      "cuisine": "Sicilian Cafe · Bar",
+      "price": "$$",
+      "reservation": "워크인",
+      "buzz": [
+        "신상",
+        "리부트",
+        "Brooklyn"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1528712306091-ed0763094c98?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "Sicilian cafe snacks mood"
+      },
+      "desc": "121년 된 Ferdinando's Focacceria 자리의 all-day Sicilian bar 리부트",
+      "chips": [
+        "신상",
+        "Brooklyn",
+        "워크인"
+      ]
+    },
+    {
+      "id": "soba-ulala",
+      "name": "Soba Ulala",
+      "kind": "restaurant",
+      "address": "73 Thompson St New York NY 10012",
+      "mapQuery": "Soba Ulala New York",
+      "lat": 40.724,
+      "lng": -74.0033,
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "cuisine": "Soba · Japanese",
+      "price": "$$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "신상",
+        "일본식"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "soba noodle bowl mood"
+      },
+      "desc": "Hirohisa의 soba 신상 · 면을 매장에서 직접 준비",
+      "chips": [
+        "신상",
+        "소바",
+        "SoHo"
+      ]
+    },
+    {
+      "id": "odo-east-village",
+      "name": "Odo East Village",
+      "kind": "restaurant",
+      "address": "536 E 5th St New York NY 10009",
+      "mapQuery": "Odo East Village New York",
+      "lat": 40.7245,
+      "lng": -73.9834,
+      "borough": "Manhattan",
+      "neighborhood": "East Village",
+      "cuisine": "Kaiseki Izakaya",
+      "price": "$$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "신상",
+        "Michelin 팀"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "Japanese counter dining mood"
+      },
+      "desc": "2스타 Odo의 캐주얼 스핀오프 · kaiseki izakaya 콘셉트",
+      "chips": [
+        "신상",
+        "이자카야",
+        "예약추천"
+      ]
+    },
+    {
+      "id": "kelang",
+      "name": "Kelang",
+      "kind": "restaurant",
+      "address": "715 Manhattan Ave Brooklyn NY 11222",
+      "mapQuery": "Kelang Greenpoint Brooklyn",
+      "lat": 40.7253,
+      "lng": -73.9514,
+      "borough": "Brooklyn",
+      "neighborhood": "Greenpoint",
+      "cuisine": "Malaysian",
+      "price": "$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "Resy Hit List",
+        "Eater Heatmap",
+        "신상"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "Malaysian rice and curry table mood"
+      },
+      "desc": "Hainan Chicken House 패밀리의 개인적 Malaysian · Resy Hit List 상위권",
+      "chips": [
+        "Resy Hit List",
+        "Brooklyn",
+        "말레이시안"
+      ]
+    },
+    {
+      "id": "border-town",
+      "name": "Border Town",
+      "kind": "restaurant",
+      "address": "189 Nassau Ave Brooklyn NY 11222",
+      "mapQuery": "Border Town Greenpoint Brooklyn",
+      "lat": 40.7245,
+      "lng": -73.9459,
+      "borough": "Brooklyn",
+      "neighborhood": "Greenpoint",
+      "cuisine": "Northern Mexican",
+      "price": "$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "신상",
+        "팝업출신",
+        "Eater Heatmap"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "taco and tortilla table mood"
+      },
+      "desc": "인기 팝업의 정식 매장화 · flour tortilla와 guisado 중심",
+      "chips": [
+        "신상",
+        "Brooklyn",
+        "멕시칸"
+      ]
+    },
+    {
+      "id": "balera",
+      "name": "Balera",
+      "kind": "restaurant",
+      "address": "442 Graham Ave Brooklyn NY 11211",
+      "mapQuery": "Balera Williamsburg Brooklyn",
+      "lat": 40.7178,
+      "lng": -73.9452,
+      "borough": "Brooklyn",
+      "neighborhood": "Williamsburg",
+      "cuisine": "Pizza · Italian",
+      "price": "$$",
+      "reservation": "워크인",
+      "buzz": [
+        "신상",
+        "Eater Heatmap",
+        "라이브"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "pizza and casual Italian mood"
+      },
+      "desc": "Williamsburg 신상 pizzeria · Roman-style pizza, pasta, 주말 DJ/live music",
+      "chips": [
+        "신상",
+        "피자",
+        "워크인"
+      ]
+    },
+    {
+      "id": "honey-badger",
+      "name": "Honey Badger",
+      "kind": "restaurant",
+      "address": "67 Fenimore St Brooklyn NY 11225",
+      "mapQuery": "Honey Badger Brooklyn restaurant",
+      "lat": 40.6607,
+      "lng": -73.959,
+      "borough": "Brooklyn",
+      "neighborhood": "Prospect-Lefferts Garden",
+      "cuisine": "Tasting Menu",
+      "price": "$$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "재오픈",
+        "테이스팅",
+        "발효"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "fine dining tasting menu mood"
+      },
+      "desc": "2026년 3월 재오픈 · fermentation lab와 13코스 tasting menu",
+      "chips": [
+        "재오픈",
+        "테이스팅",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "diljan",
+      "name": "Diljan",
+      "kind": "restaurant",
+      "address": "330 Hicks St Brooklyn NY 11201",
+      "mapQuery": "Diljan Bakery Brooklyn Heights",
+      "lat": 40.6907,
+      "lng": -73.9976,
+      "borough": "Brooklyn",
+      "neighborhood": "Brooklyn Heights",
+      "cuisine": "Afghan Bakery",
+      "price": "$",
+      "reservation": "워크인",
+      "buzz": [
+        "신상",
+        "베이커리",
+        "Brooklyn"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "bakery bread and pastry mood"
+      },
+      "desc": "Little Flower Cafe 팀 + Bryan Ford · Afghan naan과 pastries",
+      "chips": [
+        "신상",
+        "베이커리",
+        "워크인"
+      ]
+    },
+    {
+      "id": "dumpling-wang",
+      "name": "Dumpling Wang",
+      "kind": "restaurant",
+      "address": "42-37 27th St Long Island City NY 11101",
+      "mapQuery": "Dumpling Wang Long Island City",
+      "lat": 40.7479,
+      "lng": -73.9405,
+      "borough": "Queens",
+      "neighborhood": "Long Island City",
+      "cuisine": "Shanghai",
+      "price": "$",
+      "reservation": "캐주얼",
+      "buzz": [
+        "신상",
+        "Queens",
+        "심야"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "dumplings and noodles mood"
+      },
+      "desc": "Shanghai cuisine 신상 · xiao long bao, wonton, 늦은 시간까지 운영",
+      "chips": [
+        "Queens",
+        "샤오롱바오",
+        "캐주얼"
+      ]
+    },
+    {
+      "id": "gangjong-thunpa-phunshi",
+      "name": "GangJong Thunpa Phunshi",
+      "kind": "restaurant",
+      "address": "81-20 Broadway Elmhurst NY 11373",
+      "mapQuery": "GangJong Thunpa Phunshi Elmhurst Queens",
+      "lat": 40.7425,
+      "lng": -73.883,
+      "borough": "Queens",
+      "neighborhood": "Elmhurst",
+      "cuisine": "Tibetan",
+      "price": "$",
+      "reservation": "캐주얼",
+      "buzz": [
+        "신상",
+        "Queens",
+        "International Mile"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "noodle soup and dumpling mood"
+      },
+      "desc": "Elmhurst International Mile 신상 · momo, laphing, hand-pulled noodles",
+      "chips": [
+        "Queens",
+        "티베탄",
+        "캐주얼"
+      ]
+    },
+    {
+      "id": "baos-pastry",
+      "name": "Bao's Pastry",
+      "kind": "restaurant",
+      "address": "Flushing Queens NY",
+      "mapQuery": "Bao's Pastry Flushing Queens",
+      "lat": 40.759,
+      "lng": -73.83,
+      "borough": "Queens",
+      "neighborhood": "Flushing",
+      "cuisine": "Chinese Bakery",
+      "price": "$",
+      "reservation": "워크인",
+      "buzz": [
+        "신상",
+        "바이럴",
+        "베이커리"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "Chinese bakery pastry mood"
+      },
+      "desc": "2026 Q1 Flushing 화제 베이커리 · taosu, puff cake, egg tart 계열",
+      "chips": [
+        "Queens",
+        "베이커리",
+        "워크인"
+      ]
+    },
+    {
+      "id": "buvette",
+      "name": "Buvette",
+      "kind": "restaurant",
+      "address": "42 Grove St New York NY 10014",
+      "mapQuery": "Buvette New York",
+      "lat": 40.733,
+      "lng": -74.0043,
+      "borough": "Manhattan",
+      "neighborhood": "West Village",
+      "cuisine": "French Brunch",
+      "price": "$$",
+      "reservation": "예약추천",
+      "buzz": [
+        "클래식"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "European-style brunch cafe mood"
+      },
+      "desc": "프렌치 브런치 · West Village",
+      "chips": [
+        "브런치 명소",
+        "클래식"
+      ]
+    },
+    {
+      "id": "katzs",
+      "name": "Katz's Delicatessen",
+      "kind": "restaurant",
+      "address": "205 E Houston St New York NY 10002",
+      "mapQuery": "Katz's Delicatessen New York",
+      "lat": 40.7223,
+      "lng": -73.9874,
+      "borough": "Manhattan",
+      "neighborhood": "Lower East Side",
+      "cuisine": "Deli",
+      "price": "$$",
+      "reservation": "워크인",
+      "buzz": [
+        "클래식",
+        "관광"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "hearty deli sandwich board mood"
+      },
+      "desc": "델리 · 샌드위치 · Lower East Side",
+      "chips": [
+        "현지 델리",
+        "클래식"
+      ]
+    },
+    {
+      "id": "prince-st-food",
+      "name": "Prince St. Pizza",
+      "kind": "restaurant",
+      "address": "27 Prince St A New York NY 10012",
+      "mapQuery": "Prince Street Pizza New York",
+      "lat": 40.7231,
+      "lng": -73.9942,
+      "borough": "Manhattan",
+      "neighborhood": "SoHo",
+      "cuisine": "Pizza",
+      "price": "$",
+      "reservation": "워크인",
+      "buzz": [
+        "클래식",
+        "줄"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "New York slice mood"
+      },
+      "desc": "피자 · SoHo",
+      "chips": [
+        "치즈 피자",
+        "워크인"
+      ]
+    },
+    {
+      "id": "peter-luger",
+      "name": "Peter Luger",
+      "kind": "restaurant",
+      "address": "178 Broadway Brooklyn NY 11211",
+      "mapQuery": "Peter Luger Steak House Brooklyn",
+      "lat": 40.7099,
+      "lng": -73.9622,
+      "borough": "Brooklyn",
+      "neighborhood": "Williamsburg",
+      "cuisine": "Steakhouse",
+      "price": "$$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "클래식"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "legendary steakhouse plating mood"
+      },
+      "desc": "스테이크 · Williamsburg",
+      "chips": [
+        "클래식 스테이크",
+        "예약필수"
+      ]
+    },
+    {
+      "id": "river-cafe",
+      "name": "The River Café",
+      "kind": "restaurant",
+      "address": "1 Water St Brooklyn NY 11201",
+      "mapQuery": "The River Cafe Brooklyn",
+      "lat": 40.7037,
+      "lng": -73.9947,
+      "borough": "Brooklyn",
+      "neighborhood": "DUMBO",
+      "cuisine": "Fine Dining",
+      "price": "$$$$",
+      "reservation": "예약필수",
+      "buzz": [
+        "전망",
+        "클래식"
+      ],
+      "image": {
+        "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80",
+        "source": "unsplash",
+        "note": "fine dining waterfront terrace mood"
+      },
+      "desc": "이탈리안 · 파인 다이닝 · DUMBO, Brooklyn",
+      "chips": [
+        "전망 좋은 루프탑",
+        "예약필수"
+      ]
+    }
   ]
 }

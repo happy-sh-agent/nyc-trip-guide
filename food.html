@@ -16,7 +16,7 @@
     h1 { margin:8px 0 0; font-size:48px; line-height:1; letter-spacing:-0.03em; }
     .hero-sub { margin-top:10px; font-size:17px; color:rgba(255,255,255,0.92); }
     .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.94); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; }
-    .tab { flex:1; text-align:center; padding:12px 18px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; }
+    .tab { flex:1; text-align:center; padding:12px 10px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; white-space:nowrap; }
     .tab.active { background:var(--primary); color:white; }
     .section { margin-top:18px; }
     .card { background:var(--card); border:1px solid rgba(226,232,242,0.95); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
@@ -43,7 +43,7 @@
     .chip { font-size:12px; padding:5px 8px; border-radius:999px; background:#f3f6fd; color:var(--primary); font-weight:700; }
     .button { display:inline-flex; align-items:center; justify-content:center; padding:11px 14px; border-radius:14px; text-decoration:none; border:1px solid #dce5f4; color:var(--primary); font-weight:700; background:white; }
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
-    @media (max-width:640px) { .meta-grid, .filters { grid-template-columns:1fr 1fr; } .filters input { grid-column:1 / -1; } .place-card { grid-template-columns:1fr; } .thumb { width:100%; aspect-ratio: 4 / 3; min-height:180px; } }
+    @media (max-width:640px) { .tabbar { gap:6px; } .tab { padding:11px 6px; font-size:12px; } .meta-grid, .filters { grid-template-columns:1fr 1fr; } .filters input { grid-column:1 / -1; } .place-card { grid-template-columns:1fr; } .thumb { width:100%; aspect-ratio: 4 / 3; min-height:180px; } }
   </style>
 </head>
 <body>
@@ -58,6 +58,7 @@
       <a class="tab" href="./index.html">🗓️ 일정표</a>
       <a class="tab active" href="./food.html">🍽️ 맛집</a>
       <a class="tab" href="./photo-spots.html">📷 포토스팟</a>
+      <a class="tab" href="./banksy.html">🎨 뱅크시</a>
     </div>
     <section class="section">
       <div class="card">

@@ -16,7 +16,7 @@
     h1 { margin:8px 0 0; font-size:48px; line-height:1; letter-spacing:-0.03em; }
     .hero-sub { margin-top:10px; font-size:17px; color:rgba(255,255,255,0.92); }
     .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.94); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; }
-    .tab { flex:1; text-align:center; padding:12px 14px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; }
+    .tab { flex:1; text-align:center; padding:12px 10px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; white-space:nowrap; }
     .tab.active { background:var(--primary); color:white; }
     .section { margin-top:18px; }
     .card { background:var(--card); border:1px solid rgba(226,232,242,0.95); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
@@ -49,7 +49,7 @@
     @media (max-width:640px) {
       h1 { font-size:42px; }
       .tabbar { gap:6px; }
-      .tab { padding:11px 8px; font-size:13px; }
+      .tab { padding:11px 6px; font-size:12px; }
       .meta-grid, .filters { grid-template-columns:1fr 1fr; }
       .filters input { grid-column:1 / -1; }
       .place-card { grid-template-columns:1fr; }
@@ -70,6 +70,7 @@
       <a class="tab" href="./index.html">🗓️ 일정표</a>
       <a class="tab" href="./food.html">🍽️ 맛집</a>
       <a class="tab active" href="./photo-spots.html">📷 포토스팟</a>
+      <a class="tab" href="./banksy.html">🎨 뱅크시</a>
     </div>
     <section class="section">
       <div class="card">

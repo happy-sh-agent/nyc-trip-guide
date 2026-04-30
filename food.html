@@ -31,6 +31,10 @@
     .filter-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
     .filter-tag { border:1px solid var(--line); background:white; color:var(--muted); border-radius:999px; padding:8px 11px; font-weight:800; font-size:12px; cursor:pointer; }
     .filter-tag.active { background:var(--primary); border-color:var(--primary); color:white; }
+    .location-row { display:flex; gap:10px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+    .location-button { min-height:42px; border:1px solid #dce5f4; background:var(--primary); color:white; border-radius:14px; padding:0 14px; font:inherit; font-size:14px; font-weight:800; cursor:pointer; }
+    .location-button.secondary { background:white; color:var(--primary); }
+    .location-status { color:var(--muted); font-size:13px; font-weight:700; }
     .place-list { display:grid; gap:12px; }
     .place-card { display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:center; border:1px solid var(--line); border-radius:18px; padding:12px; background:white; }
     .thumb { width:120px; aspect-ratio: 4 / 3; min-height:90px; border-radius:14px; background-size:cover; background-position:center; overflow:hidden; }
@@ -38,6 +42,7 @@
     .desc { color:var(--muted); font-size:14px; margin-top:4px; }
     .details { color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; font-size:12px; font-weight:700; margin-top:7px; }
     .detail-dot::before { content:"·"; margin-right:8px; color:#b6becc; }
+    .distance-chip { display:inline-flex; align-items:center; color:#0f7a4a; background:#eaf8ef; border-radius:999px; padding:3px 7px; }
     .chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
     .chip { font-size:12px; padding:5px 8px; border-radius:999px; background:#f3f6fd; color:var(--primary); font-weight:700; }
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
@@ -77,6 +82,17 @@
           <select class="filter-control" id="reservationFilter" aria-label="예약">
             <option value="">전체 예약 방식</option>
           </select>
+          <select class="filter-control" id="distanceFilter" aria-label="거리">
+            <option value="">전체 거리</option>
+            <option value="1">1mi 이내</option>
+            <option value="3">3mi 이내</option>
+            <option value="5">5mi 이내</option>
+          </select>
+        </div>
+        <div class="location-row">
+          <button class="location-button" id="useLocationButton" type="button">현재 위치 기준</button>
+          <button class="location-button secondary" id="clearLocationButton" type="button" hidden>위치 해제</button>
+          <div class="location-status" id="locationStatus">위치 허용 시 가까운 순으로 정렬합니다.</div>
         </div>
         <div class="filter-tags" id="buzzFilters" aria-label="검증 태그"></div>
       </div>
@@ -95,8 +111,11 @@
         borough: '',
         price: '',
         reservation: '',
+        distance: '',
         buzz: ''
-      }
+      },
+      userLocation: null,
+      sortByDistance: false
     };
 
     const priceLabels = {
@@ -109,6 +128,31 @@
     const byId = id => document.getElementById(id);
     const normalize = value => String(value || '').toLowerCase().trim();
     const unique = values => [...new Set(values.filter(Boolean))];
+    const toRadians = degrees => degrees * Math.PI / 180;
+
+    function distanceMiles(a, b) {
+      const earthRadiusMiles = 3958.8;
+      const dLat = toRadians(b.lat - a.lat);
+      const dLng = toRadians(b.lng - a.lng);
+      const lat1 = toRadians(a.lat);
+      const lat2 = toRadians(b.lat);
+      const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+      return 2 * earthRadiusMiles * Math.asin(Math.sqrt(h));
+    }
+
+    function formatDistance(miles) {
+      if (typeof miles !== 'number' || Number.isNaN(miles)) return '';
+      return miles < 0.1 ? '<0.1 mi' : miles.toFixed(miles < 10 ? 1 : 0) + ' mi';
+    }
+
+    function updateDistances() {
+      state.allItems = state.allItems.map(item => ({
+        ...item,
+        distanceMiles: state.userLocation && typeof item.lat === 'number' && typeof item.lng === 'number'
+          ? distanceMiles(state.userLocation, { lat: item.lat, lng: item.lng })
+          : null
+      }));
+    }
 
     function renderOptions(selectId, values, labeler = value => value) {
       const select = byId(selectId);
@@ -138,6 +182,7 @@
         && (!state.filters.borough || item.borough === state.filters.borough)
         && (!state.filters.price || item.price === state.filters.price)
         && (!state.filters.reservation || item.reservation === state.filters.reservation)
+        && (!state.filters.distance || (typeof item.distanceMiles === 'number' && item.distanceMiles <= Number(state.filters.distance)))
         && (!state.filters.buzz
           || item.borough === state.filters.buzz
           || item.neighborhood === state.filters.buzz
@@ -162,7 +207,12 @@
     }
 
     function render() {
-      const filtered = state.allItems.filter(itemMatches);
+      const filtered = state.allItems.filter(itemMatches).sort((a, b) => {
+        if (!state.sortByDistance) return 0;
+        const aDistance = typeof a.distanceMiles === 'number' ? a.distanceMiles : Infinity;
+        const bDistance = typeof b.distanceMiles === 'number' ? b.distanceMiles : Infinity;
+        return aDistance - bDistance;
+      });
       byId('foodCount').textContent = `${filtered.length} / ${state.allItems.length}곳`;
       renderBuzzFilters(state.allItems);
 
@@ -178,6 +228,7 @@
               <span class="detail-dot">${item.cuisine || '장르 미정'}</span>
               <span class="detail-dot">${item.price || '-'}</span>
               <span class="detail-dot">${item.reservation || '예약 정보 미정'}</span>
+              ${typeof item.distanceMiles === 'number' ? '<span class="detail-dot distance-chip">' + formatDistance(item.distanceMiles) + '</span>' : ''}
             </div>
             <div class="chips">${(item.chips || []).map(chip => `<span class="chip">${chip}</span>`).join('')}</div>
           </div>
@@ -211,6 +262,46 @@
         });
         byId('reservationFilter').addEventListener('change', event => {
           state.filters.reservation = event.target.value;
+          render();
+        });
+        byId('distanceFilter').addEventListener('change', event => {
+          state.filters.distance = event.target.value;
+          render();
+        });
+        byId('useLocationButton').addEventListener('click', () => {
+          const status = byId('locationStatus');
+          if (!navigator.geolocation) {
+            status.textContent = '이 브라우저에서는 현재 위치를 사용할 수 없습니다.';
+            return;
+          }
+
+          status.textContent = '현재 위치를 확인하는 중입니다.';
+          navigator.geolocation.getCurrentPosition(position => {
+            state.userLocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            state.sortByDistance = true;
+            updateDistances();
+            byId('clearLocationButton').hidden = false;
+            status.textContent = '현재 위치 기준 가까운 순으로 정렬 중입니다.';
+            render();
+          }, () => {
+            status.textContent = '위치 권한을 허용하면 가까운 맛집을 볼 수 있습니다.';
+          }, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 300000
+          });
+        });
+        byId('clearLocationButton').addEventListener('click', () => {
+          state.userLocation = null;
+          state.sortByDistance = false;
+          state.filters.distance = '';
+          byId('distanceFilter').value = '';
+          byId('clearLocationButton').hidden = true;
+          byId('locationStatus').textContent = '위치 허용 시 가까운 순으로 정렬합니다.';
+          updateDistances();
           render();
         });
 

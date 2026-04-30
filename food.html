@@ -64,7 +64,7 @@
         <div class="section-title"><h2>뉴욕 맛집 리스트</h2><div class="subtle">places.json 기준 장소 정보를 사용합니다</div></div>
         <div class="meta-grid">
           <div class="meta-item"><div class="meta-label">지역</div><div class="meta-value">Manhattan · Brooklyn · Queens</div></div>
-          <div class="meta-item"><div class="meta-label">분위기</div><div class="meta-value">신상 · 화제성 · 클래식</div></div>
+          <div class="meta-item"><div class="meta-label">검증 기준</div><div class="meta-value">리뷰 · 사진 · 클래식</div></div>
           <div class="meta-item"><div class="meta-label">예산</div><div class="meta-value">₩₩ ~ ₩₩₩₩</div></div>
           <div class="meta-item"><div class="meta-label">추천</div><div class="meta-value" id="foodCount">로딩 중</div></div>
         </div>
@@ -80,7 +80,7 @@
             <option value="">전체 예약 방식</option>
           </select>
         </div>
-        <div class="filter-tags" id="buzzFilters" aria-label="화제성 태그"></div>
+        <div class="filter-tags" id="buzzFilters" aria-label="검증 태그"></div>
       </div>
     </section>
     <section class="section">
@@ -148,7 +148,7 @@
     }
 
     function renderBuzzFilters(items) {
-      const preferred = ['신상', 'James Beard', 'Michelin', 'Eater 38', 'Resy Hit List', '워크인', '클래식', 'Queens', 'Brooklyn'];
+      const preferred = ['리뷰 10k+', '리뷰 1k+', '사진 1k+', '클래식', '관광동선', '예약필수', '워크인', '브런치', '디저트', '피자', '스테이크', '파인다이닝', 'Theater District', 'Times Square', 'Brooklyn'];
       const available = unique(items.flatMap(item => [...(item.buzz || []), ...(item.chips || [])]));
       const tags = preferred.filter(tag => available.includes(tag));
       byId('buzzFilters').innerHTML = [

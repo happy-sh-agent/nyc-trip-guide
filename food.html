@@ -43,7 +43,7 @@
     .chip { font-size:12px; padding:5px 8px; border-radius:999px; background:#f3f6fd; color:var(--primary); font-weight:700; }
     .button { display:inline-flex; align-items:center; justify-content:center; padding:11px 14px; border-radius:14px; text-decoration:none; border:1px solid #dce5f4; color:var(--primary); font-weight:700; background:white; }
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
-    @media (max-width:640px) { .tabbar { gap:6px; } .tab { padding:11px 6px; font-size:12px; } .meta-grid, .filters { grid-template-columns:1fr 1fr; } .filters input { grid-column:1 / -1; } .place-card { grid-template-columns:1fr; } .thumb { width:100%; aspect-ratio: 4 / 3; min-height:180px; } }
+    @media (max-width:640px) { .tabbar { gap:6px; overflow-x:auto; } .tab { flex:0 0 auto; padding:11px 10px; font-size:12px; } .meta-grid, .filters { grid-template-columns:1fr 1fr; } .filters input { grid-column:1 / -1; } .place-card { grid-template-columns:1fr; } .thumb { width:100%; aspect-ratio: 4 / 3; min-height:180px; } }
   </style>
 </head>
 <body>
@@ -59,6 +59,7 @@
       <a class="tab active" href="./food.html">🍽️ 맛집</a>
       <a class="tab" href="./photo-spots.html">📷 포토스팟</a>
       <a class="tab" href="./banksy.html">🎨 뱅크시</a>
+      <a class="tab" href="./woodbury.html">🛍️ 쇼핑</a>
     </div>
     <section class="section">
       <div class="card">

@@ -54,8 +54,8 @@
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
     @media (max-width:640px) {
       h1 { font-size:42px; }
-      .tabbar { gap:6px; }
-      .tab { padding:11px 6px; font-size:12px; }
+      .tabbar { gap:6px; overflow-x:auto; }
+      .tab { flex:0 0 auto; padding:11px 10px; font-size:12px; }
       .meta-grid, .filters { grid-template-columns:1fr 1fr; }
       .filters input { grid-column:1 / -1; }
       .place-card { grid-template-columns:1fr; }
@@ -77,6 +77,7 @@
       <a class="tab" href="./food.html">🍽️ 맛집</a>
       <a class="tab" href="./photo-spots.html">📷 포토스팟</a>
       <a class="tab active" href="./banksy.html">🎨 뱅크시</a>
+      <a class="tab" href="./woodbury.html">🛍️ 쇼핑</a>
     </div>
     <section class="section">
       <div class="card">

@@ -17,7 +17,7 @@
     .hero-sub { margin-top:10px; font-size:17px; color:rgba(255,255,255,0.9); }
     .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.94); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; }
     .quick-actions { display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
-    .tab { flex:1; text-align:center; padding:12px 18px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; }
+    .tab { flex:1; text-align:center; padding:12px 14px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; }
     .tab.active { background:var(--primary); color:white; box-shadow:0 8px 18px rgba(23,59,122,0.25); }
     .section { margin-top:18px; }
     .card { background:var(--card); border:1px solid rgba(226,232,242,0.95); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
@@ -70,6 +70,8 @@
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
     @media (max-width:640px) {
       .hero h1 { font-size:42px; }
+      .tabbar { gap:6px; }
+      .tab { padding:11px 8px; font-size:13px; }
       .timeline-item { grid-template-columns:86px 1fr; }
       .info-grid, .food-grid, .pins-grid { grid-template-columns:1fr; }
       .section-title { flex-direction:column; align-items:flex-start; }
@@ -86,11 +88,12 @@
       <div class="topbar"><div>☰</div><div>🗽</div></div>
       <div class="hero-kicker">Trip planner</div>
       <h1>New York Trip</h1>
-      <div class="hero-sub">일정, 동선, 맛집을 한 번에 보는 뉴욕 여행 플래너</div>
+      <div class="hero-sub">일정, 동선, 맛집, 포토스팟을 한 번에 보는 뉴욕 여행 플래너</div>
     </section>
     <div class="tabbar">
       <a class="tab active" href="./index.html">🗓️ 일정표</a>
       <a class="tab" href="./food.html">🍽️ 맛집</a>
+      <a class="tab" href="./photo-spots.html">📷 포토스팟</a>
     </div>
     <div class="quick-actions">
       <a class="button primary" href="https://www.google.com/maps/dir/?api=1&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG" target="_blank" rel="noopener noreferrer">숙소로 돌아가기</a>

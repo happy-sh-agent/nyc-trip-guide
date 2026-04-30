@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:," />
+  <title>뉴욕 포토스팟 리스트</title>
+  <style>
+    :root { --bg:#f4f7fb; --card:rgba(255,255,255,0.97); --text:#14213d; --muted:#6b7488; --line:#e5eaf3; --primary:#173b7a; --shadow:0 14px 40px rgba(15,28,63,0.10); --radius:24px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+    .page { max-width:760px; margin:0 auto; padding:0 14px 48px; }
+    .hero { margin:0 -14px; min-height:240px; padding:22px 20px 28px; color:white; background:linear-gradient(180deg, rgba(8,20,48,0.22), rgba(8,20,48,0.80)), url('https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1400&q=80') center/cover; border-bottom-left-radius:26px; border-bottom-right-radius:26px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; font-size:14px; opacity:0.95; }
+    .hero-kicker { font-style:italic; opacity:0.92; font-size:18px; }
+    h1 { margin:8px 0 0; font-size:48px; line-height:1; letter-spacing:-0.03em; }
+    .hero-sub { margin-top:10px; font-size:17px; color:rgba(255,255,255,0.92); }
+    .tabbar { display:flex; gap:10px; background:rgba(255,255,255,0.94); margin-top:-18px; padding:10px; border-radius:22px; box-shadow:var(--shadow); position:relative; z-index:2; }
+    .tab { flex:1; text-align:center; padding:12px 14px; border-radius:999px; text-decoration:none; color:var(--muted); font-weight:700; }
+    .tab.active { background:var(--primary); color:white; }
+    .section { margin-top:18px; }
+    .card { background:var(--card); border:1px solid rgba(226,232,242,0.95); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
+    .section-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:12px; }
+    .section-title h2 { font-size:22px; margin:0; }
+    .subtle { color:var(--muted); font-size:14px; }
+    .meta-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-top:12px; }
+    .meta-item { padding:12px; border:1px solid var(--line); border-radius:16px; background:#fbfcff; }
+    .meta-label { color:var(--muted); font-size:12px; }
+    .meta-value { font-weight:700; font-size:14px; margin-top:4px; }
+    .filters { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:10px; margin-top:14px; }
+    .filter-control { width:100%; min-height:42px; border:1px solid var(--line); border-radius:14px; background:white; color:var(--text); padding:0 12px; font:inherit; font-size:14px; }
+    .filter-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+    .filter-tag { border:1px solid var(--line); background:white; color:var(--muted); border-radius:999px; padding:8px 11px; font-weight:800; font-size:12px; cursor:pointer; }
+    .filter-tag.active { background:var(--primary); border-color:var(--primary); color:white; }
+    .place-list { display:grid; gap:12px; }
+    .place-card { display:grid; grid-template-columns:120px 1fr auto; gap:14px; align-items:center; border:1px solid var(--line); border-radius:18px; padding:12px; background:white; }
+    .thumb { width:120px; aspect-ratio:4 / 3; min-height:90px; border-radius:14px; background-size:cover; background-position:center; overflow:hidden; }
+    .title { font-size:22px; font-weight:800; }
+    .desc { color:var(--muted); font-size:14px; margin-top:4px; }
+    .shot-tip { margin-top:8px; padding:9px 10px; border-radius:12px; background:#f8faff; border:1px solid var(--line); color:#34425e; font-size:13px; line-height:1.45; }
+    .details { color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; font-size:12px; font-weight:700; margin-top:7px; }
+    .detail-dot::before { content:"·"; margin-right:8px; color:#b6becc; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .chip { font-size:12px; padding:5px 8px; border-radius:999px; background:#f3f6fd; color:var(--primary); font-weight:700; }
+    .actions { display:flex; flex-direction:column; gap:8px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; padding:11px 14px; border-radius:14px; text-decoration:none; border:1px solid #dce5f4; color:var(--primary); font-weight:700; background:white; white-space:nowrap; }
+    .loading { color:var(--muted); font-size:14px; padding:20px 0; }
+    @media (max-width:640px) {
+      h1 { font-size:42px; }
+      .tabbar { gap:6px; }
+      .tab { padding:11px 8px; font-size:13px; }
+      .meta-grid, .filters { grid-template-columns:1fr 1fr; }
+      .filters input { grid-column:1 / -1; }
+      .place-card { grid-template-columns:1fr; }
+      .thumb { width:100%; aspect-ratio:4 / 3; min-height:180px; }
+      .actions { flex-direction:row; flex-wrap:wrap; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="topbar"><div>←</div><div>📷</div></div>
+      <div class="hero-kicker">Photo guide</div>
+      <h1>NYC Photo Spots</h1>
+      <div class="hero-sub">동선에 넣기 좋은 뉴욕 대표 촬영 포인트</div>
+    </section>
+    <div class="tabbar">
+      <a class="tab" href="./index.html">🗓️ 일정표</a>
+      <a class="tab" href="./food.html">🍽️ 맛집</a>
+      <a class="tab active" href="./photo-spots.html">📷 포토스팟</a>
+    </div>
+    <section class="section">
+      <div class="card">
+        <div class="section-title"><h2>뉴욕 포토스팟 리스트</h2><div class="subtle">촬영 시간대와 구도 팁 기준</div></div>
+        <div class="meta-grid">
+          <div class="meta-item"><div class="meta-label">지역</div><div class="meta-value">Manhattan · Brooklyn · Queens</div></div>
+          <div class="meta-item"><div class="meta-label">구도</div><div class="meta-value">브릿지 · 전망 · 공원</div></div>
+          <div class="meta-item"><div class="meta-label">예산</div><div class="meta-value">무료 · 유료</div></div>
+          <div class="meta-item"><div class="meta-label">추천</div><div class="meta-value" id="spotCount">로딩 중</div></div>
+        </div>
+        <div class="filters" aria-label="포토스팟 필터">
+          <input class="filter-control" id="searchInput" type="search" placeholder="장소, 동네, 촬영팁 검색" />
+          <select class="filter-control" id="boroughFilter" aria-label="지역">
+            <option value="">전체 지역</option>
+          </select>
+          <select class="filter-control" id="categoryFilter" aria-label="구도">
+            <option value="">전체 구도</option>
+          </select>
+          <select class="filter-control" id="timeFilter" aria-label="시간대">
+            <option value="">전체 시간대</option>
+          </select>
+        </div>
+        <div class="filter-tags" id="quickFilters" aria-label="빠른 필터"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="card">
+        <div class="place-list" id="spotList"><div class="loading">포토스팟 데이터를 불러오는 중입니다.</div></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const state = {
+      allItems: [],
+      filters: {
+        search: '',
+        borough: '',
+        category: '',
+        bestTime: '',
+        quick: ''
+      }
+    };
+
+    const byId = id => document.getElementById(id);
+    const normalize = value => String(value || '').toLowerCase().trim();
+    const unique = values => [...new Set(values.filter(Boolean))];
+    const dataUrl = path => `${path}?v=${Date.now()}`;
+
+    function renderOptions(selectId, values) {
+      const select = byId(selectId);
+      const first = select.options[0];
+      select.innerHTML = '';
+      select.appendChild(first);
+      values.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      });
+    }
+
+    function itemMatches(item) {
+      const haystack = normalize([
+        item.name,
+        item.desc,
+        item.shotTip,
+        item.neighborhood,
+        item.borough,
+        item.category,
+        item.bestTime,
+        item.fee,
+        item.indoorOutdoor,
+        ...(item.chips || [])
+      ].join(' '));
+
+      return (!state.filters.search || haystack.includes(normalize(state.filters.search)))
+        && (!state.filters.borough || item.borough.includes(state.filters.borough))
+        && (!state.filters.category || item.category === state.filters.category)
+        && (!state.filters.bestTime || item.bestTime === state.filters.bestTime)
+        && (!state.filters.quick
+          || item.priority === state.filters.quick
+          || item.fee === state.filters.quick
+          || item.indoorOutdoor.includes(state.filters.quick)
+          || (item.chips || []).includes(state.filters.quick));
+    }
+
+    function renderQuickFilters(items) {
+      const preferred = ['최우선', '무료', '유료', '실내', '야경', '스카이라인', '루프탑', 'Queens', '일출추천', '석양추천', '비오는날가능', '혼잡'];
+      const available = unique(items.flatMap(item => [item.priority, item.fee, item.indoorOutdoor, ...(item.chips || [])].flatMap(value => String(value || '').split(' · '))));
+      const tags = preferred.filter(tag => available.includes(tag));
+      byId('quickFilters').innerHTML = [
+        `<button class="filter-tag ${state.filters.quick === '' ? 'active' : ''}" type="button" data-quick="">전체</button>`,
+        ...tags.map(tag => `<button class="filter-tag ${state.filters.quick === tag ? 'active' : ''}" type="button" data-quick="${tag}">${tag}</button>`)
+      ].join('');
+      byId('quickFilters').querySelectorAll('.filter-tag').forEach(button => {
+        button.addEventListener('click', () => {
+          state.filters.quick = button.dataset.quick;
+          render();
+        });
+      });
+    }
+
+    function render() {
+      const filtered = state.allItems.filter(itemMatches);
+      byId('spotCount').textContent = `${filtered.length} / ${state.allItems.length}곳`;
+      renderQuickFilters(state.allItems);
+
+      byId('spotList').innerHTML = filtered.length ? filtered.map(item => `
+        <div class="place-card">
+          <div class="thumb" style="background-image:url('${item.image.url}')"></div>
+          <div>
+            <div class="title">${item.name}</div>
+            <div class="desc">${item.desc}</div>
+            <div class="shot-tip"><strong>촬영팁</strong> · ${item.shotTip}</div>
+            <div class="details">
+              <span>${item.borough || 'NYC'}</span>
+              <span class="detail-dot">${item.neighborhood || '동네 미정'}</span>
+              <span class="detail-dot">${item.category || '구도 미정'}</span>
+              <span class="detail-dot">${item.bestTime || '시간대 미정'}</span>
+              <span class="detail-dot">${item.fee || '요금 미정'}</span>
+            </div>
+            <div class="chips">${(item.chips || []).map(chip => `<span class="chip">${chip}</span>`).join('')}</div>
+          </div>
+          <div class="actions">
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer">Google Maps</a>
+            <a class="button" href="${item.sources[0]}" target="_blank" rel="noopener noreferrer">자료 보기</a>
+          </div>
+        </div>
+      `).join('') : '<div class="loading">조건에 맞는 포토스팟이 없습니다. 필터를 줄여보세요.</div>';
+    }
+
+    fetch(dataUrl('./data/photo-spots.json'))
+      .then(res => res.json())
+      .then(items => {
+        state.allItems = items;
+
+        renderOptions('boroughFilter', unique(items.flatMap(item => item.borough.split(' · '))).sort());
+        renderOptions('categoryFilter', unique(items.map(item => item.category)).sort());
+        renderOptions('timeFilter', unique(items.map(item => item.bestTime)).sort());
+
+        byId('searchInput').addEventListener('input', event => {
+          state.filters.search = event.target.value;
+          render();
+        });
+        byId('boroughFilter').addEventListener('change', event => {
+          state.filters.borough = event.target.value;
+          render();
+        });
+        byId('categoryFilter').addEventListener('change', event => {
+          state.filters.category = event.target.value;
+          render();
+        });
+        byId('timeFilter').addEventListener('change', event => {
+          state.filters.bestTime = event.target.value;
+          render();
+        });
+
+        render();
+      })
+      .catch(() => {
+        document.getElementById('spotCount').textContent = '불러오기 실패';
+        document.getElementById('spotList').innerHTML = '<div class="loading">포토스팟 데이터를 불러오지 못했습니다.</div>';
+      });
+  </script>
+</body>
+</html>

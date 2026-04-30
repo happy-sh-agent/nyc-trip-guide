@@ -3,6 +3,7 @@
     "dayKey": "DAY 1",
     "date": "04.30",
     "weekdayKo": "목",
+    "weather": {"icon": "🌤️", "summary": "오전 흐림, 오후 구름 사이 해. 바람 있음", "highF": 64, "lowF": 47, "highC": 18, "lowC": 8, "note": "얇은 겉옷 권장"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Moynihan+Train+Hall+New+York&destination=Times+Square+New+York&waypoints=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&travelmode=walking",
     "routePlaceIds": ["hotel-ts", "times-square"],
     "food": [
@@ -24,6 +25,7 @@
     "dayKey": "DAY 2",
     "date": "05.01",
     "weekdayKo": "금",
+    "weather": {"icon": "⛅", "summary": "부분적으로 맑음", "highF": 64, "lowF": 49, "highC": 18, "lowC": 10, "note": "도보 일정 무난"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=SUMMIT+One+Vanderbilt+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Grand+Central+Terminal+New+York",
     "routePlaceIds": ["nypl", "bryant-park", "gallaghers", "grand-central", "summit"],
     "food": [
@@ -45,6 +47,7 @@
     "dayKey": "DAY 3",
     "date": "05.02",
     "weekdayKo": "토",
+    "weather": {"icon": "🌥️", "summary": "해가 보이다가 흐려짐, 소나기 가능", "highF": 59, "lowF": 46, "highC": 15, "lowC": 8, "note": "작은 우산 준비"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Harry+Potter+New+York+Flatiron&destination=New+Amsterdam+Theatre+New+York&waypoints=Shake+Shack+Madison+Square+Park",
     "routePlaceIds": ["harry-potter-ny", "shake-shack-msp", "new-amsterdam"],
     "food": [
@@ -66,6 +69,7 @@
     "dayKey": "DAY 4",
     "date": "05.03",
     "weekdayKo": "일",
+    "weather": {"icon": "⛅", "summary": "해와 구름이 섞인 날씨", "highF": 62, "lowF": 48, "highC": 16, "lowC": 9, "note": "아울렛 장시간 외부 이동 무난"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=Port+Authority+Bus+Terminal+New+York|Woodbury+Common+Premium+Outlets",
     "routePlaceIds": ["hotel-ts", "port-authority", "woodbury-common"],
     "food": [
@@ -92,6 +96,7 @@
     "dayKey": "DAY 5",
     "date": "05.04",
     "weekdayKo": "월",
+    "weather": {"icon": "☀️", "summary": "맑고 약간의 구름", "highF": 66, "lowF": 55, "highC": 19, "lowC": 13, "note": "페리·섬 일정에 좋음"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Ambassador+Theatre+New+York&waypoints=Battery+Park+New+York|Statue+of+Liberty+National+Monument|Ellis+Island+New+York|Buvette+New+York|Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG",
     "routePlaceIds": ["hotel-ts", "battery-park", "liberty-island", "ellis-island", "buvette", "ambassador-theatre"],
     "food": [
@@ -118,6 +123,7 @@
     "dayKey": "DAY 6",
     "date": "05.05",
     "weekdayKo": "화",
+    "weather": {"icon": "🌦️", "summary": "구름 사이 해, 소나기 몇 차례 가능", "highF": 71, "lowF": 55, "highC": 22, "lowC": 13, "note": "촬영 전후 우산 체크"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Times+Square+New+York&destination=Birdland+Jazz+Club+New+York&waypoints=New+York+Public+Library|Bryant+Park+New+York|Grand+Central+Terminal+New+York|Museum+of+Modern+Art+New+York",
     "routePlaceIds": ["times-square", "nypl", "bryant-park", "grand-central", "moma", "birdland"],
     "food": [
@@ -125,14 +131,14 @@
       {"name": "Birdland 전 간단한 저녁", "desc": "공연장 입장 전 가벼운 식사", "tag": "공연 전 식사"}
     ],
     "notes": [
-      {"name": "스냅 촬영 코스", "desc": "타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 구성, 120분 소요", "tag": "여자친구 요청"},
+      {"name": "스냅 촬영 코스", "desc": "오전 10시부터 오후 12시까지, 타임스퀘어, 뉴욕도서관, 브라이언트파크, 그랜드센트럴 구성, 120분 소요", "tag": "여자친구 요청"},
       {"name": "MoMA 4시간 반영", "desc": "오후 시간을 넉넉하게 비워 최소 4시간 여유 관람으로 재배치했습니다.", "tag": "일정 확정"},
       {"name": "Birdland 티켓 확인", "desc": "TicketWeb 메일 기준 05/05 화요일 20:30, Birdland Theater, Table Seating입니다.", "tag": "메일 확인"},
       {"name": "공연장 최소 주문", "desc": "Birdland는 1인당 $20 food/drink minimum 안내가 있습니다.", "tag": "현장 안내"}
     ],
     "items": [
-      {"time": "08:00", "title": "스냅 촬영 코스", "desc": "타임스퀘어 → NYPL → Bryant Park → Grand Central, 2시간 코스", "tag": "촬영", "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"},
-      {"time": "10:00", "title": "점심 · 휴식", "desc": "촬영 후 회복 시간 확보", "tag": "휴식", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "10:00-12:00", "title": "스냅 촬영 코스", "desc": "타임스퀘어 → NYPL → Bryant Park → Grand Central, 2시간 코스", "tag": "촬영", "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"},
+      {"time": "12:00", "title": "점심 · 휴식", "desc": "촬영 후 회복 시간 확보", "tag": "휴식", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"},
       {"time": "14:00", "title": "MoMA", "desc": "전시를 여유 있게 보는 긴 블록 일정", "tag": "여자친구 요청 반영", "placeId": "moma"},
       {"time": "19:30", "title": "Birdland Theater 입장", "desc": "TicketWeb 기준 doors open, 공연 전 착석과 최소 주문 시간", "tag": "입장", "placeId": "birdland"},
       {"time": "20:30", "title": "Vince Giordano and the Nighthawks", "desc": "TicketWeb 확인 완료, Birdland Theater Table Seating", "tag": "고정 티켓", "immutable": true, "reservationId": "ticketweb-birdland-2026-05-05-2030", "placeId": "birdland"}
@@ -142,6 +148,7 @@
     "dayKey": "DAY 7",
     "date": "05.06",
     "weekdayKo": "수",
+    "weather": {"icon": "☀️", "summary": "맑음", "highF": 69, "lowF": 57, "highC": 20, "lowC": 14, "note": "가벼운 산책 좋음"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Ellen%27s+Stardust+Diner+New+York&destination=Minskoff+Theatre+New+York",
     "routePlaceIds": ["ellens-stardust", "minskoff"],
     "food": [
@@ -163,6 +170,7 @@
     "dayKey": "DAY 8",
     "date": "05.07",
     "weekdayKo": "목",
+    "weather": {"icon": "🌧️", "summary": "대체로 흐리고 오후 소나기", "highF": 66, "lowF": 51, "highC": 19, "lowC": 11, "note": "센트럴파크 전 우산 확인"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=American+Museum+of+Natural+History+New+York&destination=Gershwin+Theatre+New+York&waypoints=Central+Park+New+York",
     "routePlaceIds": ["amnh", "central-park", "gershwin"],
     "food": [
@@ -184,6 +192,7 @@
     "dayKey": "DAY 9",
     "date": "05.08",
     "weekdayKo": "금",
+    "weather": {"icon": "⛈️", "summary": "흐리고 선선함, 오전 뇌우 뒤 오후 비", "highF": 62, "lowF": 50, "highC": 16, "lowC": 10, "note": "실내·차량 이동 여유 권장"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=The+Metropolitan+Museum+of+Art+New+York&destination=Smith+%26+Wollensky+New+York&waypoints=Vessel+New+York|High+Line+New+York",
     "routePlaceIds": ["met", "vessel", "high-line", "smith-wollensky"],
     "food": [
@@ -205,6 +214,7 @@
     "dayKey": "DAY 10",
     "date": "05.09",
     "weekdayKo": "토",
+    "weather": {"icon": "⛅", "summary": "새벽 비 뒤 구름 많다가 오후부터 맑아짐", "highF": 62, "lowF": 51, "highC": 16, "lowC": 11, "note": "오전 이동 시 바닥 젖음 주의"},
     "map": "https://www.google.com/maps/dir/?api=1&origin=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&destination=Holiday+Inn+NEW+YORK+CITY+-+TIMES+SQUARE+by+IHG&waypoints=Museum+of+Ice+Cream+New+York|Prince+Street+Pizza+New+York",
     "routePlaceIds": ["hotel-ts", "museum-of-ice-cream", "prince-street-pizza"],
     "food": [

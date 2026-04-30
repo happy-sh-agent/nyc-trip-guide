@@ -148,14 +148,48 @@
     let reservations = {};
     let currentDay = Number(localStorage.getItem('nycTripCurrentDay') || 0);
     const dataUrl = path => `${path}?v=${Date.now()}`;
+    const HOTEL_PLACE_ID = 'hotel-ts';
 
     const dayKeyLabel = (day) => `${day.dayKey} · ${day.date} (${day.weekdayKo})`;
 
+    function getHotelPlace() {
+      return Object.values(places.days || {})
+        .flat()
+        .find(place => place.id === HOTEL_PLACE_ID);
+    }
+
     function getDayPlaces(day) {
-      return (places.days?.[day.dayKey] || []).reduce((acc, place) => {
+      const hotel = getHotelPlace();
+      const dayPlaces = (places.days?.[day.dayKey] || []).reduce((acc, place) => {
         acc[place.id] = place;
         return acc;
       }, {});
+      if (hotel && !dayPlaces[HOTEL_PLACE_ID]) dayPlaces[HOTEL_PLACE_ID] = hotel;
+      return dayPlaces;
+    }
+
+    function getRoutePlaces(day, placeLookup) {
+      const routeIds = currentDay > 0 && day.routePlaceIds[0] !== HOTEL_PLACE_ID
+        ? [HOTEL_PLACE_ID, ...day.routePlaceIds]
+        : day.routePlaceIds;
+      return routeIds.map(id => placeLookup[id]).filter(Boolean);
+    }
+
+    function getPinNumber(place, index) {
+      return currentDay > 0 && place.id === HOTEL_PLACE_ID ? 0 : index + (currentDay > 0 ? 0 : 1);
+    }
+
+    function buildMapUrl(routePlaces) {
+      if (routePlaces.length < 2) return routePlaces[0]?.mapsUrl || '#';
+      const query = place => encodeURIComponent(place.mapQuery || place.name).replace(/%20/g, '+');
+      const params = [
+        `api=1`,
+        `origin=${query(routePlaces[0])}`,
+        `destination=${query(routePlaces[routePlaces.length - 1])}`
+      ];
+      const waypoints = routePlaces.slice(1, -1).map(query);
+      if (waypoints.length) params.push(`waypoints=${waypoints.join('|')}`);
+      return `https://www.google.com/maps/dir/?${params.join('&')}`;
     }
 
     function resolveItemImage(item, dayPlaces) {
@@ -183,7 +217,8 @@
       dayLabel.textContent = dayKeyLabel(day);
       const weather = day.weather;
       dayWeather.innerHTML = weather ? `<div class="weather-card"><div class="weather-icon">${weather.icon || '🌤️'}</div><div class="weather-main"><div class="weather-title">${day.date} (${day.weekdayKo}) 뉴욕 예보</div><div class="weather-summary">${weather.summary}</div><div class="weather-note">${weather.note || '출발 전 최신 예보를 한 번 더 확인하세요.'}</div></div><div class="weather-temp">${weather.highC}° / ${weather.lowC}°C<small>${weather.highF}° / ${weather.lowF}°F</small></div></div>` : '';
-      dayMapLink.href = day.map;
+      const startsAtHotel = day.routePlaceIds[0] === HOTEL_PLACE_ID;
+      dayMapLink.href = currentDay > 0 && !startsAtHotel ? buildMapUrl(getRoutePlaces(day, dayPlaces)) : day.map;
       timeline.innerHTML = day.items.map(item => {
         const image = resolveItemImage(item, dayPlaces);
         const posterClass = isPosterImage(item, dayPlaces) ? ' poster' : '';
@@ -209,13 +244,13 @@
       const day = itinerary[currentDay];
       if (!day) return;
       const placeLookup = getDayPlaces(day);
-      const routePlaces = day.routePlaceIds.map(id => placeLookup[id]).filter(Boolean);
+      const routePlaces = getRoutePlaces(day, placeLookup);
       const itemPlaces = day.items.map(item => item.placeId ? placeLookup[item.placeId] : null).filter(Boolean);
       const mergedPlaces = [...new Map([...routePlaces, ...itemPlaces].map(place => [place.id, place])).values()];
       if (routeLayer) routeLayer.remove();
       routeLayer = L.layerGroup().addTo(map);
       const latlngs = mergedPlaces.map((place, index) => {
-        L.marker([place.lat, place.lng]).addTo(routeLayer).bindPopup(`<strong>${index + 1}. ${place.name}</strong><br>${place.address}`);
+        L.marker([place.lat, place.lng]).addTo(routeLayer).bindPopup(`<strong>${getPinNumber(place, index)}. ${place.name}</strong><br>${place.address}`);
         return [place.lat, place.lng];
       });
       if (routePlaces.length > 1) {
@@ -227,7 +262,7 @@
       } else {
         map.setView([40.758, -73.9855], 12);
       }
-      dayPins.innerHTML = mergedPlaces.map((place, index) => `<div class="pin-card"><div class="food-title">📍 ${index + 1}. ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
+      dayPins.innerHTML = mergedPlaces.map((place, index) => `<div class="pin-card"><div class="food-title">📍 ${getPinNumber(place, index)}. ${place.name}</div><div class="pin-desc">${place.address}</div><div class="food-note">${place.kind || 'place'}</div></div>`).join('');
     }
 
     function render() {

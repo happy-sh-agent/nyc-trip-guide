@@ -153,7 +153,7 @@
     let places = {};
     let reservations = {};
     let currentDay = Number(localStorage.getItem('nycTripCurrentDay') || 0);
-    const nycWeatherUrl = 'https://forecast.weather.gov/MapClick.php?FcstType=text&lat=40.7038&lg=en&lon=-74.0131&unit=1';
+    const nycWeatherUrl = 'https://www.timeanddate.com/weather/usa/new-york/hourly';
     const dataUrl = path => `${path}?v=${Date.now()}`;
     const HOTEL_PLACE_ID = 'hotel-ts';
 

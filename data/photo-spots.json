@@ -16,11 +16,15 @@
     "priority": "최우선",
     "desc": "벽돌 건물 사이로 Manhattan Bridge와 Empire State Building이 겹쳐 보이는 뉴욕 대표 사진 구도.",
     "shotTip": "차도 중앙에 오래 서지 말고 횡단 타이밍에 빠르게 찍기. 광각보다 35-50mm가 압축감이 좋습니다.",
-    "chips": ["아이코닉", "일출추천", "혼잡"],
+    "chips": [
+      "아이코닉",
+      "일출추천",
+      "혼잡"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "DUMBO bridge street view"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/2024-11-17-Manhattan_Bridge_Dumbo-0407.jpg/960px-2024-11-17-Manhattan_Bridge_Dumbo-0407.jpg",
+      "source": "wikimedia-commons",
+      "note": "Manhattan Bridge from Washington Street in DUMBO"
     },
     "sources": [
       "https://triptins.com/manhattan-bridge-view-spot-dumbo/",
@@ -44,11 +48,15 @@
     "priority": "최우선",
     "desc": "케이블 라인과 목재 보행로가 강한 원근감을 만드는 클래식 뉴욕 컷.",
     "shotTip": "맨해튼에서 브루클린 방향으로 걷다가 타워 전후에서 인물 중앙 배치. 오전 이른 시간이 가장 깔끔합니다.",
-    "chips": ["클래식", "워킹코스", "일출추천"],
+    "chips": [
+      "클래식",
+      "워킹코스",
+      "일출추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Brooklyn Bridge walkway"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Brooklyn_Bridge_as_viewed_from_pedestrian_walkway.jpg/960px-Brooklyn_Bridge_as_viewed_from_pedestrian_walkway.jpg",
+      "source": "wikimedia-commons",
+      "note": "Brooklyn Bridge pedestrian walkway"
     },
     "sources": [
       "https://www.nyc.gov/html/dot/downloads/pdf/brooklyn-bridge-promenade.pdf"
@@ -71,11 +79,15 @@
     "priority": "최우선",
     "desc": "자갈 해변, East River, Manhattan Bridge, Lower Manhattan 스카이라인을 한 프레임에 담기 좋습니다.",
     "shotTip": "블루아워에 물가 낮은 앵글로 찍으면 다리 조명과 스카이라인 반사가 살아납니다.",
-    "chips": ["야경", "스카이라인", "DUMBO"],
+    "chips": [
+      "야경",
+      "스카이라인",
+      "DUMBO"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1532960401447-7dd05bef20b0?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Brooklyn waterfront skyline"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/View_of_Manhattan_from_Brooklyn_Bridge_Park%2C_New_York_City%2C_20231005_0914_2148.jpg/960px-View_of_Manhattan_from_Brooklyn_Bridge_Park%2C_New_York_City%2C_20231005_0914_2148.jpg",
+      "source": "wikimedia-commons",
+      "note": "Brooklyn Bridge Park waterfront skyline near Pebble Beach"
     },
     "sources": [
       "https://brooklynbridgepark.org/places-to-see/pebble-beach/"
@@ -98,11 +110,15 @@
     "priority": "추천",
     "desc": "유리 파빌리온 안 회전목마와 Brooklyn Bridge, Manhattan skyline을 같이 잡을 수 있는 포인트.",
     "shotTip": "회전목마 외부 유리 반사를 활용하거나, 다리 아래쪽으로 이동해 회전목마를 전경으로 두세요.",
-    "chips": ["로맨틱", "브릿지뷰", "가족사진"],
+    "chips": [
+      "로맨틱",
+      "브릿지뷰",
+      "가족사진"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "waterfront park mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Jane%27s_Carousel%2C_Dumbo_Brooklyn_in_July_2017.jpg/960px-Jane%27s_Carousel%2C_Dumbo_Brooklyn_in_July_2017.jpg",
+      "source": "wikimedia-commons",
+      "note": "Jane's Carousel in DUMBO"
     },
     "sources": [
       "https://brooklynbridgepark.org/places-to-see/janes-carousel/"
@@ -125,11 +141,15 @@
     "priority": "최우선",
     "desc": "분수, 계단, 아케이드 타일 천장까지 구도가 다양해서 인물/건축 사진 모두 좋습니다.",
     "shotTip": "아케이드 안에서는 대칭 구도, 분수 앞에서는 계단을 배경으로 세로 사진을 추천합니다.",
-    "chips": ["Central Park", "건축", "대칭구도"],
+    "chips": [
+      "Central Park",
+      "건축",
+      "대칭구도"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "classic park architecture mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bethesda_Terrace_%26_Fountain_November_2020_04.jpg/960px-Bethesda_Terrace_%26_Fountain_November_2020_04.jpg",
+      "source": "wikimedia-commons",
+      "note": "Bethesda Terrace and Fountain in Central Park"
     },
     "sources": [
       "https://www.centralparknyc.org/attractions/bethesda-terrace"
@@ -152,11 +172,15 @@
     "priority": "추천",
     "desc": "호수와 Bow Bridge 곡선, 나무 사이 스카이라인이 함께 나오는 센트럴파크 대표 구도.",
     "shotTip": "보트 랜딩 쪽에서 다리를 측면으로 잡으면 사람 많은 다리 위보다 정돈된 사진이 나옵니다.",
-    "chips": ["로맨틱", "호수", "골든아워"],
+    "chips": [
+      "로맨틱",
+      "호수",
+      "골든아워"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Central Park lake and skyline mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/The_Bow_Bridge_%28NYPL_b11708073-G91F219_050F%29.tiff/lossy-page1-960px-The_Bow_Bridge_%28NYPL_b11708073-G91F219_050F%29.tiff.jpg",
+      "source": "wikimedia-commons",
+      "note": "Bow Bridge in Central Park"
     },
     "sources": [
       "https://www.centralparknyc.org/locations/bow-bridge-boat-landing"
@@ -179,11 +203,15 @@
     "priority": "추천",
     "desc": "Bethesda Terrace와 Bow Bridge를 호수 건너편에서 보는 조용한 전망 포인트.",
     "shotTip": "망원으로 다리와 보트를 압축하거나, 바위 가장자리를 전경으로 넣어 깊이를 만드세요.",
-    "chips": ["숨은스팟", "호수", "망원추천"],
+    "chips": [
+      "숨은스팟",
+      "호수",
+      "망원추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "lake overlook mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Look_out_point_on_the_lake_at_Central_Park%2C_NYC.jpg/960px-Look_out_point_on_the_lake_at_Central_Park%2C_NYC.jpg",
+      "source": "wikimedia-commons",
+      "note": "The Point lookout on the Lake in Central Park"
     },
     "sources": [
       "https://www.centralparknyc.org/locations/the-point"
@@ -206,11 +234,15 @@
     "priority": "최우선",
     "desc": "Empire State Building과 Central Park를 모두 볼 수 있는 밸런스 좋은 전망대.",
     "shotTip": "해 지기 45-60분 전 입장하면 낮, 석양, 야경을 한 번에 커버하기 좋습니다.",
-    "chips": ["전망대", "ESB뷰", "석양추천"],
+    "chips": [
+      "전망대",
+      "ESB뷰",
+      "석양추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Midtown skyline from observation deck mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/960px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+      "source": "wikimedia-commons",
+      "note": "View from Top of the Rock"
     },
     "sources": [
       "https://www.rockefellercenter.com/attractions/top-of-the-rock-observation-deck/"
@@ -233,11 +265,15 @@
     "priority": "최우선",
     "desc": "거울, 유리, 빛 반사를 활용한 실내형 전망대라 인물 사진 임팩트가 큽니다.",
     "shotTip": "반사 바닥 때문에 밝은 옷과 선글라스가 잘 어울리고, 렌즈 반사는 각도를 낮추면 줄어듭니다.",
-    "chips": ["실내", "반사", "비오는날가능"],
+    "chips": [
+      "실내",
+      "반사",
+      "비오는날가능"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Midtown observation view mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/SUMMIT_One_Vanderbilt_-_Affinity_-_NYC.jpg/960px-SUMMIT_One_Vanderbilt_-_Affinity_-_NYC.jpg",
+      "source": "wikimedia-commons",
+      "note": "SUMMIT One Vanderbilt interior"
     },
     "sources": [
       "https://summitov.com/"
@@ -260,11 +296,15 @@
     "priority": "추천",
     "desc": "돌출형 야외 데크, 유리 바닥, Hudson River 방향 뷰가 강한 전망대.",
     "shotTip": "유리 벽 앞 전신샷은 광각, 허드슨강과 석양은 망원으로 압축하면 좋습니다.",
-    "chips": ["야외데크", "Hudson Yards", "유리바닥"],
+    "chips": [
+      "야외데크",
+      "Hudson Yards",
+      "유리바닥"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1541336032412-2048a678540d?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Hudson Yards skyline mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Edge_HY.jpg/960px-Edge_HY.jpg",
+      "source": "wikimedia-commons",
+      "note": "Edge at Hudson Yards"
     },
     "sources": [
       "https://www.hudsonyardsnewyork.com/discover/edge"
@@ -287,11 +327,15 @@
     "priority": "추천",
     "desc": "뉴욕 한복판에서 360도 도시 야경을 찍기 좋은 클래식 전망대.",
     "shotTip": "건물 자체를 배경에 넣고 싶다면 Top of the Rock을, '그 위에 올라간 인증샷'이면 ESB를 고르세요.",
-    "chips": ["클래식", "야경", "360도"],
+    "chips": [
+      "클래식",
+      "야경",
+      "360도"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "NYC skyscraper night mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Empire_State_Building_Observatory_%28Unsplash%29.jpg/960px-Empire_State_Building_Observatory_%28Unsplash%29.jpg",
+      "source": "wikimedia-commons",
+      "note": "Empire State Building Observatory"
     },
     "sources": [
       "https://www.esbnyc.com/visit/observatories-exhibits"
@@ -314,11 +358,15 @@
     "priority": "추천",
     "desc": "튤립 모양 구조물, 허드슨강, 다운타운 뷰가 같이 나오는 입체적인 공원.",
     "shotTip": "언덕 위에서 강을 배경으로 찍거나 외부 산책로에서 공원 구조물을 전체로 잡으세요.",
-    "chips": ["건축", "Hudson River", "산책"],
+    "chips": [
+      "건축",
+      "Hudson River",
+      "산책"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Hudson waterfront mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/At_New_York_City_2023_056_-_Little_Island_at_Pier_55_seen_from_Pier_57.jpg/960px-At_New_York_City_2023_056_-_Little_Island_at_Pier_55_seen_from_Pier_57.jpg",
+      "source": "wikimedia-commons",
+      "note": "Little Island at Pier 55"
     },
     "sources": [
       "https://littleisland.org/our-venues/"
@@ -341,11 +389,15 @@
     "priority": "추천",
     "desc": "고가 공원에서 도로를 내려다보는 도시적인 프레임과 Chelsea 산책 컷을 만들기 좋습니다.",
     "shotTip": "전망 창 쪽은 사람이 몰리니 오전에 먼저 들르고, 북쪽으로 걸으며 Hudson Yards 방향 컷을 추가하세요.",
-    "chips": ["산책", "도시구도", "Chelsea"],
+    "chips": [
+      "산책",
+      "도시구도",
+      "Chelsea"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1576014131795-d440191a8e4e?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "High Line elevated park mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/New_York%27s_High_Line_in_March_2025_17_stairs_overlooking_the_intersection.jpg/960px-New_York%27s_High_Line_in_March_2025_17_stairs_overlooking_the_intersection.jpg",
+      "source": "wikimedia-commons",
+      "note": "High Line 10th Avenue overlook"
     },
     "sources": [
       "https://files.thehighline.org/pdf/fhl-self-guided-visit.pdf"
@@ -368,11 +420,15 @@
     "priority": "추천",
     "desc": "천장, 시계, 아치형 창, 분주한 사람 흐름을 한 장에 담는 뉴욕 실내 클래식.",
     "shotTip": "2층 발코니나 계단 위에서 내려다보면 대칭과 사람 흐름이 정리됩니다.",
-    "chips": ["실내", "건축", "비오는날가능"],
+    "chips": [
+      "실내",
+      "건축",
+      "비오는날가능"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Grand Central / Midtown landmark mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Grand_Central_Terminal_Main_Concourse_2019-10-03_20-02.jpg/960px-Grand_Central_Terminal_Main_Concourse_2019-10-03_20-02.jpg",
+      "source": "wikimedia-commons",
+      "note": "Grand Central Terminal Main Concourse"
     },
     "sources": [
       "https://grandcentralterminal.com/wp-content/uploads/2022/03/GCT_DigitalDirectory_Download_2022_030122.pdf",
@@ -396,11 +452,15 @@
     "priority": "추천",
     "desc": "사자상 계단, 대리석 홀, Rose Main Reading Room까지 차분한 클래식 컷이 가능한 도서관.",
     "shotTip": "열람실은 조용히, 플래시 없이. 외부 계단에서는 Bryant Park 방향 자연광이 좋습니다.",
-    "chips": ["실내", "클래식", "비오는날가능"],
+    "chips": [
+      "실내",
+      "클래식",
+      "비오는날가능"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "library reading room mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/New_York_Public_Library_Rose_Main_Reading_Room.jpeg/960px-New_York_Public_Library_Rose_Main_Reading_Room.jpeg",
+      "source": "wikimedia-commons",
+      "note": "NYPL Rose Main Reading Room"
     },
     "sources": [
       "https://www.nypl.org/sites/default/files/blog_attachments/HOH_stack_facts_2010.pdf"
@@ -423,11 +483,15 @@
     "priority": "추천",
     "desc": "전광판 빛과 사람 흐름이 만드는 에너지 있는 뉴욕 야경 인증샷.",
     "shotTip": "인물은 전광판 빛을 정면 보조광처럼 쓰고, 셔터를 조금 느리게 하면 배경 움직임이 살아납니다.",
-    "chips": ["야경", "네온", "혼잡"],
+    "chips": [
+      "야경",
+      "네온",
+      "혼잡"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Times Square night lights"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/TKTS_red_stairs_jeh.JPG/960px-TKTS_red_stairs_jeh.JPG",
+      "source": "wikimedia-commons",
+      "note": "TKTS red stairs in Times Square"
     },
     "sources": [
       "https://www.timessquarenyc.org/"
@@ -450,11 +514,15 @@
     "priority": "최우선",
     "desc": "East River 건너 Midtown skyline, Empire State Building, UN 본부를 넓게 담기 좋은 Queens 대표 전망 포인트.",
     "shotTip": "복원된 gantry 구조물을 프레임으로 쓰고, 해질 무렵 강변 난간에서 맨해튼을 압축해 찍으세요.",
-    "chips": ["Queens", "스카이라인", "석양추천"],
+    "chips": [
+      "Queens",
+      "스카이라인",
+      "석양추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Queens waterfront skyline mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/GantryPlazaStatePark.jpg",
+      "source": "wikimedia-commons",
+      "note": "Gantry Plaza State Park"
     },
     "sources": [
       "https://parks.ny.gov/parks/gantryplaza"
@@ -477,11 +545,15 @@
     "priority": "추천",
     "desc": "Queensboro Bridge 옆을 지나며 Midtown East와 East River를 공중에서 보는 짧고 강한 전망 루트.",
     "shotTip": "Manhattan행보다 Roosevelt Island행 앞쪽 창가가 덜 막힙니다. 반사 줄이려면 렌즈를 유리에 가깝게 대세요.",
-    "chips": ["가성비", "움직이는뷰", "비오는날가능"],
+    "chips": [
+      "가성비",
+      "움직이는뷰",
+      "비오는날가능"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "aerial city transit mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Roosevelt_Island_Tramway_half-way_view_towards_Manhattan%2C_2021-10-01.jpg/960px-Roosevelt_Island_Tramway_half-way_view_towards_Manhattan%2C_2021-10-01.jpg",
+      "source": "wikimedia-commons",
+      "note": "Roosevelt Island Tramway view toward Manhattan"
     },
     "sources": [
       "https://rioc.ny.gov/302/Tram"
@@ -504,11 +576,15 @@
     "priority": "추천",
     "desc": "Roosevelt Island 남단에서 UN, East River, Manhattan skyline을 미니멀한 축선 구도로 담기 좋습니다.",
     "shotTip": "나무 열과 화강석 벽이 만드는 중앙 축을 살리고, 남쪽 끝에서 강과 스카이라인을 넓게 잡으세요.",
-    "chips": ["미니멀", "East River", "조용함"],
+    "chips": [
+      "미니멀",
+      "East River",
+      "조용함"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1543716091-a840c05249ec?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "minimal waterfront skyline mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/FDR_Four_Freedoms_Park_New_York_October_2016_panorama.jpg/960px-FDR_Four_Freedoms_Park_New_York_October_2016_panorama.jpg",
+      "source": "wikimedia-commons",
+      "note": "FDR Four Freedoms State Park panorama"
     },
     "sources": [
       "https://www.parks.ny.gov/parks/186"
@@ -531,11 +607,15 @@
     "priority": "최우선",
     "desc": "흰 철골 리브와 대칭적인 중앙 홀 때문에 미래적인 건축 사진을 만들기 좋은 실내 스팟.",
     "shotTip": "중앙 바닥에서 위를 향해 세로로 찍거나, 양쪽 발코니에서 사람을 작게 넣어 스케일을 살리세요.",
-    "chips": ["실내", "건축", "비오는날가능"],
+    "chips": [
+      "실내",
+      "건축",
+      "비오는날가능"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1583364481915-dacea3e06d18?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "white modern transit architecture mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Oculus_Interior_305.jpg/960px-Oculus_Interior_305.jpg",
+      "source": "wikimedia-commons",
+      "note": "World Trade Center Oculus interior"
     },
     "sources": [
       "https://www.explorewtc.com/en/local/learn-about-wtc/oculus-transportation-hub.html"
@@ -558,11 +638,15 @@
     "priority": "추천",
     "desc": "반사 수면, 폭포, One World Trade Center가 만드는 차분한 로어맨해튼 컷.",
     "shotTip": "추모 공간이므로 조용히 촬영하세요. 물의 선과 이름 패널을 전경으로 두면 깊이가 생깁니다.",
-    "chips": ["추모공간", "반사", "Lower Manhattan"],
+    "chips": [
+      "추모공간",
+      "반사",
+      "Lower Manhattan"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Lower Manhattan memorial mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/National_September_11_Memorial_Pool_Panorama_-_Flickr_id_21855606231.jpg/960px-National_September_11_Memorial_Pool_Panorama_-_Flickr_id_21855606231.jpg",
+      "source": "wikimedia-commons",
+      "note": "National September 11 Memorial pool"
     },
     "sources": [
       "https://www.911memorial.org/visit/memorial/about-memorial"
@@ -585,11 +669,15 @@
     "priority": "추천",
     "desc": "흰 대리석 아치가 Fifth Avenue 축과 겹치며 Village 분위기를 가장 쉽게 보여주는 포인트.",
     "shotTip": "분수 남쪽에서 북쪽을 향해 아치를 정면으로 잡거나, 아치 아래에서 거리 공연을 배경으로 넣으세요.",
-    "chips": ["Village", "클래식", "거리공연"],
+    "chips": [
+      "Village",
+      "클래식",
+      "거리공연"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Washington Square Park arch mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Washington_Square_Arch_by_David_Shankbone.jpg/960px-Washington_Square_Arch_by_David_Shankbone.jpg",
+      "source": "wikimedia-commons",
+      "note": "Washington Square Arch"
     },
     "sources": [
       "https://www2.nycgovparks.org/parks/washingtonsquarepark/monuments/1657"
@@ -612,11 +700,15 @@
     "priority": "추천",
     "desc": "삼각형 건물 실루엣과 Madison Square Park의 녹지를 같이 담는 뉴욕 건축 클래식.",
     "shotTip": "교차로 중앙보다 공원 남서쪽 가장자리에서 찍으면 차도 위험 없이 건물 전체가 안정적으로 들어옵니다.",
-    "chips": ["건축", "클래식", "Flatiron"],
+    "chips": [
+      "건축",
+      "클래식",
+      "Flatiron"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1541336032412-2048a678540d?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Flatiron district architecture mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flatiron_and_Madison_Square_Park.jpg/960px-Flatiron_and_Madison_Square_Park.jpg",
+      "source": "wikimedia-commons",
+      "note": "Flatiron Building and Madison Square Park"
     },
     "sources": [
       "https://flatironnomad.nyc/wp-content/uploads/2022/05/FLATIRON-WALKING-TOUR-BROCHURE.pdf"
@@ -639,11 +731,15 @@
     "priority": "추천",
     "desc": "구리색 벌집 구조와 반복 계단 패턴이 강한 그래픽 배경이 되는 Hudson Yards 포인트.",
     "shotTip": "광장 바닥에서 올려다보면 반복 패턴이 커지고, Edge/High Line 동선과 묶기 좋습니다.",
-    "chips": ["Hudson Yards", "패턴", "건축"],
+    "chips": [
+      "Hudson Yards",
+      "패턴",
+      "건축"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1569531955317-3904f67a2b0a?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Hudson Yards architectural structure mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/15_Hudson_Yards_%26_The_Vessel.jpg/960px-15_Hudson_Yards_%26_The_Vessel.jpg",
+      "source": "wikimedia-commons",
+      "note": "Vessel at Hudson Yards"
     },
     "sources": [
       "https://www.vesselnyc.com/"
@@ -666,11 +762,15 @@
     "priority": "최우선",
     "desc": "무료 루프탑에서 Little Island, Hudson River, Lower Manhattan, New York Harbor를 한 번에 볼 수 있습니다.",
     "shotTip": "남쪽 난간에서는 Little Island와 One World Trade Center, 서쪽 난간에서는 허드슨강 석양을 잡으세요.",
-    "chips": ["무료루프탑", "석양추천", "Hudson River"],
+    "chips": [
+      "무료루프탑",
+      "석양추천",
+      "Hudson River"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Hudson River rooftop view mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Pier_57_Rooftop_Park_007.jpg/960px-Pier_57_Rooftop_Park_007.jpg",
+      "source": "wikimedia-commons",
+      "note": "Pier 57 Rooftop Park"
     },
     "sources": [
       "https://hudsonriverpark.org/locations/pier-57/",
@@ -694,11 +794,15 @@
     "priority": "추천",
     "desc": "돌다리, Pond, Central Park South skyline이 겹치는 센트럴파크 남쪽의 쉬운 포토스팟.",
     "shotTip": "연못 남쪽에서 다리와 Plaza Hotel 방향 스카이라인을 함께 넣으면 계절감이 잘 살아납니다.",
-    "chips": ["Central Park", "스카이라인", "오전추천"],
+    "chips": [
+      "Central Park",
+      "스카이라인",
+      "오전추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1543716091-a840c05249ec?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Central Park pond skyline mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Gapstow_bridge_of_central_park_in_november.jpg/960px-Gapstow_bridge_of_central_park_in_november.jpg",
+      "source": "wikimedia-commons",
+      "note": "Gapstow Bridge in Central Park"
     },
     "sources": [
       "https://www.centralparknyc.org/locations/gapstow-bridge"
@@ -721,11 +825,15 @@
     "priority": "추천",
     "desc": "Vista Rock 위 작은 성에서 Turtle Pond, Great Lawn, Ramble을 내려다보는 동화 같은 전망 포인트.",
     "shotTip": "Turtle Pond 쪽에서는 성이 바위 위로 솟는 컷, 테라스 위에서는 Great Lawn 방향 넓은 컷을 찍으세요.",
-    "chips": ["Central Park", "성", "전망"],
+    "chips": [
+      "Central Park",
+      "성",
+      "전망"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "stone architecture in park mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Belvedere_Castle%2C_Central_Park.jpg/960px-Belvedere_Castle%2C_Central_Park.jpg",
+      "source": "wikimedia-commons",
+      "note": "Belvedere Castle in Central Park"
     },
     "sources": [
       "https://www.centralparknyc.org/locations/belvedere-castle"
@@ -748,11 +856,15 @@
     "priority": "추천",
     "desc": "Hudson River와 Palisades를 높은 지대에서 보는 조용한 Upper Manhattan 정원 전망.",
     "shotTip": "정원 산책로의 꽃을 전경으로 두고 강과 절벽을 배경으로 잡으면 맨해튼 같지 않은 분위기가 납니다.",
-    "chips": ["Upper Manhattan", "정원", "석양추천"],
+    "chips": [
+      "Upper Manhattan",
+      "정원",
+      "석양추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1500534314209-a26db0f5b2da?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "garden overlook mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/2014_Fort_Tryon_Park_Heather_Garden.jpg/960px-2014_Fort_Tryon_Park_Heather_Garden.jpg",
+      "source": "wikimedia-commons",
+      "note": "Fort Tryon Park Heather Garden"
     },
     "sources": [
       "https://www2.nycgovparks.org/park-features/hiking/fort-tryon-park",
@@ -776,11 +888,15 @@
     "priority": "최우선",
     "desc": "Lower Manhattan, New York Harbor, Brooklyn Bridge Park를 한눈에 보는 클래식 산책로 전망.",
     "shotTip": "벤치와 난간을 전경으로 넣어 오래된 엽서 느낌을 만들고, 블루아워에 빌딩 조명을 기다리세요.",
-    "chips": ["Brooklyn", "야경", "스카이라인"],
+    "chips": [
+      "Brooklyn",
+      "야경",
+      "스카이라인"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1532960401447-7dd05bef20b0?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Brooklyn skyline promenade mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Manhattan_skyline_from_Brooklyn_Heights_Promenade%2C_Sept_2017.jpg/960px-Manhattan_skyline_from_Brooklyn_Heights_Promenade%2C_Sept_2017.jpg",
+      "source": "wikimedia-commons",
+      "note": "Manhattan skyline from Brooklyn Heights Promenade"
     },
     "sources": [
       "https://www.pps.org/places/brooklyn-heights-promenade"
@@ -803,11 +919,15 @@
     "priority": "추천",
     "desc": "Brooklyn Bridge Park의 높은 잔디 언덕에서 Statue of Liberty와 Downtown Manhattan을 볼 수 있습니다.",
     "shotTip": "잔디 경사와 사람 실루엣을 전경으로 두면 평평한 스카이라인 사진보다 입체감이 납니다.",
-    "chips": ["Brooklyn", "자유의여신상", "석양추천"],
+    "chips": [
+      "Brooklyn",
+      "자유의여신상",
+      "석양추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Brooklyn Bridge Park harbor view mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Brooklyn_Bridge_Park_td_%282019-08-23%29_069_-_Pier_1%2C_Harbor_View_Lawn.jpg/960px-Brooklyn_Bridge_Park_td_%282019-08-23%29_069_-_Pier_1%2C_Harbor_View_Lawn.jpg",
+      "source": "wikimedia-commons",
+      "note": "Harbor View Lawn at Brooklyn Bridge Park"
     },
     "sources": [
       "https://brooklynbridgepark.org/places-to-see/lawns/harbor-view-lawn/"
@@ -830,11 +950,15 @@
     "priority": "추천",
     "desc": "Williamsburg Bridge, 옛 Domino Sugar Factory 요소, East River, Manhattan skyline이 함께 나오는 감도 높은 강변 공원.",
     "shotTip": "elevated walkway에서 공원과 skyline을 내려다보고, 해질 때 Williamsburg Bridge 쪽으로 이동하세요.",
-    "chips": ["Brooklyn", "Williamsburg", "석양추천"],
+    "chips": [
+      "Brooklyn",
+      "Williamsburg",
+      "석양추천"
+    ],
     "image": {
-      "url": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1400&q=80",
-      "source": "unsplash",
-      "note": "Brooklyn waterfront bridge mood"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Domino_Park_Brooklyn.jpg/960px-Domino_Park_Brooklyn.jpg",
+      "source": "wikimedia-commons",
+      "note": "Domino Park in Williamsburg"
     },
     "sources": [
       "https://www.dominopark.com/"

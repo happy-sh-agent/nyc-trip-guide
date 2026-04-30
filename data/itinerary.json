@@ -86,13 +86,14 @@
       "lowC": 10,
       "note": "도보 일정 무난"
     },
-    "map": "https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=SUMMIT+One+Vanderbilt+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Grand+Central+Terminal+New+York",
+    "map": "https://www.google.com/maps/dir/?api=1&origin=New+York+Public+Library&destination=Ellen%27s+Stardust+Diner+New+York&waypoints=Bryant+Park+New+York|Gallaghers+Steakhouse+New+York|Grand+Central+Terminal+New+York|SUMMIT+One+Vanderbilt+New+York",
     "routePlaceIds": [
       "nypl",
       "bryant-park",
       "gallaghers",
       "grand-central",
-      "summit"
+      "summit",
+      "ellens-stardust"
     ],
     "food": [
       {
@@ -104,9 +105,10 @@
         "link": "https://www.google.com/maps/search/?api=1&query=Gallaghers+Steakhouse+New+York"
       },
       {
-        "name": "Midtown dinner",
-        "desc": "SUMMIT 이후 Midtown에서 가볍게 마무리",
-        "tag": "저녁 후보"
+        "name": "Ellen’s Stardust Diner",
+        "desc": "19:00쯤 현장 줄서기로 방문. 예약 불가, 노래하는 서버 공연은 오픈부터 마감까지 진행",
+        "tag": "저녁 방문",
+        "link": "https://www.google.com/maps/search/?api=1&query=Ellen%27s+Stardust+Diner+New+York"
       }
     ],
     "notes": [
@@ -155,6 +157,13 @@
         "immutable": true,
         "reservationId": "summit-one-vanderbilt-2026-05-01-1700",
         "placeId": "summit"
+      },
+      {
+        "time": "19:00",
+        "title": "Ellen’s Stardust Diner",
+        "desc": "저녁 식사. 예약 없이 현장 대기 후 입장",
+        "tag": "저녁",
+        "placeId": "ellens-stardust"
       }
     ]
   },

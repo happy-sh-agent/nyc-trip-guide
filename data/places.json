@@ -123,6 +123,20 @@
         }
       },
       {
+        "id": "ellens-stardust",
+        "name": "Ellen's Stardust Diner",
+        "kind": "restaurant",
+        "address": "1650 Broadway New York NY 10019",
+        "mapQuery": "Ellen's Stardust Diner New York",
+        "lat": 40.7613,
+        "lng": -73.9846,
+        "image": {
+          "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
+          "source": "unsplash",
+          "note": "busy retro diner counter mood"
+        }
+      },
+      {
         "id": "birdland",
         "name": "Birdland Jazz Club",
         "kind": "venue",

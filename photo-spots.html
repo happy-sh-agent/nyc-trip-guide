@@ -32,7 +32,7 @@
     .filter-tag { border:1px solid var(--line); background:white; color:var(--muted); border-radius:999px; padding:8px 11px; font-weight:800; font-size:12px; cursor:pointer; }
     .filter-tag.active { background:var(--primary); border-color:var(--primary); color:white; }
     .place-list { display:grid; gap:12px; }
-    .place-card { display:grid; grid-template-columns:120px 1fr auto; gap:14px; align-items:center; border:1px solid var(--line); border-radius:18px; padding:12px; background:white; }
+    .place-card { display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:center; border:1px solid var(--line); border-radius:18px; padding:12px; background:white; }
     .thumb { width:120px; aspect-ratio:4 / 3; min-height:90px; border-radius:14px; background:#eef3fb; overflow:hidden; }
     .thumb img { width:100%; height:100%; display:block; object-fit:cover; }
     .title { font-size:22px; font-weight:800; }
@@ -42,8 +42,6 @@
     .detail-dot::before { content:"·"; margin-right:8px; color:#b6becc; }
     .chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
     .chip { font-size:12px; padding:5px 8px; border-radius:999px; background:#f3f6fd; color:var(--primary); font-weight:700; }
-    .actions { display:flex; flex-direction:column; gap:8px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; padding:11px 14px; border-radius:14px; text-decoration:none; border:1px solid #dce5f4; color:var(--primary); font-weight:700; background:white; white-space:nowrap; }
     .loading { color:var(--muted); font-size:14px; padding:20px 0; }
     @media (max-width:640px) {
       h1 { font-size:42px; }
@@ -53,7 +51,6 @@
       .filters input { grid-column:1 / -1; }
       .place-card { grid-template-columns:1fr; }
       .thumb { width:100%; aspect-ratio:4 / 3; min-height:180px; }
-      .actions { flex-direction:row; flex-wrap:wrap; }
     }
   </style>
 </head>
@@ -191,10 +188,6 @@
               <span class="detail-dot">${item.fee || '요금 미정'}</span>
             </div>
             <div class="chips">${(item.chips || []).map(chip => `<span class="chip">${chip}</span>`).join('')}</div>
-          </div>
-          <div class="actions">
-            <a class="button" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer">Google Maps</a>
-            <a class="button" href="${item.sources[0]}" target="_blank" rel="noopener noreferrer">자료 보기</a>
           </div>
         </div>
       `).join('') : '<div class="loading">조건에 맞는 포토스팟이 없습니다. 필터를 줄여보세요.</div>';
